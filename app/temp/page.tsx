@@ -1,10 +1,13 @@
 import Navbar from "@/containers/navbar/Navbar";
+import About from "@/components/about/About";
 import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div >
       <Navbar />
+     <About/>
+    
     </div>
   );
 };
