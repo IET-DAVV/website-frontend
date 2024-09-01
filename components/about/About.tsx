@@ -1,71 +1,69 @@
+"use client";
+import {
+  collegeDescription,
+  collegeName,
+  image,
+} from "@/constants/landing/about";
 import Image from "next/image";
 import React from "react";
+import { BsArrowRightCircle } from "react-icons/bs";
+import { Playfair_Display } from "next/font/google";
+import Link from "next/link";
+import { motion } from "framer-motion";
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 const About = () => {
   return (
-    <div className=" p-12 grid grid-cols-2 w-screen h-full bg-[#3B7A9E]">
-      <div className=" px-12">
-        <h4 className="flex justify-start items-center">
-          <svg
-            width="100"
-            height="4"
-            viewBox="0 0 281 4"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line
-              x1="2.31641"
-              y1="1.99988"
-              x2="278.109"
-              y2="1.99988"
-              stroke="#F9F6FF"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>{" "}
-          Welcome to{" "}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="p-16 grid grid-cols-2 gap-20 w-full h-full bg-[#3B7A9E]"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col justify-center items-start space-y-6"
+      >
+        <h4 className="flex justify-start items-center space-x-2">
+          <Image
+            src={"/landing/line.svg"}
+            alt="line"
+            width={100}
+            height={100}
+          />
+          <span className="uppercase">Welcome to</span>{" "}
         </h4>
-        <h1 className="py-4 font-extrabold text-4xl">IET-DAVV</h1>
-        <p className="font-extralight font-sans"> 
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.It has survived not only five centuries, remaining
-          essentially unchanged. It was popularised in the 1960s with the
-          release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+        <h1 className={`py-4 font-extralight text-6xl ${playfair.className}`}>
+          {collegeName}
+        </h1>
+        <p className="font-extralight ">{collegeDescription}</p>
+        <p className="flex font-light py-4 space-x-6 justify-center items-center">
+          <span className="pt-1">EXPLORE MORE </span>
+          <Link href={"/about"} className="">
+            <BsArrowRightCircle size={40} color="#F9F6FF" />
+          </Link>
         </p>
-        <p className="flex  font-thin py-4">
-          <span className="pt-1"> EXPLORE MORE </span>
-          <button type="button" className=" px-4  ">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-8"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-
-            <span className="sr-only">Icon description</span>
-          </button>{" "}
-        </p>
-      </div>
-      <div className=" flex justify-center items-center px-24">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex items-center justify-center"
+      >
         <Image
-          src={"/mblock.png"}
+          src={image}
           alt="mblock-img"
           width={1000}
           height={1000}
-          className="rounded-lg w-72 h-72"
+          className="rounded-lg w-96 h-96"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
