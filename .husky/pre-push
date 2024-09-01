@@ -2,6 +2,3 @@
 
 # Run Next.js build
 yarn build || exit 1
-
-# If build is successful, continue with push
-. "$(dirname "$0")/h"
