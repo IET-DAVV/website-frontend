@@ -1,3 +1,4 @@
+"use client";
 import {
   collegeDescription,
   collegeName,
@@ -8,14 +9,26 @@ import React from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Playfair_Display } from "next/font/google";
 import Link from "next/link";
+import { motion } from "framer-motion";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
+
 const About = () => {
   return (
-    <div className="p-16 grid grid-cols-2 gap-20 w-full h-full bg-[#3B7A9E]">
-      <div className="flex flex-col justify-center items-start space-y-6">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="p-16 grid grid-cols-2 gap-20 w-full h-full bg-[#3B7A9E]"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col justify-center items-start space-y-6"
+      >
         <h4 className="flex justify-start items-center space-x-2">
           <Image
             src={"/landing/line.svg"}
@@ -35,8 +48,13 @@ const About = () => {
             <BsArrowRightCircle size={40} color="#F9F6FF" />
           </Link>
         </p>
-      </div>
-      <div className="flex items-center justify-center">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex items-center justify-center"
+      >
         <Image
           src={image}
           alt="mblock-img"
@@ -44,8 +62,8 @@ const About = () => {
           height={1000}
           className="rounded-lg w-96 h-96"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -77,7 +77,7 @@ export const master = [
 export const phd = [
   {
     branch: "Doctoral Program",
-    type: "Phd",
+    type: "PhD",
     id: "p1",
     link: "",
   },
