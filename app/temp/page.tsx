@@ -1,4 +1,4 @@
-import About from "@/components/about2/About";
+import About from "@/components/about/About";
 import History from "@/components/about2/History";
 import Navbar from "@/containers/navbar/Navbar";
 import React from "react";
