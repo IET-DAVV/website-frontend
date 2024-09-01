@@ -1,4 +1,4 @@
-import HeaderLinksType from "../../typings.d";
+import type { HeaderLinksType } from "../../typings.d";
 export const headerLinks: HeaderLinksType = [
   {
     name: "Home",
