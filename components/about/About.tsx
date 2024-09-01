@@ -18,8 +18,9 @@ const playfair = Playfair_Display({
 const About = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className="p-16 grid grid-cols-2 gap-20 w-full h-full bg-[#3B7A9E]"
     >
@@ -44,7 +45,10 @@ const About = () => {
         <p className="font-extralight ">{collegeDescription}</p>
         <p className="flex font-light py-4 space-x-6 justify-center items-center">
           <span className="pt-1">EXPLORE MORE </span>
-          <Link href={"/about"} className="">
+          <Link
+            href={"/about"}
+            className="hover:translate-x-2 transition-all duration-300"
+          >
             <BsArrowRightCircle size={40} color="#F9F6FF" />
           </Link>
         </p>
