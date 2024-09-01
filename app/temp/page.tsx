@@ -1,5 +1,6 @@
+import About from "@/components/about2/About";
+import History from "@/components/about2/History";
 import Navbar from "@/containers/navbar/Navbar";
-import About from "@/components/about/About";
 import React from "react";
 import AcademicPrograms from "@/components/academic-programs/AcademicPrograms";
 
@@ -11,6 +12,7 @@ const page = () => {
      <AcademicPrograms />
     
     </div>
+      
   );
 };
 
