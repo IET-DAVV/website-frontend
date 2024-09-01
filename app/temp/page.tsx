@@ -5,11 +5,10 @@ import AcademicPrograms from "@/components/academic-programs/AcademicPrograms";
 
 const page = () => {
   return (
-    <div >
+    <div className=" overflow-x-hidden">
       <Navbar />
-     <About/>
-     <AcademicPrograms />
-    
+      <About />
+      <AcademicPrograms />
     </div>
   );
 };

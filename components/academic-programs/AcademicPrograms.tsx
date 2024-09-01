@@ -7,8 +7,6 @@ import Card from "./Card";
 
 const AcademicPrograms = () => {
   const [preview, setPreview] = useState<any>(bachelor);
-
-  console.log("this is data", preview);
   return (
     <>
       <div className="bg-white py-12 px-8 ">
