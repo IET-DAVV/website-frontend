@@ -20,9 +20,7 @@ const Header = ({ links }: { links: HeaderLinksType }) => {
       />
 
       <ul className="flex flex-row justify-center items-center space-x-3">
-        {headerLinks?.map((link: any) => (
-          <li key={link.name}>{link.name}</li>
-        ))}
+        {headerLinks?.map((link: any) => <li key={link.name}>{link.name}</li>)}
       </ul>
     </div>
   );
