@@ -3,10 +3,11 @@ import History from "@/components/about2/History";
 import Navbar from "@/containers/navbar/Navbar";
 import Image from "next/image";
 import React from "react";
+import AcademicPrograms from "@/components/academic-programs/AcademicPrograms";
 
 const page = () => {
   return (
-    <div>
+    <div className=" overflow-x-hidden">
       <Navbar />
       <About/>
       <History /> 
