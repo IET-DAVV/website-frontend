@@ -1,4 +1,4 @@
-import { aboutIET } from "@/constants/about-page/about";
+import { aboutIET, aboutImage } from "@/constants/about-page/about";
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import React from "react";
@@ -13,7 +13,7 @@ const About = () => {
       <div className="grid grid-cols-2 justify-center items-center w-full place-items-center">
         <div className="relative inset-0 w-full h-full flex justify-center items-center">
           <Image
-            src="/aboutietimg.png"
+            src={aboutImage}
             width={1000}
             height={1000}
             alt=""

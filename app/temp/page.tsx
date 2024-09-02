@@ -9,8 +9,8 @@ const page = () => {
   return (
     <div className=" overflow-x-hidden bg-white">
       <Navbar />
-      <About/>
-      {/* <History />  */}
+      {/* <About/> */}
+      <History /> 
     </div>
       
   );
