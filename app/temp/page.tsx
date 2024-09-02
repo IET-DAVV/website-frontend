@@ -7,10 +7,10 @@ import AcademicPrograms from "@/components/academic-programs/AcademicPrograms";
 
 const page = () => {
   return (
-    <div className=" overflow-x-hidden">
+    <div className=" overflow-x-hidden bg-white">
       <Navbar />
       <About/>
-      <History /> 
+      {/* <History />  */}
     </div>
       
   );

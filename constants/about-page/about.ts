@@ -1,2 +1,2 @@
 export const aboutIET =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. non natus blanditiis voluptate suscipit! Eligendi mollitia laudantium deserunt tempora error illum obcaecati libero enim, veniam quo, expedita vel magni excepturi?";
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae non natus blanditiis voluptate suscipit! Eligendi mollitia laudantium deserunt empora error illum obcaecati libero enim,veniam quo, expedita vel magni excepturi? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim aut at iure consequatur. Pariatur libero repellendus voluptates beatae consequuntur, off";
