@@ -4,7 +4,7 @@ import { HeaderLinksType } from "@/typings";
 import { IoMail } from "react-icons/io5";
 import Image from "next/image";
 
-const Header = () => {
+const Header = ({ links }: { links: HeaderLinksType }) => {
   return (
     <div className="flex flex-row justify-between items-center p-6 bg-white text-black">
       <p>{LOGO}</p>
@@ -20,9 +20,7 @@ const Header = () => {
       />
 
       <ul className="flex flex-row justify-center items-center space-x-3">
-        {headerLinks?.map((link: any) => (
-          <li key={link.name}>{link.name}</li>
-        ))}
+        {headerLinks?.map((link: any) => <li key={link.name}>{link.name}</li>)}
       </ul>
     </div>
   );

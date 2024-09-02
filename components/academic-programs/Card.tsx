@@ -1,7 +1,13 @@
 import React from "react";
 import { BsArrowUpRightCircle } from "react-icons/bs";
 
-const Card = ({ branch, type, link }: any) => {
+interface CardProps {
+  branch: string;
+  type: string;
+  link: string;
+}
+
+const Card = ({ branch, type, link }: CardProps) => {
   console.log("this is from card", branch);
   return (
     <div className="flex flex-col justify-between border-[1.508px] border-solid border-[#110909] rounded-lg h-48">

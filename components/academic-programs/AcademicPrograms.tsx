@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 const AcademicPrograms = () => {
-  const [preview, setPreview] = useState<any>(bachelor);
+  const [preview, setPreview] = useState<Object[]>(bachelor);
   return (
     <>
       <div className="bg-white py-12 px-8 flex flex-col items-start justify-start space-y-10">
