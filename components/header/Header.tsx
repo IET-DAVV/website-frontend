@@ -1,31 +1,144 @@
 import React from "react";
-import { LOGO, headerLinks } from "@/constants/header/data";
-import { HeaderLinksType } from "@/typings";
-import { IoMail } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
+import { FiPhone } from "react-icons/fi";
+import { FaChevronDown, FaSearch } from "react-icons/fa";
+import Link from "next/link";
+import { GrAnnounce } from "react-icons/gr";
+import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
+import logo from "@/public/landing/logo.png";
+import Marquee from "react-fast-marquee";
 
-const Header = () => {
+export const Header = () => {
   return (
-    <div className="flex flex-row justify-between items-center p-6 bg-white text-black">
-      <p>{LOGO}</p>
-      <IoMail />
-      <Image
-        src={
-          "https://s3-alpha-sig.figma.com/img/8b1f/ba24/868716fdffba81dd0aa4eeee613b783b?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=h2e2nShAB3FPAWQak9sT7ibuyPBt2xyEcTLhOTai2fH4324zn80Ikki0t8ZXSVNw2O8FzrAr6q9rc-phzhNNsrLQZm7IYIx6MLC2zZ27W18e45ZHEkBahd89xBXpMhwvhn9Uj834moJTnuCdnl4ahUXSN-h6TD4J6ofGXRWXyfreISNZvZMkIMH7zWD75UPBG-Z~0ONafT4NK6nsnRRYYWk0USZyt9l5LzOEcCmOGdZ6wXmcLnkPxTh4IRbWj-jg~Avn-ipeab-ggTrsXbjY9m0fEcq~dcaNa003Cx-RT9xAiInTcQQD7WNI9VVpxeA7Kp8bYqWe37p9J1F6fvBTyg__"
-        }
-        className="w-10 h-10"
-        alt="logo"
-        width={1000}
-        height={1000}
-      />
-
-      <ul className="flex flex-row justify-center items-center space-x-3">
-        {headerLinks?.map((link: any) => (
-          <li key={link.name}>{link.name}</li>
-        ))}
-      </ul>
-    </div>
+    <header>
+      <div className="bg-black text-white flex justify-between px-12 text-sm font-sans py-2 items-center">
+        <div className="flex gap-10">
+          <div className="flex items-center gap-3">
+            <MdEmail /> <span>1234@ietdavv.edu.in </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <FiPhone />
+            <span>+0731-2455856</span>
+          </div>
+        </div>
+        <div className="flex gap-10 items-center">
+          <Link href="./">Placement</Link>
+          <div>
+            <Link href="./" className="flex items-center gap-2">
+              Courses{" "}
+              <span>
+                <FaChevronDown />
+              </span>
+            </Link>
+          </div>
+          <div>
+            {" "}
+            <Link href="./" className="flex items-center gap-2">
+              Notice{" "}
+              <span>
+                <FaChevronDown />
+              </span>
+            </Link>
+          </div>
+          <Link href="./">Alumini</Link>
+          <div>
+            <input
+              type="Search"
+              placeholder="  Search"
+              className="rounded-full p-1"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-between px-12 bg-transparent items-center mt-2">
+        <div className="font-bold flex items-center gap-4">
+          <Image
+            src={logo}
+            alt="IET-DAVV"
+            className="size-[60px] bg-transparent"
+          />
+          <h2>
+            Institute of Engineering <br /> and Technology
+          </h2>
+        </div>
+        <div>
+          <ul className="flex items-center gap-5">
+            <li className="underline-offset-4">
+              <Link href="./home" className="hover:underline">
+                Home
+              </Link>
+            </li>
+            <li className="underline-offset-4">
+              <Link href="./about" className="hover:underline">
+                About us
+              </Link>
+            </li>
+            <li className="underline-offset-4">
+              <Link
+                href="./academics"
+                className="flex items-center gap-2 hover:underline"
+              >
+                Academics{" "}
+                <span>
+                  <FaChevronDown />
+                </span>
+              </Link>
+            </li>
+            <li className="underline-offset-4">
+              <Link
+                href="./admission"
+                className="flex items-center gap-2 hover:underline"
+              >
+                Admission{" "}
+                <span>
+                  <FaChevronDown />
+                </span>
+              </Link>
+            </li>
+            <li className="underline-offset-4">
+              <Link
+                href="./hostel"
+                className="flex items-center gap-2 hover:underline"
+              >
+                Hostel{" "}
+                <span>
+                  <FaChevronDown />
+                </span>
+              </Link>
+            </li>
+            <li className="underline-offset-4">
+              <Link href="./contact" className="hover:underline">
+                Contact us
+              </Link>
+            </li>
+            <li className="underline-offset-4">
+              <Link href="./fresher" className="hover:underline">
+                Fresher's corner
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="flex justify-between px-12 gap-4 mt-5 bg-slate-300 items-center p-2">
+        <div className="bg-black text-white p-2 flex items-center gap-2 rounded-full">
+          <span>
+            <GrAnnounce />
+          </span>
+          Announcements
+        </div>
+        <div>
+        <Marquee speed={40} gradient={false}>
+          <p>
+            Practical exam time table | Enrollment data update | Practical exam
+            time table | Enrollment data update | Practical exam time table
+          </p>
+          </Marquee>
+        </div>
+        <div>
+          <GiHamburgerMenu />
+        </div>
+      </div>
+    </header>
   );
 };
-
-export default Header;
