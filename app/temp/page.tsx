@@ -4,6 +4,7 @@ import Navbar from "@/containers/navbar/Navbar";
 import Image from "next/image";
 import React from "react";
 import AcademicPrograms from "@/components/academic-programs/AcademicPrograms";
+import Clubs from "@/components/clubs/Clubs";
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
       <Navbar />
       {/* <About/> */}
       <History /> 
+      <Clubs/>
     </div>
       
   );
