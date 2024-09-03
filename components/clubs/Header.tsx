@@ -1,17 +1,20 @@
-import React from 'react';
-
-const Header = () => {
+import { Playfair_Display } from "next/font/google";
+import React from "react";
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+const Header = ({ clubDescription }: { clubDescription: string }) => {
   return (
-    <div className="flex items-start justify-between p-4 bg-gray-50  ">
-      <div className="text-left w-1/4 mx-8">
-        <h1 className="text-6xl font-bold font-serif leading-none tracking-tight text-gray-900">IET</h1>
-        <h2 className="text-6xl font-bold font-serif leading-none tracking-tight text-gray-900">CLUBS</h2>
-      </div>
-      <div className="flex-1 text-left  text-gray-700 w-3/4">
-        <p className="text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
-          Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed.
-        </p>
+    <div className="flex items-center justify-between p-4 bg-gray-50">
+      <h1
+        className={`uppercase text-6xl font-serif leading-none tracking-tight text-gray-900 ${playfair.className}`}
+      >
+        IET <br />
+        Clubs
+      </h1>
+      <div className="flex text-left justify-end items-center text-gray-700 w-3/4">
+        <p className="text-lg">{clubDescription}</p>
       </div>
     </div>
   );

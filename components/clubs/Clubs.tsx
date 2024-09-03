@@ -1,39 +1,33 @@
-"use client"
-import { useState } from 'react';
-import { clubs, imagesMap } from '@/constants/clubs/data';
-import ImageGallery from './Gallery';
-import Sidebar from './Sidebar';
-import Header from './Header';
+"use client";
+import { useState } from "react";
+import { clubs, imagesMap } from "@/constants/clubs/data";
+import ImageGallery from "./Gallery";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 const Clubs = () => {
-  const [selectedClub, setSelectedClub] = useState<string>('E-CELL');
-
+  const [selectedClub, setSelectedClub] = useState<string>("E-CELL");
   return (
-    <>
-     <div
-     className='bg-gray-50 flex flex-col gap-2'
-     >
-
-<Header />
-
-       
-<div className="flex bg-gray-50 ">
-  {/* Sidebar - Centered vertically */}
-  <aside className="w-1/4 flex items-center justify-center">
-    <div className="p-8">
-      <Sidebar clubs={clubs} selectedClub={selectedClub} onSelectClub={setSelectedClub} />
+    <div className="bg-gray-50 px-20 py-10 flex flex-col gap-2">
+      <Header
+        clubDescription={
+          clubs.find((club) => club.name === selectedClub)?.description || ""
+        }
+      />
+      <div className="grid grid-cols-4 bg-gray-50 gap-4">
+        <aside className="col-span-1 flex justify-start items-center w-full">
+          <Sidebar
+            clubs={clubs.map((club) => club.name)}
+            selectedClub={selectedClub}
+            onSelectClub={setSelectedClub}
+          />
+        </aside>
+        <main className="w-full h-full flex max-h-full justify-center items-center col-span-3">
+          <ImageGallery images={imagesMap[selectedClub] || []} />
+        </main>
+      </div>
     </div>
-  </aside>
-
-  {/* Main content - Images start from the top */}
-  <main className="w-3/4 p-8 ">
-    <ImageGallery images={imagesMap[selectedClub] || []} />
-  </main>
-</div>
-
-     </div>
-    </>
   );
-}
+};
 
 export default Clubs;

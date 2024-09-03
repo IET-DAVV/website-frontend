@@ -1,4 +1,5 @@
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 interface ImageGalleryProps {
   images: string[];
@@ -6,13 +7,15 @@ interface ImageGalleryProps {
 
 const ImageGallery = ({ images }: ImageGalleryProps) => {
   return (
-    <div className="grid grid-cols-2 gap-4 justify-items-center">
+    <div className="grid grid-cols-2 gap-10 place-items-center">
       {images.map((image, index) => (
-        <img
+        <Image
           key={index}
           src={image}
+          width={400}
+          height={400}
           alt={`Club ${index}`}
-          className="h-[400px] w-[400px] object-cover rounded-lg"
+          className="h-96 w-96 object-cover rounded-lg"
         />
       ))}
     </div>
