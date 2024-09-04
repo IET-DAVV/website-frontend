@@ -4,15 +4,14 @@ import Navbar from "@/containers/navbar/Navbar";
 import Image from "next/image";
 import React from "react";
 import AcademicPrograms from "@/components/academic-programs/AcademicPrograms";
+import Achievements from "@/components/achievements-carousal/Achievements";
 
 const page = () => {
   return (
     <div className=" overflow-x-hidden bg-white">
       <Navbar />
-      {/* <About/> */}
-      <History /> 
+      <Achievements />
     </div>
-      
   );
 };
 
