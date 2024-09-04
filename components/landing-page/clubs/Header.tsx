@@ -6,7 +6,7 @@ const playfair = Playfair_Display({
 });
 const Header = ({ clubDescription }: { clubDescription: string }) => {
   return (
-    <div className="flex items-center justify-between p-4 bg-gray-50">
+    <div className="flex items-center text-black justify-between p-4 bg-gray-50">
       <h1
         className={`uppercase text-6xl font-serif leading-none tracking-tight text-gray-900 ${playfair.className}`}
       >

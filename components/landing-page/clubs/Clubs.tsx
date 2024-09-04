@@ -8,7 +8,7 @@ import Header from "./Header";
 const Clubs = () => {
   const [selectedClub, setSelectedClub] = useState<string>("E-CELL");
   return (
-    <div className="bg-gray-50 px-20 py-10 flex flex-col gap-2">
+    <div className="bg-white px-20 py-10 flex flex-col gap-2">
       <Header
         clubDescription={
           clubs.find((club) => club.name === selectedClub)?.description || ""

@@ -1,6 +1,3 @@
-import { useState } from "react";
-import Image from "next/image";
-
 interface SidebarProps {
   clubs: string[];
   selectedClub: string;
@@ -20,11 +17,13 @@ const Sidebar = ({ clubs, selectedClub, onSelectClub }: SidebarProps) => {
             onClick={() => onSelectClub(club)}
           >
             <span
-              className={` mr-2 text-2xl ${selectedClub === club ? "text-black" : "text-white"}`}
+              className={` mr-2 text-2xl ${
+                selectedClub === club ? "text-black" : "text-white"
+              }`}
             >
               •
             </span>
-            <span>{club}</span>
+            <span className="text-dark-gray">{club}</span>
           </li>
         ))}
       </ul>
