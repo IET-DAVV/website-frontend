@@ -5,6 +5,7 @@ import AcademicPrograms from "@/components/landing-page/academic-programs/Academ
 import Clubs from "@/components/landing-page/clubs/Clubs";
 import History from "@/components/about-page/History";
 import About from "@/components/landing-page/about/About";
+import Events from "@/components/events/Events";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       <About />
       <History />
       <Clubs />
+      <Events />
     </div>
   );
 };
