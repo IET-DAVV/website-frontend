@@ -36,5 +36,10 @@ yarn.lock
 *.tsbuildinfo
 next-env.d.ts
 
+<<<<<<< HEAD
 
 package-lock.json
+=======
+#package-log.json
+package-lock.json
+>>>>>>> b0dfb15183f1ce989a388693755dd92427d10fa9
