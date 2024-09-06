@@ -15,7 +15,7 @@ interface SlideProps {
 }
 const CustomSlide = ({ year, title, description, imgAddress }: SlideProps) => {
   return (
-    <div className="grid grid-cols-2 pl-8 items-center py-6">
+    <div className="grid grid-cols-2 pl-6 items-center py-6">
       <div className="space-y-4">
         <h4 className="border border-white rounded-full h-5 px-1 w-12 items-center justify-center text-sm bg-white text-[#3B7A9E]">
           {year}
