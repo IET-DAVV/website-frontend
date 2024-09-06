@@ -1,10 +1,10 @@
-import Navbar from "@/containers/navbar/Navbar";
+import Chart from "@/components/chart/Chart";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <Navbar />
+      <Chart />
     </div>
   );
 };
