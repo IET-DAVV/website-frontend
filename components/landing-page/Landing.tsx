@@ -16,14 +16,14 @@ const Landing = () => {
           <Image
             key={index}
             src={src}
-            className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+            className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-200 ease-in-out"
             width={1920}
             height={1080}
             alt={`Landing image ${index + 1}`}
             priority={index === 0}
             style={{
               opacity: 0,
-              animation: `fadeInOut 9s infinite ${index * 3}s`,
+              animation: `fadeInOut 20s infinite ${index * 3}s`,
             }}
           />
         ))}
