@@ -11,15 +11,15 @@ export const achievements: Object[] = [
     index: 2,
     year: "2022",
     title: "SIH Winners",
-    Description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. ",
-    imgAddress: "/sihWinner2022.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.  ",
+    imgAddress: "/landing/ecell2.png",
   },
   {
     index: 3,
     year: "2022",
     title: "SIH Winners",
-    Description:
+    description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. ",
     imgAddress: "/sihWinner2022.png",
   },
@@ -27,7 +27,7 @@ export const achievements: Object[] = [
     index: 4,
     year: "2022",
     title: "SIH Winners",
-    Description:
+    description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. ",
     imgAddress: "/sihWinner2022.png",
   },

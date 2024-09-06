@@ -15,7 +15,7 @@ function SampleNextArrow(props: any) {
   return (
     <IoArrowForward
       color="white"
-      className="absolute top-1/2 right-1 z-10 transform -translate-y-1/2 cursor-pointer"
+      className="absolute top-1/2 right-1 z-10 transform -translate-y-1/2 cursor-pointer border-2 rounded-full p-2 w-10 h-10"
       onClick={props.onClick}
     />
   );
@@ -25,7 +25,7 @@ function SamplePrevArrow(props: any) {
   return (
     <IoArrowBack
       color="white"
-      className="absolute top-1/2 left-1 z-10 transform -translate-y-1/2 cursor-pointer"
+      className="absolute top-1/2 left-1 z-10 transform -translate-y-1/2 cursor-pointer border-2 rounded-full p-2 w-10 h-10"
       onClick={props.onClick}
     />
   );
@@ -40,6 +40,8 @@ const Slides = () => {
     prevArrow: <SamplePrevArrow />,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
   const [data, setData] = useState<object[]>(achievements);
   return (

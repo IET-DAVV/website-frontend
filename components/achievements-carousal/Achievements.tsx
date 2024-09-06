@@ -10,13 +10,15 @@ const playfair = Playfair_Display({
 });
 const Achievements = () => {
   return (
-    <div className="  py-10  ">
-      <div className="px-8 pb-8  grid grid-cols-2 justify-center  bg-white ">
-        <h1 className={`text-black text-6xl  font-mono ${playfair.className}`}>
+    <div className="">
+      <div className="p-10 grid grid-cols-2  justify-center bg-white">
+        <h1
+          className={`text-black font-extralight text-7xl font-mono ${playfair.className}`}
+        >
           ACHIEVEMENTS
         </h1>
         <h1
-          className={`text-gray-400  text-6xl  font-extralight ${playfair.className}`}
+          className={`text-light-gray  text-7xl font-extralight ${playfair.className}`}
         >
           ACHIEVEMENTS
         </h1>
