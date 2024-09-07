@@ -1,5 +1,4 @@
 "use client"
-
 import React from 'react';
 import Masonry from "react-responsive-masonry";
 import { imagesMap } from '@/constants/events/data';
@@ -16,10 +15,12 @@ const Events: React.FC = () => {
           Events
         </div>
       </div>
-      <div className="w-[1000px] mr-[-150px] ml-20"> 
+      
+  
+      <div className="w-full -mr-40 ml-20">
         <Masonry 
           columnsCount={3} 
-          gutter="20px"
+          gutter="20px" 
         >  
           <div className="bg-light-gray h-[300px] rounded-lg w-full" />
           <div className="bg-light-gray h-[150px] rounded-lg w-full" />
