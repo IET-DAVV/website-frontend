@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Sector } from "recharts";
 
@@ -6,7 +6,7 @@ const data = [
   { name: "Group A", value: 400 },
   { name: "Group B", value: 300 },
   { name: "Group C", value: 300 },
-  { name: "Group D", value: 200 }
+  { name: "Group D", value: 200 },
 ];
 
 const renderActiveShape = (props: any) => {
@@ -22,7 +22,7 @@ const renderActiveShape = (props: any) => {
     fill,
     payload,
     percent,
-    value
+    value,
   } = props;
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
@@ -85,10 +85,10 @@ const renderActiveShape = (props: any) => {
 export default function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const onPieEnter = useCallback(
-    (_, index) => {
+    (_: any, index: number) => {
       setActiveIndex(index);
     },
-    [setActiveIndex]
+    [setActiveIndex],
   );
 
   return (
