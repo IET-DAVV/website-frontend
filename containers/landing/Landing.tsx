@@ -1,4 +1,6 @@
 import Achievements from "@/components/achievements-carousal/Achievements";
+import Chart from "@/components/chart/Chart";
+import Recruiters from "@/components/chart/Recruiters";
 import About from "@/components/landing-page/about/About";
 import AcademicPrograms from "@/components/landing-page/academic-programs/AcademicPrograms";
 import Clubs from "@/components/landing-page/clubs/Clubs";
@@ -11,8 +13,10 @@ const LandingContainer = () => {
     <div>
       <Landing />
       <About />
+      <Recruiters />
       <AcademicPrograms />
       <Achievements />
+      <Chart />
       <Events />
       <Clubs />
     </div>

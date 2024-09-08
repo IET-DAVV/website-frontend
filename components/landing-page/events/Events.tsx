@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Masonry from "react-responsive-masonry";
-import { imagesMap } from "@/constants/events/data";
+import { imagesMap } from "@/constants/landing/events/data";
 import Image from "next/image";
 import { Playfair } from "next/font/google";
 import { motion } from "framer-motion";

@@ -5,15 +5,19 @@ import AcademicPrograms from "@/components/landing-page/academic-programs/Academ
 import Clubs from "@/components/landing-page/clubs/Clubs";
 import History from "@/components/about-page/History";
 import About from "@/components/landing-page/about/About";
-import Achievements from "@/components/achievements-carousal/Achievements";
+import Recruiters from "@/components/chart/Recruiters";
+import Chart from "@/components/chart/Chart";
 import Events from "@/components/landing-page/events/Events";
 
 const page = () => {
   return (
-    <div className=" overflow-x-hidden mt-80 bg-white">
-      {/* <About />
+    <div className=" overflow-x-hidden bg-white">
+      <Navbar />
+      <About />
+      <Recruiters />
+      <Chart />
       <History />
-      <Clubs /> */}
+      <Clubs /> 
       <Events />
     </div>
   );

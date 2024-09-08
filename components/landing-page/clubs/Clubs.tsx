@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { clubs, imagesMap } from "@/constants/clubs/data";
+import { clubs, imagesMap } from "@/constants/landing/clubs/data";
 import ImageGallery from "./Gallery";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
