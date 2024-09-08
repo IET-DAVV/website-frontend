@@ -6,6 +6,7 @@ import Clubs from "@/components/landing-page/clubs/Clubs";
 import History from "@/components/about-page/History";
 import About from "@/components/landing-page/about/About";
 import Achievements from "@/components/achievements-carousal/Achievements";
+import Events from "@/components/landing-page/events/Events";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       {/* <About />
       <History />
       <Clubs /> */}
+      <Events />
     </div>
   );
 };
