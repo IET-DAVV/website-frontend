@@ -15,6 +15,8 @@ const Events: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="flex flex-col mx-auto col-span-1 justify-center items-start"
       >
@@ -33,6 +35,8 @@ const Events: React.FC = () => {
       <div className="w-full -mr-40 -mt-20 mx-auto col-span-2">
         <Masonry columnsCount={3} gutter="25px">
           <motion.div
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -40,19 +44,22 @@ const Events: React.FC = () => {
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-[#1C1C1C] h-[150px] rounded-lg w-full"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Image
@@ -65,7 +72,8 @@ const Events: React.FC = () => {
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Image
@@ -78,19 +86,22 @@ const Events: React.FC = () => {
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.7 }}
           >
             <Image
@@ -103,7 +114,8 @@ const Events: React.FC = () => {
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.8 }}
             className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
           />
