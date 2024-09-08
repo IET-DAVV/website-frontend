@@ -1,12 +1,12 @@
 "use client";
 import React, { useCallback, useState } from "react";
-import { PieChart, Pie, Sector } from "recharts";
+import { PieChart, Pie, Sector, Cell } from "recharts";
 
 const data = [
-  { name: "Group A", value: 400 },
-  { name: "Group B", value: 300 },
-  { name: "Group C", value: 300 },
-  { name: "Group D", value: 200 },
+  { name: "Students placed", value: 500, color: "#8884d8" },
+  { name: "Students went for higher studies", value: 300, color: "#82ca9d" },
+  { name: "Students went for startups", value: 300, color: "#ffc658" },
+  { name: "Students went for jobs", value: 200, color: "#ff8042" },
 ];
 
 const renderActiveShape = (props: any) => {
@@ -68,7 +68,7 @@ const renderActiveShape = (props: any) => {
         y={ey}
         textAnchor={textAnchor}
         fill="#333"
-      >{`PV ${value}`}</text>
+      >{` ${value}`}</text>
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
@@ -76,7 +76,7 @@ const renderActiveShape = (props: any) => {
         textAnchor={textAnchor}
         fill="#999"
       >
-        {`(Rate ${(percent * 100).toFixed(2)}%)`}
+        {`(${(percent * 100).toFixed(2)}%)`}
       </text>
     </g>
   );
@@ -92,19 +92,26 @@ export default function App() {
   );
 
   return (
-    <PieChart width={400} height={400}>
-      <Pie
+    <div className="w-full h-full flex justify-center items-center"> 
+        <PieChart width={600} height={600}>
+        <Pie
         activeIndex={activeIndex}
         activeShape={renderActiveShape}
         data={data}
-        cx={200}
-        cy={200}
-        innerRadius={60}
-        outerRadius={80}
+        cx={300}
+        cy={300}
+        innerRadius={140}
+        outerRadius={180}
         fill="#8884d8"
         dataKey="value"
         onMouseEnter={onPieEnter}
-      />
+        nameKey="name"
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={entry.color} />
+        ))}
+      </Pie>
     </PieChart>
+    </div>
   );
 }

@@ -7,6 +7,7 @@ import History from "@/components/about-page/History";
 import About from "@/components/landing-page/about/About";
 import Recruiters from "@/components/chart/Recruiters";
 import Chart from "@/components/chart/Chart";
+import Events from "@/components/landing-page/events/Events";
 
 const page = () => {
   return (
@@ -16,7 +17,8 @@ const page = () => {
       <Recruiters />
       <Chart />
       <History />
-      <Clubs />
+      <Clubs /> 
+      <Events />
     </div>
   );
 };
