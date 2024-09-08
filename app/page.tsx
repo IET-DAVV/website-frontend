@@ -1,12 +1,7 @@
-import Landing from "@/containers/landing/Landing";
-import Image from "next/image";
-import Piechart from "@/components/chart/Piechart";
-import Recruiters from "@/components/chart/Recruiters";
+
+import LandingContainer from "@/containers/landing/Landing";
+
 
 export default function Home() {
-  return (
-    <div>
-      <Landing />
-    </div>
-  );
+  return <LandingContainer />;
 }

@@ -4,7 +4,7 @@ import { clubs, imagesMap } from "@/constants/clubs/data";
 import ImageGallery from "./Gallery";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-
+import { motion } from "framer-motion";
 const Clubs = () => {
   const [selectedClub, setSelectedClub] = useState<string>("E-CELL");
   return (
@@ -14,7 +14,14 @@ const Clubs = () => {
           clubs.find((club) => club.name === selectedClub)?.description || ""
         }
       />
-      <div className="grid grid-cols-4 bg-gray-50 gap-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="grid grid-cols-4 bg-gray-50 gap-4"
+      >
         <aside className="col-span-1 flex justify-start items-center w-full">
           <Sidebar
             clubs={clubs.map((club) => club.name)}
@@ -25,7 +32,7 @@ const Clubs = () => {
         <main className="w-full h-full flex max-h-full justify-center items-center col-span-3">
           <ImageGallery images={imagesMap[selectedClub] || []} />
         </main>
-      </div>
+      </motion.div>
     </div>
   );
 };
