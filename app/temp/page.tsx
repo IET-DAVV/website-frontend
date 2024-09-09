@@ -1,11 +1,17 @@
-import { Header } from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/components/common/footer/Footer";
+import Header from "@/components/common/header/Header";
+import Courses from "@/components/courses/Courses";
 
-export default function Temp() {
-    return (
-        <>
-            <Header />
-            <Footer />
-        </>
-    );
-}
+import React from "react";
+
+const page = () => {
+  return (
+    <div>
+      {/* <Header /> */}
+      <Courses />
+      {/* <Footer /> */}
+    </div>
+  );
+};
+
+export default page;
