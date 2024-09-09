@@ -1,58 +1,36 @@
 import React from "react";
 import Image from "next/image";
-import zs from "@/public/images/zs.png";
-import barclays from "@/public/images/barclays.png";
-import capillary from "@/public/images/capillary.png";
-import cognizant from "@/public/images/cognizant.png";
-import lg from "@/public/images/lg.png";
-import LTI from "@/public/images/LTI.png";
-import quantiphi from "@/public/images/quantiphi.png";
 import Marquee from "react-fast-marquee";
+import { companies } from "@/public/landing/companies";
+import { Playfair_Display } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 const Recruiters = () => {
   return (
-    <div className="bg-[#f8f1e9] py-10 text-center">
-      <h2 className="text-3xl font-serif text-black">RECRUITERS</h2>
-      <p className="text-sm text-gray-600 mt-2">
-        MORE THAN 30 COMPANIES VISIT IET-DAVV EVERY YEAR
-      </p>
-
-      <Marquee className="mt-8" speed={50} gradient={false}>
-        <Image
-          src={LTI}
-          alt="LTI"
-          className="mx-10 w-20 h-auto"
-        />
-        <Image
-          src={zs}
-          alt="ZS"
-          className="mx-10 w-20 h-auto"
-        />
-        <Image
-          src={barclays}
-          alt="Barclays"
-          className="mx-10 w-20 h-auto"
-        />
-        <Image
-          src={capillary}
-          alt="Capillary"
-          className="mx-10 w-20 h-auto"
-        />
-        <Image
-          src={lg}
-          alt="LG"
-          className="mx-10 w-20 h-auto"
-        />
-        <Image
-          src={quantiphi}
-          alt="Quantiphi"
-          className="mx-10 w-20 h-auto"
-        />
-        <Image
-          src={cognizant}
-          alt="Cognizant"
-          className="mx-10 w-20 h-auto"
-        />
+    <div className="bg-white flex flex-col items-center justify-center space-y-10 text-center py-20">
+      <div className="flex flex-col items-center justify-center space-y-2">
+        <h2
+          className={`text-5xl font-serif text-black ${playfairDisplay.className}`}
+        >
+          RECRUITERS
+        </h2>
+        <p className={`text-sm text-black`}>
+          MORE THAN 30 COMPANIES VISIT IET-DAVV EVERY YEAR
+        </p>
+      </div>
+      <Marquee speed={50} pauseOnHover={true} gradient={false}>
+        {companies.map((company, index) => (
+          <Image
+            key={index}
+            src={company}
+            alt={`company number ${index}`}
+            className="mx-10 w-20 h-auto"
+          />
+        ))}
       </Marquee>
     </div>
   );

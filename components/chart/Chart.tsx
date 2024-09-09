@@ -1,36 +1,37 @@
+"use client";
 import React from "react";
 import Piechart from "@/components/chart/Piechart";
-
+import { stats } from "@/constants/landing/chart";
+import { motion } from "framer-motion";
 function Chart() {
   return (
-    <div className="flex justify-between items-center w-[1525px] h-[550px] top-[5310px] bg-[#f8f1e9] p-8">
-      <div className="p-8">
-        <div className="flex items-center mb-4">
-          <div className="font-serif text-gray text-7xl">98%</div>
-          <div className="text-gray text-4xl ml-4">Students placed</div>
-        </div>
-
-        <div className="flex items-center mt-8 mb-4">
-          <div className="font-serif text-gray text-7xl">1500</div>
-          <div className="text-gray text-4xl ml-4">No. of students</div>
-        </div>
-
-        <div className="flex items-center mt-8 mb-4">
-          <div className="font-serif text-gray text-7xl">25+</div>
-          <div className="text-gray text-4xl ml-4">Companies visited</div>
-        </div>
-      </div>
-
-      {/* Center Dividing Line */}
-      <div className="h-1/2 w-[2px] bg-black mx-8"></div>
-
-      {/* right side part */}
-      <div className="w-1/3 h-1/4 flex flex-col justify-center">
-        <div className="bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-gray-800 text-xl">Top Five Email Senders</h2>
-          <Piechart />
-        </div>
-      </div>
+    <div className="grid grid-cols-2 justify-between items-center  bg-white p-10">
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="w-full flex flex-col justify-start space-y-5 items-start border-r-2 border-[#444444]"
+      >
+        {stats.map((stat) => (
+          <div
+            className="flex space-x-10 justify-start w-full items-center text-black"
+            key={stat.title}
+          >
+            <div className="font-serif text-gray text-7xl">{stat.value}</div>
+            <div className="text-gray text-4xl">{stat.title}</div>
+          </div>
+        ))}
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="flex flex-col w-full h-full justify-center items-center"
+      >
+        <Piechart />
+      </motion.div>
     </div>
   );
 }
