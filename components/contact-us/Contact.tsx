@@ -111,7 +111,7 @@ const ContactUs = () => {
             <div>
               <textarea
                 placeholder="Type your message here"
-                rows="13"
+                rows={13}
                 className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
               ></textarea>
             </div>
