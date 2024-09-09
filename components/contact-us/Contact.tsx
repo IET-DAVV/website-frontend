@@ -37,7 +37,7 @@ const ContactUs = () => {
           {/* Address Section */}
           <div className="text-gray-700">
             <div className="flex items-center text-light-blue">
-              <FaMapMarkerAlt className="mr-2" size={22} />
+              <FaMapMarkerAlt className="mr-2" size={20} />
               <h3 className={`${manrope.className} text-l font-medium`}>
                 Address
               </h3>
@@ -52,7 +52,7 @@ const ContactUs = () => {
           {/* Email Section */}
           <div className="text-gray-700">
             <div className="flex items-center text-light-blue">
-              <FaEnvelope className="mr-2" size={22} />
+              <FaEnvelope className="mr-2" size={20} />
               <h3 className={`${manrope.className} text-l font-medium`}>
                 Email
               </h3>
@@ -65,7 +65,7 @@ const ContactUs = () => {
           {/* Phone Section */}
           <div className="text-gray-700">
             <div className="flex items-center text-light-blue">
-              <FaPhoneAlt className="mr-2" size={22} />
+              <FaPhoneAlt className="mr-2" size={20} />
               <h3 className={`${manrope.className} text-l font-medium`}>
                 Call Us
               </h3>
@@ -82,7 +82,6 @@ const ContactUs = () => {
               width="100%"
               height="300"
               style={{ border: 0 }}
-              allowFullScreen=""
               loading="lazy"
               title="Map Location"
             ></iframe>
