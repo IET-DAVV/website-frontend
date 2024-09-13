@@ -30,7 +30,7 @@ const Header = ({ links }: { links: HeaderLinksType }) => {
           <Link
             href={link.href}
             key={link.name}
-            className="last:border-b-2 text-sm border-black"
+            className="last:border-b-2 text-sm border-black hover:border-b-2 hover:border-black"
           >
             {link.name}
           </Link>
