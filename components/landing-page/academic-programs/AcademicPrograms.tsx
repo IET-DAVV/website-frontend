@@ -7,6 +7,8 @@ import Card from "./Card";
 import { Playfair_Display } from "next/font/google";
 import { academicPrograms } from "@/constants/landing/academicPrograms";
 import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -14,6 +16,9 @@ const playfair = Playfair_Display({
 });
 const AcademicPrograms = () => {
   const [preview, setPreview] = useState<Object[]>(bachelor);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <>
       <div className="bg-white py-12 px-8 flex flex-col items-start justify-start space-y-10">
@@ -41,8 +46,9 @@ const AcademicPrograms = () => {
             ))}
         </div>
         <motion.div
+          ref={ref}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5 }}
           className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
         >
@@ -50,7 +56,7 @@ const AcademicPrograms = () => {
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link href={item.link}>
