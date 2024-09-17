@@ -13,20 +13,24 @@ const Recruiters = () => {
   return (
     <div className="bg-white flex flex-col items-center justify-center space-y-10 text-center py-20">
       <div className="flex flex-col items-center justify-center space-y-2">
-        <h2 className={`text-5xl font-serif text-black ${playfairDisplay.className}`}>RECRUITERS</h2>
+        <h2
+          className={`text-5xl font-serif text-black ${playfairDisplay.className}`}
+        >
+          RECRUITERS
+        </h2>
         <p className={`text-sm text-black`}>
           MORE THAN 30 COMPANIES VISIT IET-DAVV EVERY YEAR
-      </p>
+        </p>
       </div>
       <Marquee speed={50} pauseOnHover={true} gradient={false}>
-      {companies.map((company, index) => (
-        <Image
-          key={index}
-          src={company}
-          alt={`company number ${index}`}
-          className="mx-10 w-20 h-auto"
-        />
-      ))}
+        {companies.map((company, index) => (
+          <Image
+            key={index}
+            src={company}
+            alt={`company number ${index}`}
+            className="mx-10 w-20 h-auto"
+          />
+        ))}
       </Marquee>
     </div>
   );

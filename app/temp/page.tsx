@@ -17,7 +17,7 @@ const page = () => {
       <Recruiters />
       <Chart />
       <History />
-      <Clubs /> 
+      <Clubs />
       <Events />
     </div>
   );

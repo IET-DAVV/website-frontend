@@ -92,26 +92,26 @@ export default function App() {
   );
 
   return (
-    <div className="w-full h-full flex justify-center items-center"> 
-        <PieChart width={600} height={600}>
+    <div className="w-full h-full flex justify-center items-center">
+      <PieChart width={600} height={600}>
         <Pie
-        activeIndex={activeIndex}
-        activeShape={renderActiveShape}
-        data={data}
-        cx={300}
-        cy={300}
-        innerRadius={140}
-        outerRadius={180}
-        fill="#8884d8"
-        dataKey="value"
-        onMouseEnter={onPieEnter}
-        nameKey="name"
-      >
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={entry.color} />
-        ))}
-      </Pie>
-    </PieChart>
+          activeIndex={activeIndex}
+          activeShape={renderActiveShape}
+          data={data}
+          cx={300}
+          cy={300}
+          innerRadius={140}
+          outerRadius={180}
+          fill="#8884d8"
+          dataKey="value"
+          onMouseEnter={onPieEnter}
+          nameKey="name"
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={entry.color} />
+          ))}
+        </Pie>
+      </PieChart>
     </div>
   );
 }
