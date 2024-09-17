@@ -7,11 +7,11 @@ import quantiphi from "./quantiphi.png";
 import zs from "./zs.png";
 
 export const companies = [
-    LTI,
-    barclays,
-    capillary,
-    cognizant,
-    lg,
-    quantiphi,
-    zs
-]
+  LTI,
+  barclays,
+  capillary,
+  cognizant,
+  lg,
+  quantiphi,
+  zs,
+];
