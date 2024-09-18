@@ -5,6 +5,9 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./containers/**/*.{js,ts,jsx,tsx,mdx}",
+    "./constants/**/*.{js,ts,jsx,tsx,mdx}",
+    "./utils/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -13,6 +16,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+    },
+    colors: {
+      // FOR HOME PAGE
+      "dark-gray": "#2F2F2F",
+      "light-blue": "#0EAADB",
+      yellow: "#FFC90B",
+      "light-yellow": "#FFEDC3",
+      "dark-blue": "#06779B",
+      black: "#000000",
+      "light-gray": "#8C8C8C",
+      white: "#FFFFFF",
+
+      // FOR THE REMAINING PAGES
     },
   },
   plugins: [],
