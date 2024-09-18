@@ -11,13 +11,14 @@ import Events from "@/components/landing-page/events/Events";
 
 const page = () => {
   return (
+
     <div className=" overflow-x-hidden bg-white">
       <Navbar />
       <About />
       <Recruiters />
       <Chart />
       <History />
-      <Clubs /> 
+      <Clubs />
       <Events />
     </div>
   );

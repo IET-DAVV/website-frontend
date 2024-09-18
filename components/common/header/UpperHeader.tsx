@@ -7,11 +7,11 @@ const UpperHeader = () => {
   return (
     <div className="bg-black w-full h-8 flex justify-between items-center px-10">
       <div className="flex items-center space-x-10 text-xs">
-        <div className="flex hover:border-b-2 hover:border-white items-center space-x-2">
+        <div className="flex hover:border-b-2 hover:border-white text-white cursor-pointer items-center space-x-2">
           <IoMail />
           <p>info@ietdavv.edu.in</p>
         </div>
-        <div className="flex hover:border-b-2 hover:border-white items-center space-x-2">
+        <div className="flex hover:border-b-2 hover:border-white text-white cursor-pointer items-center space-x-2">
           <IoCall />
           <p>+91 98260 00000</p>
         </div>

@@ -1,4 +1,2 @@
 #!/usr/bin/env sh
-
-# Run Next.js build
 yarn build || exit 1

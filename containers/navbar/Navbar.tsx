@@ -5,7 +5,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <Header links={headerLinks} />
+      {/* <Header links={headerLinks} /> */}
     </div>
   );
 };
