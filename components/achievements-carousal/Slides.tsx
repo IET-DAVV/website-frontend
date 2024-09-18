@@ -43,7 +43,6 @@ const Slides = () => {
     autoplay: true,
     autoplaySpeed: 3000,
   };
-  // const [data, setData] = useState<object[]>(achievements);
   return (
     <div className="slider-container ">
       <Slider {...settings}>

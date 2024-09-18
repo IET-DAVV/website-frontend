@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+
 import Footer from "@/components/common/footer/Footer";
 import HeaderContainer from "@/containers/header/Header";
 import { motion } from "framer-motion";
