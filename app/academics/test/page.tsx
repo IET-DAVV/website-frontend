@@ -1,7 +1,12 @@
 import React from "react";
+import Timetable from "@/components/test-timetable/TestTimeTable";
 
 const page = () => {
-  return <div>page</div>;
+  return (
+    <div>
+      <Timetable />
+    </div>
+  );
 };
 
 export default page;
