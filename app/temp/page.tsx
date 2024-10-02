@@ -7,8 +7,9 @@ import React from "react";
 const page = () => {
   return (
     <div>
+      
       {/* <Header /> */}
-      <Courses />
+      {/* <Courses /> */}
       {/* <Footer /> */}
     </div>
   );
