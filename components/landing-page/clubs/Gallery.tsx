@@ -23,7 +23,8 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
         <motion.div
           key={index}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
           custom={index}
           variants={variants}
         >

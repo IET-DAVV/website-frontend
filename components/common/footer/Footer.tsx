@@ -46,8 +46,9 @@ const Footer = () => {
               <motion.div
                 key={link.name}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: index * 0.1 }}
               >
                 <Link
                   href={link.url}
@@ -66,8 +67,9 @@ const Footer = () => {
               <motion.div
                 key={info.name}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: index * 0.1 }}
               >
                 <Link
                   href={info.value}
@@ -87,8 +89,9 @@ const Footer = () => {
               <motion.div
                 key={link.name}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: index * 0.1 }}
               >
                 <Link
                   href={link.url}
