@@ -11,7 +11,11 @@ import React from "react";
 const LandingContainer = () => {
   return (
     <div>
+<<<<<<< HEAD
       {/* <Landing />
+=======
+      <Landing />
+>>>>>>> b723d658d8dd18bccb5e1f268ec3413b751e38dc
       <About />
       <Recruiters />
       <AcademicPrograms />
@@ -22,7 +26,10 @@ const LandingContainer = () => {
       <Chart />
       <Events />
       <Clubs />
+<<<<<<< HEAD
 >>>>>>> c14d1878fdbb17bbf3e615727bbb2807c89ebd18
+=======
+>>>>>>> b723d658d8dd18bccb5e1f268ec3413b751e38dc
     </div>
   );
 };

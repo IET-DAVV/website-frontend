@@ -30,4 +30,30 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+<<<<<<< HEAD
+=======
+}
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #02a3bb;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #02a3bb;
+}
+
+/* For Firefox */
+/* * {
+  scrollbar-width: thin;
+  scrollbar-color: #02a3bb #f1f1f1;
+>>>>>>> b723d658d8dd18bccb5e1f268ec3413b751e38dc
 } */

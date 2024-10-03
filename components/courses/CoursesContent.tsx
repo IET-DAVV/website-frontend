@@ -1,8 +1,17 @@
 import React from "react";
 import { Manrope, Playfair } from "next/font/google";
-import {course} from "@/constants/courses/data";
+import { course } from "@/constants/courses/data";
 import { FaTrowelBricks, FaMicrochip } from "react-icons/fa6";
-import { FaReact, FaLaptopCode, FaCogs, FaHardHat, FaNetworkWired, FaBook, FaGraduationCap } from "react-icons/fa";
+import {
+  FaReact,
+  FaLaptopCode,
+  FaCogs,
+  FaHardHat,
+  FaNetworkWired,
+  FaBook,
+  FaGraduationCap,
+} from "react-icons/fa";
+import { IoFlask } from "react-icons/io5";
 
 /*Icons corresponding to different courses offered */
 
@@ -13,13 +22,26 @@ const courseIcons: { [key: string]: JSX.Element } = {
   "Civil Engineering": <FaTrowelBricks />,
   "Electronics & Telecommunication Engineering": <FaNetworkWired />,
   "Electronics & Instrumentation Engineering": <FaMicrochip />,
-  "Applied Mathematics in Specialization in Computing & Informatics": <FaBook />,
-  "Computer Engineering with specialization in Software Engineering": <FaReact />,
-  "Information Technology with specialization in Information Security": <FaLaptopCode />,
-  "Mechanical Engineering with specialization in Design & Thermal Engineering": <FaCogs />,
+  "Applied Mathematics in Specialization in Computing & Informatics": (
+    <FaBook />
+  ),
+  "Computer Engineering with specialization in Software Engineering": (
+    <FaReact />
+  ),
+  "Information Technology with specialization in Information Security": (
+    <FaLaptopCode />
+  ),
+  "Mechanical Engineering with specialization in Design & Thermal Engineering":
+    <FaCogs />,
   "Industrial Engineering & Management": <FaGraduationCap />,
-  "Electronics  Engineering with specialization in Digital Communication": <FaNetworkWired />,
-  "Electronics  Engineering with specialization in Digital Instrumentation": <FaMicrochip />,
+  "Electronics  Engineering with specialization in Digital Communication": (
+    <FaNetworkWired />
+  ),
+  "Electronics  Engineering with specialization in Digital Instrumentation": (
+    <FaMicrochip />
+  ),
+  "All these UG/PG/Doctoral programmes come under Faculty of Engineering of DAVV":
+    <IoFlask />,
 };
 
 /* Fonts definition */
@@ -88,10 +110,14 @@ const CoursesContent: React.FC<CoursesContentProps> = ({ selectedCourse }) => {
             return (
               <button
                 key={index}
-                className={`${manrope.className} font-medium border border-blue-600 w-[250px] h-[229px] rounded-md hover:bg-sky-700 hover:text-white text-lg p-2 flex flex-col items-center justify-center gap-4`}
+                className={`${manrope.className} font-medium border border-dark-blue w-[250px] h-[229px] rounded-md hover:bg-light-blue hover:text-white text-lg p-2 flex flex-col items-center justify-center gap-4 transition-all duration-200 ease-linear`}
               >
-                <span className="text-4xl
-                ">{courseIcons[course]}</span>
+                <span
+                  className="text-4xl
+                "
+                >
+                  {courseIcons[course]}
+                </span>
                 <span>{course}</span>
               </button>
             );

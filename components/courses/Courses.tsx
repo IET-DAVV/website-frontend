@@ -19,8 +19,8 @@ const Courses = () => {
   };
 
   return (
-    <section>
-      <h1 className={`${playfair.className} text-6xl text-center my-10`}>
+    <section className="">
+      <h1 className={`${playfair.className} text-6xl py-10 text-center`}>
         Programs offered
       </h1>
       <Header onSelectCourse={handleSelectCourse} />
