@@ -5,53 +5,47 @@ export const headerLinks: HeaderLinksType = [
     href: "/",
   },
   {
-    name: "About",
+    name: "About Us",
     href: "/about",
   },
   {
-    name: "Contact",
+    name: "Academics",
+    href: "/academics",
+  },
+  {
+    name: "Admissions",
+    href: "/admissions",
+  },
+  {
+    name: "Hostel",
+    href: "/hostel",
+  },
+  {
+    name: "Contact Us",
     href: "/contact",
   },
   {
-    name: "Blog",
-    href: "/blog",
-  },
-  {
-    name: "Services",
-    href: "/services",
-  },
-  {
-    name: "Portfolio",
-    href: "/portfolio",
-  },
-  {
-    name: "Testimonials",
-    href: "/testimonials",
-  },
-  {
-    name: "FAQ",
-    href: "/faq",
-  },
-  {
-    name: "Pricing",
-    href: "/pricing",
-  },
-  {
-    name: "404",
-    href: "/404",
-  },
-  {
-    name: "Elements",
-    href: "/elements",
-  },
-  {
-    name: "Login",
-    href: "/login",
-  },
-  {
-    name: "Register",
-    href: "/register",
+    name: "Fresher's Corner ",
+    href: "/freshers",
   },
 ];
 
-export const LOGO = "IET DAVV";
+export const LOGO = "Institute of Engineering and Technology";
+export const UPPER_HEADER_LINKS = [
+  {
+    name: "Placement",
+    href: "/placement",
+  },
+  {
+    name: "Courses",
+    href: "/courses",
+  },
+  {
+    name: "Notices",
+    href: "/notices",
+  },
+  {
+    name: "Alumni",
+    href: "/alumni",
+  },
+];

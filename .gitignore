@@ -38,3 +38,8 @@ next-env.d.ts
 
 #package-log.json
 package-lock.json
+
+# Ignore Husky components
+.husky/
+husky.config.js
+husky.config.cjs
