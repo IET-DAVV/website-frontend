@@ -37,12 +37,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
     "postcss": "^8",
-<<<<<<< HEAD
-    "tailwindcss": "^3.4.10",
-=======
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.1",
->>>>>>> b723d658d8dd18bccb5e1f268ec3413b751e38dc
     "typescript": "^5"
   },
   "lint-staged": {

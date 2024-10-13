@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Header from "./Header";
 import Content from "./Content";
 
-const intakeCapacity: React.FC = () => {
-  const [selectedCourse, setSelectedCourse] = useState<string>("B.E. (FULL-TIME)");
+const IntakeCapacity: React.FC = () => {
+  const [selectedCourse, setSelectedCourse] =
+    useState<string>("B.E. (FULL-TIME)");
 
   const handleSelectCourse = (courseName: string) => {
     setSelectedCourse(courseName);
@@ -18,4 +19,4 @@ const intakeCapacity: React.FC = () => {
   );
 };
 
-export default intakeCapacity;
+export default IntakeCapacity;

@@ -37,11 +37,13 @@ const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
         <p className="text-slate-700 text-sm ml-24 py-6 w-[350px]">
           {filteredCourse.description}
         </p>
-        <p className={`${playfair.className} text-slate-700 ml-24 py-4 text-center flex flex-col`}>
+        <p
+          className={`${playfair.className} text-slate-700 ml-24 py-4 text-center flex flex-col`}
+        >
           <span className="text-4xl ml-2 text-blue-600">
             {filteredCourse.total}
           </span>
-        Seats
+          Seats
         </p>
       </div>
 
