@@ -10,9 +10,8 @@ const manrope = Manrope({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const Calender = () => {
+const Calendar = () => {
   const years = Object.keys(calenderData.years);
-  console.log(years);
   const [selectedYear, setSelectedYear] = useState<string>("");
 
   function handleyearChange(course: string) {
@@ -21,8 +20,7 @@ const Calender = () => {
 
   return (
     <div className="text-black">
-      <Title title="Calender" />
-
+      <Title title="Calendar" />
       <div className="p-4 mb-10">
         <div className={`flex justify-center ${manrope.className}`}>
           <div className="inline-block">
@@ -45,7 +43,7 @@ const Calender = () => {
                 </li>
               ))}
             </ul>
-            <div className="h-[1px] bg-[#C5C5C5] w-full mt-[-1px]"></div>
+            <div className="h-[1px] bg-[#C5C5C5] w-full"></div>
           </div>
         </div>
       </div>
@@ -73,4 +71,4 @@ const Calender = () => {
   );
 };
 
-export default Calender;
+export default Calendar;
