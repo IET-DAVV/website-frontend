@@ -21,11 +21,13 @@ const CustomSlide = ({ year, title, description, imgAddress }: SlideProps) => {
           {year}
         </h4>
         <h1
-          className={`text-2xl font-bold tracking-wider ${manrope.className}`}
+          className={`text-2xl font-bold tracking-wider text-white ${manrope.className}`}
         >
           {title}
         </h1>
-        <p className={`${manrope.className} font-thin`}>{description}</p>
+        <p className={`${manrope.className} font-thin text-white`}>
+          {description}
+        </p>
       </div>
       <div className="flex justify-center items-center col-span-2 ">
         <Image
