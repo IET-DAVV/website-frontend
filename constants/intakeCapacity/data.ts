@@ -13,7 +13,6 @@ export const courseData = [
       { name: "Civil Engineering", seats: 60 },
       { name: "Electronics & Telecommunication Engineering", seats: 100 },
       { name: "Electronics & Instrumentation Engineering", seats: 60 },
-      
     ],
   },
   {
@@ -39,11 +38,26 @@ export const courseData = [
       "IET is presently offering M.E. (FULL TIME) 2-year Degree Programs in Six branches with the intake strength",
     total: 108,
     coursesOffered: [
-      { name: "Computer Engineering with specialization in Software Engineering", seats: 20 },
-      { name: "Information Technology with specialization in Information Security", seats: 18 },
-      { name: "Mechanical Engineering with specialization in Design & Thermal Engineering", seats: 20 },
-      { name: "Electronics Engineering with specialization in Digital Communication", seats: 20 },
-      { name: "Electronics Engineering with specialization in Digital Instrumentation", seats: 15 },
+      {
+        name: "Computer Engineering with specialization in Software Engineering",
+        seats: 20,
+      },
+      {
+        name: "Information Technology with specialization in Information Security",
+        seats: 18,
+      },
+      {
+        name: "Mechanical Engineering with specialization in Design & Thermal Engineering",
+        seats: 20,
+      },
+      {
+        name: "Electronics Engineering with specialization in Digital Communication",
+        seats: 20,
+      },
+      {
+        name: "Electronics Engineering with specialization in Digital Instrumentation",
+        seats: 15,
+      },
       { name: "Industrial Engineering & Management", seats: 15 },
     ],
   },
@@ -55,11 +69,26 @@ export const courseData = [
       "IET is presently offering M.E. (PART TIME) 4-year Degree Programs in Six branches with the intake strength",
     total: 60,
     coursesOffered: [
-      { name: "Computer Engineering with specialization in Software Engineering", seats: 10 },
-      { name: "Information Technology with specialization in Information Security", seats: 10 },
-      { name: "Mechanical Engineering with specialization in Design & Thermal Engineering", seats: 10 },
-      { name: "Electronics Engineering with specialization in Digital Communication", seats: 10 },
-      { name: "Electronics Engineering with specialization in Digital Instrumentation", seats: 10 },
+      {
+        name: "Computer Engineering with specialization in Software Engineering",
+        seats: 10,
+      },
+      {
+        name: "Information Technology with specialization in Information Security",
+        seats: 10,
+      },
+      {
+        name: "Mechanical Engineering with specialization in Design & Thermal Engineering",
+        seats: 10,
+      },
+      {
+        name: "Electronics Engineering with specialization in Digital Communication",
+        seats: 10,
+      },
+      {
+        name: "Electronics Engineering with specialization in Digital Instrumentation",
+        seats: 10,
+      },
       { name: "Industrial Engineering & Management", seats: 10 },
     ],
   },
