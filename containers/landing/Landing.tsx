@@ -1,4 +1,4 @@
-import Achievements from "@/components/achievements-carousal/Achievements";
+import Achievements from "@/components/achievements-carousel/Achievements";
 import Chart from "@/components/chart/Chart";
 import Recruiters from "@/components/chart/Recruiters";
 import About from "@/components/landing-page/about/About";

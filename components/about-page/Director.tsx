@@ -10,17 +10,16 @@ const playfair = Playfair_Display({
 
 function Director() {
   return (
-    <div className="grid grid-cols-7 h-screen w-sceen bg-[#F25853] m-16">
-      <div className="flex justify-end col-span-3">
+    <div className="grid grid-cols-7 rounded-lg bg-[#F25853] ">
+      <div className="flex justify-center col-span-3">
         <div className="flex flex-col w-2/3 bg-black left-0 bg-opacity-25 space-y-10 px-8 py-12">
           <h1
-            className={`${playfair.className} text-3xl font-light uppercase `}
+            className={`${playfair.className} text-3xl font-light uppercase text-white`}
           >
             Dr. Sanjiv Tokekar
           </h1>
-          <p className="break-words text-sm leading-relaxed font-extralight.">
-            {" "}
-            {aboutDirectorText}{" "}
+          <p className="break-words text-md leading-relaxed font-light text-white">
+            {aboutDirectorText}
           </p>
         </div>
       </div>
