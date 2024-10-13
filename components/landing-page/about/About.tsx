@@ -38,14 +38,16 @@ const About = () => {
             width={100}
             height={100}
           />
-          <span className="uppercase">Welcome to</span>{" "}
+          <span className="uppercase text-white">Welcome to</span>{" "}
         </h4>
-        <h1 className={`py-4 font-extralight text-6xl ${playfair.className}`}>
+        <h1
+          className={`py-4 font-extralight text-6xl text-white ${playfair.className}`}
+        >
           {collegeName}
         </h1>
-        <p className="font-extralight ">{collegeDescription}</p>
+        <p className="font-extralight text-white ">{collegeDescription}</p>
         <p className="flex font-light py-4 space-x-6 justify-center items-center">
-          <span className="pt-1">EXPLORE MORE </span>
+          <span className="pt-1 text-white">EXPLORE MORE </span>
           <Link
             href={"/about"}
             className="hover:translate-x-2 transition-all duration-300"
