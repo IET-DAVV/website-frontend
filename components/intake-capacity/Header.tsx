@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
   };
 
   return (
-    <>
+    <div>
       <ul
         className={`${manrope.className} flex justify-evenly text-base font-medium`}
       >
@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
               onClick={() => handleCourseClick(course)}
               className={`${
                 selectedCourse === course
-                  ? "text-blue-500 font-semibold underline decoration-[3px]"
+                  ? "text-dark-blue font-semibold underline decoration-[3px]"
                   : "text-black"
               }`}
             >
@@ -44,8 +44,8 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
           </li>
         ))}
       </ul>
-      <div className="h-[2px] w-auto bg-gray-500 mt-2 mx-24"></div>
-    </>
+      <div className="h-px w-auto bg-light-gray mt-2 mx-24" />
+    </div>
   );
 };
 

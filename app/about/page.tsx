@@ -14,7 +14,7 @@ const page = () => {
   return (
     <>
       <div className=" overflow-hidden bg-white">
-        <Navbar />
+        {/* <Navbar /> */}
         <About />
         <History />
         <div className="p-5 flex flex-col space-y-5">

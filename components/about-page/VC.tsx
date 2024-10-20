@@ -9,7 +9,7 @@ const playfair = Playfair_Display({
 const VC = () => {
   return (
     <>
-      <div className="relative">
+      <div className="relative rounded-lg">
         <Image
           src={aboutVC}
           width={400}

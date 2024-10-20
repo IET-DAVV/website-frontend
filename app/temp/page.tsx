@@ -13,19 +13,7 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 const page = () => {
-  return (
-    <>
-      <div className=" overflow-hidden bg-white">
-        <Navbar />
-        <About />
-        <History />
-        <div className="p-5 flex flex-col space-y-5">
-          <Director />
-          <VC />
-        </div>
-      </div>
-    </>
-  );
+  return <></>;
 };
 
 export default page;
