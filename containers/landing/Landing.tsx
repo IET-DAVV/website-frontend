@@ -16,6 +16,7 @@ const LandingContainer = () => {
       <Recruiters />
       <AcademicPrograms />
       <Achievements />
+      <Clubs />
       <Chart />
       <Events />
       <Clubs />
