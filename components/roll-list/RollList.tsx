@@ -74,7 +74,7 @@ const RollList = () => {
       {/* Course Selector */}
       {selectedYear === "B.E. I YEAR" ? (
         <div>
-          <div className="grid grid-cols-6 gap-4 w-fit py-10 ">
+          <div className="grid grid-cols-6 gap-4 w-fit py-10">
             {Object.keys(rolllistData["B.E. I YEAR"]).map((course) => (
               <button
                 key={course}
