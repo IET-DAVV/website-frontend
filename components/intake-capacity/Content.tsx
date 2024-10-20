@@ -24,7 +24,7 @@ const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
   }
 
   return (
-    <div className="flex justify-between p-10">
+    <div className="flex justify-between px-10 pb-10">
       <div className="flex flex-col">
         <p
           className={`${manrope.className} text-slate-700 text-sm ml-24 mt-10 py-4`}
