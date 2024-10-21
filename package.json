@@ -14,7 +14,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.31",
     "global": "^4.4.0",
-    "next": "^14.2.6",
+    "next": "^14.2.15",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.5",
