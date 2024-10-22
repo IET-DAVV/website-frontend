@@ -10,7 +10,7 @@ const playfair = Playfair_Display({
 });
 const Landing = () => {
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative -z-10">
       <div className="relative w-full h-screen">
         {landingImages.map((src, index) => (
           <Image

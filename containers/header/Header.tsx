@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 
 const HeaderContainer = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div
       className={`w-full z-50 ${pathname === "/" ? "absolute top-0 left-0" : "block"}`}

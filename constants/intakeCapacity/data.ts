@@ -2,7 +2,7 @@ export const courseData = [
   {
     name: "B.E. (FULL-TIME)",
     time: "FULL TIME",
-    fullName: "Bachelor's of Engineering",
+    fullName: "Bachelor of Engineering",
     description:
       "IET is presently offering B.E. (FULL TIME) 4-year Degree Programs in Six branches with the intake strength",
     total: 510,
@@ -18,7 +18,7 @@ export const courseData = [
   {
     name: "B.E. (PART-TIME)",
     time: "PART TIME",
-    fullName: "Bachelor's of Engineering",
+    fullName: "Bachelor of Engineering",
     description:
       "IET is presently offering B.E. (PART TIME) 4-year Degree Programs in Six branches with the intake strength",
     total: 150,
