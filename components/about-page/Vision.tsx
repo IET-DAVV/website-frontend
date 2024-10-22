@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 
 const Vision = () => {
   return (
-    <div className="px-14">
+    <div className="mx-14 my-20">
       <div className="flex justify-end">
         <div>
           <h1
