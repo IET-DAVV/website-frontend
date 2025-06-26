@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { LOGO, headerLinks } from "@/constants/header/data";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
 import Link from "next/link";
+let hoverTimeout: NodeJS.Timeout;
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -35,18 +36,31 @@ const Header = () => {
             <Link
               href={link.href}
               className="text-sm hover:border-b-2 border-black"
-              onMouseEnter={() => setOpenDropdown(idx)}
-              onMouseLeave={() => setOpenDropdown(null)}
+              onMouseEnter={() => {
+                clearTimeout(hoverTimeout);
+                setOpenDropdown(idx);
+              }}
+              onMouseLeave={() => {
+                hoverTimeout = setTimeout(() => {
+                  setOpenDropdown(null);
+                }, 200);
+              }}
             >
               {link.name}
             </Link>
 
-
-            {/* Dropdown Items */}
             {link.dropdown && openDropdown === idx && (
-              <ul className="absolute left-0 mt-2 w-48 bg-white shadow-md border rounded z-50"
-                onMouseEnter={() => setOpenDropdown(idx)}
-                onMouseLeave={() => setOpenDropdown(null)}
+              <ul
+                className="absolute left-0 mt-2 w-48 bg-white shadow-md border rounded z-50"
+                onMouseEnter={() => {
+                  clearTimeout(hoverTimeout);
+                  setOpenDropdown(idx);
+                }}
+                onMouseLeave={() => {
+                  hoverTimeout = setTimeout(() => {
+                    setOpenDropdown(null);
+                  }, 200);
+                }}
               >
                 {link.dropdown.map((item) => (
                   <li key={item.name} className="px-4 py-2 hover:bg-gray-100">
@@ -56,6 +70,7 @@ const Header = () => {
               </ul>
             )}
           </li>
+
         ))}
       </ul>
     </div>
