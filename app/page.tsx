@@ -1,5 +1,5 @@
 import LandingContainer from "@/containers/landing/Landing";
-export default function Home() {
+export default function Page() {
   return (
     <div>
       <LandingContainer />
