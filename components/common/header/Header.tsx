@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { LOGO, headerLinks } from "@/constants/header/data";
-import { HeaderLinksType } from "@/typings";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
 import Link from "next/link";
@@ -10,8 +9,11 @@ const manrope = Manrope({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-const Header = ({ links }: { links: HeaderLinksType }) => {
+const Header = () => {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+
   return (
+  <div>
     <div className="flex flex-row justify-between items-center px-6 py-2 bg-transparent text-black">
       <div className="flex flex-row justify-center items-center space-x-2">
         <Image
@@ -21,21 +23,45 @@ const Header = ({ links }: { links: HeaderLinksType }) => {
           width={1000}
           height={1000}
         />
-        <p className={`${manrope.className} text-sm w-44 font-bold`}>{LOGO}</p>
+        <p className={`${manrope.className} text-sm w-44 font-bold`}>
+          {LOGO}
+        </p>
       </div>
-      <ul className="flex flex-row justify-center items-center space-x-5">
-        {headerLinks?.map((link: any) => (
-          <Link
-            href={link.href}
-            key={link.name}
-            className="last:border-b-2 text-sm border-black hover:border-b-2 hover:border-black"
-          >
-            {link.name}
-          </Link>
+
+      {/* ✅ Final working navbar with dropdown */}
+      <ul className="flex flex-row justify-center items-center space-x-5 relative">
+        {headerLinks.map((link, idx) => (
+          <li key={link.name} className="relative">
+            <Link
+              href={link.href}
+              className="text-sm hover:border-b-2 border-black"
+              onMouseEnter={() => setOpenDropdown(idx)}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              {link.name}
+            </Link>
+
+
+            {/* Dropdown Items */}
+            {link.dropdown && openDropdown === idx && (
+              <ul className="absolute left-0 mt-2 w-48 bg-white shadow-md border rounded z-50"
+                onMouseEnter={() => setOpenDropdown(idx)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                {link.dropdown.map((item) => (
+                  <li key={item.name} className="px-4 py-2 hover:bg-gray-100">
+                    <Link href={item.href}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
         ))}
       </ul>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Header;

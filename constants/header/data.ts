@@ -11,10 +11,22 @@ export const headerLinks: HeaderLinksType = [
   {
     name: "Academics",
     href: "/academics",
+     dropdown: [
+      { name: "Calendar", href: "/academics/calendar" },
+      { name: "Class", href: "/academics/class" },
+      { name: "Roll List", href: "/academics/roll-list" },
+      { name: "Syllabus", href: "/academics/syllabus" },
+      { name: "Test", href: "/academics/test" },
+    ],
+
   },
   {
     name: "Admissions",
     href: "/admissions",
+    dropdown: [
+      { name: "Enrollment List", href: "/admissions/enrollment-list" },
+      { name: "Intake Capacity", href: "/admissions/intake-capacity" },
+    ],
   },
   {
     name: "Hostel",
