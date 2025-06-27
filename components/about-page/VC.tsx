@@ -21,7 +21,7 @@ const VC = () => {
           <h1
             className={`${playfair.className} text-3xl font-light uppercase text-white`}
           >
-            Dr. Renu Jain
+            Dr. Rakesh Singhai
           </h1>
           <p className="break-words text-sm leading-relaxed font-light text-white">
             {aboutVCText}

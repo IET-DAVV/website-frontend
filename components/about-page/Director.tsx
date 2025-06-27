@@ -16,7 +16,7 @@ function Director() {
           <h1
             className={`${playfair.className} text-3xl font-light uppercase text-white`}
           >
-            Dr. Sanjiv Tokekar
+            Dr. Vrinda Tokekar
           </h1>
           <p className="break-words text-md leading-relaxed font-light text-white">
             {aboutDirectorText}
