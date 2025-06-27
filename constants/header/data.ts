@@ -12,20 +12,20 @@ export const headerLinks: HeaderLinksType = [
     name: "Academics",
     href: "/academics",
      dropdown: [
-      { name: "Calendar", href: "/academics/calendar" },
-      { name: "Class", href: "/academics/class" },
-      { name: "Roll List", href: "/academics/roll-list" },
-      { name: "Syllabus", href: "/academics/syllabus" },
-      { name: "Test", href: "/academics/test" },
+      { name: "CLASS TIMETABLE", href: "/academics/class" },
+      { name: "TEST TIMETABLE", href: "/academics/test" },
+      { name: "SYLLABUS", href: "/academics/syllabus" },
+      { name: "CALENDAR", href: "/academics/calendar" },
     ],
-
+    
   },
   {
     name: "Admissions",
     href: "/admissions",
     dropdown: [
-      { name: "Enrollment List", href: "/admissions/enrollment-list" },
-      { name: "Intake Capacity", href: "/admissions/intake-capacity" },
+      { name: "INTAKE CAPACITY", href: "/admission/intake-capacity" },
+      { name: "ROLL LIST", href: "/academics/roll-list" },
+      { name: "ENROLLMENT LIST", href: "/admission/enrollment-list" },
     ],
   },
   {
