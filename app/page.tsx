@@ -1,12 +1,9 @@
-// import LandingContainer from "@/containers/landing/Landing";
-// goutam
-import Time from "@/components/class-timetable/ClassTimeTable";
+import LandingContainer from "@/containers/landing/Landing";
 
 export default function Home() {
   return (
     <div>
-      {/* <LandingContainer /> */}
-      <Time />
+      <LandingContainer />
     </div>
   );
 }
