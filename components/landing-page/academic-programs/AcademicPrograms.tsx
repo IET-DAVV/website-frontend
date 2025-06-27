@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
-const AcademicPrograms = () => {
+const AcademicPrograms2 = () => {
   const [preview, setPreview] = useState<Object[]>(bachelor);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -70,4 +70,4 @@ const AcademicPrograms = () => {
   );
 };
 
-export default AcademicPrograms;
+export default AcademicPrograms2;

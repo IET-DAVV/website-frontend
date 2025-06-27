@@ -12,7 +12,7 @@ const manrope = Manrope({
 
 const Header = ({ links }: { links: HeaderLinksType }) => {
   return (
-    <div className="flex flex-row justify-between items-center px-6 py-2 bg-transparent text-black">
+    <div className="flex flex-row justify-between items-center px-6 py-2 bg-white/80 text-black">
       <div className="flex flex-row justify-center items-center space-x-2">
         <Image
           src={"/logo.svg"}

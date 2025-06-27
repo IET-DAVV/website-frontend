@@ -21,8 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-white`}>
-        <HeaderContainer />
+      <body className={`${poppins.className} `}>
+        {/* <HeaderContainer /> */}
         {children}
         <Footer />
       </body>

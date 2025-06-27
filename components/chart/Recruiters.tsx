@@ -11,14 +11,14 @@ const playfairDisplay = Playfair_Display({
 
 const Recruiters = () => {
   return (
-    <div className="bg-white flex flex-col items-center justify-center space-y-10 text-center py-20">
+    <div className="bg-gray-900 flex flex-col items-center justify-center space-y-10 text-center py-20">
       <div className="flex flex-col items-center justify-center space-y-2">
         <h2
-          className={`text-5xl font-serif text-black ${playfairDisplay.className}`}
+          className={`text-5xl font-serif text-white font-semibold ${playfairDisplay.className}`}
         >
           RECRUITERS
         </h2>
-        <p className={`text-sm text-black`}>
+        <p className={`text-sm text-white`}>
           MORE THAN 30 COMPANIES VISIT IET-DAVV EVERY YEAR
         </p>
       </div>
