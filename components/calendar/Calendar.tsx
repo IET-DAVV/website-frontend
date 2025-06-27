@@ -20,7 +20,7 @@ const Calendar = () => {
 
   return (
     <div className="text-black">
-      <Title title="Calendar" />
+      <Title title="CALENDAR" />
       <div className="p-4 mb-10">
         <div className={`flex justify-center ${manrope.className}`}>
           <div className="inline-block">
