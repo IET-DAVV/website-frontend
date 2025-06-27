@@ -1,6 +1,6 @@
-import LandingContainer from "@/containers/landing/Landing";
+// import LandingContainer from "@/containers/landing/Landing";
 // goutam
-import Time from "@/components/class-timetable/ClassTImeTAble";
+import Time from "@/components/class-timetable/ClassTimeTable";
 
 export default function Home() {
   return (
