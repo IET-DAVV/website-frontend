@@ -1,9 +1,23 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import { Manrope, Playfair_Display } from "next/font/google";
 
-export const metadata: Metadata = {
+// Load Manrope for body
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
+
+// Load Playfair Display for NYT-style headings
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
+export const metadata = {
   title: "Your App",
-  description: "Description here",
+  description: "Modern typography with Manrope and NYT-style headings",
 };
 
 export default function RootLayout({
@@ -13,7 +27,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      {/* Manrope as the global/default font */}
+      <body className={manrope.className}>{children}</body>
     </html>
   );
 }
+
+// ✅ Export Playfair for component use
+export { playfair };

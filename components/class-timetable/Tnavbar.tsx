@@ -1,6 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 const navItems = [
   "B.E. (FULL TIME)",
@@ -19,7 +25,9 @@ const Tnavbar: React.FC<TnavbarProps> = ({ activeTab, setActiveTab }) => {
   return (
     <div className="w-full flex flex-col items-center py-12">
       {/* TIME – TABLE heading */}
-      <h1 className="text-5xl font-serif tracking-widest text-[#006f8b] py-12">
+      <h1
+        className={`text-5xl  tracking-widest text-[#006f8b] py-12 ${playfair.className}`}
+      >
         TIME – TABLE
       </h1>
 

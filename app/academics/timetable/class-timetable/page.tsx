@@ -37,13 +37,13 @@ function Page() {
       <Tnavbar activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="px-8 mt-6">
         {/* 🔹 Heading with bold serif font and spacing */}
-        <h2 className="text-2xl font-serif  text-black mb-2">BRANCH</h2>
+        <h2 className="text-2xl font-manrope  text-black mb-2">BRANCH</h2>
         <hr className="border-t border-gray-300 mb-6" />
 
         {renderBranchComponent()}
       </div>
       <div className="px-8 mt-6">
-        <h2 className="text-2xl font-serif  text-black mb-2">YEAR</h2>
+        <h2 className="text-2xl  text-black mb-2">YEAR</h2>
 
         <hr className="border-t border-gray-300 mb-6" />
         <YearSelector />
