@@ -9,7 +9,7 @@ export const headerLinks: HeaderLinksType = [
     href: "/about",
   },
   {
-    name: "Academics",
+    name: "Academics ▾",
     href: "/academics",
      dropdown: [
       { name: "CLASS TIMETABLE", href: "/academics/class" },
@@ -20,7 +20,7 @@ export const headerLinks: HeaderLinksType = [
     
   },
   {
-    name: "Admissions",
+    name: "Admissions ▾",
     href: "/admissions",
     dropdown: [
       { name: "INTAKE CAPACITY", href: "/admission/intake-capacity" },
@@ -29,8 +29,23 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Hostel",
-    href: "/hostel",
+    name: "Infrastructure ▾",
+    href: "/infrastructure",
+    dropdown: [
+      { name: "LIBRARY", href: "/infrastructure/library" },
+      { name: "LABS", href: "/infrastructure/labs" },
+      { name: "HOSTEL", href: "/infrastructure/hostel" },
+      { name: "CANTEEN", href: "/infrastructure/canteen" },
+    ],
+  },
+  {
+    name: "Examination ▾",
+    href: "/examination",
+    dropdown: [
+      { name: "EXAMINATION FORM", href: "/examination/form" },
+      { name: "RESULTS", href: "/examination/results" },
+      { name: "ADMIT CARD", href: "/examination/admit-card" },
+    ],
   },
   {
     name: "Contact Us",

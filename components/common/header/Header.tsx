@@ -30,7 +30,7 @@ const Header = () => {
       </div>
 
       {/* ✅ Final working navbar with dropdown */}
-      <ul className="flex flex-row justify-center items-center space-x-5 relative">
+      <ul className="flex flex-row justify-center items-center space-x-10 relative ">
         {headerLinks.map((link, idx) => (
           <li key={link.name} className="relative">
             <Link
