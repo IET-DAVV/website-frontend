@@ -25,7 +25,7 @@ const About = () => {
             <h1
               className={`${playfair.className} text-6xl font-extralight uppercase`}
             >
-              About-IET
+              About-IET DAVV Indore
             </h1>
             <p className=" break-words text-black">{aboutIET}</p>
           </div>
