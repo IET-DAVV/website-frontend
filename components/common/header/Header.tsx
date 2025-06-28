@@ -51,7 +51,7 @@ const Header = () => {
 
             {link.dropdown && openDropdown === idx && (
               <ul
-                className="absolute left-0 mt-2 w-60 bg-white/30 backdrop-blur-md shadow-md border border-gray-200 rounded z-50"
+                className="absolute left-0 mt-2 w-60 bg-white/30 backdrop-blur-md shadow-md border border-gray-200 rounded z-50 w-[120px]"
                 onMouseEnter={() => {
                   clearTimeout(hoverTimeout);
                   setOpenDropdown(idx);
@@ -64,8 +64,8 @@ const Header = () => {
               >
                 {link.dropdown.map((item, itemIdx) => (
                   <React.Fragment key={item.name}>
-                  <li key={item.name} className="px-4 py-2 hover:bg-white/50 hover:backdrop-blur-sm cursor-pointer rounded-md">
-                    <Link href={item.href}>{item.name}</Link>
+                  <li key={item.name} className="px-2 py-0.2 hover:bg-white/50 hover:backdrop-blur-sm cursor-pointer rounded-md">
+                    <Link href={item.href} className="text-xs">{item.name}</Link>
                   </li>
                 {itemIdx < (link.dropdown?.length ?? 0) - 1 && (
                   <hr className="border-t border-gray-200 mx-2 my-1" />
