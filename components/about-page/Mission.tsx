@@ -39,7 +39,7 @@ const Mission = () => {
               {value.name}
               <span
           className={`absolute left-0 bottom-0 h-[3px] transition-all duration-300 ${
-            isActive ? "w-full bg-[#3B799E]" : "w-full bg-gray-300 h-[0.8px]"
+            isActive ? "w-full bg-[#3B799E]" : "w-full bg-gray-300 h-[0.7px]"
           }`}
         ></span>
             </button>
