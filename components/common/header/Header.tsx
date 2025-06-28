@@ -64,9 +64,16 @@ const Header = () => {
               >
                 {link.dropdown.map((item, itemIdx) => (
                   <React.Fragment key={item.name}>
-                  <li key={item.name} className="px-2 py-0.2 hover:bg-white/50 hover:backdrop-blur-sm cursor-pointer rounded-md">
-                    <Link href={item.href} className="text-xs">{item.name}</Link>
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="block px-2 py-1 text-xs hover:bg-white/50 hover:backdrop-blur-sm rounded-md"
+                      onClick={() => setOpenDropdown(null)} // optional
+                    >
+                      {item.name}
+                    </Link>
                   </li>
+
                 {itemIdx < (link.dropdown?.length ?? 0) - 1 && (
                   <hr className="border-t border-gray-200 mx-2 my-1" />
                 )}
