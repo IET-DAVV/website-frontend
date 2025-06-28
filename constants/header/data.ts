@@ -23,6 +23,7 @@ export const headerLinks: HeaderLinksType = [
     name: "Admissions ▾",
     href: "/admissions",
     dropdown: [
+      { name: "Process", href: "/admission/process" },
       { name: "Intake Capacity", href: "/admission/intake-capacity" },
       { name: "Roll List", href: "/admission/roll-list" },
       { name: "Enrollment List", href: "/admission/enrollment-list" },
