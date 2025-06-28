@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Playfair } from "next/font/google";
-import { timetableData } from "../../constants/timetable/data";
+import { classtimetableData } from "@/constants/class-timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
 import BranchSelector from "../common/academics/BranchSelector";
 import YearSelector from "../common/academics/YearSelector";
@@ -13,8 +13,8 @@ const playfair = Playfair({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const Timetable = () => {
-  const courses = Object.keys(timetableData.courses);
+const ClassTimeTable = () => {
+  const courses = Object.keys(classtimetableData.courses);
   const [selectedCourse, setSelectedCourse] = useState<string>("BE_FULL_TIME");
   const [selectedBranch, setSelectedBranch] = useState<string>("");
   const [selectedYear, setSelectedYear] = useState<string>("");
@@ -23,26 +23,27 @@ const Timetable = () => {
     { sectionName: string; PdfLink: string | null }[]
   >([]);
 
-  const courseList = Object.keys(timetableData.courses).map((courseKey) => ({
-    courseKey,
-    courseName: timetableData.courses[courseKey].courseName,
-  }));
+  const courseList = Object.keys(classtimetableData.courses).map(
+    (courseKey) => ({
+      courseKey,
+      courseName: classtimetableData.courses[courseKey].courseName,
+    }),
+  );
 
   const branches = Object.keys(
-    timetableData.courses[selectedCourse]?.branches || {},
+    classtimetableData.courses[selectedCourse]?.branches || {},
   );
   const years = Object.keys(
-    timetableData.courses[selectedCourse]?.branches[selectedBranch]?.years ||
-      {},
+    classtimetableData.courses[selectedCourse]?.branches[selectedBranch]
+      ?.years || {},
   );
 
   console.log(courseList);
   useEffect(() => {
     if (selectedCourse && selectedBranch && selectedYear) {
       const sectionList = Object.entries(
-        timetableData.courses[selectedCourse]?.branches[selectedBranch]?.years[
-          selectedYear
-        ]?.sections || {},
+        classtimetableData.courses[selectedCourse]?.branches[selectedBranch]
+          ?.years[selectedYear]?.sections || {},
       ).map(([sectionName, { PdfLink }]) => ({
         sectionName,
         PdfLink: PdfLink || null,
@@ -54,9 +55,11 @@ const Timetable = () => {
     }
   }, [selectedCourse, selectedBranch, selectedYear]);
 
+  console.log(years);
+  console.log("hey");
   return (
-    <div className="text-black">
-      <Title title="TIME-TABLE" />
+    <div className="text-black pt-36">
+      <Title title="Class Time Table" />
       <div className="p-4">
         <CourseSelector
           courses={courseList}
@@ -75,12 +78,11 @@ const Timetable = () => {
           selectedYear={selectedYear}
           onSelect={setSelectedYear}
         />
-
         {showSections && (
           <SectionSelector
             sections={sections}
             showName={true}
-            hideIfShortName={true}
+            hideIfShortName={false}
           />
         )}
       </div>
@@ -88,4 +90,4 @@ const Timetable = () => {
   );
 };
 
-export default Timetable;
+export default ClassTimeTable;

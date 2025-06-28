@@ -43,7 +43,7 @@ const RollList = () => {
 
   return (
     <div className="text-black">
-      <Title title="Roll-List" />
+      <Title title="ROLL LIST" />
 
       {/* Year Selector */}
       <div className={`flex justify-center ${manrope.className}`}>

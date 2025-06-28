@@ -55,7 +55,7 @@ const Syllabus = () => {
 
   return (
     <div className="text-black">
-      <Title title="Syllabus" />
+      <Title title="SYLLABUS" />
       <div className="p-4">
         <CourseSelector
           courses={courseList}

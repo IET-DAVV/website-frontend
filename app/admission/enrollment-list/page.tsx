@@ -1,7 +1,15 @@
 import React from "react";
+import EnrollmentList from "@/components/enrollment/EnrollmentList";
 
-const page = () => {
-  return <div>page</div>;
+const EnrollmentPage = () => {
+  return (
+    <div>
+      <EnrollmentList />
+    </div>
+  );
 };
 
-export default page;
+export default EnrollmentPage;
+
+
+
