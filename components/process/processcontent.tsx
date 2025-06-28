@@ -8,7 +8,7 @@ export default function ProcessContent() {
         </h2>
 
         <div>
-          <h3 className="font-semibold text-[#0077C2]">
+          <h3 className="font-semibold text-[#06779B]">
             Eligibility For Admission:
           </h3>
 
@@ -20,14 +20,14 @@ export default function ProcessContent() {
             are mentioned thereof. Admission shall normally be done in the
             months of July/August every year.
             <br />
-            <span className="text-blue-600 font-medium">
+            <span className=" font-medium">
               Please regularly check website of DTE Bhopal.
             </span>
           </p>
         </div>
 
         <div>
-          <h3 className="font-semibold">Admission Process:</h3>
+          <h3 className="font-semibold text-[#06779B]">Admission Process:</h3>
           <p>
             Admission process shall take place through counselling conducted by
             DTE, Bhopal through Counselling Authority and its nodal centers in
@@ -36,7 +36,7 @@ export default function ProcessContent() {
         </div>
 
         <div>
-          <h3 className="font-semibold">Registration:</h3>
+          <h3 className="font-semibold text-[#06779B]">Registration:</h3>
           <p>
             The admitted student shall be required to register for the program
             in each semester separately as per the schedule announced in the
@@ -78,7 +78,7 @@ export default function ProcessContent() {
         </ul>
 
         <div>
-          <h3 className="font-semibold">Eligibility for Admission:</h3>
+          <h3 className="font-semibold text-[#06779B]">Eligibility for Admission:</h3>
           <ul className="list-disc list-inside text-base space-y-1">
             <li>60% in BE/BTech in relevant field</li>
             <li>Valid GATE Score (for regular candidates)</li>
@@ -87,7 +87,7 @@ export default function ProcessContent() {
         </div>
 
         <div>
-          <h3 className="font-semibold">Note:</h3>
+          <h3 className="font-semibold text-[#06779B]">Note:</h3>
           <ul className="list-disc list-inside text-base text-gray-700 space-y-1">
             <li>
               There is relaxation of 5% in the eligibility for SC/ ST/ Sponsored

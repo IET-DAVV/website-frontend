@@ -1,15 +1,18 @@
 "use client";
 
+import Title from "../common/academics/Title";
 import { CONTACT, PDF_LINK } from "@/constants/process";
 import Link from "next/link";
 
 export default function AdmissionBox() {
   return (
-    <section className="border-2 border-gray-300 rounded-xl p-6 bg-white mb-10 shadow-sm">
-      {/* Top: Two-column layout with vertical line */}
-      <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
-        {/* Left: Heading */}
-        <div className="md:w-1/2 pr-6">
+    <div className="text-black">
+      <Title title="Admission Process" />
+      <section className="border-2 border-gray-300 rounded-xl p-6 bg-white mb-10 shadow-sm">
+        {/* Top: Two-column layout with vertical line */}
+        <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+          {/* Left: Heading */}
+          <div className="md:w-1/2 pr-6">
           <h2 className="text-2xl font-bold">ADMISSION 2025–26</h2>
         </div>
 
@@ -20,7 +23,7 @@ export default function AdmissionBox() {
         <div className="md:w-1/2 flex flex-col sm:flex-row sm:items-center gap-4 pl-6">
           <Link
             href="#"
-            className="bg-blue-600 text-white px-4 py-2 text-sm rounded-md font-medium hover:bg-blue-700 transition"
+            className="bg-[#06779B] text-white px-4 py-2 text-sm rounded-md font-medium hover:bg-blue-700 transition"
           >
             Click Here
           </Link>
@@ -55,10 +58,11 @@ export default function AdmissionBox() {
       {/* Contact Info */}
       <p className="text-lg">
         For More Information Regarding Admissions:&nbsp;
-        <span className="text-blue-700 font-semibold text-lg">
+        <span className="text-[#06779B] font-semibold text-lg">
           Contact: {CONTACT.name} (M) {CONTACT.phone}
         </span>
       </p>
     </section>
-  );
+  </div>
+);
 }
