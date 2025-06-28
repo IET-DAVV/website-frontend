@@ -5,20 +5,12 @@ import {
   missionDavv,
   missionIet,
 } from "@/constants/about-page/mission";
-import {
-  visionIETabout,
-  visionDAVVabout,
-  missionIETabout,
-  missionDAVVabout,
-} from "@/constants/missionvision/data";
 import DesCard from "./DesCard";
 
 const Mission = () => {
   const [preview, setPreview] = useState<Object[]>(missionIet);
   const [activeTab, setActiveTab] = useState<"IET" | "DAVV">("IET");
 
-  const mission: string[] = activeTab === "IET" ? missionIETabout : missionDAVVabout;
-  const vision: string[] = activeTab === "IET" ? visionIETabout : visionDAVVabout;
 
   return (
     <>

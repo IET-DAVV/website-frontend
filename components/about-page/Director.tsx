@@ -13,7 +13,7 @@ const DirectorVrinda = () => {
         <hr className="border-t border-gray-400 mb-11 mt-2" />
 
         {/* Heading */}
-        <h2 className="font-newyork text-sm md:text-5xl font-light justify-right flex items-right">
+        <h2 className="font-newyork text-sm md:text-5xl font-light justify-right flex items-right mb-3">
           Dr. Vrinda Tokekar
         </h2>
 

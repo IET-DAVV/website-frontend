@@ -43,9 +43,9 @@ export const headerLinks: HeaderLinksType = [
     name: "Examination ▾",
     href: "/examination",
     dropdown: [
-      { name: "Examination Form", href: "/examination/form" },
-      { name: "Results", href: "/examination/results" },
-      { name: "Admit Card", href: "/examination/admit-card" },
+      { name: "Examination Form", href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx" },
+      { name: "Results", href: "https://results.ietdavv.edu.in/" },
+      { name: "Admit Card", href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx" },
     ],
   },
   {
