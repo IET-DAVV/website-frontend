@@ -1,11 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { LOGO, headerLinks } from "@/constants/header/data";
+import { LOGO } from "@/constants/header/data"; // ✅ Keep this import
+import { HeaderLinksType } from "@/typings.d"; // ✅ Type for the prop
 import Image from "next/image";
 import { Manrope } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+interface HeaderProps {
+  links: HeaderLinksType; // ✅ Expect a `links` prop
+}
 
 let hoverTimeout: NodeJS.Timeout;
 
@@ -14,7 +19,7 @@ const manrope = Manrope({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-const Header = () => {
+const Header: React.FC<HeaderProps> = ({ links }) => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -25,7 +30,7 @@ const Header = () => {
         isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
       }`}
     >
-      {/* LEFT: Logo + Text */}
+      {/* Logo */}
       <div className="flex flex-row items-center space-x-2">
         <Image
           src={"/logo.svg"}
@@ -37,9 +42,9 @@ const Header = () => {
         <p className={`${manrope.className} text-sm w-44 font-bold`}>{LOGO}</p>
       </div>
 
-      {/* RIGHT: Navigation Links */}
+      {/* Links */}
       <ul className="flex flex-row justify-center items-center space-x-10 relative">
-        {headerLinks.map((link, idx) => (
+        {links.map((link, idx) => (
           <li key={link.name} className="relative">
             <Link
               href={link.href}
