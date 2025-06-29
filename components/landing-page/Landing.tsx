@@ -1,29 +1,24 @@
 "use client";
 import React, { useState } from "react";
-import { landingImages } from "@/constants/landing/landingImages";
 import "@/styles/fonts.css";
 import Image from "next/image";
+import mblock from "@/public/landing/mblock.png"; // Adjust path based on actual structure
+
 
 const Landing = () => {
   return (
     <div className="w-full h-full relative -z-10">
       <div className="relative w-full h-screen">
-        {landingImages.map((src, index) => (
-          <Image
-            key={index}
-            src={src}
-            className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-200 ease-in-out"
-            width={1920}
-            height={1080}
-            alt={`Landing image ${index + 1}`}
-            priority={index === 0}
-            style={{
-              opacity: 0,
-              animation: `fadeInOut 20s infinite ${index * 3}s`,
-            }}
-          />
-        ))}
+        <Image
+          src={mblock}
+          className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-200 ease-in-out"
+          width={1920}
+          height={1080}
+          alt="Landing image"
+          priority
+        />
       </div>
+
       <style jsx>{`
         @keyframes fadeInOut {
           0%,
