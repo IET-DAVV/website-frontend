@@ -1,5 +1,3 @@
-import React from "react";
-
 import AdmissionBox from "@/components/process/process";
 import ProcessContent from "@/components/process/processcontent";
 

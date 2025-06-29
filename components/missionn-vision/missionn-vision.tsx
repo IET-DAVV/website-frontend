@@ -1,6 +1,7 @@
 // components/missionn-vision/mission-vision.tsx
 
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 
 interface missionvisionSelectorProps {
   missionvisions: string[];
