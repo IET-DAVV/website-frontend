@@ -27,7 +27,8 @@
     "recharts": "^2.12.7",
     "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
-    "vercel": "^37.4.2"
+    "vercel": "^37.4.2",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.1",

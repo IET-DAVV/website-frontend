@@ -4,6 +4,7 @@ import "@/app/globals.css";
 
 interface TitleProps {
   title: string;
+  className?: string;
 }
 
 const Title: React.FC<TitleProps> = ({ title }) => {
