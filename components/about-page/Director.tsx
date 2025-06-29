@@ -13,8 +13,9 @@ const DirectorVrinda = () => {
     <div className="flex flex-row bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden h-[450px]">
       {/* Left: Text Section */}
       <div className="w-2/3 p-8 flex flex-col justify-center">
+        <hr className="border-t border-gray-400 mt-11 mb-2" />
         <h2
-          className={`${playfair.className} text-xl font-semibold text-black mb-4`}
+          className={`${playfair.className} font-newyork text-sm md:text-5xl font-light justify-right flex items-right mb-3`}
         >
           Dr. Vrinda Tokekar
         </h2>
@@ -31,6 +32,7 @@ const DirectorVrinda = () => {
           mentorship, and faculty-led innovation. Her vision continues to
           elevate IET DAVV’s infrastructure, research profile, and global
           academic presence.
+          <hr className="border-t border-gray-400 mt-11 mb-2" />
         </p>
       </div>
 
@@ -39,7 +41,7 @@ const DirectorVrinda = () => {
         <Image
           src={aboutDirector}
           alt="Dr. Vrinda Tokekar"
-          width={500}
+          width={1200}
           height={500}
           className="w-full h-full object-cover"
         />

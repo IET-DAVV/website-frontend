@@ -1,22 +1,17 @@
 import { aboutVC, aboutVCText } from "@/constants/about-page/about";
-import { Playfair_Display } from "next/font/google";
+import "@/styles/fonts.css";
 import Image from "next/image";
 import React from "react";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
 const VC = () => {
   return (
-    <div className="flex flex-row bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden h-[450px]">
+    <div className="px-20 flex flex-row bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden h-[450px]">
       {/* Left: Image Section */}
-      <div className="w-1/2">
+      <div className="w-1/4 border-2 border-black">
         <Image
           src={aboutVC}
           alt="Dr. Rakesh Singhai"
-          width={500}
+          width={1200}
           height={500}
           className="w-full h-full object-cover"
         />
@@ -24,12 +19,21 @@ const VC = () => {
 
       {/* Right: Text Section */}
       <div className="w-2/3 p-8 flex flex-col justify-center">
-        <h2
-          className={`${playfair.className} text-xl font-semibold text-black mb-4`}
-        >
+        {/* Top Line */}
+        <hr className="border-t border-gray-400 mb-10 mt-2" />
+
+        {/* Heading */}
+        <h2 className="font-newyork text-sm md:text-5xl font-light justify-right flex items-right mb-3">
           Dr. Rakesh Singhai
         </h2>
-        <p className="text-sm text-gray-800 leading-relaxed">{aboutVCText}</p>
+
+        {/* Paragraph */}
+        <p className="text-sm text-gray-800 leading-relaxed">
+          {aboutVCText}
+
+          {/* Bottom Line */}
+          <hr className="border-t border-gray-400 mt-11 mb-2" />
+        </p>
       </div>
     </div>
   );

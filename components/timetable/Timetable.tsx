@@ -56,7 +56,7 @@ const Timetable = () => {
 
   return (
     <div className="text-black">
-      <Title title="TIME-TABLE" />
+      <Title title="CLASS TIMETABLE" />
       <div className="p-4">
         <CourseSelector
           courses={courseList}
