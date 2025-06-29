@@ -28,7 +28,7 @@ const NewsSection: React.FC = () => {
 
   return (
     <div className="col-span-12 md:col-span-3">
-      <div className="bg-black bg-opacity-60 backdrop-filter backdrop-blur-md rounded-lg p-6 h-full flex flex-col border border-white border-opacity-20">
+      <div className="bg-gray-200/20 bg-opacity-60 backdrop-filter backdrop-blur-md rounded-lg p-6 h-full flex flex-col border border-white border-opacity-20">
         <h2 className="text-2xl font-semibold mb-6 text-white">News</h2>
         <div
           className="space-y-3 overflow-y-auto flex-grow pr-2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"

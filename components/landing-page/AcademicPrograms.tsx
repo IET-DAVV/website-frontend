@@ -129,13 +129,13 @@ const NewAcademicPrograms = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-blueShade-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-100 mb-4">
             Academic Programs
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto">
             Comprehensive engineering programs designed to meet industry demands
             and foster innovation
           </p>
@@ -143,7 +143,7 @@ const NewAcademicPrograms = () => {
 
         {/* Program Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="bg-gray-800 rounded-lg p-1 shadow-lg">
+          <div className="bg-transparent rounded-lg p-1 shadow-lg">
             {Object.keys(programs).map((tab) => (
               <Button
                 key={tab}
@@ -151,8 +151,8 @@ const NewAcademicPrograms = () => {
                 onClick={() => setActiveTab(tab)}
                 className={`px-8 py-3 mx-1  font-semibold transition-all duration-300 ${
                   activeTab === tab
-                    ? "bg-blue-600 text-black shadow-md hover:text-white"
-                    : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+                    ? "bg-blue-600 text-white shadow-md hover:text-white"
+                    : "text-white hover:text-blue-600 hover:bg-blue-50"
                 }`}
               >
                 {tab}
@@ -166,17 +166,17 @@ const NewAcademicPrograms = () => {
           {programs[activeTab].map((program: Program, index: number) => (
             <Card
               key={index}
-              className={`group hover:shadow-xl bg-gray-800 transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 ${program.colorScheme} `}
+              className={`group hover:shadow-xl bg-blueShade-100 transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 ${program.colorScheme} `}
             >
               <CardHeader className="pb-4">
                 <div className="flex justify-between items-start mb-3">
                   <Badge
                     variant="secondary"
-                    className="bg-blue-100 text-blue-800 hover:bg-blue-200"
+                    className="bg-gray-100/50 bg-opacity text-blue-800 hover:bg-gray-200/80"
                   >
                     {program.type}
                   </Badge>
-                  <div className="text-sm text-gray-500 font-medium">
+                  <div className="text-sm text-gray-900  font-medium">
                     {program.duration}
                   </div>
                 </div>
@@ -190,7 +190,7 @@ const NewAcademicPrograms = () => {
                 </CardDescription>
                 <Button
                   variant="outline"
-                  className="w-full bg-gray-900 text-white group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-300"
+                  className="w-full bg-blueShade-500 text-white group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-300"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

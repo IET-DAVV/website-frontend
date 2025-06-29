@@ -19,7 +19,6 @@ const LandingContainer = () => {
       <Clubs />
       <Chart />
       <Events />
-      <Clubs />
     </div>
   );
 };

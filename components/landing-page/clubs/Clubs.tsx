@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const Clubs = () => {
   const [selectedClub, setSelectedClub] = useState<string>("E-CELL");
   return (
-    <div className="bg-white px-20 py-10 flex flex-col gap-2">
+    <div className="bg-blueShade-200 px-20 py-10 flex flex-col gap-2">
       <Header
         clubDescription={
           clubs.find((club) => club.name === selectedClub)?.description || ""
@@ -20,7 +20,7 @@ const Clubs = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="grid grid-cols-4 bg-gray-50 gap-4"
+        className="grid grid-cols-4 bg-gray-50 bg-opacity-10 gap-4"
       >
         <aside className="col-span-1 flex justify-start items-center w-full">
           <Sidebar
@@ -29,7 +29,7 @@ const Clubs = () => {
             onSelectClub={setSelectedClub}
           />
         </aside>
-        <main className="w-full h-full flex max-h-full justify-center items-center col-span-3">
+        <main className="w-full h-full flex p-2 max-h-full justify-center items-center col-span-3">
           <ImageGallery images={imagesMap[selectedClub] || []} />
         </main>
       </motion.div>

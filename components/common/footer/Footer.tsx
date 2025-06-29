@@ -15,26 +15,26 @@ import {
 import { motion } from "framer-motion";
 const Footer = () => {
   return (
-    <motion.div className="bg-black p-10 overflow-hidden">
+    <motion.div className="bg-black max-h-1vh p-10 overflow-hidden">
       <div className="grid grid-cols-5 p-10 gap-10">
         <div className="col-span-2 flex flex-col items-start p-5 border-r border-[#D9D9D9] justify-start space-y-5">
           <h1 className="font-medium text-white text-lg">Reach Us</h1>
           <div className="flex items-center justify-start space-x-3">
             <CiLocationOn className="text-white" size={30} />
-            <p className="font-light text-light-gray text-xs">
+            <p className="font-light text-white text-xs">
               Institute of Engineering and Technology, Devi Ahilya
               Vishwavidhyalaya, Khandwa Road, Indore, Madhya Pradesh 452010
             </p>
           </div>
           <div className="flex items-center justify-start space-x-3">
             <CiPhone className="text-white" size={20} />
-            <p className="font-light text-light-gray text-sm hover:text-light-blue">
+            <p className="font-light text-white text-sm hover:text-light-blue">
               +91 731 403 0303
             </p>
           </div>
           <div className="flex items-center justify-start space-x-3">
             <CiMail className="text-white" size={20} />
-            <p className="font-light text-light-gray text-sm hover:text-light-blue">
+            <p className="font-light text-white text-sm hover:text-light-blue">
               iet@dauniv.ac.in
             </p>
           </div>
@@ -52,7 +52,7 @@ const Footer = () => {
               >
                 <Link
                   href={link.url}
-                  className="font-light text-light-gray text-sm hover:text-light-blue"
+                  className="font-light text-white text-sm hover:text-light-blue"
                 >
                   {link.name}
                 </Link>
@@ -74,7 +74,7 @@ const Footer = () => {
                 <Link
                   href={info.value}
                   key={info.name}
-                  className="font-light text-light-gray text-sm hover:text-light-blue"
+                  className="font-light text-white text-sm hover:text-light-blue"
                 >
                   {info.name}
                 </Link>
@@ -96,7 +96,7 @@ const Footer = () => {
                 <Link
                   href={link.url}
                   key={link.name}
-                  className="font-light text-light-gray text-sm hover:text-light-blue"
+                  className="font-light text-white text-sm hover:text-light-blue"
                 >
                   {link.name}
                 </Link>

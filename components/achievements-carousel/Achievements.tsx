@@ -11,7 +11,7 @@ const playfair = Playfair_Display({
 const Achievements = () => {
   return (
     <div className="">
-      <div className="p-10 grid grid-cols-2  justify-center bg-white">
+      <div className="p-10 grid grid-cols-2  justify-center bg-blueShade-200">
         <h1
           className={`text-black font-extralight text-7xl font-mono ${playfair.className}`}
         >
@@ -23,7 +23,7 @@ const Achievements = () => {
           ACHIEVEMENTS
         </h1>
       </div>
-      <div className="bg-[#3B7A9E] px-8 py-8 ">
+      <div className="bg-blueShade-200 px-8 py-8 ">
         <Slides />
       </div>
     </div>

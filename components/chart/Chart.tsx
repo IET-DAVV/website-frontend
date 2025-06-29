@@ -5,7 +5,7 @@ import { stats } from "@/constants/landing/chart";
 import { motion } from "framer-motion";
 function Chart() {
   return (
-    <div className="grid grid-cols-2 justify-between items-center  bg-white p-10">
+    <div className="grid grid-cols-2 justify-between items-center  bg-blueShade-200 p-10">
       <motion.div
         initial={{ opacity: 0 }}
         transition={{ duration: 1 }}
@@ -15,7 +15,7 @@ function Chart() {
       >
         {stats.map((stat) => (
           <div
-            className="flex space-x-10 justify-start w-full items-center text-black"
+            className="flex space-x-10 justify-start w-full items-center text-white"
             key={stat.title}
           >
             <div className="font-serif text-gray text-7xl">{stat.value}</div>

@@ -11,7 +11,7 @@ const playfairDisplay = Playfair_Display({
 
 const Recruiters = () => {
   return (
-    <div className="bg-gray-900 flex flex-col items-center justify-center space-y-10 text-center py-20">
+    <div className="bg-blueShade-200 flex flex-col items-center justify-center space-y-10 text-center py-20">
       <div className="flex flex-col items-center justify-center space-y-2">
         <h2
           className={`text-5xl font-serif text-white font-semibold ${playfairDisplay.className}`}
@@ -22,7 +22,12 @@ const Recruiters = () => {
           MORE THAN 30 COMPANIES VISIT IET-DAVV EVERY YEAR
         </p>
       </div>
-      <Marquee speed={50} pauseOnHover={true} gradient={false}>
+      <Marquee
+        speed={50}
+        pauseOnHover={true}
+        gradient={false}
+        className="bg-gray-50 bg-opacity-20"
+      >
         {companies.map((company, index) => (
           <Image
             key={index}

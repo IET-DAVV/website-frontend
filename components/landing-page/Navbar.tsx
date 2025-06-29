@@ -9,10 +9,16 @@ import {
 import Image from "next/image";
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-gray-900 bg-opacity-70 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+    <nav className="bg-blueShade-500 z-50 sticky top-0  shadow-lg">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <Image alt="Institute Logo" className="h-12 mr-3" src="logo.png" />{" "}
+          <Image
+            alt="Institute Logo"
+            className="mr-3"
+            src="/landing/logo.png"
+            width="40"
+            height="35"
+          />{" "}
           {/* Placeholder image */}
           <div>
             <h1 className="text-xl font-bold text-white">
@@ -24,7 +30,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center space-x-2 text-sm">
           <a
             className="px-4 py-2 rounded-lg text-gray-200 hover:bg-white hover:bg-opacity-10 hover:text-white transition-colors duration-300"
-            href="#"
+            href="/about"
           >
             About us
           </a>

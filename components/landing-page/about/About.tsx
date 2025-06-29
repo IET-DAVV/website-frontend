@@ -22,7 +22,7 @@ const About = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="p-16 grid grid-cols-2 overflow-hidden gap-20 w-full h-full bg-[#3B7A9E]"
+      className="p-16 grid grid-cols-2 overflow-hidden gap-20 w-full h-full bg-blueShade-200"
     >
       <motion.div
         initial={{ opacity: 0, x: -100 }}

@@ -11,7 +11,7 @@ const playfair = Playfair({
 });
 const Events: React.FC = () => {
   return (
-    <div className="bg-black grid grid-cols-3 justify-between items-center h-screen overflow-hidden">
+    <div className="bg-blueShade-200 grid grid-cols-3 justify-between items-center h-screen overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
