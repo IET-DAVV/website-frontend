@@ -1,9 +1,20 @@
-"use client ";
+"use client";
 import React, { useState, useRef } from "react";
-import { LOGO, headerLinks } from "@/constants/header/data";
+import { LOGO } from "@/constants/header/data";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
 import Link from "next/link";
+
+type HeaderLinksType = {
+  name: string;
+  href: string;
+  dropdown?: { name: string; href: string }[];
+}[];
+
+type HeaderProps = {
+  links: HeaderLinksType;
+};
+
 let hoverTimeout: NodeJS.Timeout;
 
 const manrope = Manrope({
@@ -11,7 +22,7 @@ const manrope = Manrope({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-const Header = () => {
+const Header: React.FC<HeaderProps> = ({ links }) => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
   return (
@@ -30,9 +41,8 @@ const Header = () => {
           </p>
         </div>
 
-        {/* ✅ Final working navbar with dropdown */}
-        <ul className="flex flex-row justify-center items-center space-x-10 relative ">
-          {headerLinks.map((link, idx) => (
+        <ul className="flex flex-row justify-center items-center space-x-10 relative">
+          {links.map((link, idx) => (
             <li key={link.name} className="relative">
               <Link
                 href={link.href}
@@ -65,16 +75,15 @@ const Header = () => {
                 >
                   {link.dropdown.map((item, itemIdx) => (
                     <React.Fragment key={item.name}>
-                      <li key={item.name}>
+                      <li>
                         <Link
                           href={item.href}
                           className="block px-2 py-1 text-xs hover:bg-white/50 hover:backdrop-blur-sm rounded-md"
-                          onClick={() => setOpenDropdown(null)} // optional
+                          onClick={() => setOpenDropdown(null)}
                         >
                           {item.name}
                         </Link>
                       </li>
-
                       {itemIdx < (link.dropdown?.length ?? 0) - 1 && (
                         <hr className="border-t border-gray-200 mx-2 my-1" />
                       )}
