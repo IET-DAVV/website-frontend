@@ -1,17 +1,30 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import { admissionDownloads } from "@/constants/process";
 import { Download } from "lucide-react";
+import "@/styles/fonts.css";
+import Title from "../common/academics/Title";
 
 const DownloadSection = () => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
+      <Title
+        title="PROCESS"
+        className="text-7xl leading-tight font-newyork mb-0"
+      />
+      <Title
+        title="(ADMISSION 2025-26)"
+        className="text-4xl font-newyork leading-tight mb-10"
+      />
+
       {admissionDownloads.map((section, index) => (
-        <div key={index} className="space-y-3">
+        <div key={index} className="space-y-4 mb-16">
           <h2
-            className="text-x1 font-semibold text-center font-serif text-[#2F2F2F]"
+            className="text-xl text-black font-bold text-center  text-[#2F2F2F] mb-0"
             dangerouslySetInnerHTML={{ __html: section.title }}
           />
 
-          <div className="border rounded-md divide-y ">
+          <div className="border rounded-md divide-y divide-gray-800 max-w-2xl w-full mx-auto shadow-sm border-gray-800 ">
             {section.items.map((item, idx) => (
               <div
                 key={idx}
