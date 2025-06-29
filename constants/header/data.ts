@@ -11,46 +11,40 @@ export const headerLinks: HeaderLinksType = [
   {
     name: "Academics ▾",
     href: "/academics",
-    dropdown: [
-      { name: "Class Timetable", href: "/academics/class" },
-      { name: "Test Timetable", href: "/academics/test" },
-      { name: "Syllabus", href: "/academics/syllabus" },
-      { name: "Calendar", href: "/academics/calendar" },
+     dropdown: [
+      { name: "CLASS TIMETABLE", href: "/academics/class" },
+      { name: "TEST TIMETABLE", href: "/academics/test" },
+      { name: "SYLLABUS", href: "/academics/syllabus" },
+      { name: "CALENDAR", href: "/academics/calendar" },
     ],
+    
   },
   {
     name: "Admissions ▾",
     href: "/admissions",
     dropdown: [
-      { name: "Process", href: "/admission/process" },
-      { name: "Intake Capacity", href: "/admission/intake-capacity" },
-      { name: "Roll List", href: "/admission/roll-list" },
-      { name: "Enrollment List", href: "/admission/enrollment-list" },
+      { name: "INTAKE CAPACITY", href: "/admission/intake-capacity" },
+      { name: "ROLL LIST", href: "/admission/roll-list" },
+      { name: "ENROLLMENT LIST", href: "/admission/enrollment-list" },
     ],
   },
   {
     name: "Infrastructure ▾",
     href: "/infrastructure",
     dropdown: [
-      { name: "Library", href: "/infrastructure/library" },
-      { name: "Labs", href: "/infrastructure/labs" },
-      { name: "Hostel", href: "/infrastructure/hostel" },
-      { name: "Canteen", href: "/infrastructure/canteen" },
+      { name: "LIBRARY", href: "/infrastructure/library" },
+      { name: "LABS", href: "/infrastructure/labs" },
+      { name: "HOSTEL", href: "/infrastructure/hostel" },
+      { name: "CANTEEN", href: "/infrastructure/canteen" },
     ],
   },
   {
     name: "Examination ▾",
     href: "/examination",
     dropdown: [
-      {
-        name: "Examination Form",
-        href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
-      },
-      { name: "Results", href: "https://results.ietdavv.edu.in/" },
-      {
-        name: "Admit Card",
-        href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
-      },
+      { name: "EXAMINATION FORM", href: "/examination/form" },
+      { name: "RESULTS", href: "/examination/results" },
+      { name: "ADMIT CARD", href: "/examination/admit-card" },
     ],
   },
   {
