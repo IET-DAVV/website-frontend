@@ -1,6 +1,5 @@
 "use client";
 import Header from "@/components/common/header/Header";
-import LowerHeader from "@/components/common/header/LowerHeader";
 import UpperHeader from "@/components/common/header/UpperHeader";
 import { headerLinks } from "@/constants/header/data";
 import React from "react";
@@ -14,7 +13,6 @@ const HeaderContainer = () => {
     >
       <UpperHeader />
       <Header links={headerLinks} />
-      <LowerHeader />
     </div>
   );
 };

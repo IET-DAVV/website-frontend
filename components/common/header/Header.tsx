@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { LOGO, headerLinks } from "@/constants/header/data";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
@@ -22,9 +22,12 @@ const Header = () => {
   return (
     <div>
       <div
-        className={`flex flex-row justify-between items-center px-6 py-2 ${isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"}  text-black`}
+        className={`flex flex-row justify-between items-center px-6 py-2 ${
+          isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
+        } text-black`}
       >
-        <div className="flex flex-row justify-center items-center space-x-2">
+        {/* LEFT: Logo + Text */}
+        <div className="flex flex-row items-center space-x-2">
           <Image
             src={"/logo.svg"}
             className="w-12 h-12"
@@ -35,15 +38,35 @@ const Header = () => {
           <p className={`${manrope.className} text-sm w-44 font-bold`}>
             {LOGO}
           </p>
+        </div>
 
-          {/* ✅ Final working navbar with dropdown */}
+        {/* RIGHT: Navigation Links */}
+        <ul className="flex flex-row justify-center items-center space-x-10 relative">
+          {headerLinks.map((link, idx) => (
+            <li key={link.name} className="relative">
+              <Link
+                href={link.href}
+                className={`text-sm bg-transparent hover:border-b-2 ${isHome ? "border-black" : "border-white/80"} `}
+                onMouseEnter={() => {
+                  clearTimeout(hoverTimeout);
+                  setOpenDropdown(idx);
+                }}
+                onMouseLeave={() => {
+                  hoverTimeout = setTimeout(() => {
+                    setOpenDropdown(null);
+                  }, 200);
+                }}
+              >
+                {link.name}
+              </Link>
 
-          <ul className="flex flex-row justify-center items-center space-x-10 relative mr-0 ">
-            {headerLinks.map((link, idx) => (
-              <li key={link.name} className="relative">
-                <Link
-                  href={link.href}
-                  className="text-sm hover:border-b-2 border-white/80"
+              {link.dropdown && openDropdown === idx && (
+                <ul
+                  className={`absolute left-0 mt-5 p-2 w-[200px] ${
+                    isHome
+                      ? "bg-[#f8f8f8B3]"
+                      : "text-black bg-white"
+                  } shadow-md border border-gray-200 rounded-b-md z-50 w-[120px]`}
                   onMouseEnter={() => {
                     clearTimeout(hoverTimeout);
                     setOpenDropdown(idx);
@@ -54,43 +77,30 @@ const Header = () => {
                     }, 200);
                   }}
                 >
-                  {link.name}
-                </Link>
+                  {link.dropdown.map((item, itemIdx) => (
+                    <React.Fragment key={item.name}>
+                      <li key={item.name}>
+                        <Link
+                          href={item.href}
+                          className={`block px-2 py-4 text-black  text-sm  bg-transparent hover:text-black ${
+                            isHome
+                              ? "bg-[#f8f8f8B3]"
+                              : "bg-white"
+                          } hover:bg-white hover:backdrop-blur-sm rounded-b-md`}
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
 
-                {link.dropdown && openDropdown === idx && (
-                  <ul
-                    className={`absolute left-0 mt-5 w-60 ${isHome ? "bg-[#f8f8f8B3]" : "text-black bg-white"} shadow-md border border-gray-200 rounded-b-md z-50 w-[120px]`}
-                    onMouseEnter={() => {
-                      clearTimeout(hoverTimeout);
-                      setOpenDropdown(idx);
-                    }}
-                    onMouseLeave={() => {
-                      hoverTimeout = setTimeout(() => {
-                        setOpenDropdown(null);
-                      }, 200);
-                    }}
-                  >
-                    {link.dropdown.map((item, itemIdx) => (
-                      <React.Fragment key={item.name}>
-                        <li key={item.name}>
-                          <Link
-                            href={item.href}
-                            className={`block px-2 py-1 text-xs text-black hover:text-black bg-[#f8f8f8B3]${isHome ? "bg-[#f8f8f8B3]" : "text-black bg-white"}  hover:bg-white hover:backdrop-blur-sm rounded-b-md`}
-                            onClick={() => setOpenDropdown(null)} // optional
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-
-                        {itemIdx < (link.dropdown?.length ?? 0) - 1}
-                      </React.Fragment>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+                      {itemIdx < (link.dropdown?.length ?? 0) - 1}
+                    </React.Fragment>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
