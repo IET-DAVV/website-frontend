@@ -22,7 +22,7 @@ const Canteen = () => {
           This page is coming soon
         </h1>
         <p className="text-sm text-gray-500">
-          The Freshers section is under construction. Stay tuned!!!!
+          The Freshers section is under construction. Stay tuned!
         </p>
       </div>
     </div>

@@ -31,8 +31,6 @@
     "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.4.1",
-    "@commitlint/config-conventional": "^19.4.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -41,7 +39,6 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
-    "husky": "^9.1.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
