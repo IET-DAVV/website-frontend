@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flappy Bird</title>
+  <style>
+    body {
+      margin: 0;
+      background: #def;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    canvas {
+      border: 2px solid #333;
+      background: linear-gradient(to bottom, #cceeff, #99ddff);
+    }
+    #scoreBoard {
+      position: absolute;
+      top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #444;
+      text-align: center;
+      width: 100%;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div id="scoreBoard">
+    Score: <span id="score">0</span> | High Score: <span id="highScore">0</span>
+  </div>
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let bird = { x: 80, y: 250, size: 20, velocity: 0 };
+    let gravity = 0.4; // Slower gravity
+    let lift = -8.5;
+    let pipes = [];
+    let score = 0;
+    let highScore = localStorage.getItem('flappyHighScore') || 0;
+
+    document.getElementById("highScore").innerText = highScore;
+
+    let frame = 0;
+    let gameOver = false;
+
+    function drawBird() {
+      ctx.fillStyle = "#ff5050";
+      ctx.beginPath();
+      ctx.arc(bird.x, bird.y, bird.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawPipes() {
+      ctx.fillStyle = "#009900";
+      for (let p of pipes) {
+        ctx.fillRect(p.x, 0, p.width, p.top);
+        ctx.fillRect(p.x, p.top + p.gap, p.width, canvas.height - p.top - p.gap);
+      }
+    }
+
+    function updatePipes() {
+      if (frame % 90 === 0) {
+        let top = Math.random() * 200 + 50;
+        pipes.push({ x: canvas.width, top: top, width: 40, gap: 140 });
+      }
+
+      for (let i = pipes.length - 1; i >= 0; i--) {
+        let p = pipes[i];
+        p.x -= 2;
+        if (p.x + p.width < 0) {
+          pipes.splice(i, 1);
+          score++;
+          document.getElementById("score").innerText = score;
+        }
+
+        if (
+          bird.x + bird.size > p.x &&
+          bird.x - bird.size < p.x + p.width &&
+          (bird.y - bird.size < p.top || bird.y + bird.size > p.top + p.gap)
+        ) {
+          gameOver = true;
+        }
+      }
+    }
+
+    function resetGame() {
+      bird.y = 250;
+      bird.velocity = 0;
+      pipes = [];
+      score = 0;
+      gameOver = false;
+      frame = 0;
+      document.getElementById("score").innerText = score;
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawBird();
+      drawPipes();
+    }
+
+    function update() {
+      bird.velocity += gravity;
+      bird.y += bird.velocity;
+
+      if (bird.y + bird.size > canvas.height || bird.y - bird.size < 0) {
+        gameOver = true;
+      }
+
+      updatePipes();
+    }
+
+    function loop() {
+      if (!gameOver) {
+        update();
+        draw();
+        frame++;
+        requestAnimationFrame(loop);
+      } else {
+        ctx.fillStyle = "#000";
+        ctx.font = "30px sans-serif";
+        ctx.fillText("Game Over!", canvas.width / 2 - 80, canvas.height / 2);
+        ctx.font = "16px sans-serif";
+        ctx.fillText("Click to Restart", canvas.width / 2 - 70, canvas.height / 2 + 30);
+
+        if (score > highScore) {
+          highScore = score;
+          localStorage.setItem("flappyHighScore", score);
+          document.getElementById("highScore").innerText = highScore;
+        }
+
+        canvas.addEventListener("click", restartOnce);
+      }
+    }
+
+    function restartOnce() {
+      canvas.removeEventListener("click", restartOnce);
+      resetGame();
+      loop();
+    }
+
+    canvas.addEventListener("click", () => {
+      bird.velocity = lift;
+    });
+
+    resetGame();
+    loop();
+  </script>
+</body>
+</html>

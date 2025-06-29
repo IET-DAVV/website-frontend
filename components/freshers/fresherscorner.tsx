@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import "@/styles/fonts.css"; // font-newyork
-import TetrisGame from "./TetrisGame"; // ✅ our new local game
+import "@/styles/fonts.css"; // Your custom font
 
 const FreshersCorner = () => {
   const [startGame, setStartGame] = useState(false);
@@ -33,11 +32,17 @@ const FreshersCorner = () => {
         </button>
       </div>
 
-      {/* 🎮 Tetris Game Below */}
+      {/* 🎮 Flappy Bird Game Section */}
       {startGame && (
-        <div className="mt-12 w-full max-w-sm bg-black p-4 rounded-lg shadow-lg text-white">
-          <h2 className="text-center text-2xl font-bold mb-4">🎮 Click The Circle! </h2>
-          <TetrisGame />
+        <div className="mt-12 w-full max-w-3xl bg-white p-4 rounded-lg shadow-lg">
+          <h2 className="text-center text-2xl font-bold mb-4 text-pink-700">🎮 Flappy Bird Game</h2>
+          <iframe
+            src="/flappy_bird_game.html"
+            width="100%"
+            height="650px"
+            style={{ border: "none" }}
+            title="Flappy Bird Game"
+          />
         </div>
       )}
     </div>
