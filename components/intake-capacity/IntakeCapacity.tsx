@@ -2,13 +2,8 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Content from "./Content";
-import { Playfair_Display } from "next/font/google";
 import Title from "../common/academics/Title";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 const IntakeCapacity: React.FC = () => {
   const [selectedCourse, setSelectedCourse] =
     useState<string>("B.E. (FULL-TIME)");

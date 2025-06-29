@@ -1,19 +1,15 @@
 "use client";
+import React, { useState } from "react";
 import {
   collegeDescription,
   collegeName,
   image,
 } from "@/constants/landing/about";
 import Image from "next/image";
-import React from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
-import { Playfair_Display } from "next/font/google";
+import "@/styles/fonts.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 
 const About = () => {
   return (
@@ -41,7 +37,7 @@ const About = () => {
           <span className="uppercase text-white">Welcome to</span>{" "}
         </h4>
         <h1
-          className={`py-4 font-extralight text-6xl text-white ${playfair.className}`}
+          className={`py-4 font-extralight text-6xl text-white font-newyork`}
         >
           {collegeName}
         </h1>

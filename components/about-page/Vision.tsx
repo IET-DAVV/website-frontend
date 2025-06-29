@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import visionIET from "@/public/vision_iet.png";
 import visionDAVV from "@/public/vision_davv.png";

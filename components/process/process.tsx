@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from "react";
 
 import Title from "../common/academics/Title";
 import { CONTACT, PDF_LINK } from "@/constants/process";

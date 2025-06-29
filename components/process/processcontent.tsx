@@ -1,3 +1,6 @@
+"use client";
+import React, { useState } from "react";
+
 export default function ProcessContent() {
   return (
     <section className="text-gray-800 space-y-10">

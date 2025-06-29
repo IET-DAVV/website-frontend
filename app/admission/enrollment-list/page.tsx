@@ -1,4 +1,3 @@
-import React from "react";
 import EnrollmentList from "@/components/enrollment/EnrollmentList";
 
 const EnrollmentPage = () => {

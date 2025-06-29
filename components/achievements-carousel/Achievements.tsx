@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect} from "react";
 import "@/styles/fonts.css"; 
 import CustomSlides from "./Slides";
 import Slides from "./Slides";

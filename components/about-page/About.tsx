@@ -1,7 +1,8 @@
+"use client";
+import React, { useState } from "react";
 import { aboutIET, aboutImage } from "@/constants/about-page/about";
 import "@/styles/fonts.css"; 
 import Image from "next/image";
-import React from "react";
 
 const About = () => {
   return (

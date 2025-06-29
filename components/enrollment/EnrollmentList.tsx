@@ -1,6 +1,5 @@
 "use client";
-
-import React from "react";
+import React, { useState } from "react";
 import { Manrope } from "next/font/google";
 import { MdOutlineFileDownload } from "react-icons/md";
 import Title from "../common/academics/Title";
