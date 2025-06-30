@@ -13,7 +13,7 @@ const ProgramsOffered: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8 py-10">
+    <div className="space-y-8  py-10">
       <Title title="PROGRAMS OFFERED" />
       <Header onSelectCourse={handleSelectCourse} />
       <Content selectedCourse={selectedCourse} />

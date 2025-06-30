@@ -25,8 +25,6 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
     "B.E. (PART-TIME)",
     "M.E. (FULL-TIME)",
     "M.E. (PART-TIME)",
-    "PHD",
-    "MSC",
   ];
 
   return (

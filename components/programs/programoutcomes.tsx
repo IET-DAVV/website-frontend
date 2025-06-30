@@ -39,8 +39,7 @@ const ProgramOutcomes: React.FC<ProgramOutcomesProps> = ({ selectedCourse }) => 
       "Outcome 5 for M.E. Part-Time",
       "Outcome 6 for M.E. Part-Time",
     ],
-    phd: ["PhD outcome 1", "PhD outcome 2", "PhD outcome 3", "PhD outcome 4", "PhD outcome 5", "PhD outcome 6"],
-    msc: ["MSC outcome 1", "MSC outcome 2", "MSC outcome 3", "MSC outcome 4", "MSC outcome 5", "MSC outcome 6"],
+    
   };
 
   const outcomes = outcomesMap[selectedCourse] || [];

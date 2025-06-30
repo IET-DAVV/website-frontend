@@ -34,8 +34,6 @@ const labelToKeyMap: Record<string, string> = {
   "B.E. (PART-TIME)": "btech-part",
   "M.E. (FULL-TIME)": "me-full",
   "M.E. (PART-TIME)": "me-part",
-  PHD: "phd",
-  MSC: "msc",
 };
 
 const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
