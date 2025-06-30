@@ -1,8 +1,6 @@
 import AnnouncementSection from "./AnnouncementSection";
 import HeroCarousel from "./HeroCarousel";
-import Navbar from "./Navbar";
 import NewsSection from "./NewsSection";
-import TopBar from "./TopBar";
 
 export default function NewLandingpage() {
   return (
