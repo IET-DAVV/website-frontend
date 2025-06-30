@@ -16,6 +16,7 @@ export const headerLinks: HeaderLinksType = [
       { name: "Test Timetable", href: "/academics/test" },
       { name: "Syllabus", href: "/academics/syllabus" },
       { name: "Calendar", href: "/academics/calendar" },
+      { name: "Programs Offered", href: "/academics/programsoffered" },
     ],
   },
   {
