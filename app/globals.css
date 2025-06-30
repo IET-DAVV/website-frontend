@@ -56,3 +56,8 @@ body {
   scrollbar-color: #02a3bb #f1f1f1;
 
 } */
+ @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} 

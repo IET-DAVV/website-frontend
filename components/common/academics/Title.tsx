@@ -1,19 +1,16 @@
 import React from "react";
-import { Playfair } from "next/font/google";
-
-const playfair = Playfair({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
+import "@/styles/fonts.css"; // 👈 Import your font definitions
+import "@/app/globals.css";
 
 interface TitleProps {
   title: string;
+  className?: string;
 }
 
 const Title: React.FC<TitleProps> = ({ title }) => {
   return (
     <h1
-      className={`${playfair.className} text-6xl leading-[150px] font-bold mb-4 text-center text-[#06779B]`}
+      className={`font-newyork text-[80px] leading-[120px] font-normal mb-4 text-center text-[#06779B]`}
     >
       {title}
     </h1>

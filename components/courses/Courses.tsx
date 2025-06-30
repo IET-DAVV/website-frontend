@@ -4,6 +4,7 @@ import Header from "@/components/courses/Header";
 import { Playfair } from "next/font/google";
 import CoursesContent from "./CoursesContent";
 import ProgramOutcome from "./ProgramOutcome";
+import Title from "../common/academics/Title";
 
 const playfair = Playfair({
   subsets: ["latin"],
@@ -20,9 +21,7 @@ const Courses = () => {
 
   return (
     <section className="">
-      <h1 className={`${playfair.className} text-6xl py-10 text-center`}>
-        Programs offered
-      </h1>
+      <Title title="PROGRAMS OFFERED" />
       <Header onSelectCourse={handleSelectCourse} />
       <CoursesContent selectedCourse={selectedCourse} />
       <ProgramOutcome />
