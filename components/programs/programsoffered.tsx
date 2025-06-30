@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import ProgramCard from "./programcard";
-import { programsData } from "@/constants/programsdata";
+import { programsData } from "@/constants/Programs/programsdata";
 
 const TABS = [
   { key: "btech-full", label: "B.Tech (FULL TIME)" },
