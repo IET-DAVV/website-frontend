@@ -7,7 +7,9 @@ import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import Director from "@/components/about-page/Director";
 import VC from "@/components/about-page/VC";
-
+import Mission from "@/components/about-page/Mission";
+import Vision from "@/components/about-page/Vision";
+import Landmarks from "@/components/about-page/Landmarks";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -15,15 +17,14 @@ const playfair = Playfair_Display({
 const page = () => {
   return (
     <>
-      <div className=" overflow-hidden bg-white">
-        <Navbar />
-        <About />
-        <History />
-        <div className="p-5 flex flex-col space-y-5">
-          <Director />
-          <VC />
-        </div>
-      </div>
+      <Navbar />
+      <About />
+      <History />
+      <Landmarks />
+      <Vision />
+      <Mission />
+      <Director />
+      <VC />
     </>
   );
 };

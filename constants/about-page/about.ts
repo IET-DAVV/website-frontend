@@ -3,6 +3,12 @@ export const aboutIET =
 export const aboutImage = "/about/aboutietimg.png";
 export const aboutDirector = "/about/about_director.png";
 export const aboutVC = "/about/aboutVC.png";
+export const visionIET = "/about/visionietimg.png";
+export const visionDAVV = "/about/visiondavvimg.png";
+export const visionDavvText =
+  "Emerge as a premier higher learning institution by creating, advancing and disseminating knowledge with collective wisdom, through value imbued holistic education for peaceful, sustainable and humane society.";
+export const visionIetText =
+  "To be a leading human resource development centre for generating, advancing and disseminating knowledge, serve and build value to the society and industry through research, entrepreneurship and outreach activities.";
 export const aboutDirectorText =
   "Devi Ahilya Vishwavidyalaya, Indore (DAVV) formerly, established in 1964 at Indore - the pride city of Malwa, is the leading university in the central part of India.Initially it was known as the University of Indore and the jurisdiction was limited to the district of Indore. Later in the year 1988 university was renamed after the famous and benevolent ruler of Malwa i.e. Devi Ahilya Bai Holkar.During reorganization of the Universities the jurisdiction of the university was expanded over to Indore division spanning over Six Districts. In Indore division, here are fifty four development blocks, out of which forty development blocks are identified as tribal blocks. In all there are 153 affiliated colleges imparting education at UG/PG level in almost all the basic & professional disciplines Most of them also provide the facilities of doctoral research. University now has 6000 students in its campus and total 1, 20,000 students in its affiliated colleges. University has 16 Faculties.";
 export const aboutVCText =
