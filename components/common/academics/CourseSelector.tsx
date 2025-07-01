@@ -31,6 +31,7 @@ const CourseSelector: React.FC<CourseSelectorProps> = ({
     setSelectedBranch("");
     setSelectedYear("");
   }
+  
 
   return (
     <div
