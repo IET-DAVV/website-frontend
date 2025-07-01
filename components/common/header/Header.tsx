@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
       {/* Links */}
       <ul className="flex flex-row justify-center items-center space-x-10 relative">
         {links.map((link, idx) => (
-          <li key={link.name} className="relative">
+          <li key={link.name} className="relative ">
             <Link
               href={link.href}
               className={`text-sm bg-transparent hover:border-b-2 ${
