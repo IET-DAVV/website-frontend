@@ -21,10 +21,10 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
   };
 
   const courseOptions = [
-    "B.E. (FULL-TIME)",
-    "B.E. (PART-TIME)",
-    "M.E. (FULL-TIME)",
-    "M.E. (PART-TIME)",
+    "B.TECH(FULL-TIME)",
+    "B.TECH(PART-TIME)",
+    "M.TECH(FULL-TIME)",
+    "M.TECH(PART-TIME)",
   ];
 
   return (
