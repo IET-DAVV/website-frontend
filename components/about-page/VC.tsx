@@ -1,14 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { aboutVC, aboutVCText } from "@/constants/about-page/about";
 import "@/styles/fonts.css";
 import Image from "next/image";
 
 const VC = () => {
   return (
-    <div className="px-20 flex flex-row bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden h-[450px]">
-      {/* Left: Image Section */}
-      <div className="w-1/4 border-2 border-black">
+    <div className="px-4 md:px-20 py-8 md:py-0 flex flex-col md:flex-row bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden md:h-[450px]">
+      {/* Image Section */}
+      <div className="w-fit md:w-1/3 h-64 md:h-full border-b md:border-b-0 md:border-r border-black">
         <Image
           src={aboutVC}
           alt="Dr. Rakesh Singhai"
@@ -18,23 +18,23 @@ const VC = () => {
         />
       </div>
 
-      {/* Right: Text Section */}
-      <div className="w-2/3 p-8 flex flex-col justify-center">
+      {/* Text Section */}
+      <div className="w-full md:w-2/3 px-6 py-6 md:p-8 flex flex-col justify-center">
         {/* Top Line */}
-        <hr className="border-t border-gray-400 mb-11 mt-2" />
+        <hr className="border-t border-gray-400 mb-6 md:mb-11 mt-2" />
 
         {/* Heading */}
-        <h2 className="font-newyork text-sm md:text-5xl font-light justify-right flex items-right mb-3">
+        <h2 className="font-newyork text-xl md:text-5xl font-light mb-3">
           Dr. Rakesh Singhai
         </h2>
 
         {/* Paragraph */}
-        <p className="text-sm text-gray-800 leading-relaxed">
+        <p className="text-sm md:text-base text-gray-800 leading-relaxed">
           {aboutVCText}
-
-          {/* Bottom Line */}
-          <hr className="border-t border-gray-400 mt-11 mb-2" />
         </p>
+
+        {/* Bottom Line */}
+        <hr className="border-t border-gray-400 mt-6 md:mt-11 mb-2" />
       </div>
     </div>
   );
