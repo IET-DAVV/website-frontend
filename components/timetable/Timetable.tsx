@@ -1,5 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
+=======
+import { Playfair } from "next/font/google";
+>>>>>>> origin/main
 import { timetableData } from "../../constants/timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
 import BranchSelector from "../common/academics/BranchSelector";
@@ -7,6 +11,14 @@ import YearSelector from "../common/academics/YearSelector";
 import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
 
+<<<<<<< HEAD
+=======
+const playfair = Playfair({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+>>>>>>> origin/main
 const Timetable = () => {
   const courses = Object.keys(timetableData.courses);
   const [selectedCourse, setSelectedCourse] = useState<string>("BE_FULL_TIME");
@@ -50,7 +62,11 @@ const Timetable = () => {
 
   return (
     <div className="text-black">
+<<<<<<< HEAD
       <Title title="CLASS TIMETABLE" />
+=======
+      <Title title="Time-Table" />
+>>>>>>> origin/main
       <div className="p-4">
         <CourseSelector
           courses={courseList}

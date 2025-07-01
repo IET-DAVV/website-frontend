@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 "use client";
 import React, { useState } from "react";
+=======
+import React from "react";
+>>>>>>> origin/main
 interface Cardprop {
   id: string;
   description: string;

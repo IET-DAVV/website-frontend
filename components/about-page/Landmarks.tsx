@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import React from "react";
+>>>>>>> origin/main
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import dynamic from "next/dynamic";

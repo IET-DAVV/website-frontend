@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import React from "react";
+>>>>>>> origin/main
 import Contact from "@/components/contact-us/Contact";
 
 const page = () => {

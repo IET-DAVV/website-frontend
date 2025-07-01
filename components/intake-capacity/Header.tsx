@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 "use client";
+=======
+>>>>>>> origin/main
 import { Manrope } from "next/font/google";
 import React, { useState } from "react";
 

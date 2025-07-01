@@ -4,12 +4,23 @@ import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import Card from "./Card";
+<<<<<<< HEAD
 import "@/styles/fonts.css";
+=======
+import { Playfair_Display } from "next/font/google";
+>>>>>>> origin/main
 import { academicPrograms } from "@/constants/landing/academicPrograms";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
+<<<<<<< HEAD
+=======
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+>>>>>>> origin/main
 const AcademicPrograms = () => {
   const [preview, setPreview] = useState<Object[]>(bachelor);
   const ref = useRef(null);
@@ -18,7 +29,13 @@ const AcademicPrograms = () => {
   return (
     <>
       <div className="bg-white py-12 px-8 flex flex-col items-start justify-start space-y-10">
+<<<<<<< HEAD
         <h1 className={`text-black font-mono text-6xl px-2 font-newyork`}>
+=======
+        <h1
+          className={`text-black font-mono text-6xl px-2 ${playfair.className}`}
+        >
+>>>>>>> origin/main
           ACADEMIC PROGRAMS
         </h1>
         <div

@@ -56,8 +56,11 @@ body {
   scrollbar-color: #02a3bb #f1f1f1;
 
 } */
+<<<<<<< HEAD
  @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 } 
+=======
+>>>>>>> origin/main

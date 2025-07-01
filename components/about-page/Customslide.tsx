@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import React from "react";
+>>>>>>> origin/main
 import { Manrope } from "next/font/google";
 import { Achievement } from "grommet-icons";
 

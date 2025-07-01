@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import React from "react";
+>>>>>>> origin/main
 import Calendar from "@/components/calendar/Calendar";
 
 const page = () => {

@@ -1,7 +1,10 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { Manrope, Playfair } from "next/font/google";
+<<<<<<< HEAD
 import Title from "../common/academics/Title";
+=======
+>>>>>>> origin/main
 
 const playfair = Playfair({
   subsets: ["latin"],
@@ -16,9 +19,19 @@ const manrope = Manrope({
 const ContactUs = () => {
   return (
     <div className="flex flex-col space-y-10 mx-auto p-16">
+<<<<<<< HEAD
       <div className="flex flex-col ">
           <Title title="CONTACT US" />
         <p className="text-center text-light-blue ">
+=======
+      <div className="flex flex-col space-y-2">
+        <h1
+          className={`${playfair.className} text-6xl font-semibold text-center text-light-blue`}
+        >
+          Contact us
+        </h1>
+        <p className="text-center text-light-blue mt-2">
+>>>>>>> origin/main
           Do you have any questions? Don&apos;t hesitate to contact us
         </p>
       </div>

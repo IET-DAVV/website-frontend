@@ -1,4 +1,5 @@
 "use client";
+<<<<<<< HEAD
 import React, { useState } from "react";
 import Masonry from "react-responsive-masonry";
 import { imagesMap } from "@/constants/landing/events/data";
@@ -6,6 +7,18 @@ import Image from "next/image";
 import "@/styles/fonts.css";
 import { motion } from "framer-motion";
 
+=======
+import React from "react";
+import Masonry from "react-responsive-masonry";
+import { imagesMap } from "@/constants/landing/events/data";
+import Image from "next/image";
+import { Playfair } from "next/font/google";
+import { motion } from "framer-motion";
+const playfair = Playfair({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+>>>>>>> origin/main
 const Events: React.FC = () => {
   return (
     <div className="bg-black grid grid-cols-3 justify-between items-center h-screen overflow-hidden">
@@ -17,11 +30,21 @@ const Events: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="flex flex-col mx-auto col-span-1 justify-center items-start"
       >
+<<<<<<< HEAD
         <div className={`text-[#6b6b6b] text-7xl font-normal font-newyork`}>
           IET
         </div>
         <div
           className={`text-[#f9f6ff] text-9xl font-normal ml-[73px] font-newyork`}
+=======
+        <div
+          className={`text-[#6b6b6b] text-7xl font-normal ${playfair.className}`}
+        >
+          IET
+        </div>
+        <div
+          className={`text-[#f9f6ff] text-9xl font-normal ml-[73px] ${playfair.className}`}
+>>>>>>> origin/main
         >
           Events
         </div>

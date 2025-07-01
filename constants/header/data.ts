@@ -9,6 +9,7 @@ export const headerLinks: HeaderLinksType = [
     href: "/about",
   },
   {
+<<<<<<< HEAD
     name: "Academics ▾",
     href: "/academics",
     dropdown: [
@@ -52,6 +53,18 @@ export const headerLinks: HeaderLinksType = [
         href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
       },
     ],
+=======
+    name: "Academics",
+    href: "/academics",
+  },
+  {
+    name: "Admissions",
+    href: "/admissions",
+  },
+  {
+    name: "Hostel",
+    href: "/hostel",
+>>>>>>> origin/main
   },
   {
     name: "Contact Us",
