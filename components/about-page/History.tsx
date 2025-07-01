@@ -1,30 +1,15 @@
-<<<<<<< HEAD
 "use client";
 import React, { useState } from "react";
 import { history, timeline } from "@/constants/about-page/about";
 import "@/styles/fonts.css";
 import Image from "next/image";
 
-=======
-import { history, timeline } from "@/constants/about-page/about";
-import { Playfair_Display } from "next/font/google";
-import Image from "next/image";
-import React from "react";
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
->>>>>>> origin/main
 const History = () => {
   return (
     <div>
       <div className="flex flex-col space-y-20 h-full p-20 w-full bg-[#3B799E]">
         <div className="text-center text-5xl font-light">
-<<<<<<< HEAD
           <h1 className={`font-newyork text-white font-extralight`}>
-=======
-          <h1 className={`${playfair.className} text-white font-extralight`}>
->>>>>>> origin/main
             IET HISTORY
           </h1>
         </div>

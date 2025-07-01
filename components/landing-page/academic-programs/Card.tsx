@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 "use client";
 import React, { useState } from "react";
-=======
-import React from "react";
->>>>>>> origin/main
 import { BsArrowUpRightCircle } from "react-icons/bs";
 
 interface CardProps {

@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 "use client";
 import React, { useState } from "react";
-=======
-import React from "react";
->>>>>>> origin/main
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { companies } from "@/public/landing/companies";

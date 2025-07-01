@@ -1,19 +1,8 @@
-<<<<<<< HEAD
 "use client";
 import React, { useState } from "react";
 import { Manrope } from "next/font/google";
 import { courseData } from "@/constants/intakeCapacity/data";
 import "@/styles/fonts.css";
-=======
-import React from "react";
-import { Manrope, Playfair } from "next/font/google";
-import { courseData } from "@/constants/intakeCapacity/data";
-
-const playfair = Playfair({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
->>>>>>> origin/main
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -39,22 +28,14 @@ const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
         >
           {filteredCourse.time}
         </p>
-<<<<<<< HEAD
         <h1 className={`font-newyork text-7xl ml-24 w-[400px]`}>
-=======
-        <h1 className={`${playfair.className} text-7xl ml-24 w-[400px]`}>
->>>>>>> origin/main
           {filteredCourse.fullName}
         </h1>
         <p className="text-slate-700 text-sm ml-24 py-6 w-[350px]">
           {filteredCourse.description}
         </p>
         <p
-<<<<<<< HEAD
           className={`font-newyork text-slate-700 ml-24 py-4 text-center flex flex-col`}
-=======
-          className={`${playfair.className} text-slate-700 ml-24 py-4 text-center flex flex-col`}
->>>>>>> origin/main
         >
           <span className="text-4xl ml-2 text-dark-blue">
             {filteredCourse.total}

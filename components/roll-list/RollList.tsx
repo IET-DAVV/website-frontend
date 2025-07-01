@@ -2,23 +2,11 @@
 "use client";
 
 import React, { useState } from "react";
-<<<<<<< HEAD
-=======
-import { Playfair } from "next/font/google";
->>>>>>> origin/main
 import { Manrope } from "next/font/google";
 import { rolllistData } from "@/constants/roll-list/data"; // Adjust the import path as necessary
 import Title from "../common/academics/Title";
 import { MdOutlineFileDownload } from "react-icons/md";
 
-<<<<<<< HEAD
-=======
-const playfair = Playfair({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
->>>>>>> origin/main
 const manrope = Manrope({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -49,11 +37,7 @@ const RollList = () => {
 
   return (
     <div className="text-black">
-<<<<<<< HEAD
       <Title title="ROLL LIST" />
-=======
-      <Title title="Roll-List" />
->>>>>>> origin/main
 
       {/* Year Selector */}
       <div className={`flex justify-center ${manrope.className}`}>

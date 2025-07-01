@@ -1,9 +1,5 @@
 "use client";
-<<<<<<< HEAD
 import React, { useState } from "react";
-=======
-import React from "react";
->>>>>>> origin/main
 import Piechart from "@/components/chart/Piechart";
 import { stats } from "@/constants/landing/chart";
 import { motion } from "framer-motion";

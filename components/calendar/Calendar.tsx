@@ -1,9 +1,5 @@
 "use client";
-<<<<<<< HEAD
 import React, { useState } from "react";
-=======
-import React, { useState, useEffect } from "react";
->>>>>>> origin/main
 import { Manrope } from "next/font/google";
 import { calenderData } from "../../constants/calender/data";
 import { MdOutlineFileDownload } from "react-icons/md";
@@ -24,11 +20,7 @@ const Calendar = () => {
 
   return (
     <div className="text-black">
-<<<<<<< HEAD
       <Title title="CALENDAR" />
-=======
-      <Title title="Calendar" />
->>>>>>> origin/main
       <div className="p-4 mb-10">
         <div className={`flex justify-center ${manrope.className}`}>
           <div className="inline-block">

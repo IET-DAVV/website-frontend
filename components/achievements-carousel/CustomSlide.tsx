@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-=======
-import Image from "next/image";
-import React from "react";
->>>>>>> origin/main
 import { Manrope } from "next/font/google";
 
 const manrope = Manrope({
