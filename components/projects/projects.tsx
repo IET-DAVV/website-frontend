@@ -20,7 +20,7 @@ const DownloadRow = ({
         style={{ backgroundColor: "#3B7A9E" }}
         disabled
       >
-        Download
+        Downlad
       </button>
     </td>
   </tr>
