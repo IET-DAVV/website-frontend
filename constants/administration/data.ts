@@ -16,8 +16,8 @@ export interface DirectorProfile {
 }
 
 export const directorData: DirectorProfile = {
-  name: "Dr. Vernda Tokakar",
-  image: "https://www.ietdavv.edu.in/images/Faculty/vrinda.jpg",
+  name: "Dr. (Mrs.) Vrinda Tokekar ",
+  image: "/Administration/vrinda.png",
   designation: [
     "Professor, Director & Head of Department",
     "Information Technology",
@@ -122,7 +122,7 @@ export interface Department {
 export const departments: Department[] = [
   {
     name: "Dr. Sanjiv Tokekar",
-    image: "https://www.ietdavv.edu.in/images/new_images/sanjiv.jpg",
+    image: "/Administration/sanjiv.png",
     email: "stokekar@ietdavv.edu.in",
     phone: "+91 94253 22306",
     designation: "Professor and Head, Electronics and Telecommunication",
@@ -133,7 +133,7 @@ export const departments: Department[] = [
   },
   {
     name: "Dr. (Mrs.) Vrinda Tokekar",
-    image: "https://www.ietdavv.edu.in/images/Faculty/vrinda.jpg",
+    image: "/Administration/vrinda.png",
     email: "vtokekar@ietdavv.edu.in",
     phone: "+91 94253 17939",
     designation: "Professor and Head, Information Technology Department",
