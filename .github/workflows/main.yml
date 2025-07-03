@@ -18,10 +18,17 @@ jobs:
       - name: ��� Deploy to Server
         run: |
           ssh -o StrictHostKeyChecking=no webuser@117.239.195.147 << 'EOF'
-            cd /var/www/website
-            git fetch origin dev
-            git reset --hard origin/dev
+           export NVM_DIR="$HOME/.nvm"
+           source "$NVM_DIR/nvm.sh"
+           nvm use 18
 
-            npm install  
-            /home/webuser/.nvm/versions/node/v18.20.8/bin/pm2 restart next-dev
+           cd /var/www/website
+           git fetch origin dev
+           git reset --hard origin/dev
+
+           node -v   # ✅ Add this to verify you're using 18.x
+           npm -v    # ✅ Confirm npm is 10+
+
+           npm install
+           pm2 restart next-dev
           EOF
