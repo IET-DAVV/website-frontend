@@ -9,13 +9,13 @@ export const programsData = [
       duration: "4 years",
       students: "400",
       specializations: [
-        { name: "Computer Science Engineering", icon: "💻" },
-        { name: "Information Technology", icon: "🌐" },
-        { name: "Mechanical Engineering", icon: "🛠️" },
-        { name: "Civil Engineering", icon: "🏗️" },
-        { name: "Electronics & Telecommunication Engineering ", icon: "📡" },
-        { name: "Electronics & Instrumentation Engineering", icon: "🧭" },
-        { name: "Computer Science & Business System (CSBS)", icon: "📊" },
+        { name: "Computer Science Engineering", icon: "cse.svg" },
+        { name: "Information Technology", icon: "it.svg" },
+        { name: "Mechanical Engineering", icon: "mech.svg" },
+        { name: "Civil Engineering", icon: "civil.svg" },
+        { name: "Electronics & Telecommunication Engineering", icon: "etc.svg" },
+        { name: "Electronics & Instrumentation Engineering", icon: "ei.svg" },
+        { name: "Computer Science & Business System (CSBS)", icon: "cse.svg" },
     
       ],
     },
@@ -27,11 +27,11 @@ export const programsData = [
       duration: "5 years",
       students: "150",
       specializations: [
-        { name: "Computer Science Engineering", icon: "💻" },
-        { name: "Information Technology", icon: "🌐" },
-        { name: "Mechanical Engineering", icon: "🛠️" },
-        { name: "Electronics & Telecommunication Engineering ", icon: "📡" },
-        { name: "Electronics & Instrumentation Engineering", icon: "🧭" },
+        { name: "Computer Science Engineering", icon: "cse.svg" },
+        { name: "Information Technology", icon: "it.svg" },
+        { name: "Mechanical Engineering", icon: "mech.svg" },
+        { name: "Electronics & Telecommunication Engineering", icon: "etc.svg" },
+        { name: "Electronics & Instrumentation Engineering", icon: "ei.svg" },
       ],
     },
     "me-full": {
@@ -44,23 +44,23 @@ export const programsData = [
       specializations: [
          {
           name: "Computer Engineering with specialization in Software Engineering",
-          icon: "💻",
+          icon: "cse.svg",
         },
         {
           name: "Information Technology with specialization in Information Security",
-          icon: "🔒",
+          icon: "it.svg",
         },
         {
           name: "Mechanical Engineering with specialization in Design & Thermal Engineering",
-          icon: "⚙️",
+          icon: "mech.svg",
         },
         {
           name: "Electronics Engineering with specialization in Digital Communication",
-          icon: "📡",
+          icon: "etc.svg",
         },
         {
           name: "Electronics Engineering with specialization in Digital Instrumentation",
-          icon: "📟",
+          icon: "ei.svg",
         },
         { name: "Industrial Engineering & Management", icon: "🏭" },
       ],
@@ -76,25 +76,25 @@ export const programsData = [
       specializations: [
         {
           name: "Computer Engineering with specialization in Software Engineering",
-          icon: "💻",
+          icon: "cse.svg",
         },
         {
           name: "Information Technology with specialization in Information Security",
-          icon: "🔒",
+          icon: "it.svg",
         },
         {
           name: "Mechanical Engineering with specialization in Design & Thermal Engineering",
-          icon: "⚙️",
+          icon: "mech.svg",
         },
         {
           name: "Electronics Engineering with specialization in Digital Communication",
-          icon: "📡",
+          icon: "etc.svg",
         },
         {
           name: "Electronics Engineering with specialization in Digital Instrumentation",
-          icon: "📟",
+          icon: "ei.svg",
         },
-        { name: "Industrial Engineering & Management", icon: "🏭" },
+        { name: "Industrial Engineering & Management", icon: "civil.svg" },
       ],
     },
    

@@ -4,6 +4,8 @@ import { Manrope } from "next/font/google";
 import { programsData } from "@/constants/Programs/programsdata";
 import "@/styles/fonts.css";
 import ProgramOutcomes from "./programoutcomes";
+import Image from "next/image";
+
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -42,16 +44,16 @@ const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
 
   const key = labelToKeyMap[selectedCourse];
   const dataObject = programsData[0] as Record<string, Course>;
-  const course = dataObject[key];
+  const course = dataObject[key] || dataObject["btech-full"];
 
-  if (!course) return <p>Course not found</p>;
+
 
   return (
     <div className="flex flex-col px-10 pb-10">
-      <h2 className="text-center text-4xl font-newyork my-8 text-grey-800">Programs offered</h2>
+      <h2 className="text-center text-4xl font-newyork my-8 text-grey-800"></h2>
       <div className="flex justify-between items-start">
         {/* Left Content */}
-        <div className="flex flex-col ml-24 mt-4">
+        <div className="flex flex-col ml-24 mt-10">
           <p className={`${manrope.className} text-sm text-slate-700 mb-2`}>
             {course.subtitle}
           </p>
@@ -72,22 +74,30 @@ const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
         </div>
 
         {/* Right Content */}
-        <div className={`${manrope.className} ml-20 mt-10`}>
-          <div className="grid grid-cols-3 gap-4 w-[700px]">
+        <div className={`${manrope.className} ml-10 mt-10`}>
+          <div className="grid grid-cols-3 gap-4 ">
             {course.specializations.map((spec) => {
               const isActive = selectedBranch === spec.name;
               return (
                 <button
                   key={spec.name}
                   onClick={() => setSelectedBranch(spec.name)}
-                  className={`border border-slate-200 rounded-lg p-4 flex flex-col items-center text-center transition-all duration-300 ${
-                    isActive
+                  className={`group w-full min-w-[250px] min-h-[200px] mx-auto border border-[#06779B] rounded-lg p-6 flex flex-col items-center text-center transition-all duration-300 ${isActive
                       ? "bg-[#06779B] text-white"
                       : "bg-white text-black hover:bg-[#06779B] hover:text-white"
-                  }`}
+                    }`}
                 >
-                  <div className="text-3xl mb-2">{spec.icon}</div>
-                  <p className="text-sm font-medium">{spec.name}</p>
+
+                  <Image
+                    src={`/icons/${spec.icon}`}
+                    alt={spec.name}
+                    width={48}
+                    height={48}
+                    className={`mb-4 transition-all duration-300 ${isActive ? "invert brightness-0" : "group-hover:invert group-hover:brightness-0"
+                      }`}
+                  />
+
+                  <p className="text-lg font-bold font-medium">{spec.name}</p>
                 </button>
               );
             })}

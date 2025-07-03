@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
     <div>
       <ul className={`${manrope.className} flex justify-evenly text-base font-medium`}>
         {courseOptions.map((course) => (
-          <li key={course} className="underline-offset-[14px]">
+          <li key={course} className="underline-offset-[14px] ">
             <button
               type="button"
               onClick={() => handleCourseClick(course)}

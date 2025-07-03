@@ -6,7 +6,7 @@ import Title from "../common/academics/Title";
 
 const ProgramsOffered: React.FC = () => {
   const [selectedCourse, setSelectedCourse] =
-    useState<string>("B.E. (FULL-TIME)");
+    useState<string>("B.TECH (FULL-TIME)");
 
   const handleSelectCourse = (courseName: string) => {
     setSelectedCourse(courseName);
