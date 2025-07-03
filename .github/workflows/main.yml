@@ -29,7 +29,7 @@ jobs:
            node -v   # ✅ Add this to verify you're using 18.x
            npm -v    # ✅ Confirm npm is 10+
 
-           npm install
+           
            npm install --omit=dev
            pm2 restart next-dev
           EOF
