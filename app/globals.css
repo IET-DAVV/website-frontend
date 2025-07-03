@@ -22,8 +22,10 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #999999; /* Darker on hover */
+  background-color: #f8f8f8; /* Darker on hover */
 }
+
+
 
 
 /* :root {
