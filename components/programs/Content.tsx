@@ -30,11 +30,12 @@ interface Course {
 }
 
 const labelToKeyMap: Record<string, string> = {
-  "B.E. (FULL-TIME)": "btech-full",
-  "B.E. (PART-TIME)": "btech-part",
-  "M.E. (FULL-TIME)": "me-full",
-  "M.E. (PART-TIME)": "me-part",
+  "B.TECH (FULL-TIME)": "btech-full",
+  "B.TECH (PART-TIME)": "btech-part",
+  "M.TECH (FULL-TIME)": "me-full",
+  "M.TECH (PART-TIME)": "me-part",
 };
+
 
 const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
   const [selectedBranch, setSelectedBranch] = useState<string | null>(null);

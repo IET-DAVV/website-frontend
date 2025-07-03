@@ -1,4 +1,3 @@
-// File: components/Programs/Header.tsx
 "use client";
 import { Manrope } from "next/font/google";
 import React, { useState } from "react";
@@ -13,7 +12,7 @@ const manrope = Manrope({
 });
 
 const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
-  const [selectedCourse, setSelectedCourse] = useState<string>("B.E. (FULL-TIME)");
+  const [selectedCourse, setSelectedCourse] = useState<string>("B.TECH (FULL-TIME)");
 
   const handleCourseClick = (courseName: string) => {
     setSelectedCourse(courseName);
@@ -21,10 +20,10 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
   };
 
   const courseOptions = [
-    "B.E. (FULL-TIME)",
-    "B.E. (PART-TIME)",
-    "M.E. (FULL-TIME)",
-    "M.E. (PART-TIME)",
+    "B.TECH (FULL-TIME)",
+    "B.TECH (PART-TIME)",
+    "M.TECH (FULL-TIME)",
+    "M.TECH (PART-TIME)",
   ];
 
   return (
@@ -52,6 +51,3 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
 };
 
 export default Header;
-
-
-// File: components/Programs/Content.tsx

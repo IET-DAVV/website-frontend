@@ -36,7 +36,7 @@ export const programsData = [
     },
     "me-full": {
       name: "me-full",
-      title: "Master’s of Engineering",
+      title: "Master’s of Technology",
       subtitle: "FULL TIME",
       description: "Full time M.E. program with advanced technical knowledge.",
       duration: "2 years",
@@ -67,7 +67,7 @@ export const programsData = [
     },
     "me-part": {
       name: "me-part",
-      title: "Master’s of Engineering",
+      title: "Master’s of Technology",
       subtitle: "PART TIME",
       description:
         "Master of Technology (M.Tech) is a postgraduate degree in engineering and technology, focusing on advanced knowledge and practical skills in a specific technical field.",
