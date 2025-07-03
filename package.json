@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "if [ \"$CI\" != \"true\" ]; then husky install; fi"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
@@ -21,7 +21,6 @@
     "react": "^18.3.1",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.5",
-    "next": "14.2.6",
     "react-responsive-masonry": "^2.3.0",
     "react-slick": "^0.30.2",
     "recharts": "^2.12.7",
@@ -40,9 +39,7 @@
     "eslint-config-next": "14.2.6",
     "postcss": "^8.5.6",
     "prettier": "^3.3.3",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.6"
+    "tailwindcss": "^3.4.1"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
