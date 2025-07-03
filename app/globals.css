@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* In globals.css or a dedicated CSS file */
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;             /* Thin scrollbar */
+  margin-top: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f0f0f0;     /* Light gray background */
+  border-radius: 100vh;
+  margin-top: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #b0b0b0; /* Gray thumb */
+  border-radius: 100vh;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #999999; /* Darker on hover */
+}
+
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
