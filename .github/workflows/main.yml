@@ -1,0 +1,25 @@
+name: 🚀 Deploy to IET Server (User Access)
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔐 Start SSH Agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: 🚀 Deploy to Server
+        run: |
+          ssh -o StrictHostKeyChecking=no webuser@117.239.195.147 << 'EOF'
+            cd /var/www/website
+            git pull origin dev
+            npm install
+            pm2 restart next-dev
+          EOF
