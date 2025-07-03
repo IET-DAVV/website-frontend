@@ -18,6 +18,7 @@ export const headerLinks: HeaderLinksType = [
       { name: "Calendar", href: "/academics/calendar" },
       { name: "Programs Offered", href: "/academics/programsoffered" },
       { name: "Notice", href: "/academics/notice" },
+      { name: "Projects", href: "/academics/projects" },
     ],
   },
   {
