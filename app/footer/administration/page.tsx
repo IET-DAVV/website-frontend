@@ -1,4 +1,4 @@
-import Administration from "@/components/administration/Administration";
+import Administration from "@/components/administration/administration";
 
 const EnrollmentPage = () => {
   return (
