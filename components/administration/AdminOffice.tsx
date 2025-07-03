@@ -49,7 +49,7 @@ const AdminOffice = () => {
       <div className="mx-40">
         <h3 className="text-3xl mb-5 font-semibold text-[#1D1D1D]">
           Administrative Experience:{" "}
-          <span className="text-[#067798]">(10 + years)</span>
+          <span className="text-[#067798]">(15 + years)</span>
         </h3>
         <p className=" text-lg text-[#686868]">{AdministrativeExperience}</p>
       </div>
@@ -59,7 +59,7 @@ const AdminOffice = () => {
         <h2 className="text-3xl mb-5 font-semibold text-[#1D1D1D]">
           Teaching Experience:
           <span className="text-[#067798]">
-            (as visiting faculty) (10 + years)
+            (as visiting faculty) (15 + years)
           </span>
         </h2>
         <div className="flex flex-col text-lg text-[#686868]">
