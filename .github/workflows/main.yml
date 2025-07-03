@@ -30,5 +30,6 @@ jobs:
            npm -v    # ✅ Confirm npm is 10+
 
            npm install
+           npm install --omit=dev
            pm2 restart next-dev
           EOF
