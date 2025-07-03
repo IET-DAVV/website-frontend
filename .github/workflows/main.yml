@@ -20,6 +20,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no webuser@117.239.195.147 << 'EOF'
             cd /var/www/website
             git pull origin dev
-            npm install
+            # npm install  
             pm2 restart next-dev
           EOF
