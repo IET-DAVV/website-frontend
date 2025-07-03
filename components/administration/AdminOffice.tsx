@@ -23,11 +23,14 @@ const AdminOffice = () => {
             <p className="text-gray-700 w-[90%] ">{designation}</p>
           </div>
         </div>
-        <Image
-          src={image}
-          alt={name}
-          className=" border-4 border-[#686868] w-48 h-48 object-cover"
-        />
+        <div className=" relative w-[50%] h-48">
+          <Image
+            src={image}
+            fill
+            alt={name}
+            className="border-4 border-[#686868] object-cover"
+          />
+        </div>
       </div>
       <div className="h-[0.5px] w-[85%] bg-light-gray m-auto" />
 
@@ -54,7 +57,7 @@ const AdminOffice = () => {
 
       <div className="mx-40">
         <h2 className="text-3xl mb-5 font-semibold text-[#1D1D1D]">
-          Teaching Experience: 
+          Teaching Experience:
           <span className="text-[#067798]">
             (as visiting faculty) (10 + years)
           </span>

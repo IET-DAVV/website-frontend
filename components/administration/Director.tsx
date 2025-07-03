@@ -30,6 +30,8 @@ const Director: React.FC = () => {
           </div>
         </div>
         <Image
+          width={48}
+          height={48}
           src={image}
           alt={name}
           className=" border-4 border-[#686868] w-48 h-48 object-cover"

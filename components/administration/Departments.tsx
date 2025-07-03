@@ -65,6 +65,8 @@ const Departments = () => {
               </div>
             </div>
             <Image
+              width={48}
+              height={48}
               src={departments.image}
               alt={departments.name}
               className="border-4 border-[#686868] w-48 h-48 object-cover"
