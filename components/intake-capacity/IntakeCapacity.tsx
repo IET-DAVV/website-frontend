@@ -20,7 +20,7 @@ const IntakeCapacity: React.FC = () => {
       <h1
         className={`${playfair.className} flex flex-row justify-center items-center w-full text-6xl`}
       >
-        Intake Capacity
+        INTAKE CAPACITY
       </h1>
       <Header onSelectCourse={handleSelectCourse} />
       <Content selectedCourse={selectedCourse} />

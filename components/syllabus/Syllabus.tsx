@@ -1,17 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Playfair } from "next/font/google";
 import { syllabusDataData } from "@/constants/syllabus/data";
 import CourseSelector from "../common/academics/CourseSelector";
 import BranchSelector from "../common/academics/BranchSelector";
 import YearSelector from "../common/academics/YearSelector";
 import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
-
-const playfair = Playfair({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 
 const Syllabus = () => {
   const courses = Object.keys(syllabusDataData.courses);
@@ -55,7 +49,7 @@ const Syllabus = () => {
 
   return (
     <div className="text-black">
-      <Title title="Syllabus" />
+      <Title title="SYLLABUS" />
       <div className="p-4">
         <CourseSelector
           courses={courseList}
