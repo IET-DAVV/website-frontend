@@ -43,12 +43,7 @@ const VisionSection = () => {
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left: Image with Overlay Text */}
-        {/* Right: Heading */}
-        <div className="md:w-1/2 w-full text-center md:text-right">
-          <p className="font-newyork text-xl sm:text-3xl md:text-5xl font-light">
-            VISION–DAVV
-          </p>
-        </div>
+        
         <div className="relative w-full md:w-[1158px] h-64 sm:h-[280px] md:h-[231px] border-2 border-[#3B799E] overflow-hidden">
           <Image
             src={visionDAVV}
@@ -67,6 +62,13 @@ const VisionSection = () => {
             through value imbued holistic education for peaceful, sustainable
             and humane society.
           </div>
+          
+        </div>
+        {/* Right: Heading */}
+        <div className="md:w-1/2 w-full text-center md:text-right">
+          <p className="font-newyork text-xl sm:text-3xl md:text-5xl font-light">
+            VISION–DAVV
+          </p>
         </div>
       </div>
     </div>
