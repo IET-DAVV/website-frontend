@@ -7,16 +7,7 @@ import Image from "next/image";
 const VC = () => {
   return (
     <div className="px-4 md:px-20 py-8 md:py-0 flex flex-col md:flex-row bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden md:h-[450px]">
-      {/* Image Section */}
-      <div className="w-fit md:w-1/3 h-64 md:h-full border-b md:border-b-0 md:border-r border-black">
-        <Image
-          src={aboutVC}
-          alt="Dr. Rakesh Singhai"
-          width={500}
-          height={500}
-          className="w-full h-full object-cover"
-        />
-      </div>
+     
 
       {/* Text Section */}
       <div className="w-full md:w-2/3 px-6 py-6 md:p-8 flex flex-col justify-center">
@@ -32,11 +23,24 @@ const VC = () => {
         <p className="text-sm md:text-base text-gray-800 leading-relaxed">
           {aboutVCText}
         </p>
+     
+
 
         {/* Bottom Line */}
         <hr className="border-t border-gray-400 mt-6 md:mt-11 mb-2" />
       </div>
+          {/* Image Section */}
+      <div className="w-fit md:w-1/3 h-64 md:h-full border-b md:border-b-0 md:border-r border-black">
+        <Image
+          src={aboutVC}
+          alt="Dr. Rakesh Singhai"
+          width={500}
+          height={500}
+          className="w-full h-full object-cover"
+        />
+      </div>
     </div>
+    
   );
 };
 
