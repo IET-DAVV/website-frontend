@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "if [ \"$CI\" != \"true\" ]; then husky install; fi"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
@@ -20,17 +20,19 @@
     "prettier": "^3.6.2",
     "react": "^18.3.1",
     "react-dom": "^18",
+    "react-icons": "^4.9.0",
+    "react-player": "^2.11.0",
     "react-fast-marquee": "^1.6.5",
+
     "react-icons": "^5.5.0",
     "react-responsive-carousel": "^3.2.23",
+
     "react-responsive-masonry": "^2.3.0",
     "react-slick": "^0.30.2",
-    "react-tetris": "^0.4.0",
     "recharts": "^2.12.7",
     "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
-    "vercel": "^37.4.2",
-    "yarn": "^1.22.22"
+    "vercel": "^37.4.2"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -41,11 +43,12 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
+
     "postcss": "^8",
     "prettier": "^3.6.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  },
+
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{ts,tsx}": [

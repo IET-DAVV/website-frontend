@@ -9,6 +9,7 @@ const Mission = () => {
   const [activeTab, setActiveTab] = useState<"IET" | "DAVV">("IET");
 
   return (
+
     <div className="my-20 mx-4 sm:mx-8 md:mx-16">
       {/* Tabs */}
       <div className="relative flex justify-center items-center gap-12 sm:gap-20 md:gap-40 mb-8">

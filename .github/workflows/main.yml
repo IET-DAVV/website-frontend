@@ -1,0 +1,35 @@
+name: Deploy to IET Server (User Access)
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ��� Start SSH Agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: ��� Deploy to Server
+        run: |
+          ssh -o StrictHostKeyChecking=no webuser@117.239.195.147 << 'EOF'
+           export NVM_DIR="$HOME/.nvm"
+           source "$NVM_DIR/nvm.sh"
+           nvm use 18
+
+           cd /var/www/website
+           git fetch origin dev
+           git reset --hard origin/dev
+
+           node -v   # ✅ Add this to verify you're using 18.x
+           npm -v    # ✅ Confirm npm is 10+
+
+           export CI=true  
+           npm install --omit=dev
+           pm2 restart next-dev
+          EOF

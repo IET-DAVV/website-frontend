@@ -31,6 +31,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
       className={`w-full px-6 py-2 ${
         isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
       }`}
+
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
@@ -57,6 +58,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex flex-row justify-center items-center space-x-10 relative">
+
           {links.map((link, idx) => (
             <li key={link.name} className="relative">
               <Link

@@ -9,6 +9,7 @@ const VC = () => {
     <div className="px-4 md:px-20 py-8 md:py-0 flex flex-col md:flex-row-reverse bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden md:h-[450px]">
       {/* Image Section - right on desktop, centered on mobile */}
       <div className="w-full md:w-1/3 h-64 md:h-full border-b md:border-b-0  flex justify-center items-center ">
+
         <Image
           src={aboutVC}
           alt="Dr. Rakesh Singhai"
@@ -25,6 +26,7 @@ const VC = () => {
 
         {/* Heading */}
         <h2 className="font-newyork text-xl md:text-5xl font-light mb-1">
+
           Dr. Rakesh Singhai
         </h2>
 

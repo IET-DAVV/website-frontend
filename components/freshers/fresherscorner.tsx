@@ -110,6 +110,7 @@ const FreshersCorner: React.FC = () => {
         {branchSections[selectedBranch].map((title) => (
           <SectionCard key={title} title={title} />
         ))}
+
       </div>
     </div>
   );

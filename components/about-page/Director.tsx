@@ -24,7 +24,9 @@ const Director = () => {
         <hr className="border-t border-gray-400 mb-6 md:mb-11 mt-2" />
 
         {/* Heading */}
+
         <h2 className="font-newyork text-xl md:text-5xl font-light mb-1">
+
           Dr. Vrinda Tokekar
         </h2>
 
