@@ -1,5 +1,3 @@
-import { link } from "fs";
-
 export const missionIet = [
   {
     id: "01",

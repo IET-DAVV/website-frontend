@@ -4,6 +4,11 @@ import { aboutDirector, aboutDirectorText } from "@/constants/about-page/about";
 import "@/styles/fonts.css";
 import Image from "next/image";
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 const DirectorVrinda = () => {
   return (
     <div className="flex flex-col md:flex-row bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden md:h-[450px]">
@@ -40,3 +45,4 @@ const DirectorVrinda = () => {
 };
 
 export default DirectorVrinda;
+

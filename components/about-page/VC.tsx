@@ -2,6 +2,7 @@
 import React from "react";
 import { aboutVC, aboutVCText } from "@/constants/about-page/about";
 import "@/styles/fonts.css";
+import "@/styles/fonts.css";
 import Image from "next/image";
 
 const VC = () => {
@@ -12,7 +13,7 @@ const VC = () => {
         <Image
           src={aboutVC}
           alt="Dr. Rakesh Singhai"
-          width={500}
+          width={1200}
           height={500}
           className="w-full h-full object-cover"
         />
@@ -41,3 +42,4 @@ const VC = () => {
 };
 
 export default VC;
+

@@ -28,7 +28,7 @@ const VisionSection = () => {
           <div
             className="absolute inset-0 z-10 flex items-center justify-center px-6 sm:px-12 md:px-20 text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium md:font-semibold leading-relaxed text-center"
             style={{
-              backgroundColor: "rgba(59, 121, 158, 0.5)",
+              backgroundColor: "rgba(59, 121, 158, 0.1)", // More transparent
             }}
           >
             To be a leading human resource development centre for generating,
@@ -59,7 +59,7 @@ const VisionSection = () => {
           <div
             className="absolute inset-0 z-10 flex items-center justify-center px-6 sm:px-12 md:px-20 text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium md:font-semibold leading-relaxed text-center"
             style={{
-              backgroundColor: "rgba(59, 121, 158, 0.5)",
+              backgroundColor: "rgba(59, 121, 158, 0.1)", // More transparent
             }}
           >
             Emerge as a premier higher learning institution by creating,
