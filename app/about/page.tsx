@@ -12,12 +12,12 @@ const page = () => {
       <div className=" overflow-hidden bg-white">
         <About />
         <History />
+        <AchievementsSlider />
         <Vision />
         <Mission />
-        <AchievementsSlider />
         <div className="p-5 flex flex-col space-y-5">
-          <Director />
           <VC />
+          <Director />
         </div>
       </div>
     </>
