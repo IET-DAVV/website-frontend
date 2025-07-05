@@ -28,9 +28,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
 
   return (
     <header
-      className={`w-full px-6 py-2 ${
-        isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
-      }`}
+      className={`w-full px-6 py-2 bg-[#3B7A9E] text-white`}
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
