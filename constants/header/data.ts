@@ -16,9 +16,7 @@ export const headerLinks: HeaderLinksType = [
       { name: "Test Timetable", href: "/academics/test" },
       { name: "Syllabus", href: "/academics/syllabus" },
       { name: "Calendar", href: "/academics/calendar" },
-      { name: "Programs Offered", href: "/academics/programsoffered" },
-      { name: "Notice", href: "/academics/notice" },
-      { name: "Projects", href: "/academics/projects" },
+
     ],
   },
   {
@@ -74,11 +72,11 @@ export const UPPER_HEADER_LINKS = [
   },
   {
     name: "Courses",
-    href: "/courses",
+    href: "/academics/programsoffered",
   },
   {
     name: "Notices",
-    href: "/notices",
+    href: "/academics/notice",
   },
   {
     name: "Alumni",

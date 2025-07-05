@@ -9,10 +9,13 @@ const UpperHeader = () => {
       <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
         {/* Left: Contact Info */}
         <div className="flex flex-col md:flex-row md:items-center md:space-x-10 space-y-1 md:space-y-0">
-          <div className="flex items-center space-x-2 hover:border-b-2 hover:border-white cursor-pointer">
-            <IoMail />
-            <p>info@ietdavv.edu.in</p>
-          </div>
+         <a
+          href="mailto:webmaster@ietdavv.edu.in"
+          className="flex items-center space-x-2 cursor-pointer text-white"
+        >
+          <IoMail />
+          <p className="hover:border-b-2 hover:border-white">webmaster@ietdavv.edu.in</p>
+        </a>
           <div className="flex items-center space-x-2 hover:border-b-2 hover:border-white cursor-pointer">
             <IoCall />
             <p>+91 98260 00000</p>
