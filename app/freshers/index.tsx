@@ -1,8 +1,6 @@
 import React from "react";
 import FreshersCorner from "@/components/freshers/Fresherscorner";
 
-const FreshersPage = () => {
+export default function FreshersPage() {
   return <FreshersCorner />;
-};
-
-export default FreshersPage;
+}

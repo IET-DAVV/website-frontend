@@ -1,47 +1,116 @@
 "use client";
 import React, { useState } from "react";
-import "@/styles/fonts.css"; // font-newyork
-import TetrisGame from "./TetrisGame"; // ✅ our new local game
+import SectionCard from "./SectionCard";
+import "./FreshersCorner.css";
 
-const FreshersCorner = () => {
-  const [startGame, setStartGame] = useState(false);
+const courseTabs = [
+  "B.TECH (FULL TIME)",
+  "B.TECH (PART-TIME)",
+  "M.TECH (FULL TIME)",
+  "M.TECH (PART TIME)",
+  "Ph.D",
+  "MSc.",
+];
+
+const branchOptions = [
+  "Computer Science",
+  "Information Technology",
+  "Mechanical Engineering",
+  "CSBS",
+  "Electronics & Instrumentation",
+  "Electronics & Telecommunication",
+  "Civil Engineering",
+];
+
+const branchSections: { [key: string]: string[] } = {
+  "Computer Science": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Information Technology": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Mechanical Engineering": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  CSBS: [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Electronics & Instrumentation": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Electronics & Telecommunication": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Civil Engineering": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+};
+
+const FreshersCorner: React.FC = () => {
+  const [selectedCourse, setSelectedCourse] = useState("B.TECH (PART-TIME)");
+  const [selectedBranch, setSelectedBranch] = useState("Computer Science");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-blue-100 px-4 py-10 flex flex-col items-center justify-start">
-      {/* 🎁 Gift Box UI */}
-      <div className="text-center space-y-6 max-w-xl">
-        <div className="relative w-40 h-40 mx-auto">
-          <div className="w-full h-full bg-yellow-300 border-4 border-pink-400 shadow-lg" />
-          <div className="absolute inset-x-0 top-1/2 h-4 bg-pink-600" />
-          <div className="absolute inset-y-0 left-1/2 w-4 bg-pink-600" />
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-8 bg-pink-500 rounded-full shadow-lg rotate-12" />
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-8 bg-pink-500 rounded-full shadow-lg -rotate-12" />
-        </div>
+    <div className="freshers-container">
+      <h1 className="main-heading">FRESHER&apos;S CORNER</h1>
 
-        <h1 className="text-4xl md:text-5xl font-newyork font-bold text-pink-700 drop-shadow">
-          Welcome Freshers 🎉
-        </h1>
-        <p className="text-lg text-gray-700 font-medium">
-          There&apos;s a surprise waiting for you!
-        </p>
-
-        <button
-          onClick={() => setStartGame(true)}
-          className="mt-4 px-6 py-3 bg-pink-600 text-white rounded-full text-lg font-semibold hover:bg-pink-700 transition"
-        >
-          Click & Start the Game
-        </button>
+      <div className="course-tabs">
+        {courseTabs.map((course) => (
+          <button
+            key={course}
+            className={`course-tab ${selectedCourse === course ? "active" : ""}`}
+            onClick={() => setSelectedCourse(course)}
+          >
+            {course}
+          </button>
+        ))}
       </div>
 
-      {/* 🎮 Tetris Game Below */}
-      {startGame && (
-        <div className="mt-12 w-full max-w-sm bg-black p-4 rounded-lg shadow-lg text-white">
-          <h2 className="text-center text-2xl font-bold mb-4">
-            🎮 Click The Circle!
-          </h2>
-          <TetrisGame />
-        </div>
-      )}
+      <div className="branch-buttons">
+        {branchOptions.map((branch) => (
+          <button
+            key={branch}
+            className={`branch-btn ${selectedBranch === branch ? "active" : ""}`}
+            onClick={() => setSelectedBranch(branch)}
+          >
+            {branch}
+          </button>
+        ))}
+      </div>
+
+      <div className="sections-container">
+        {branchSections[selectedBranch].map((title) => (
+          <SectionCard key={title} title={title} />
+        ))}
+      </div>
     </div>
   );
 };
