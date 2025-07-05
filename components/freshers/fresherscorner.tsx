@@ -115,4 +115,4 @@ const FreshersCorner: React.FC = () => {
   );
 };
 
-export default Canteen;
+export default FreshersCorner;
