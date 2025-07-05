@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const ExaminationComingSoon = () => {
   return (
     <div className="flex items-center justify-center min-h-[80vh] bg-gray-100">

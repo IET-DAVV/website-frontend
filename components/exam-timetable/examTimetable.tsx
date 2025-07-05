@@ -1,67 +1,97 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { examTimeTableData } from "@/constants/exam-timetable/examTimeTabledata";
-import Title from "../common/academics/Title";
+import { examtimetableData } from "@/constants/exam-timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
+import BranchSelector from "../common/academics/BranchSelector";
 import SectionSelector from "../common/academics/SectionSelector";
-import { ReceiptRussianRuble } from "lucide-react";
+import Title from "../common/academics/Title";
+import { useRouter } from "next/navigation";
+import ExamNotice from "./examNotice";
 
-function ExamTimetable() {
-    const [selectedCourse, setSelectedCourse] = useState<string>("");
+const ExamTimetable = () => {
+  const router = useRouter();
+
+  const courseList = Object.keys(examtimetableData.courses).map((courseKey) => ({
+    courseKey,
+    courseName: courseKey, // Use actual course name if available in data
+  }));
+
+  const [selectedCourse, setSelectedCourse] = useState<string>(Object.keys(examtimetableData.courses)[0] || "");
   const [selectedBranch, setSelectedBranch] = useState<string>("");
-  const [selectedYear, setSelectedYear] = useState<string>("");
-const [showSections, setShowSections] = useState<boolean>(false);
   const [sections, setSections] = useState<
     { sectionName: string; PdfLink: string | null }[]
   >([]);
 
-  const courseList = Object.keys(examTimeTableData.courses).map(
-    (courseKey) => ({
-      courseKey,
-      courseName: examTimeTableData.courses[courseKey].courseName,
-    }),
+  const branches = Object.keys(
+    examtimetableData.courses[selectedCourse]?.branches || {}
   );
 
-useEffect(()=>{
-    if(selectedCourse ){
-          const sectionList = Object.entries(examTimeTableData.courses[selectedCourse]?.sections || {}).map(
-  ([sectionName, { PdfLink }]) => ({
-    sectionName,
-    PdfLink: PdfLink || null,
-  })
-);
-
-setSections(sectionList);
-      setShowSections(true);
+  useEffect(() => {
+    if (selectedCourse && selectedBranch) {
+      const sectionList = Object.entries(
+        examtimetableData.courses[selectedCourse]?.branches[selectedBranch]
+          ?.sections || {}
+      ).map(([sectionName, { PdfLink }]) => ({
+        sectionName,
+        PdfLink: PdfLink || null,
+      }));
+      setSections(sectionList);
     } else {
-        setShowSections(false)
+      setSections([]);
     }
-}, [selectedCourse])
+  }, [selectedCourse, selectedBranch]);
 
-   return(
-    <div className="">
-    <div>
-        <Title title="EXAM TIMETABLE" />
-    </div>
-    <div className="p-4 pb-16">
-     <CourseSelector
-        courses={courseList}
-        selectedCourse={selectedCourse}
-        onSelect={setSelectedCourse}
-        setSelectedBranch={setSelectedBranch}
-        setSelectedYear={setSelectedYear}
-      />
-       {showSections && (
-          <SectionSelector
-            sections={sections}
-            showName={true}
-            hideIfShortName={false}
-          />
-        )}</div>
-    </div>
-   )
+useEffect(() => {
+  if (selectedCourse === "Exam Notice") {
+    
+  } else {
+    const availableBranches =
+      Object.keys(examtimetableData.courses[selectedCourse]?.branches || {});
+    setSelectedBranch(""); // ✅ Keep this
+    setSections([]); // ✅ Clear old sections
+  }
+}, [selectedCourse]);
 
-}
+  return (
+    <div className="text-black">
+      <Title title="Exam Time Table" />
+
+      <div className="p-4">
+        <CourseSelector
+          courses={courseList}
+          selectedCourse={selectedCourse}
+          onSelect={setSelectedCourse}
+          setSelectedBranch={() => { }}
+          setSelectedYear={() => { }}
+        />
+
+        {selectedCourse === "Exam Notice" ? (
+          <div className="mt-6">
+            <ExamNotice/>
+          </div>
+        ) : (
+          <>
+            {selectedCourse && (
+              <BranchSelector
+                branches={branches}
+                selectedBranch={selectedBranch}
+                onSelect={setSelectedBranch}
+              />
+            )}
+
+            {sections.length > 0 && (
+              <SectionSelector
+                sections={sections}
+                showName={true}
+                hideIfShortName={false}
+              />
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default ExamTimetable;
