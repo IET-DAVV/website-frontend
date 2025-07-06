@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+
 interface ImageGalleryProps {
   images: string[];
 }
@@ -17,8 +18,9 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
       },
     }),
   };
+
   return (
-    <div className="grid grid-cols-2 gap-10 place-items-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6 w-full">
       {images.map((image, index) => (
         <motion.div
           key={index}
@@ -27,14 +29,14 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
           viewport={{ once: true }}
           custom={index}
           variants={variants}
+          className="w-full"
         >
           <Image
-            key={index}
             src={image}
             width={400}
             height={400}
             alt={`Club ${index}`}
-            className="h-96 w-96 object-cover rounded-lg"
+            className="w-full aspect-square object-cover rounded-xl shadow-md"
           />
         </motion.div>
       ))}

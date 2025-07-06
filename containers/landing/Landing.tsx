@@ -20,7 +20,7 @@ const LandingContainer = () => {
       <Achievements />
       <Chart />
       <Events />
-      <Clubs />
+      {/* <Clubs /> */}
     </div>
   );
 };
