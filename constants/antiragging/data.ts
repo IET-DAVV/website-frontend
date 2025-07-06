@@ -18,7 +18,7 @@ export const antiRagging: AntiRagging = {
             }
         },
         CURBING_THE_MENANCE_OF_RAGGING: {
-            SectionsName: "CURBING THE MENANCE OF RAGGING ",
+            SectionsName: "Curbing the Menance of Ragging ",
             sections: {
 
             }
@@ -50,39 +50,36 @@ export const antiRaggingGuidelines = {
         `College life is very important in every body's life because it not only determines the future of a person but also is a time when most students understand the realities of life. But, do all students enjoy their campus life? The answer is that none of the students enjoy their campus life at least till the end of their first year. This is mainly because of ragging.`,
 
         `What is ragging? Ragging means causing, inducing, compelling or forcing a student, whether by way of a practical joke or otherwise, to do any act which detracts from human dignity or exposes him to ridicule or to forbear from doing any lawful act, by injuring him or by using criminal force to him.`,
-
-        `In view of the directions of the Hon’ble Supreme Court in the matter of “University of Kerala v/s. Council, Principals, Colleges and others” in SLP no. 24295 of 2006 dated 16.05.2007 and that dated 8.05.2009 in Civil Appeal number 887 of 2009, to prohibit, prevent and eliminate the scourge of ragging including any conduct by any student or students whether by words spoken or written or by an act which has the effect of teasing, treating or handling with rudeness a fresher or any other student... and punishing those who indulge in ragging as provided for in these Regulations and the appropriate law in force.`,
-
-
     ],
-    punishments: [
-        `On receipt of the recommendation of the Anti Ragging Squad or on receipt of any information concerning any reported incident of ragging, the Head of Institution shall immediately proceed to file a First Information Report (FIR), within twenty four hours...`,
 
-        "i. Suspension from attending classes and academic privileges.",
+    subContent1:{heading:"In view of the directions of the Hon’ble Supreme Court ",content:"in the matter of “University of Kerala v/s. Council, Principals, Colleges and others” in SLP no. 24295 of 2006 dated 16.05.2007 and that dated 8.05.2009 in Civil Appeal number 887 of 2009, to prohibit, prevent and eliminate the scourge of ragging including any conduct by any student or students whether by words spoken or written or by an act which has the effect of teasing, treating or handling with rudeness a fresher or any other student, or indulging in rowdy or indisciplined activities by any student or students which causes or is likely to cause annoyance, hardship or psychological harm or to raise fear or apprehension thereof in any fresher or any other student or asking any student to do any act which such student will not in the ordinary course do and which has the effect of causing or generating a sense of shame, or torment or embarrassment so as to adversely affect the physique or psyche of such fresher or any other student, with or without an intent to derive a sadistic pleasure or showing off power, authority or superiority by a student over any fresher or any other student; and thereby, to eliminate ragging in all its forms from universities, deemed universities and other higher educational Institutions in the country by prohibiting it under these Regulations, preventing its occurrence and punishing those who indulge in ragging as provided for in these Regulations and the appropriate law in force."},
+
+    punishments: {
+        content:`On receipt of the recommendation of the Anti Ragging Squad or on receipt of any information concerning any reported incident of ragging, the Head of Institution shall immediately proceed to file a First Information Report (FIR), within twenty four hours...`,
+
+        subContent:["i. Suspension from attending classes and academic privileges.",
         "ii. Withholding/ withdrawing scholarship/ fellowship and other benefits.",
         "iii. Debarring from appearing in any test/ examination or other evaluation process.",
         "iv. Withholding results.",
         "v. Suspension/ expulsion from the hostel.",
         "vi. Cancellation of admission.",
-        "vii. Rustication from the Institution for period ranging from one to four semesters. etc"
-    ],
+        "vii. Rustication from the Institution for period ranging from one to four semesters. etc"],
+
+        ending:"Read (cf. clause 9) for other punishment given on the site www.dauniv.ac.in under the link Prevention of Ragging on the left hand side of the page and in the Circulars of UGC Dated 17-June-2009 (English & Hindi Version) ."
+    },
     links: [
-        {
-            label: "Measures",
-            url: "#",
-        },
-        {
-            label: "Affidavit in English",
-            url: "#",
-        },
-        {
-            label: "Affidavit in Hindi",
-            url: "#",
-        },
-        {
-            label: "UGC Circular (17-June-2009)",
-            url: "https://www.dauniv.ac.in/prevention-of-ragging",
-        },
+      {
+        label: "Measures ",
+        file: "https://www.ietdavv.edu.in/images/new_images/download.png",
+      },
+      {
+        label: "Afiidavit in English",
+        file: "https://www.ietdavv.edu.in/images/new_images/download.png",
+      },
+      {
+        label: "Affidavit in Hindi",
+        file: "https://www.ietdavv.edu.in/images/new_images/download.png",
+      },
     ]
 };
 
