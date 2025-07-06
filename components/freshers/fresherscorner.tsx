@@ -1,32 +1,119 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import SectionCard from "./SectionCard";
+import "./FreshersCorner.css";
 
-const Canteen = () => {
+const courseTabs = [
+  "B.TECH (FULL TIME)",
+  "B.TECH (PART-TIME)",
+  "M.TECH (FULL TIME)",
+  "M.TECH (PART TIME)",
+  "Ph.D",
+  "MSc.",
+];
+
+const branchOptions = [
+  "Computer Science",
+  "Information Technology",
+  "Mechanical Engineering",
+  "CSBS",
+  "Electronics & Instrumentation",
+  "Electronics & Telecommunication",
+  "Civil Engineering",
+];
+
+const branchSections: { [key: string]: string[] } = {
+  "Computer Science": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Information Technology": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Mechanical Engineering": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  CSBS: [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Electronics & Instrumentation": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Electronics & Telecommunication": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+  "Civil Engineering": [
+    "Class Time Table",
+    "Calendar",
+    "Test Time Table",
+    "Syllabus",
+    "Exam Time Table",
+  ],
+};
+
+const FreshersCorner: React.FC = () => {
+  const [selectedCourse, setSelectedCourse] = useState("B.TECH (PART-TIME)");
+  const [selectedBranch, setSelectedBranch] = useState("Computer Science");
+
   return (
-    <div className="flex items-center justify-center min-h-[80vh] bg-gray-100">
-      <div className="text-center px-6 py-10 bg-white shadow-lg rounded-lg border border-gray-300">
-        {/* ASCII-style icon */}
-        <pre className="text-blue-600 font-mono text-sm leading-tight mb-4">
-          {String.raw`
-   _______  _______  _______  __   __ 
-  |       ||       ||       ||  |_|  |
-  |  _____||   _   ||   _   ||       |
-  | |_____ |  | |  ||  | |  ||       |
-  |_____  ||  |_|  ||  |_|  ||       |
-   _____| ||       ||       || ||_|| |
-  |_______||_______||_______||_|   |_|
-`}
-        </pre>
+    <div className="freshers-container">
+      <h1 className="main-heading">FRESHER&apos;S CORNER</h1>
 
-        {/* Message */}
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 font-newyork">
-          This page is coming soon
-        </h1>
-        <p className="text-sm text-gray-500">
-          The Freshers section is under construction. Stay tuned!
-        </p>
+      <div className="course-tabs">
+        {courseTabs.map((course) => (
+          <button
+            key={course}
+            className={`course-tab ${selectedCourse === course ? "active" : ""}`}
+            onClick={() => setSelectedCourse(course)}
+          >
+            {course}
+          </button>
+        ))}
+      </div>
+
+      <div className="branch-buttons">
+        {branchOptions.map((branch) => (
+          <button
+            key={branch}
+            className={`branch-btn ${selectedBranch === branch ? "active" : ""}`}
+            onClick={() => setSelectedBranch(branch)}
+          >
+            {branch}
+          </button>
+        ))}
+      </div>
+
+      <div className="sections-container">
+        {branchSections[selectedBranch].map((title) => (
+          <SectionCard key={title} title={title} />
+        ))}
+
       </div>
     </div>
   );
 };
 
-export default Canteen;
+export default FreshersCorner;
