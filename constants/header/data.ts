@@ -30,14 +30,8 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Infrastructure ▾",
+    name: "Infrastructure ",
     href: "/infrastructure",
-    dropdown: [
-      { name: "Library", href: "/infrastructure/library" },
-      { name: "Labs", href: "/infrastructure/labs" },
-      { name: "Hostel", href: "/infrastructure/hostel" },
-      { name: "Canteen", href: "/infrastructure/canteen" },
-    ],
   },
   {
     name: "Examination ▾",
