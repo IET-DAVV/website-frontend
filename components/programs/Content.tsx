@@ -36,6 +36,8 @@ const labelToKeyMap: Record<string, string> = {
   "B.TECH (PART-TIME)": "btech-part",
   "M.TECH (FULL-TIME)": "me-full",
   "M.TECH (PART-TIME)": "me-part",
+  "PHD":"phd",
+  "MSc.":"msc",
 };
 
 
