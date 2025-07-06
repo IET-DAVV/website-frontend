@@ -47,8 +47,8 @@ const CourseSelector: React.FC<CourseSelectorProps> = ({
               text-sm sm:text-base md:text-lg
               ${
                 selectedCourse === courseKey
-                  ? "font-semibold text-[#06779B]"
-                  : "text-black hover:text-[#06779B]"
+                  ? "font-extrabold text-[#06779B]"
+                  : "text-[#686868] font-medium hover:text-[#06779B]"
               }`}
               >
                 {courseName}
