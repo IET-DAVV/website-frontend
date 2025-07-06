@@ -43,6 +43,7 @@ export const headerLinks: HeaderLinksType = [
     name: "Examination ▾",
     href: "/examination",
     dropdown: [
+      { name: "Exam Time Table", href: "/examination/exam-timetable" },
       {
         name: "Examination Form",
         href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
