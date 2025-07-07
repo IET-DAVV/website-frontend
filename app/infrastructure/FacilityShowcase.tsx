@@ -55,11 +55,11 @@ const FacilityShowcase = () => {
   const facilityList = Object.keys(facilities);
 
   return (
-    <div className="flex bg-gray-100 min-h-screen max-w-7xl mx-auto">
+    <div className="flex bg-gray-100 h-full max-w-8xl mx-auto">
       {/* Main Content Area */}
-      <div className="flex-1 relative">
+      <div className="flex-1 relative h-screen">
         {/* Image Container */}
-        <div className="relative w-full h-full">
+        <div className="relative aspect-auto w-full h-full">
           <Image
             src={facilities[selectedFacility].image}
             alt={facilities[selectedFacility].alt}

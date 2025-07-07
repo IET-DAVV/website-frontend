@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import Head from 'next/head';
+import Image from "next/image";
+import Head from "next/head";
 
 export default function IncubationCentre() {
   return (
@@ -13,33 +13,35 @@ export default function IncubationCentre() {
 
       <div className="max-w-7xl mx-auto">
         {/* Top border line */}
-  <div className="border-t border-black mb-12"></div>
-  <h1 className="text-center text-[80px] leading-[120px] font-manrope text-black mb-12"
-  style={{ fontFamily: 'NewYork, serif' }}>
-  Incubation Centre
-  </h1>
-
+        <div className="border-t border-black mb-12"></div>
+        <h1
+          className="text-center text-[80px] leading-[120px] font-manrope text-black mb-12"
+          style={{ fontFamily: "NewYork, serif" }}
+        >
+          Incubation Centre
+        </h1>
 
         {/* Main content */}
         <div className="flex flex-col lg:flex-row items-start gap-12">
           {/* Left content */}
           <div className="flex-1 text-black text-base leading-relaxed space-y-6 max-w-2xl">
             <p>
-              Devi Ahilya Vishwavidyalaya, Incubation Centre (DAVV-IC) is a Section 8
-              company designed to foster a vibrant ecosystem of technology incubation and
-              entrepreneurship. By aligning with national priorities, DAVV-IC aims to
-              generate employment, create wealth, and build successful businesses. The
-              center provides a nurturing environment for emerging startups, particularly
-              those originating from academia, to help them transition from innovative
-              ideas to scalable, sustainable businesses. DAVV-IC is registered under CIN
-              No. U80901MP2022NPL063927 and has obtained 12A & 80G certificates for tax
-              exemptions and CSR registration.
+              Devi Ahilya Vishwavidyalaya, Incubation Centre (DAVV-IC) is a
+              Section 8 company designed to foster a vibrant ecosystem of
+              technology incubation and entrepreneurship. By aligning with
+              national priorities, DAVV-IC aims to generate employment, create
+              wealth, and build successful businesses. The center provides a
+              nurturing environment for emerging startups, particularly those
+              originating from academia, to help them transition from innovative
+              ideas to scalable, sustainable businesses. DAVV-IC is registered
+              under CIN No. U80901MP2022NPL063927 and has obtained 12A & 80G
+              certificates for tax exemptions and CSR registration.
             </p>
 
             <p>
-              The DAVV Incubation Forum aims to connect budding entrepreneurs, startups,
-              and mentors by providing resources, networking opportunities, and a platform
-              to showcase innovative ideas.
+              The DAVV Incubation Forum aims to connect budding entrepreneurs,
+              startups, and mentors by providing resources, networking
+              opportunities, and a platform to showcase innovative ideas.
             </p>
           </div>
 

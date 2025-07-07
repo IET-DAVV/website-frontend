@@ -46,7 +46,7 @@ const HeroInfra = () => {
       <div className="max-w-8xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-light-blue mb-4 tracking-wide">
+          <h1 className="text-4xl font-newyork sm:text-5xl lg:text-6xl font-light text-light-blue mb-4 tracking-wide">
             INFRASTRUCTURE
           </h1>
         </div>
@@ -56,7 +56,7 @@ const HeroInfra = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-8 col-span-1">
             <div>
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-light text-black mb-6 leading-tight font-newyork">
+              <h2 className="text-5xl  sm:text-6xl lg:text-7xl font-light text-black mb-6 leading-tight font-newyork">
                 Campus
               </h2>
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-light text-black mb-8 leading-tight font-newyork">

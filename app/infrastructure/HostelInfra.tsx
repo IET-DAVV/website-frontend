@@ -47,10 +47,10 @@ const HostelsPage = () => {
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-6xl text-center text-gray-800 mb-12" >
+        <h1 className="text-7xl font-newyork text-center text-gray-800 mb-12" >
           Hostels
         </h1>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <div className="grid m-2 grid-cols-2">
             {hostelsData.map((hostel) => (
               <div key={hostel.id} className="relative rounded-lg overflow-hidden group m-1">
