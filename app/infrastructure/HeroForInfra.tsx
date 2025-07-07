@@ -6,37 +6,37 @@ const HeroInfra = () => {
     {
       id: 1,
       name: 'M BLOCK',
-      image: '/mblock aerial.jpg',
+      image: '/infrastructure/blocks/mblock aerial.jpg',
       alt: 'M Block aerial view'
     },
     {
       id: 2,
       name: 'A BLOCK',
-      image: '/api/placeholder/320/240',
+      image: '/infrastructure/blocks/ablock aerial.png',
       alt: 'A Block aerial view'
     },
     {
       id: 3,
       name: 'B BLOCK',
-      image: '/api/placeholder/320/240',
+      image: '/infrastructure/blocks/bBlock aerial.jpg',
       alt: 'B Block aerial view'
     },
     {
       id: 4,
       name: 'D BLOCK',
-      image: '/api/placeholder/320/240',
+      image: '/infrastructure/blocks/dblock aerial.png',
       alt: 'D Block aerial view'
     },
     {
       id: 5,
       name: 'E BLOCK',
-      image: '/api/placeholder/320/240',
+      image: '/infrastructure/blocks/eblock aerial.png',
       alt: 'E Block aerial view'
     },
     {
       id: 6,
       name: 'F BLOCK',
-      image: '/api/placeholder/320/240',
+      image: '/infrastructure/blocks/fblock aerial.png',
       alt: 'F Block aerial view'
     }
   ];

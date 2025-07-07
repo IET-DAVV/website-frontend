@@ -18,7 +18,7 @@ const LibraryPage = () => {
           <div className="relative rounded-lg overflow-hidden shadow-2xl">
             <div className="relative h-96 sm:h-[500px] lg:h-[600px]">
               <Image
-                src="/api/placeholder/1200/600"
+                src="/infrastructure/library aerial.png"
                 alt="IET DAVV Central Library aerial view"
                 fill
                 className="object-cover"

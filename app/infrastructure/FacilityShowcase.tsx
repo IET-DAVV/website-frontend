@@ -17,7 +17,7 @@ const FacilityShowcase = () => {
   const facilities:Facilities = {
     'COMPUTER LAB': {
       title: 'Computer Lab',
-      image: '/computer-lab.jpg',
+      image: '/infrastructure/computer-lab.jpg',
       alt: 'Students working in computer lab with desktop computers'
     },
     'VLSI LAB': {

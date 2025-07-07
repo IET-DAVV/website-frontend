@@ -17,6 +17,7 @@ const config: Config = {
       },
       fontFamily: {
         newyork: ['"NewYork"', 'serif'],
+        playfair: ['"Playfair Display"', 'serif'],
       },
       colors: {
         // FOR HOME PAGE
