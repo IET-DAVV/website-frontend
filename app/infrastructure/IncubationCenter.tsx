@@ -1,22 +1,15 @@
 import Image from "next/image";
-import Head from "next/head";
+
 
 export default function IncubationCentre() {
   return (
-    <div className="bg-[#CCCCCC80] backdrop-blur-md py-16 px-8 font-sans">
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+    <div className="bg-[#CCCCCC80] backdrop-blur-md py-16 px-8 ">
 
       <div className="max-w-7xl mx-auto">
         {/* Top border line */}
         <div className="border-t border-black mb-12"></div>
         <h1
-          className="text-center text-[80px] leading-[120px] font-manrope text-black mb-12"
-          style={{ fontFamily: "NewYork, serif" }}
+          className="text-center text-[80px] font-newyork leading-[120px] font-manrope text-black mb-12"
         >
           Incubation Centre
         </h1>
