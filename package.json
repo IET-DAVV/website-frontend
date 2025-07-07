@@ -10,7 +10,6 @@
     "prepare": "if [ \"$CI\" != \"true\" ]; then husky install; fi"
   },
   "dependencies": {
-    "@next/font": "^14.2.15",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.31",
