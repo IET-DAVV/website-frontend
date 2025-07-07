@@ -22,32 +22,32 @@ const FacilityShowcase = () => {
     },
     'VLSI LAB': {
       title: 'VLSI Lab',
-      image: '/vlsi-lab.jpg',
+      image: '/infrastructure/vlsi_lab.jpg',
       alt: 'VLSI laboratory with electronic equipment and workstations'
     },
     'AUDITORIUM': {
       title: 'Auditorium',
-      image: '/auditorium.jpg',
+      image: '/infrastructure/auditorium.jpg',
       alt: 'Large auditorium with seating and presentation screen'
     },
     'ELECTRONICS LAB': {
       title: 'Electronics Lab',
-      image: '/electronics-lab.jpg',
+      image: '/infrastructure/electronics-lab.png',
       alt: 'Electronics laboratory with circuit boards and testing equipment'
     },
     'WORKSHOP': {
       title: 'Workshop',
-      image: '/workshop.jpg',
+      image: '/infrastructure/workshop.jpg',
       alt: 'Workshop area with tools and workbenches'
     },
     'AIML LAB': {
       title: 'AIML Lab',
-      image: '/aiml-lab.jpg',
+      image: '/infrastructure/aiml.png',
       alt: 'AI/ML laboratory with high-performance computing systems'
     },
     'CANTEEN': {
       title: 'Canteen',
-      image: '/canteen.jpg',
+      image: '/infrastructure/canteen.jpg',
       alt: 'Student canteen with dining tables and food service area'
     }
   };
