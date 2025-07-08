@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-
+import Link from 'next/link';
 const HostelsPage = () => {
   const hostelsData = [
     {
@@ -94,9 +94,12 @@ const HostelsPage = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-teal-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-teal-600 transition-colors duration-300">
+          <Link href="/hostel">
+          <button className="bg-light-blue text-black font-semibold py-3 px-8 rounded-lg hover:bg-dark-blue transition-colors duration-300">
             View More
           </button>
+          </Link>
+          
         </div>
       </div>
     </div>
