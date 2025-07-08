@@ -47,6 +47,9 @@ const StackCards = () => {
     }
   ];
 
+  // Calculate total cards including the base card
+  const totalCards = cards.length + 1;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100">
       <div className="container mx-auto px-4 py-8">
@@ -60,83 +63,89 @@ const StackCards = () => {
           </p>
         </div>
 
-        {/* Static Base Card - Always visible */}
-        <div className="relative w-full max-w-6xl mx-auto h-[80vh] mb-8">
-          <div className="w-full h-full bg-white rounded-3xl shadow-2xl overflow-hidden">
-            <div className="flex flex-col lg:flex-row h-full">
-              {/* Content Section */}
-              <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
-                <div className="mb-4">
-                  <span className="text-sm font-semibold text-gray-500 tracking-wider uppercase">
-                    WELCOME TO
-                  </span>
-                </div>
-                <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                  IET CLUBS
-                </h2>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-purple-800 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-purple-700 transition-colors text-lg"
-                  >
-                    Explore Clubs
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="border-2 border-purple-800 text-purple-800 px-8 py-4 rounded-full font-semibold hover:bg-purple-50 transition-colors text-lg"
-                  >
-                    Learn more
-                  </motion.button>
-                </div>
-              </div>
-
-              {/* Image Section */}
-              <div className="flex-1 relative overflow-hidden lg:rounded-r-3xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-blue-600 opacity-20 z-10" />
-                <img
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop"
-                  alt="IET Clubs"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-10 z-10" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Stack Cards Section */}
-        <div ref={containerRef} className="relative" style={{ height: `${cards.length * 100}vh` }}>
-          <div className="sticky top-12 h-screen flex items-start justify-center overflow-hidden">
+        {/* Stack Cards Section - Reduced height multiplier */}
+        <div ref={containerRef} className="relative" style={{ height: `${totalCards * 80}vh` }}>
+          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
             <div className="relative w-full max-w-6xl mx-auto h-[80vh]">
+              
+              {/* Static Base Card */}
+              <div className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+                <div className="w-full h-full bg-white rounded-3xl shadow-2xl overflow-hidden">
+                  <div className="flex flex-col lg:flex-row h-full">
+                    {/* Content Section */}
+                    <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
+                      <div className="mb-4">
+                        <span className="text-sm font-semibold text-gray-500 tracking-wider uppercase">
+                          WELCOME TO
+                        </span>
+                      </div>
+                      <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                        IET CLUBS
+                      </h2>
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-purple-800 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-purple-700 transition-colors text-lg"
+                        >
+                          Explore Clubs
+                        </motion.button>
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="border-2 border-purple-800 text-purple-800 px-8 py-4 rounded-full font-semibold hover:bg-purple-50 transition-colors text-lg"
+                        >
+                          Learn more
+                        </motion.button>
+                      </div>
+                    </div>
+
+                    {/* Image Section */}
+                    <div className="flex-1 relative overflow-hidden lg:rounded-r-3xl">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-blue-600 opacity-20 z-10" />
+                      <img
+                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop"
+                        alt="IET Clubs"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-10 z-10" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Dynamic Stack Cards */}
               {cards.map((card, index) => {
-                // Calculate scroll progress for each card
+                // Adjusted scroll progress calculation for earlier card changes
+                const cardStart = (index + 1) * 0.15; // Cards start changing earlier
+                const cardEnd = cardStart + 0.15; // Shorter transition period
+                
                 const cardProgress = useTransform(
                   scrollYProgress,
-                  [index / cards.length, (index + 1) / cards.length],
+                  [cardStart, cardEnd],
                   [0, 1]
                 );
 
-                // Y position for true stacking effect - cards slide up from bottom
+                // Reduced stack offset for tighter stacking
+                const stackOffset = Math.max(8, 20 - (index * 3));
                 const y = useTransform(
                   cardProgress,
-                  [0, 1, 1],
-                  [800, 0, 5]
+                  [0, 1],
+                  [700, stackOffset] // Reduced initial Y position
                 );
 
-                // Scale for subtle depth effect
+                // Scale for depth effect
                 const scale = useTransform(
                   cardProgress,
-                  [0, 0.3, 1],
-                  [0.95, 1, 1.02]
+                  [0, 0.5, 1],
+                  [0.9, 1, 1.01]
                 );
 
                 // Rotation for entering effect
                 const rotateX = useTransform(
                   cardProgress,
-                  [0, 0.3],
-                  [3, 0]
+                  [0, 0.5],
+                  [5, 0]
                 );
 
                 return (
@@ -147,7 +156,7 @@ const StackCards = () => {
                       y,
                       scale,
                       rotateX,
-                      zIndex: cards.length + index,
+                      zIndex: 10 + index,
                       transformStyle: "preserve-3d",
                       transformOrigin: "center bottom",
                     }}
@@ -199,30 +208,6 @@ const StackCards = () => {
               })}
             </div>
           </div>
-        </div>
-
-        {/* Progress Indicator */}
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-50">
-          {cards.map((_, index) => (
-            <motion.div
-              key={index}
-              className="w-3 h-3 rounded-full bg-white bg-opacity-50"
-              style={{
-                backgroundColor: useTransform(
-                  scrollYProgress,
-                  [index / cards.length, (index + 1) / cards.length],
-                  ["rgba(255,255,255,0.3)", "rgba(147,51,234,1)"]
-                ),
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Footer Section */}
-        <div className="text-center py-8">
-          <p className="text-gray-600 text-lg">
-            Scroll to see more destinations stack on top
-          </p>
         </div>
       </div>
     </div>
