@@ -12,7 +12,6 @@
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.31",
     "global": "^4.4.0",
     "grommet-icons": "^4.12.1",
     "lucide-react": "^0.525.0",
@@ -41,6 +40,7 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
+    "framer-motion": "^12.23.0",
     "he": "^1.2.0",
     "postcss": "^8",
     "prettier": "^3.6.2",
