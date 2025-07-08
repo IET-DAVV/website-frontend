@@ -49,13 +49,13 @@ const GalleryCarousel = () => {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="text-center py-16">
-        <h1 className="text-6xl font-light text-teal-600 tracking-wider">
+        <h1 className="text-6xl font-light text-light-blue font-newyork tracking-wider">
           Gallery
         </h1>
       </div>
 
       {/* Carousel Container */}
-      <div className="relative bg-green-200 py-16">
+      <div className="relative py-16">
         <div className="max-w-7xl mx-auto px-8">
           {/* Navigation Buttons */}
           <button

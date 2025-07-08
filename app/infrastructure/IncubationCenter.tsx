@@ -1,16 +1,13 @@
 import Image from "next/image";
-
+import Link from "next/link";
 
 export default function IncubationCentre() {
   return (
     <div className="bg-[#CCCCCC80] backdrop-blur-md py-16 px-8 ">
-
       <div className="max-w-7xl mx-auto">
         {/* Top border line */}
         <div className="border-t border-black mb-12"></div>
-        <h1
-          className="text-center text-[80px] font-newyork leading-[120px] font-manrope text-black mb-12"
-        >
+        <h1 className="text-center text-[80px] font-newyork leading-[120px] font-manrope text-black mb-12">
           Incubation Centre
         </h1>
 
@@ -48,9 +45,15 @@ export default function IncubationCentre() {
               className="rounded-lg shadow-md"
               priority
             />
-            <button className="mt-6 bg-[#008ECC] text-white text-lg font-medium px-8 py-3 rounded-md hover:bg-[#007bb3] transition">
-              Explore More
-            </button>
+            <Link
+              href="https://davvincubationcentre.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="mt-6 bg-[#008ECC] text-white text-lg font-medium px-8 py-3 rounded-md hover:bg-[#007bb3] transition">
+                Explore More
+              </button>
+            </Link>
           </div>
         </div>
 

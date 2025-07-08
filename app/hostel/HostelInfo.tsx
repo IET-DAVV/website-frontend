@@ -57,17 +57,17 @@ The fee structure also includes provisions for additional courses, certification
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Column - Navigation */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 border-r-2">
             <div className="space-y-8">
               {/* Navigation Menu */}
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {admissionData.map((section) => (
                   <button
                     key={section.id}
                     onClick={() => setSelectedSection(section.id)}
                     className={`block w-full text-left text-2xl font-light tracking-wide transition-all duration-300 ${
                       selectedSection === section.id
-                        ? "text-black font-medium"
+                        ? "text-dark-blue font-medium"
                         : "text-gray-600 hover:text-gray-800"
                     }`}
                   >

@@ -1,7 +1,18 @@
-import React from 'react';
-import Image from 'next/image';
+'use client'
+import React, { useState } from "react";
+import Image from "next/image";
+import EBooksModal from "./EbookPopup";
 
 const LibraryPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleEBooksClick = (): void => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = (): void => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}
@@ -24,10 +35,10 @@ const LibraryPage = () => {
                 className="object-cover"
                 priority
               />
-              
+
               {/* Dark overlay for better text readability */}
               <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-              
+
               {/* Content overlay */}
               <div className="absolute inset-0 flex items-end">
                 <div className="w-full p-6 sm:p-8 lg:p-12">
@@ -35,19 +46,22 @@ const LibraryPage = () => {
                     {/* Text content */}
                     <div className="lg:col-span-2">
                       <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed font-light">
-                        The IET DAVV Central Library is a newly renovated, state-of-the-art facility 
-                        designed to support students' academic and research endeavors. Relocated 
-                        from its original 1997 space in A-Block, it now features modern interiors, 
-                        comfortable reading areas, and individual study desks backed by high-speed 
-                        Wi-Fi and digital access.
+                        The IET DAVV Central Library is a newly renovated,
+                        state-of-the-art facility designed to support students'
+                        academic and research endeavors. Relocated from its
+                        original 1997 space in A-Block, it now features modern
+                        interiors, comfortable reading areas, and individual
+                        study desks backed by high-speed Wi-Fi and digital
+                        access.
                       </p>
                     </div>
-                    
+
                     {/* E Books button */}
                     <div className="lg:col-span-1 flex justify-start lg:justify-end">
-                      <button className="bg-light-blue hover:bg-dark-blue text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 text-lg shadow-lg">
+                      <button onClick={handleEBooksClick} className="bg-light-blue hover:bg-dark-blue text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 text-lg shadow-lg">
                         E Books
                       </button>
+                      <EBooksModal isOpen={isModalOpen} onClose={handleCloseModal}/>
                     </div>
                   </div>
                 </div>

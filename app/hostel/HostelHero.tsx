@@ -136,18 +136,18 @@ const HostelComponent = () => {
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h1 className="text-4xl font-light text-center mb-12 text-teal-600 tracking-widest">
+        <h1 className="text-6xl font-newyork font-light text-center mb-12 text-light-blue tracking-widest">
           HOSTEL
         </h1>
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-8">
-          <div className="flex border-b border-gray-300">
+          <div className="flex ">
             <button
               onClick={() => handleTabChange('boys')}
               className={`px-8 py-3 font-medium text-lg tracking-wide transition-colors ${
                 selectedTab === 'boys'
-                  ? 'text-teal-600 border-b-2 border-teal-600'
+                  ? 'text-dark-blue font-semibold border-b-2 border-dark-blue'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -157,7 +157,7 @@ const HostelComponent = () => {
               onClick={() => handleTabChange('girls')}
               className={`px-8 py-3 font-medium text-lg tracking-wide transition-colors ${
                 selectedTab === 'girls'
-                  ? 'text-teal-600 border-b-2 border-teal-600'
+                  ? 'text-dark-blue font-semibold border-b-2 border-dark-blue'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -174,7 +174,7 @@ const HostelComponent = () => {
               onClick={() => setSelectedHostel(hostel.id)}
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                 selectedHostel === hostel.id
-                  ? 'bg-teal-600 text-white shadow-lg'
+                  ? 'bg-teal-600 bg-dark-blue text-white shadow-lg'
                   : 'bg-white text-gray-700 border border-gray-300 hover:border-teal-300 hover:bg-teal-50'
               }`}
             >
@@ -195,7 +195,7 @@ const HostelComponent = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Manager */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-24 h-24 bg-gray-300 rounded-full mb-4 flex items-center justify-center">
+                  <div className="w-24 h-24 bg-gray-500 rounded-full mb-4 flex items-center justify-center">
                     <div className="w-16 h-16 bg-gray-500 rounded-full"></div>
                   </div>
                   <h3 className="font-semibold text-gray-800 mb-1">Manager</h3>
