@@ -14,7 +14,7 @@ const AcademicPrograms = () => {
 
   return (
     <div className="bg-white py-8 sm:py-12 px-4 sm:px-8 flex flex-col items-start justify-start space-y-6 sm:space-y-10">
-      <h1 className="text-black font-mono text-4xl sm:text-6xl px-1 sm:px-2 font-newyork">
+      <h1 className="text-black text-4xl sm:text-6xl px-1 sm:px-2 font-newyork">
         ACADEMIC PROGRAMS
       </h1>
 
@@ -23,7 +23,7 @@ const AcademicPrograms = () => {
           academicPrograms.map((value, id) => (
             <button
               key={id}
-              className={`hover:underline font-sans hover:font-semibold ${
+              className={`hover:underline font-sans hover:font-semibold transition-all duration-200 ${
                 preview === value.link
                   ? "font-semibold underline"
                   : "text-black"
@@ -40,20 +40,27 @@ const AcademicPrograms = () => {
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
+        className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200"
+        style={{
+          scrollbarWidth: 'thin',
+          scrollbarColor: '#9ca3af #e5e7eb'
+        }}
       >
-        {preview?.map((item: any, index: number) => (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Link href={item.link}>
-              <Card branch={item.branch} type={item.type} link={item.link} />
-            </Link>
-          </motion.div>
-        ))}
+        <div className="flex gap-4 pb-4 min-w-max">
+          {preview?.map((item: any, index: number) => (
+            <motion.div
+              key={item.id}
+              className="flex-shrink-0 w-80"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Link href={item.link}>
+                <Card branch={item.branch} type={item.type} link={item.link} />
+              </Link>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </div>
   );
