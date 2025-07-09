@@ -24,8 +24,7 @@ const Footer = () => {
           <div className="flex items-start space-x-3">
             <CiLocationOn className="text-white" size={30} />
             <p className="font-light text-light-gray text-xs max-w-sm">
-              Institute of Engineering and Technology, Devi Ahilya
-              Vishwavidhyalaya, Khandwa Road, Indore, Madhya Pradesh 452010
+              Institute of Engineering and Technology, Devi Ahilya Vishwavidhyalaya, Khandwa Road, Indore, Madhya Pradesh 452010
             </p>
           </div>
           <div className="flex items-center space-x-3">
@@ -110,6 +109,17 @@ const Footer = () => {
             ))}
           </div>
         </div>
+
+        {/* Miscellaneous */}
+        <div className="flex flex-col items-start justify-start space-y-5 p-5">
+          <h1 className="font-medium text-white text-lg">Miscellaneous</h1>
+          <Link
+            href="/grievance"
+            className="font-light text-light-gray text-sm hover:text-light-blue"
+          >
+            Grievance
+          </Link>
+        </div>
       </div>
 
       {/* Bottom Strip */}
@@ -126,7 +136,7 @@ const Footer = () => {
                   size={30}
                 />
               </Link>
-            ),
+            )
           )}
         </div>
       </div>
