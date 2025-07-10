@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* In globals.css or a dedicated CSS file */
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;             /* Thin scrollbar */
+  margin-top: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f0f0f0;     /* Light gray background */
+  border-radius: 100vh;
+  margin-top: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #b0b0b0; /* Gray thumb */
+  border-radius: 100vh;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #f8f8f8; /* Darker on hover */
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #02a3bb;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #02a3bb;
+}
+
+ @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} 
