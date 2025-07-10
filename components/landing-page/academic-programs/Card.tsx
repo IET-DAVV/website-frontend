@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { BsArrowUpRightCircle } from "react-icons/bs";
 
 interface CardProps {
@@ -8,7 +9,6 @@ interface CardProps {
 }
 
 const Card = ({ branch, type, link }: CardProps) => {
-  console.log("this is from card", branch);
   return (
     <div className="flex flex-col justify-between border-[1.508px] border-solid border-[#110909] rounded-lg h-48">
       <div className="flex justify-between text-black items-center px-5 py-8  ">

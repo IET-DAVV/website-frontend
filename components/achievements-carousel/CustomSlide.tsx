@@ -1,45 +1,53 @@
-import Image from "next/image";
+"use client";
 import React from "react";
-import { Manrope } from "next/font/google";
+import Image from "next/image";
+import { FaMedal, FaTrophy, FaAward } from "react-icons/fa";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500"],
-});
+const achievements = [
+  {
+    icon: <FaMedal className="text-blue-500 text-4xl mb-4" />,
+    title: "National Finalist",
+    description:
+      "Secured top 5 position at a prestigious tech event, competing with 500+ teams.",
+  },
+  {
+    icon: <FaTrophy className="text-blue-500 text-4xl mb-4" />,
+    title: "Hackathon Winner",
+    description:
+      "Won first place in a national hackathon with an AI-based smart solution.",
+  },
+  {
+    icon: <FaAward className="text-blue-500 text-4xl mb-4" />,
+    title: "Research Recognition",
+    description:
+      "Our project paper was selected in the top IEEE research publications.",
+  },
+];
 
-interface SlideProps {
-  year: string;
-  title: string;
-  description: string;
-  imgAddress: string;
-}
-const CustomSlide = ({ year, title, description, imgAddress }: SlideProps) => {
+const AchievementsSection = () => {
   return (
-    <div className="grid grid-cols-3 p-12 bg-[#3B7A9E] justify-center gap-10 items-center w-full">
-      <div className="p-4 space-y-4 flex flex-col justify-center items-start">
-        <h4 className="flex border border-white rounded-full h-fit px-5 w-fit py-0.5 items-center justify-center text-xs bg-white text-[#3B7A9E]">
-          {year}
-        </h4>
-        <h1
-          className={`text-2xl font-bold tracking-wider text-white ${manrope.className}`}
-        >
-          {title}
-        </h1>
-        <p className={`${manrope.className} font-thin text-white`}>
-          {description}
-        </p>
+    <section className="bg-white py-16 px-6">
+      <h2 className="text-3xl font-bold text-center text-black mb-4">
+        Achievements
+      </h2>
+      <div className="w-24 h-1 bg-blue-500 mx-auto mb-12 rounded-full"></div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {achievements.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white border border-gray-200 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300"
+          >
+            {item.icon}
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              {item.title}
+            </h3>
+            <p className="text-sm text-gray-600">{item.description}</p>
+          </div>
+        ))}
       </div>
-      <div className="flex justify-center items-center col-span-2 ">
-        <Image
-          src={imgAddress}
-          alt="carousal-slide-img"
-          width={1000}
-          height={1000}
-          className="rounded-lg w-fit h-[500px]"
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 
-export default CustomSlide;
+export default AchievementsSection;

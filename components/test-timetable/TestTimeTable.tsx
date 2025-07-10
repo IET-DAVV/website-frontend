@@ -1,17 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Playfair } from "next/font/google";
 import { testtimetableData } from "@/constants/test-timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
 import BranchSelector from "../common/academics/BranchSelector";
 import YearSelector from "../common/academics/YearSelector";
 import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
-
-const playfair = Playfair({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 
 const Timetable = () => {
   const courses = Object.keys(testtimetableData.courses);
@@ -57,7 +51,7 @@ const Timetable = () => {
 
   return (
     <div className="text-black">
-      <Title title="Test Time Table" />
+      <Title title="TEST TIMETABLE" />
       <div className="p-4">
         <CourseSelector
           courses={courseList}

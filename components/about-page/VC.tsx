@@ -1,34 +1,47 @@
-import { aboutVC, aboutVCText } from "@/constants/about-page/about";
-import { Playfair_Display } from "next/font/google";
-import Image from "next/image";
+"use client";
 import React from "react";
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
+import { aboutVC, aboutVCText } from "@/constants/about-page/about";
+import "@/styles/fonts.css";
+import Image from "next/image";
+
 const VC = () => {
   return (
-    <>
-      <div className="relative rounded-lg">
+    <div className="px-4 md:px-20 py-8 md:py-0 flex flex-col md:flex-row-reverse bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden md:h-[450px]">
+      {/* Image Section - right on desktop, centered on mobile */}
+      <div className="w-full md:w-1/3 h-64 md:h-full border-b md:border-b-0  flex justify-center items-center ">
+
         <Image
           src={aboutVC}
-          width={400}
-          height={875}
-          alt=""
-          className="h-full w-full object-cover overflow-hidden "
+          alt="Dr. Rakesh Singhai"
+          width={1200}
+          height={500}
+          className="h-full object-cover w-auto"
         />
-        <div className="flex flex-col h-full w-1/4 bg-black bg-opacity-50 right-24 space-y-10 px-8 py-12 absolute top-0">
-          <h1
-            className={`${playfair.className} text-3xl font-light uppercase text-white`}
-          >
-            Dr. Renu Jain
-          </h1>
-          <p className="break-words text-sm leading-relaxed font-light text-white">
-            {aboutVCText}
-          </p>
-        </div>
       </div>
-    </>
+
+      {/* Text Section */}
+      <div className="w-full md:w-2/3 px-6 py-6 md:p-8 flex flex-col justify-center">
+        {/* Top Line */}
+        <hr className="border-t border-gray-400 mb-6 md:mb-11 mt-2" />
+
+        {/* Heading */}
+        <h2 className="font-newyork text-xl md:text-5xl font-light mb-1">
+
+          Dr. Rakesh Singhai
+        </h2>
+
+        {/* Designation */}
+        <p className="text-gray-500 text-sm md:text-base mb-3">Vice Chancellor</p>
+
+        {/* Paragraph */}
+        <p className="text-sm md:text-base text-gray-800 leading-relaxed">
+          {aboutVCText}
+        </p>
+
+        {/* Bottom Line */}
+        <hr className="border-t border-gray-400 mt-6 md:mt-11 mb-2" />
+      </div>
+    </div>
   );
 };
 

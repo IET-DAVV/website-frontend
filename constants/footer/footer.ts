@@ -42,6 +42,14 @@ export const information = [
     name: "Mandatory Disclosure",
     value: "https://dauniv.ac.in/",
   },
+  {
+    name: "Administration",
+    value: "/footer/administration",
+  },
+  {
+    name: "Anti Ragging",
+    value: "/footer/antiRagging",
+  },
 ];
 
 export const sitemap = [

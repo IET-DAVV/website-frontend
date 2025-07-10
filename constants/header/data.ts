@@ -9,16 +9,45 @@ export const headerLinks: HeaderLinksType = [
     href: "/about",
   },
   {
-    name: "Academics",
+    name: "Academics ▾",
     href: "/academics",
+    dropdown: [
+      { name: "Class Timetable", href: "/academics/class" },
+      { name: "Test Timetable", href: "/academics/test" },
+      { name: "Syllabus", href: "/academics/syllabus" },
+      { name: "Calendar", href: "/academics/calendar" },
+
+    ],
   },
   {
-    name: "Admissions",
+    name: "Admissions ▾",
     href: "/admissions",
+    dropdown: [
+      { name: "Process", href: "/admission/process" },
+      { name: "Intake Capacity", href: "/admission/intake-capacity" },
+      { name: "Roll List", href: "/admission/roll-list" },
+      { name: "Enrollment List", href: "/admission/enrollment-list" },
+    ],
   },
   {
-    name: "Hostel",
-    href: "/hostel",
+    name: "Infrastructure ",
+    href: "/infrastructure",
+  },
+  {
+    name: "Examination ▾",
+    href: "/examination",
+    dropdown: [
+      { name: "Exam Time Table", href: "/examination/exam-timetable" },
+      {
+        name: "Examination Form",
+        href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
+      },
+      { name: "Results", href: "https://results.ietdavv.edu.in/" },
+      {
+        name: "Admit Card",
+        href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
+      },
+    ],
   },
   {
     name: "Contact Us",
@@ -38,11 +67,11 @@ export const UPPER_HEADER_LINKS = [
   },
   {
     name: "Courses",
-    href: "/courses",
+    href: "/academics/programsoffered",
   },
   {
     name: "Notices",
-    href: "/notices",
+    href: "/academics/notice",
   },
   {
     name: "Alumni",

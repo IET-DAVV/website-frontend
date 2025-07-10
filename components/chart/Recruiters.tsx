@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
@@ -11,14 +12,14 @@ const playfairDisplay = Playfair_Display({
 
 const Recruiters = () => {
   return (
-    <div className="bg-white flex flex-col items-center justify-center space-y-10 text-center py-20">
-      <div className="flex flex-col items-center justify-center space-y-2">
+    <div className="bg-white flex flex-col items-center justify-center space-y-6 sm:space-y-10 text-center py-12 sm:py-20 px-4">
+      <div className="flex flex-col items-center justify-center space-y-1 sm:space-y-2">
         <h2
-          className={`text-5xl font-serif text-black ${playfairDisplay.className}`}
+          className={`text-3xl sm:text-5xl font-serif text-black ${playfairDisplay.className}`}
         >
           RECRUITERS
         </h2>
-        <p className={`text-sm text-black`}>
+        <p className="text-xs sm:text-sm text-black">
           MORE THAN 30 COMPANIES VISIT IET-DAVV EVERY YEAR
         </p>
       </div>
@@ -28,7 +29,7 @@ const Recruiters = () => {
             key={index}
             src={company}
             alt={`company number ${index}`}
-            className="mx-10 w-20 h-auto"
+            className="mx-6 sm:mx-10 w-16 sm:w-20 h-auto"
           />
         ))}
       </Marquee>
