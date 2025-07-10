@@ -54,6 +54,10 @@ export const quickFindings = [
     name: "IPR Cell",
     value: "/footer/administration",
   },
+  {
+    name: "Anti Ragging",
+    value: "/footer/antiRagging",
+  },
 ];
 
 export const moreInformation = [

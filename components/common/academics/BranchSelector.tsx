@@ -25,8 +25,8 @@ const BranchSelector: React.FC<BranchSelectorProps> = ({
             text-sm sm:text-base md:text-md
             ${
               selectedBranch === branch
-                ? "bg-[#06779B] text-white border-[#06779B]"
-                : "text-black border-black hover:bg-[#06779B] hover:text-white hover:border-[#06779B]"
+                ? "bg-[#06779B] rounded-[10px] text-white border-[#06779B]"
+                : "text-[#686868] rounded-[10px] border-black hover:bg-[#06779B] hover:text-white hover:border-[#06779B]"
             }`}
         >
           {branch}

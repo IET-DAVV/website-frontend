@@ -25,10 +25,15 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isInfra = pathname === "/infrastructure"
+  const hostel = pathname === '/hostel'
 
   return (
     <header
-      className={`w-full px-6 py-2 bg-[#3B7A9E] text-white`}
+      className={`w-full px-6 py-2 ${
+        isHome || isInfra || hostel ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
+      }`}
+
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
@@ -53,8 +58,9 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
           {menuOpen ? <IoClose /> : <IoMenu />}
         </div>
 
-        {/* Links */}
-        <ul className="flex flex-row justify-center items-center space-x-10 relative">
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex flex-row justify-center items-center space-x-10 relative">
+
           {links.map((link, idx) => (
             <li key={link.name} className="relative">
               <Link

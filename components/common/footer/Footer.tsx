@@ -124,6 +124,17 @@ const Footer = () => {
             ))}
           </div>
         </div>
+
+        {/* Miscellaneous */}
+        <div className="flex flex-col items-start justify-start space-y-5 p-5">
+          <h1 className="font-medium text-white text-lg">Miscellaneous</h1>
+          <Link
+            href="/grievance"
+            className="font-light text-light-gray text-sm hover:text-light-blue"
+          >
+            Grievance
+          </Link>
+        </div>
       </div>
 
       {/* Bottom Strip */}
@@ -140,7 +151,7 @@ const Footer = () => {
                   size={30}
                 />
               </Link>
-            ),
+            )
           )}
         </div>
       </div>

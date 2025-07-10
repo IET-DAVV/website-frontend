@@ -37,7 +37,7 @@ const CourseSelector: React.FC<CourseSelectorProps> = ({
     <div
       className={`flex justify-center w-full px-4 sm:px-8 ${manrope.className}`}
     >
-      <div className="w-full max-w-5xl overflow-x-auto custom-scrollbar">
+      <div className="w-full  overflow-x-auto custom-scrollbar">
         <ul className="flex justify-start sm:justify-center whitespace-nowrap gap-4 sm:gap-8 md:gap-10 pb-2">
           {courses.map(({ courseKey, courseName }) => (
             <li key={courseKey} className="relative inline-block">
@@ -47,8 +47,8 @@ const CourseSelector: React.FC<CourseSelectorProps> = ({
               text-sm sm:text-base md:text-lg
               ${
                 selectedCourse === courseKey
-                  ? "font-semibold text-[#06779B]"
-                  : "text-black hover:text-[#06779B]"
+                  ? "font-extrabold text-[#06779B]"
+                  : "text-[#686868] font-medium hover:text-[#06779B]"
               }`}
               >
                 {courseName}

@@ -16,9 +16,7 @@ export const headerLinks: HeaderLinksType = [
       { name: "Test Timetable", href: "/academics/test" },
       { name: "Syllabus", href: "/academics/syllabus" },
       { name: "Calendar", href: "/academics/calendar" },
-      { name: "Programs Offered", href: "/academics/programsoffered" },
-      { name: "Notice", href: "/academics/notice" },
-      { name: "Projects", href: "/academics/projects" },
+
     ],
   },
   {
@@ -32,19 +30,14 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Infrastructure ▾",
+    name: "Infrastructure ",
     href: "/infrastructure",
-    dropdown: [
-      { name: "Library", href: "/infrastructure/library" },
-      { name: "Labs", href: "/infrastructure/labs" },
-      { name: "Hostel", href: "/infrastructure/hostel" },
-      { name: "Canteen", href: "/infrastructure/canteen" },
-    ],
   },
   {
     name: "Examination ▾",
     href: "/examination",
     dropdown: [
+      { name: "Exam Time Table", href: "/examination/exam-timetable" },
       {
         name: "Examination Form",
         href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
@@ -74,11 +67,11 @@ export const UPPER_HEADER_LINKS = [
   },
   {
     name: "Courses",
-    href: "/courses",
+    href: "/academics/programsoffered",
   },
   {
     name: "Notices",
-    href: "/notices",
+    href: "/academics/notice",
   },
   {
     name: "Alumni",
