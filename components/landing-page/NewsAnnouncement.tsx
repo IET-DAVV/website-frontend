@@ -6,77 +6,98 @@ interface NewsAnnouncementProps {
 }
 
 const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLUListElement>(null);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [scrollAmount, setScrollAmount] = useState(0);
+  const scrollStep = 1; // pixels per interval
+  const scrollInterval = 50; // ms
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    const scroll = scrollRef.current;
-    if (!container || !scroll) return;
+  const clearExistingTimeout = () => {
+    if (scrollTimeout.current) {
+      clearTimeout(scrollTimeout.current);
+      scrollTimeout.current = null;
+    }
+  };
 
-    let scrollAmount = 0;
-    const scrollStep = 1; // pixels per interval
-    const scrollInterval = 50; // ms
-
-    const maxScroll = scroll.scrollHeight - container.clientHeight;
-
-    const handleUserScroll = () => {
-      setIsUserScrolling(true);
-      if (scrollTimeout.current) {
-        clearTimeout(scrollTimeout.current);
-      }
-      scrollTimeout.current = setTimeout(() => {
+  const startResumeTimeout = () => {
+    clearExistingTimeout();
+    scrollTimeout.current = setTimeout(() => {
+      if (!isHovering) {
         setIsUserScrolling(false);
-      }, 2000);
-    };
+      }
+    }, 2000);
+  };
 
-    const handleMouseEnter = () => {
-      setIsUserScrolling(true);
-    };
+  const handleUserInteraction = () => {
+    setIsUserScrolling(true);
+    clearExistingTimeout();
+    startResumeTimeout();
+  };
 
-    const handleMouseLeave = () => {
-      setIsUserScrolling(false);
-    };
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+    setIsUserScrolling(true);
+    clearExistingTimeout();
+  };
 
-    container.addEventListener('scroll', handleUserScroll);
-    container.addEventListener('mouseenter', handleMouseEnter);
-    container.addEventListener('mouseleave', handleMouseLeave);
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    startResumeTimeout();
+  };
+
+  const handleClick = () => {
+    setIsUserScrolling(true);
+    clearExistingTimeout();
+    startResumeTimeout();
+  };
+
+  useEffect(() => {
+    const maxScroll = scrollRef.current
+      ? scrollRef.current.scrollHeight - scrollRef.current.parentElement!.clientHeight
+      : 0;
 
     const intervalId = setInterval(() => {
       if (!isUserScrolling) {
-        scrollAmount += scrollStep;
-        if (scrollAmount >= maxScroll) {
-          scrollAmount = 0;
-        }
-        scroll.style.transform = `translateY(-${scrollAmount}px)`;
+        setScrollAmount((prev) => {
+          const newScrollAmount = prev + scrollStep;
+          if (newScrollAmount >= maxScroll) {
+            return 0; // Reset to the top
+          }
+          return newScrollAmount;
+        });
       }
     }, scrollInterval);
 
     return () => {
       clearInterval(intervalId);
-      container.removeEventListener('scroll', handleUserScroll);
-      container.removeEventListener('mouseenter', handleMouseEnter);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-      if (scrollTimeout.current) {
-        clearTimeout(scrollTimeout.current);
-      }
+      clearExistingTimeout();
     };
-  }, [items, isUserScrolling]);
+  }, [isUserScrolling, scrollStep, scrollInterval]);
+
+  useEffect(() => {
+    const scroll = scrollRef.current;
+    if (scroll) {
+      scroll.style.transform = `translateY(-${scrollAmount}px)`;
+    }
+  }, [scrollAmount]);
 
   return (
     <div
-      className="bg-white text-black rounded-lg shadow-lg overflow-hidden"
-      style={{ height: 'auto', maxHeight: '200px' }}
-      ref={containerRef}
-      onMouseEnter={() => setIsUserScrolling(true)}
-      onMouseLeave={() => setIsUserScrolling(false)}
+      className="bg-white text-black rounded-lg shadow-lg overflow-hidden max-h-[350px] sm:max-h-[500px] mb-8 sm:mb-12"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <h2 className="text-2xl text-white flex justify-center bg-black font-bold rounded-md mb-4">
         {title}
       </h2>
-      <div className="p-6 relative" style={{ maxHeight: '160px', overflowY: 'auto' }}>
+      <div
+        className="p-6 relative max-h-[280px] sm:max-h-[400px] overflow-y-auto"
+        onWheel={handleUserInteraction}
+        onTouchStart={handleUserInteraction}
+        onClick={handleClick}
+      >
         <ul ref={scrollRef} className="space-y-4 will-change-transform">
           {items.map((item, index) => (
             <li key={index}>&rsaquo; {item}</li>
