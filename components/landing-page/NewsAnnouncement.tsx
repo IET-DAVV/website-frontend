@@ -6,24 +6,55 @@ interface NewsAnnouncementProps {
 }
 
 const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
-  const scrollRef = useRef<HTMLUListElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const animationFrameId = useRef<number | null>(null);
+  const scrollPosition = useRef(0);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const [scrollAmount, setScrollAmount] = useState(0);
-  const scrollStep = 1; // pixels per interval
-  const scrollInterval = 50; // ms
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+  const scrollStep = 0.5; // pixels per frame for smoother scrolling
+  const [isPaused, setIsPaused] = useState(false);
 
-  const clearExistingTimeout = () => {
-    if (scrollTimeout.current) {
-      clearTimeout(scrollTimeout.current);
-      scrollTimeout.current = null;
+  const clearAnimationFrame = () => {
+    if (animationFrameId.current !== null) {
+      cancelAnimationFrame(animationFrameId.current);
+      animationFrameId.current = null;
     }
   };
 
+  const scrollStepFunction = () => {
+    if (isUserScrolling || isPaused) {
+      animationFrameId.current = requestAnimationFrame(scrollStepFunction);
+      return;
+    }
+    const scrollContainer = scrollRef.current;
+    const list = listRef.current;
+    if (!scrollContainer || !list) {
+      animationFrameId.current = requestAnimationFrame(scrollStepFunction);
+      return;
+    }
+
+    const listHeight = list.offsetHeight;
+    scrollPosition.current += scrollStep;
+
+    if (scrollPosition.current >= listHeight) {
+      scrollPosition.current = 0;
+    }
+
+    scrollContainer.scrollTop = scrollPosition.current;
+
+    animationFrameId.current = requestAnimationFrame(scrollStepFunction);
+  };
+
+  useEffect(() => {
+    animationFrameId.current = requestAnimationFrame(scrollStepFunction);
+    return () => {
+      clearAnimationFrame();
+    };
+  }, [isUserScrolling, isPaused]);
+
   const startResumeTimeout = () => {
-    clearExistingTimeout();
-    scrollTimeout.current = setTimeout(() => {
+    setTimeout(() => {
       if (!isHovering) {
         setIsUserScrolling(false);
       }
@@ -32,14 +63,12 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
 
   const handleUserInteraction = () => {
     setIsUserScrolling(true);
-    clearExistingTimeout();
     startResumeTimeout();
   };
 
   const handleMouseEnter = () => {
     setIsHovering(true);
     setIsUserScrolling(true);
-    clearExistingTimeout();
   };
 
   const handleMouseLeave = () => {
@@ -49,43 +78,16 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
 
   const handleClick = () => {
     setIsUserScrolling(true);
-    clearExistingTimeout();
     startResumeTimeout();
   };
 
-  useEffect(() => {
-    const maxScroll = scrollRef.current
-      ? scrollRef.current.scrollHeight - scrollRef.current.parentElement!.clientHeight
-      : 0;
-
-    const intervalId = setInterval(() => {
-      if (!isUserScrolling) {
-        setScrollAmount((prev) => {
-          const newScrollAmount = prev + scrollStep;
-          if (newScrollAmount >= maxScroll) {
-            return 0; // Reset to the top
-          }
-          return newScrollAmount;
-        });
-      }
-    }, scrollInterval);
-
-    return () => {
-      clearInterval(intervalId);
-      clearExistingTimeout();
-    };
-  }, [isUserScrolling, scrollStep, scrollInterval]);
-
-  useEffect(() => {
-    const scroll = scrollRef.current;
-    if (scroll) {
-      scroll.style.transform = `translateY(-${scrollAmount}px)`;
-    }
-  }, [scrollAmount]);
+  const togglePause = () => {
+    setIsPaused(!isPaused);
+  };
 
   return (
     <div
-      className="bg-white text-black rounded-lg shadow-lg overflow-hidden max-h-[350px] sm:max-h-[500px] mb-8 sm:mb-12"
+      className="bg-white text-black rounded-lg shadow-lg overflow-hidden max-h-[280px] sm:max-h-[400px] mb-8 sm:mb-12 relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -93,17 +95,26 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
         {title}
       </h2>
       <div
-        className="p-6 relative max-h-[280px] sm:max-h-[400px] overflow-y-auto"
+        ref={scrollRef}
+        className={`p-6 relative max-h-[224px] sm:max-h-[320px] overflow-y-auto ${isPaused ? 'overflow-y-scroll' : 'overflow-hidden'}`}
         onWheel={handleUserInteraction}
         onTouchStart={handleUserInteraction}
         onClick={handleClick}
       >
-        <ul ref={scrollRef} className="space-y-4 will-change-transform">
-          {items.map((item, index) => (
-            <li key={index}>&rsaquo; {item}</li>
-          ))}
-        </ul>
+        <div>
+          <ul ref={listRef} className="space-y-4">
+            {items.map((item, index) => (
+              <li key={`original-${index}`}>&rsaquo; {item}</li>
+            ))}
+          </ul>
+          <ul className="space-y-4">
+            {items.map((item, index) => (
+              <li key={`duplicate-${index}`}>&rsaquo; {item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
+      
     </div>
   );
 };
