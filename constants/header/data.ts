@@ -63,7 +63,7 @@ export const LOGO = "Institute of Engineering and Technology";
 export const UPPER_HEADER_LINKS = [
   {
     name: "Placement",
-    href: "/placement",
+    href: "https://www.dauniv.ac.in/placement",
   },
   {
     name: "Courses",
@@ -75,6 +75,6 @@ export const UPPER_HEADER_LINKS = [
   },
   {
     name: "Alumni",
-    href: "/alumni",
+    href: "https://ietdavvalumni.almaconnect.com/",
   },
 ];
