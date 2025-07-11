@@ -10,9 +10,12 @@
     "prepare": "if [ \"$CI\" != \"true\" ]; then husky install; fi"
   },
   "dependencies": {
+    "algoliasearch": "^5.32.0",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
+    "fuse.js": "^7.1.0",
     "global": "^4.4.0",
+    "gray-matter": "^4.0.3",
     "grommet-icons": "^4.12.1",
     "lucide-react": "^0.525.0",
     "next": "14.2.6",

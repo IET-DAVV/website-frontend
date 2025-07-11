@@ -1,0 +1,207 @@
+[
+  {
+    "title": "page",
+    "content": "import LandingContainer from \"@/containers/landing/Landing\";",
+    "href": "/"
+  },
+  {
+    "title": "layout",
+    "content": "import type { Metadata } from \"next\"; import { Manrope } from \"next/font/google\"; import \"./globals.css\"; import Footer from \"@/components/common/footer/Footer\"; import HeaderContainer from \"@/contain...",
+    "href": "/layout"
+  },
+  {
+    "title": "error",
+    "content": "\"use client\"; import { useEffect } from \"react\";",
+    "href": "/error"
+  },
+  {
+    "title": "page",
+    "content": "import { aboutVC, aboutVCText } from \"@/constants/about-page/about\"; import About from \"@/components/about-page/About\"; import History from \"@/components/about-page/History\"; import Navbar from \"@/con...",
+    "href": "/temp/"
+  },
+  {
+    "title": "page",
+    "content": "\"use client\";",
+    "href": "/search/"
+  },
+  {
+    "title": "page",
+    "content": "import FacilityShowcase from \"./FacilityShowcase\"; import HeroInfra from \"./HeroForInfra\"; import HostelsPage from \"./HostelInfra\"; import IncubationCentre from \"./IncubationCenter\"; import LibraryPag...",
+    "href": "/infrastructure/"
+  },
+  {
+    "title": "Library",
+    "content": "'use client' import React, { useState } from \"react\"; import Image from \"next/image\"; import EBooksModal from \"./EbookPopup\";",
+    "href": "/infrastructure/Library"
+  },
+  {
+    "title": "IncubationCenter",
+    "content": "import Image from \"next/image\"; import Link from \"next/link\";",
+    "href": "/infrastructure/IncubationCenter"
+  },
+  {
+    "title": "HostelInfra",
+    "content": "import React from 'react'; import Image from 'next/image'; import Link from 'next/link'; const HostelsPage = () => {   const hostelsData = [     {       id: 1,       name: 'Visvesvaraya (Boys)',      ...",
+    "href": "/infrastructure/HostelInfra"
+  },
+  {
+    "title": "HeroForInfra",
+    "content": "\"use client\"; import Image from \"next/image\"; import he from 'he'; import React, { useState } from \"react\";",
+    "href": "/infrastructure/HeroForInfra"
+  },
+  {
+    "title": "FacilityShowcase",
+    "content": "'use client' import React, { useState } from 'react'; import Image from 'next/image'; interface Facility {   title: string;   image: string;   alt: string; }",
+    "href": "/infrastructure/FacilityShowcase"
+  },
+  {
+    "title": "EbookPopup",
+    "content": "interface EBooksModalProps {   isOpen: boolean;   onClose: () => void; }",
+    "href": "/infrastructure/EbookPopup"
+  },
+  {
+    "title": "page",
+    "content": "import Library from \"@/components/infrastructure/library\";",
+    "href": "/infrastructure/library/"
+  },
+  {
+    "title": "page",
+    "content": "import Lab from \"@/components/infrastructure/lab\";",
+    "href": "/infrastructure/labs/"
+  },
+  {
+    "title": "page",
+    "content": "import Hostel from \"@/components/infrastructure/hostel\";",
+    "href": "/infrastructure/hostel/"
+  },
+  {
+    "title": "page",
+    "content": "import Canteen from \"@/components/infrastructure/canteen\";",
+    "href": "/infrastructure/canteen/"
+  },
+  {
+    "title": "page",
+    "content": "import GalleryCarousel from \"./HostelGallery\"; import HostelComponent from \"./HostelHero\"; import AdmissionComponent from \"./HostelInfo\";",
+    "href": "/hostel/"
+  },
+  {
+    "title": "HostelInfo",
+    "content": "\"use client\"; import React, { useState } from \"react\";",
+    "href": "/hostel/HostelInfo"
+  },
+  {
+    "title": "HostelHero",
+    "content": "'use client' import Image from 'next/image'; import React, { useState } from 'react';",
+    "href": "/hostel/HostelHero"
+  },
+  {
+    "title": "HostelGallery",
+    "content": "'use client' import Image from 'next/image'; import React, { useState } from 'react';",
+    "href": "/hostel/HostelGallery"
+  },
+  {
+    "title": "page",
+    "content": "\"use client\"; import React, { useState } from \"react\";",
+    "href": "/grievance/"
+  },
+  {
+    "title": "page",
+    "content": "import FreshersCorner from \"@/components/freshers/fresherscorner\";",
+    "href": "/freshers/"
+  },
+  {
+    "title": "page",
+    "content": "import React from 'react' import ScholarshipPage from \"@/components/ScholarshipsPage/scholarshipPage\"; const antiRagging = () => {   return (     <div>       <ScholarshipPage/>     </div>   ) }",
+    "href": "/footer/scholarPage/"
+  },
+  {
+    "title": "page",
+    "content": "import React from 'react' import AntiRagging from \"@/components/antiragging/antiragging\"; const antiRagging = () => {   return (     <div>       <AntiRagging/>     </div>   ) }",
+    "href": "/footer/antiRagging/"
+  },
+  {
+    "title": "page",
+    "content": "import React from \"react\";",
+    "href": "/examination/"
+  },
+  {
+    "title": "page",
+    "content": "import ExamTimetable from '@/components/exam-timetable/examTimetable' import React from 'react'",
+    "href": "/examination/exam-timetable/"
+  },
+  {
+    "title": "page",
+    "content": "import Courses from \"@/components/courses/Courses\"; import React from \"react\";",
+    "href": "/courses/[course]/"
+  },
+  {
+    "title": "page",
+    "content": "import Contact from \"@/components/contact-us/Contact\";",
+    "href": "/contact/"
+  },
+  {
+    "title": "page",
+    "content": "import React from \"react\"; import RollList from \"@/components/roll-list/RollList\";",
+    "href": "/admission/roll-list/"
+  },
+  {
+    "title": "page",
+    "content": "import AdmissionBox from \"@/components/process/process\"; import ProcessContent from \"@/components/process/processcontent\";",
+    "href": "/admission/process/"
+  },
+  {
+    "title": "page",
+    "content": "import IntakeCapacity from \"@/components/intake-capacity/IntakeCapacity\";",
+    "href": "/admission/intake-capacity/"
+  },
+  {
+    "title": "page",
+    "content": "import EnrollmentList from \"@/components/enrollment/EnrollmentList\";",
+    "href": "/admission/enrollment-list/"
+  },
+  {
+    "title": "page",
+    "content": "import Timetable from \"@/components/test-timetable/TestTimeTable\";",
+    "href": "/academics/test/"
+  },
+  {
+    "title": "page",
+    "content": "import Syllabus from \"@/components/syllabus/Syllabus\";",
+    "href": "/academics/syllabus/"
+  },
+  {
+    "title": "page",
+    "content": "import React from \"react\"; import RollList from \"@/components/roll-list/RollList\";",
+    "href": "/academics/roll-list/"
+  },
+  {
+    "title": "page",
+    "content": "import Project from \"@/components/projects/projects\";",
+    "href": "/academics/projects/"
+  },
+  {
+    "title": "page",
+    "content": "import ProgramsOffered from \"@/components/programs/programsoffered\";",
+    "href": "/academics/programsoffered/"
+  },
+  {
+    "title": "page",
+    "content": "import Notice from \"@/components/notice/notice\";",
+    "href": "/academics/notice/"
+  },
+  {
+    "title": "page",
+    "content": "import Timetable from \"@/components/timetable/Timetable\";",
+    "href": "/academics/class/"
+  },
+  {
+    "title": "page",
+    "content": "import Calendar from \"@/components/calendar/Calendar\";",
+    "href": "/academics/calendar/"
+  },
+  {
+    "title": "page",
+    "content": "import About from \"@/components/about-page/About\"; import History from \"@/components/about-page/History\"; import Director from \"@/components/about-page/Director\"; import VC from \"@/components/about-pa...",
+    "href": "/about/"
+  }
+]
