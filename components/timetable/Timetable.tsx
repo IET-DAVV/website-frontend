@@ -4,7 +4,7 @@ import { timetableData } from "../../constants/timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
 import BranchSelector from "../common/academics/BranchSelector";
 import YearSelector from "../common/academics/YearSelector";
-import { SectionSelector } from "../common/academics/SectionSelector";
+import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
 
 const Timetable = () => {
