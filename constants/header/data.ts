@@ -10,7 +10,7 @@ export const headerLinks: HeaderLinksType = [
   },
   {
     name: "Academics ▾",
-    href: "/academics",
+    href: "",
     dropdown: [
       { name: "Class Timetable", href: "/academics/class" },
       { name: "Test Timetable", href: "/academics/test" },
@@ -21,7 +21,7 @@ export const headerLinks: HeaderLinksType = [
   },
   {
     name: "Admissions ▾",
-    href: "/admissions",
+    href: "",
     dropdown: [
       { name: "Process", href: "/admission/process" },
       { name: "Intake Capacity", href: "/admission/intake-capacity" },
@@ -35,9 +35,9 @@ export const headerLinks: HeaderLinksType = [
   },
   {
     name: "Examination ▾",
-    href: "/examination",
+    href: "",
     dropdown: [
-      { name: "Exam Time Table", href: "/examination/exam-timetable" },
+      { name: "Exam Time Table", href: "/examination" },
       {
         name: "Examination Form",
         href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
