@@ -25,13 +25,11 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isInfra = pathname === "/infrastructure"
-  const hostel = pathname === '/hostel'
-
+  
   return (
     <header
       className={`w-full px-6 py-2 ${
-        isHome || isInfra || hostel ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
+        isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
       }`}
 
     >
