@@ -1,4 +1,3 @@
-// components/HeroSection.tsx
 'use client'; // This directive is necessary for client-side interactivity in Next.js 13+
 
 import React, { useState, useEffect } from 'react';
@@ -29,9 +28,11 @@ const HeroSection: React.FC = () => {
   ];
 
   const slides = [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDA9Ru6GvCvc4r2A6ijbZtUjmUmdwiVy3040bgKWKf4W0EIKrEBKA2zWVUN1gGlQRSROzFDUXVhlKKrezB9TzhCyHeuvVkCWQ0UszpHYBaxCtWHojrJ63T1emx2dM1_TNs8iu_PAWzcI576wPfySJdHa8xgBmpf4A7NrUEHM0WEuXaRCiJ8SwrFovHkrdSU0nOse5ERK1XScTUTXa2MAeqlKS4aFL54Q3sK54A7xbns-VCJ00AzMx9wAZ6SULlwXoHy7oXf5-YfV5Ft",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAiZaq0vXQ8-eg7kOPMjhcJ4QpSwImeBrMGpdWAatqoyklbTIwiXh1n7ez8JwxsSkwEV9XQ6DUFCKATXLjn1iPb40VquZbnHb2bsmzNT8oYFuY7bMlGM0dAQTwWVEGCYHwWPzTz0_fNrIWru-vAqtQMI8p9xOLv177f_ot4L-x2Bgm4hv-0GjFfySitTUygnFt7kGDN0ZxP8QTKh5LZz7ekl1jvVAuukZvW5korEjI6gdvF3f48Hp-lJur4xAwebl_RKUtJz0RI7mON",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDo8Th9n46sWQTc3QJEzC9my0tA673pOvn9CSTiZFcJ34DxuY8LGalSSKhlooDU_A6c0o8GiYyXdrM3rEBva3_LvQGkCWhvdOODp5HNoiQXXA5lSuJtB3DpknWMe_MESwzn5WkGcQIau7V0D_tkhG0Vy3cWgVzntpM7nhvjxAWD-kTR2gt5-Kx0VNtWzoQn_R9FYr7bOWpd4Fu9uUkRrGgDFcelqCZ-A-Ox8QJFQwFMRSbYbplegkWgELMS-3u7WQa5a5PNTRtCip5E",
+    "landing/mblock.png",
+    "HeroSection/IMG-20250312-WA0003.jpg",
+    "HeroSection/IMG-20250112-WA0334 (1).jpg",
+    "HeroSection/Screenshot_2025-06-29-14-52-08-27_1c337646f29875672b5a61192b9010f9.jpg",
+    "HeroSection/IMG-20250705-WA0009.jpg",
   ];
 
   useEffect(() => {
@@ -46,14 +47,14 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className="container top-32 mx-auto px-12 h-full relative -z-10">
-      <div className="grid h-screen grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+    <div className="w-full top-32 px-4 sm:px-6 lg:px-8 h-full relative -z-10">
+      <div className="grid h-screen grid-cols-1 lg:grid-cols-5 gap-8 items-start">
         {/* News Section */}
         <NewsAnnouncement title="News" items={newsItems} />
 
         {/* Carousel Section */}
-        <div className="lg:col-span-2">
-          <div className="carousel-container relative overflow-hidden rounded-lg">
+        <div className="lg:col-span-3">
+          <div className="carousel-container relative overflow-hidden rounded-lg w-full h-[455px] sm:h-[555px] mx-auto">
             {slides.map((src, index) => (
               <div
                 key={index}
@@ -62,7 +63,7 @@ const HeroSection: React.FC = () => {
               >
                 <img
                   alt={`Slide ${index + 1}`}
-                  className="w-full h-auto object-cover rounded-lg"
+                  className="w-full h-full object-cover rounded-lg"
                   src={src}
                 />
               </div>

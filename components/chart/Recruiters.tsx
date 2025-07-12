@@ -3,19 +3,15 @@ import React from "react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { companies } from "@/public/landing/companies";
-import { Playfair_Display } from "next/font/google";
+import "@/app/globals.css";
 
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 
 const Recruiters = () => {
   return (
     <div className="bg-white flex flex-col items-center justify-center space-y-6 sm:space-y-10 text-center py-12 sm:py-20 px-4">
       <div className="flex flex-col items-center justify-center space-y-1 sm:space-y-2">
         <h2
-          className={`text-3xl sm:text-5xl font-serif text-black ${playfairDisplay.className}`}
+          className={`text-3xl sm:text-5xl font-serif text-black font-newyork`}
         >
           RECRUITERS
         </h2>

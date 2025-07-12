@@ -87,7 +87,7 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
 
   return (
     <div
-      className="bg-white text-black rounded-lg shadow-lg overflow-hidden max-h-[280px] sm:max-h-[400px] mb-8 sm:mb-12 relative"
+      className="bg-white text-black rounded-lg shadow-lg overflow-hidden h-[455px] sm:h-[555px] mb-8 sm:mb-12 relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -96,7 +96,7 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
       </h2>
       <div
         ref={scrollRef}
-        className={`p-6 relative max-h-[224px] sm:max-h-[320px] overflow-y-auto ${isPaused ? 'overflow-y-scroll' : 'overflow-hidden'}`}
+        className={`p-6 relative h-[calc(100%-3rem)] overflow-y-auto ${isPaused ? 'overflow-y-scroll' : 'overflow-hidden'}`}
         onWheel={handleUserInteraction}
         onTouchStart={handleUserInteraction}
         onClick={handleClick}
