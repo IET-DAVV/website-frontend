@@ -28,7 +28,7 @@ export const importantLinks = [
 export const quickFindings = [
   {
     name: "Anti Ragging Committee & Squad",
-    value: "https://dauniv.ac.in/",
+    value: "/footer/antiRagging",
   },
   {
     name: "TEQIP",
@@ -36,7 +36,7 @@ export const quickFindings = [
   },
   {
     name: "Grievance",
-    value: "info@ietdavv.ac.in",
+    value: "/footer/grievance",
   },
   {
     name: "AICTE Feedback",
@@ -96,5 +96,9 @@ export const moreInformation = [
   {
     name: "Content Review Policy",
     url: "/student-corner",
+  },
+  {
+    name: "Scholar Page",
+    url: "/footer/scholarPage",
   },
 ];
