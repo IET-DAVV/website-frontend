@@ -9,7 +9,7 @@ export const headerLinks: HeaderLinksType = [
     href: "/about",
   },
   {
-    name: "Academics ▾",
+    name: "Academics",
     href: "",
     dropdown: [
       { name: "Class Timetable", href: "/academics/class" },
@@ -20,7 +20,7 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Admissions ▾",
+    name: "Admissions",
     href: "",
     dropdown: [
       { name: "Process", href: "/admission/process" },
@@ -34,7 +34,7 @@ export const headerLinks: HeaderLinksType = [
     href: "/infrastructure",
   },
   {
-    name: "Examination ▾",
+    name: "Examination",
     href: "",
     dropdown: [
       { name: "Exam Time Table", href: "/examination" },

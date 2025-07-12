@@ -19,7 +19,7 @@ const Recruiters = () => {
           MORE THAN 30 COMPANIES VISIT IET-DAVV EVERY YEAR
         </p>
       </div>
-      <Marquee speed={50} pauseOnHover={true} gradient={false}>
+      <Marquee speed={50} pauseOnHover={false} gradient={false}>
         {companies.map((company, index) => (
           <Image
             key={index}
