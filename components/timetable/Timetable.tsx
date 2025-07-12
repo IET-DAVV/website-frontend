@@ -17,6 +17,23 @@ const Timetable = () => {
     { sectionName: string; PdfLink: string | null }[]
   >([]);
 
+  // Initialize selectedBranch and selectedYear when selectedCourse changes
+  React.useEffect(() => {
+    const branches = Object.keys(timetableData.courses[selectedCourse]?.branches || {});
+    if (branches.length > 0) {
+      setSelectedBranch(branches[0]);
+      const years = Object.keys(timetableData.courses[selectedCourse]?.branches[branches[0]]?.years || {});
+      if (years.length > 0) {
+        setSelectedYear(years[0]);
+      } else {
+        setSelectedYear("");
+      }
+    } else {
+      setSelectedBranch("");
+      setSelectedYear("");
+    }
+  }, [selectedCourse]);
+
   const courseList = Object.keys(timetableData.courses).map((courseKey) => ({
     courseKey,
     courseName: timetableData.courses[courseKey].courseName,
@@ -49,9 +66,9 @@ const Timetable = () => {
   }, [selectedCourse, selectedBranch, selectedYear]);
 
   return (
-    <div className="text-black">
+    <div className="text-black text-center">
       <Title title="CLASS TIMETABLE" />
-      <div className="p-4">
+      <div className="p-4 flex flex-col items-center">
         <CourseSelector
           courses={courseList}
           selectedCourse={selectedCourse}
@@ -71,11 +88,13 @@ const Timetable = () => {
         />
 
         {showSections && (
-          <SectionSelector
-            sections={sections}
-            showName={true}
-            hideIfShortName={true}
-          />
+          <div className="w-full">
+            <SectionSelector
+              sections={sections}
+              showName={true}
+              hideIfShortName={true}
+            />
+          </div>
         )}
       </div>
     </div>

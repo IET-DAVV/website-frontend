@@ -68,7 +68,7 @@ const ContactUs = () => {
           {/* Map Section */}
           <div>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.603071302143!2d-74.0119439240958!3d40.70783364844964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3ad17959fa90d3d0!2zNDAuNzA3ODMzLCAtNzQuMDExOTQz!5e0!3m2!1sen!2sus!4v1694183935048!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.6346805629755!2d75.87664765623428!3d22.681014494832198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcc03e36712d%3A0xb6f3c2bf734a7c!2sInstitute%20of%20Engineering%20%26%20Technology%2C%20DAVV!5e0!3m2!1sen!2sin!4v1752181961945!5m2!1sen!2sin"
               width="100%"
               height="300"
               style={{ border: 0 }}
