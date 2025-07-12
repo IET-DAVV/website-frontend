@@ -129,7 +129,7 @@ const Footer = () => {
         <div className="flex flex-col items-start justify-start space-y-5 p-5">
           <h1 className="font-medium text-white text-lg">Miscellaneous</h1>
           <Link
-            href="/grievance"
+            href="/footer/grievance"
             className="font-light text-light-gray text-sm hover:text-light-blue"
           >
             Grievance

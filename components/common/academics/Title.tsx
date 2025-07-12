@@ -1,5 +1,4 @@
 import React from "react";
-import "@/styles/fonts.css"; // 👈 Import your font definitions
 import "@/app/globals.css";
 
 interface TitleProps {

@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "if [ \"$CI\" != \"true\" ]; then husky install; fi"
+    "prepare": "node scripts/prepare.js"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
+    "fuse.js": "^7.1.0",
     "global": "^4.4.0",
     "grommet-icons": "^4.12.1",
     "lucide-react": "^0.525.0",

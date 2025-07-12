@@ -9,8 +9,8 @@ export const headerLinks: HeaderLinksType = [
     href: "/about",
   },
   {
-    name: "Academics ▾",
-    href: "/academics",
+    name: "Academics",
+    href: "",
     dropdown: [
       { name: "Class Timetable", href: "/academics/class" },
       { name: "Test Timetable", href: "/academics/test" },
@@ -20,8 +20,8 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Admissions ▾",
-    href: "/admissions",
+    name: "Admissions",
+    href: "",
     dropdown: [
       { name: "Process", href: "/admission/process" },
       { name: "Intake Capacity", href: "/admission/intake-capacity" },
@@ -34,10 +34,10 @@ export const headerLinks: HeaderLinksType = [
     href: "/infrastructure",
   },
   {
-    name: "Examination ▾",
-    href: "/examination",
+    name: "Examination",
+    href: "",
     dropdown: [
-      { name: "Exam Time Table", href: "/examination/exam-timetable" },
+      { name: "Exam Time Table", href: "/examination" },
       {
         name: "Examination Form",
         href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
@@ -63,7 +63,7 @@ export const LOGO = "Institute of Engineering and Technology";
 export const UPPER_HEADER_LINKS = [
   {
     name: "Placement",
-    href: "/placement",
+    href: "https://www.dauniv.ac.in/placement",
   },
   {
     name: "Courses",
@@ -75,6 +75,6 @@ export const UPPER_HEADER_LINKS = [
   },
   {
     name: "Alumni",
-    href: "/alumni",
+    href: "https://ietdavvalumni.almaconnect.com/",
   },
 ];
