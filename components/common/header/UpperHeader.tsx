@@ -67,13 +67,41 @@ const UpperHeader = () => {
           {/* Top Links */}
           <div className="flex flex-wrap justify-start md:justify-end gap-3">
             {UPPER_HEADER_LINKS.map((link) => (
-              <Link
-                className="hover:border-b-2 hover:border-white"
-                href={link.href}
-                key={link.name}
-              >
-                {link.name}
-              </Link>
+              <div key={link.name} className="relative group">
+                {link.dropdown ? (
+                  <div className="flex items-center space-x-1 cursor-pointer hover:border-b-2 hover:border-white text-xs">
+                    <span>{link.name}</span>
+                    <span className="transition-transform duration-200 group-hover:rotate-180">
+                      ▼
+                    </span>
+
+                    {/* Dropdown */}
+                    <ul className="absolute hidden group-hover:flex flex-col bg-black text-white py-2 px-3 top-full left-0 shadow-lg z-50 rounded-md min-w-max">
+                      {link.dropdown.map((item) => (
+                        <li
+                          key={item.name}
+                          onClick={() => {
+                            router.push(
+                              `/academics/programsoffered?course=${encodeURIComponent(item.value)}`
+                            );
+                          }}
+                          className="cursor-pointer py-1 px-2 transition-all duration-200 text-xs rounded-md hover:underline hover:underline-offset-4 hover:shadow-md hover:shadow-yellow-300"
+                        >
+                          {item.name}
+                        </li>
+
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="hover:border-b-2 hover:border-white text-xs"
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
 
