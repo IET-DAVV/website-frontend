@@ -32,71 +32,169 @@ const StackCards: React.FC = () => {
       id: 1,
       title: "GDG IET DAVV (Google Developer Group- Tech with Purpose)",
       subtitle: "(Formerly known as GDSC)",
-      description: "From contests like CodeQuest to bootcamps like LearnAIML, GDG IET DAVV is where tech-loving students come together to learn, build, and grow. Whether it's exploring AI/ML or working on real-world dev projects, you'll always find something exciting to be a part of. It's a place that pushes you but also helps you settle in, learn with peers, and find your pace.",
+      description: "From contests like CodeQuest to bootcamps like LearnAIML, GDG IET DAVV is where tech-loving students come together to learn, build, and grow. Whether it’s exploring AI/ML or working on real-world dev projects, you’ll always find something exciting to be a part of. It’s a place that pushes you but also helps you settle in, learn with peers, and find your pace.\nNo prior experience needed – just bring your curiosity!",
       twoImages: {
-        imgz1: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
-        imgz2: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop"
+        imgz1: "/landing/Clubs/GDG_1.png",
+        imgz2: "/landing/Clubs/GDG_2.png"
       },
-      backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop",
-      exploreNow: "https://gdg.community.dev/gdg-iet-davv-indore/",
-      socialLink: "https://instagram.com/gdgietdavv",
+      backgroundImage: "/landing/Clubs/GDG_bg.png",
+      exploreNow: "https://gdsc.ietdavv.edu.in/",
+      socialLink: "https://www.instagram.com/gdgoc.ietdavv/",
       rightRectangleName: "GDGOC"
     },
     {
       id: 2,
-      title: "IEEE Student Branch IET DAVV",
-      subtitle: "(Institute of Electrical and Electronics Engineers)",
-      description: "IEEE Student Branch at IET DAVV is a gateway to the world of technology and innovation. We organize technical workshops, coding competitions, and networking events that help students stay ahead in the rapidly evolving tech landscape. Join us to connect with like-minded peers and industry professionals.",
+      title: "E-Cell IET DAVV (Think. Feel. Collaborate.)",
+      subtitle: "",
+      description: "The entrepreneurship engine of IET. E-Cell isn’t just a club it’s a mindset. From ideathons to startup showcases, members don’t just attend events, they build, lead, and grow through them. The club nurtures future founders with exposure, mentorship, and a collaborative ecosystem. E-cell is where passion meets purpose, and your potential finds a platform.\nStill figuring things out? This is the place that helps you figure yourself out too",
       twoImages: {
-        imgz1: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
-        imgz2: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&h=300&fit=crop"
+        imgz1: "/landing/Clubs/ECell_1.png",
+        imgz2: "/landing/Clubs/ECell_2.png"
       },
-      backgroundImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&h=800&fit=crop",
-      exploreNow: "https://ieee.org/",
-      socialLink: "https://instagram.com/ieee_ietdavv",
-      rightRectangleName: "IEEE"
+      backgroundImage: "/landing/Clubs/ECell_bg.png",
+      exploreNow: "https://www.ecellietdavv.in/",
+      socialLink: "https://www.instagram.com/ecell_ietdavv/",
+      rightRectangleName: "Ecell"
     },
     {
       id: 3,
-      title: "Robotics Club IET DAVV",
-      subtitle: "(Innovation through Automation)",
-      description: "Dive into the fascinating world of robotics and automation. Our club focuses on building innovative robots, participating in competitions, and exploring cutting-edge technologies like AI and IoT. Perfect for students passionate about hardware, software, and everything in between.",
+      title: "NSS IET DAVV",
+      subtitle: "“Not Me, But You”",
+      description: "Rooted in the spirit of service, NSS at IET DAVV encourages students to step beyond themselves. From blood donation drives and plantation efforts to awareness campaigns and community outreach, each initiative offers a chance to engage with real-world issues. Students don’t just participate they immerse, often stepping into communities and staying on ground to create lasting impact. NSS isn’t just about volunteering it’s about becoming the kind of leader who lifts others while growing from the experience.",
       twoImages: {
-        imgz1: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
-        imgz2: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=400&h=300&fit=crop"
+        imgz1: "/landing/Clubs/NSS_1.png",
+        imgz2: "/landing/Clubs/NSS_2.png"
       },
-      backgroundImage: "https://images.unsplash.com/photo-1546776230-bb36c3c641d2?w=1200&h=800&fit=crop",
+      backgroundImage: "/landing/Clubs/NSS_bg.png",
       exploreNow: "https://robotics-ietdavv.com/",
-      socialLink: "https://instagram.com/robotics_ietdavv",
-      rightRectangleName: "ROBO"
+      socialLink: "https://nssietdavv.epizy.com/",
+      rightRectangleName: "NSS"
     },
     {
       id: 4,
-      title: "Coding Club IET DAVV",
-      subtitle: "(Competitive Programming Excellence)",
-      description: "Sharpen your programming skills and compete at the highest level. We focus on competitive programming, algorithm design, and problem-solving techniques. Regular contests, workshops, and mentorship programs help students excel in coding interviews and programming competitions.",
+      title: "Robotronics Club  (Innovation in Motion)",
+      subtitle: "",
+      description: "From Arduino and Raspberry Pi to drones and autonomous robots, Robotronics Club fuses tech curiosity with hands-on creation. Through national-level workshops like CPS (in collab with IIT Ropar) and events like Tech Think Tank, members explore embedded systems, PCB design, automation, and more. Whether you’re into designing circuits or launching drones, this club offers the tools, guidance, and stage to build, tinker, and lead.\nHere, your ideas don’t stay on paper — they move.\nSharpen your programming skills and compete at the highest level. We focus on competitive programming, algorithm design, and problem-solving techniques. Regular contests, workshops, and mentorship programs help students excel in coding interviews and programming competitions.",
       twoImages: {
-        imgz1: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
-        imgz2: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop"
+        imgz1: "/landing/Clubs/Robotronics_1.png",
+        imgz2: "/landing/Clubs/Robotronics_2.png"
       },
-      backgroundImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=800&fit=crop",
+      backgroundImage: "/landing/Clubs/Robotronics_bg.png",
       exploreNow: "https://codingclub-ietdavv.com/",
-      socialLink: "https://instagram.com/codingclub_ietdavv",
-      rightRectangleName: "CODE"
+      socialLink: "https://www.instagram.com/robotronics._iet/",
+      rightRectangleName: "Robotronics"
     },
     {
       id: 5,
-      title: "Design Club IET DAVV",
-      subtitle: "(Creative Innovation Hub)",
-      description: "Where creativity meets technology. Our design club focuses on UI/UX design, graphic design, and digital art. We organize design sprints, workshops on design tools, and collaborate on projects that blend aesthetics with functionality. Perfect for creative minds looking to make an impact.",
+      title: "Rudra Dance Club ",
+      subtitle: "(Where rhythm meets legacy)",
+      description: "From owning the stage at Fluxus IIT Indore, to winning hearts at Acropolis, CDGI, and homegrown events like Sfoorti and TEDxDAVV, Rudra Dance Club has become the pulse of IET’s cultural scene. With performances that blend classical, hip-hop, contemporary and everything in between, it’s a stage where every dance form finds a voice. For those who speak through movement and live for the spotlight, this is where your rhythm finds its roar.\nThe beat begins here.",
       twoImages: {
-        imgz1: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=300&fit=crop",
-        imgz2: "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400&h=300&fit=crop"
+        imgz1: "/landing/Clubs/Rudra_1.png",
+        imgz2: "/landing/Clubs/Rudra_2.png"
       },
-      backgroundImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop",
+      backgroundImage: "/landing/Clubs/Rudra_bg.png",
+      exploreNow: "https://designclub-ietdavv.com/",
+      socialLink: "https://www.instagram.com/rudra_iet.davv/",
+      rightRectangleName: "RUDRA"
+    },
+    {
+      id: 6,
+      title: "Cultural Club  (The Heartbeat of Celebrations) ",
+      subtitle: "",
+      description: "From hosting grand stages like E-Sangam and Induction to lighting up campus life with Tarang, Nidanam, and flash mobs, Cultural Club is where tradition meets energy. Be it fresher parties or university-level festivals, this legacy club curates experiences that stay with you long after the lights dim. If you’ve ever felt the pulse of a crowd or dreamed of crafting unforgettable moments, this is your cue.\nBecause culture isn’t just followed, it’s created.",
+      twoImages: {
+        imgz1: "/landing/Clubs/Cultural_1.png",
+        imgz2: "/landing/Clubs/Cultural_2.png"
+      },
+      backgroundImage: "/landing/Clubs/cultural_bg.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "DSGN"
+      rightRectangleName: "Cultural "
+    },
+    {
+      id: 7,
+      title: "IET Visuals (Glance of IET)",
+      subtitle: "",
+      description: "Every fest, every celebration, every quiet candid you’ve ever seen of IET through a story, reel, or photo, chances are it came from the lens of IET Visuals. As the official production team of the college, they don’t just shoot events—they document memories. Whether it’s photography, cinematography, or just a creative spark waiting to be lit, this is where you get to build something lasting with a team that sees stories in everything.\nYou bring the vision. They’ll help you frame it.",
+      twoImages: {
+        imgz1: "/landing/Clubs/Visuals_1.png",
+        imgz2: "/landing/Clubs/Visuals_2.png"
+      },
+      backgroundImage: "/landing/Clubs/Visuals_bg.png",
+      exploreNow: "https://designclub-ietdavv.com/",
+      socialLink: "https://instagram.com/designclub_ietdavv",
+      rightRectangleName: "IET\nVisuals"
+    },
+    {
+      id: 8,
+      title: "CEAC IET DAVV ",
+      subtitle: "Be the missing component of our circuit",
+      description: "The Core Electronics Awareness Club (CEAC) is IET DAVV’s hub for all things hardware. Whether it’s working on real-time projects, attending speaker sessions, or visiting industries, CEAC helps students get hands-on with the field beyond textbooks. This year, the team secured 2nd place at the Startup Expo, turning their ideas into something bigger. So if you’re someone who’s curious about circuits, driven by design, or just figuring out where electronics fits into your journey this is a great place to begin.",
+      twoImages: {
+        imgz1: "/landing/Clubs/CEAC_1.jpg",
+        imgz2: "/landing/Clubs/CEAC_2.jpg"
+      },
+      backgroundImage: "/landing/Clubs/CEAC_bg.png",
+      exploreNow: "https://designclub-ietdavv.com/",
+      socialLink: "https://instagram.com/designclub_ietdavv",
+      rightRectangleName: "CEAC"
+    },
+    {
+      id: 9,
+      title: "POART Club ",
+      subtitle: "Where voices rise and stay heard.",
+      description: "Born out of DAVV’s student community, POART celebrates creativity through open mics, jamming sessions, debates, and theatre. With hundreds of students tuning in and an official backing from DARPAN & NITI Aayog, POART isn’t just a club it’s a campus-wide canvas for expression. Expanding that spirit, OBSYRA its new esports wing builds a digital stage for gaming, casting, and all things competitive. From high-stakes BGMI scrims to full-on tournament vibes, this is where passion meets play.",
+      twoImages: {
+        imgz1: "/landing/Clubs/POART_1.jpg",
+        imgz2: "/landing/Clubs/POART_2.jpg"
+      },
+      backgroundImage: "/landing/Clubs/POART_bg.png",
+      exploreNow: "https://designclub-ietdavv.com/",
+      socialLink: "https://instagram.com/designclub_ietdavv",
+      rightRectangleName: "POART"
+    },
+    {
+      id: 10,
+      title: "The Tech-Driven Tribe of IET-DAVV ",
+      subtitle: "Be the missing component of our circuit",
+      description: "Three teams. One shared drive to build what most just imagine.\nIntroducing Team Hawk, Spark Ignited, and Team Elektronin from IET’s core technical crew turning ideas into drones, electric rides, and autonomous machines. They may share the same lab tables, tools, and tech spirit, but each team branches into its own world:\na. Hawk flies into aeronautics,\nb. Spark ignite drives electric innovation,\nc. Elektronin takes on self-driving terrain.\nFor freshers with curiosity and a maker mindset  this is where the building begins.",
+      twoImages: {
+        imgz1: "/landing/Clubs/TTDT_1.jpg",
+        imgz2: "/landing/Clubs/TTDT_2.jpg"
+      },
+      backgroundImage: "/landing/Clubs/TTDT_bg.jpg",
+      exploreNow: "https://designclub-ietdavv.com/",
+      socialLink: "https://instagram.com/designclub_ietdavv",
+      rightRectangleName: "TTDT"
+    },
+    {
+      id: 11,
+      title: "Engineers Without Borders, IET Chapter",
+      subtitle: "Where technical skills meet real social change. ",
+      description: "Part of a global humanitarian network, EWB IET DAVV has been driving impact since 2009, from creating educational audio content for visually impaired students to organizing donation drives and building digital platforms. Their initiatives blend purpose with practical problem-solving, showing how engineering can support inclusion, sustainability, and grassroots action. For freshers who want to apply their knowledge beyond labs and classrooms this is where real-world impact begins.",
+      twoImages: {
+        imgz1: "/landing/Clubs/EWB_1.jpg",
+        imgz2: "/landing/Clubs/EWB_2.jpg"
+      },
+      backgroundImage: "/landing/Clubs/EWB_bg.png",
+      exploreNow: "https://designclub-ietdavv.com/",
+      socialLink: "https://instagram.com/designclub_ietdavv",
+      rightRectangleName: "EWB"
+    },
+    {
+      id: 12,
+      title: "National Cadet Corps (NCC) – DAVV Unit",
+      subtitle: "Learn leadership, discipline, and service, all while wearing the uniform.",
+      description: "DAVV’s NCC unit offers students the chance to join India’s premier cadet organisation, blending military-style training with community action. From drills and camps to medical camps and national cadet expos, NCC builds character and confidence. Cadets also earn certificates that open doors in both defence and civilian sectors. For freshers who want to grow in discipline, teamwork, and purpose this is where transformation begins.",
+      twoImages: {
+        imgz1: "/landing/Clubs/NCC_1.jpg",
+        imgz2: "/landing/Clubs/NCC_2.jpg"
+      },
+      backgroundImage: "/landing/Clubs/NCC_bg.png",
+      exploreNow: "https://designclub-ietdavv.com/",
+      socialLink: "https://instagram.com/designclub_ietdavv",
+      rightRectangleName: "NCC"
     }
   ];
 
@@ -117,7 +215,7 @@ const StackCards: React.FC = () => {
         </div>
 
         {/* Stack Cards Section */}
-        <div ref={containerRef} className="relative" style={{ height: `${totalCards * 80}vh` }}>
+        <div ref={containerRef} className="relative" style={{ height: `${totalCards * 110}vh` }}>
           <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
             <div className="relative w-full max-w-6xl mx-auto h-[80vh]">
               
@@ -135,22 +233,7 @@ const StackCards: React.FC = () => {
                       <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
                         IET CLUBS
                       </h2>
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="bg-purple-800 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-purple-700 transition-colors text-lg"
-                        >
-                          Explore Clubs
-                        </motion.button>
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="border-2 border-purple-800 text-purple-800 px-8 py-4 rounded-full font-semibold hover:bg-purple-50 transition-colors text-lg"
-                        >
-                          Learn more
-                        </motion.button>
-                      </div>
+                      
                     </div>
 
                     {/* Image Section */}
@@ -171,9 +254,9 @@ const StackCards: React.FC = () => {
 
               {/* Dynamic Stack Cards */}
               {cards.map((card, index) => {
-                const cardStart = (index + 1) * 0.15;
-                const cardEnd = cardStart + 0.15;
-                
+                const cardStart = (index + 1) * 0.07;
+                const cardEnd = cardStart + 0.07;
+
                 const cardProgress = useTransform(
                   scrollYProgress,
                   [cardStart, cardEnd],
