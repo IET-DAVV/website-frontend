@@ -59,7 +59,8 @@ export const headerLinks: HeaderLinksType = [
   },
 ];
 
-export const LOGO = "Institute of Engineering and Technology";
+export const LOGO = "Institute of Engineering & Technology";
+export const LOGO_SUBTITLE = "देवी अहिल्या विश्वविद्यालय";
 export const UPPER_HEADER_LINKS = [
   {
     name: "Placement",
