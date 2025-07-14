@@ -13,6 +13,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "IET-DAVV",
   description: "IET-DAVV",
+  icons: {
+    icon: "/favicon.ico", // this points to public/favicon.ico
+  },
 };
 
 export default function RootLayout({

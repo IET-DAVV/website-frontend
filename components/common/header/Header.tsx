@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { LOGO } from "@/constants/header/data";
+import { LOGO, LOGO_SUBTITLE } from "@/constants/header/data";
 import { HeaderLinksType } from "@/typings.d";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
@@ -43,7 +43,10 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             width={1000}
             height={1000}
           />
-          <p className={`${manrope.className} text-sm w-44 font-bold`}>{LOGO}</p>
+          <div className={`${manrope.className} leading-tight`}>
+            <p className="text-sm font-bold whitespace-nowrap">{LOGO}</p>
+            <p className="text-xs text-gray-600">{LOGO_SUBTITLE}</p>
+          </div>
         </div>
 
         {/* Hamburger (Mobile Only) */}
@@ -56,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
 
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex flex-row justify-center items-center space-x-10 relative">
+        <ul className="hidden md:flex flex-row justify-center items-center space-x-4 relative">
           {links.map((link, idx) => (
             <li key={link.name} className="relative">
               {link.dropdown ? (

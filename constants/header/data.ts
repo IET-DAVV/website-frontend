@@ -59,7 +59,8 @@ export const headerLinks: HeaderLinksType = [
   },
 ];
 
-export const LOGO = "Institute of Engineering and Technology";
+export const LOGO = "Institute of Engineering & Technology";
+export const LOGO_SUBTITLE = "देवी अहिल्या विश्वविद्यालय";
 export const UPPER_HEADER_LINKS = [
   {
     name: "Placement",
@@ -68,6 +69,14 @@ export const UPPER_HEADER_LINKS = [
   {
     name: "Courses",
     href: "/academics/programsoffered",
+    dropdown: [
+      { name: "B.TECH (FULL-TIME)", value: "B.TECH (FULL-TIME)" },
+      { name: "B.TECH (PART-TIME)", value: "B.TECH (PART-TIME)" },
+      { name: "M.TECH (FULL-TIME)", value: "M.TECH (FULL-TIME)" },
+      { name: "M.TECH (PART-TIME)", value: "M.TECH (PART-TIME)" },
+      { name: "PHD", value: "PHD" },
+      { name: "MSc.", value: "MSc." },
+    ],
   },
   {
     name: "Notices",
