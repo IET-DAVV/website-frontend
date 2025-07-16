@@ -2,32 +2,35 @@
 const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 31536000, // 1 year,
-
+    minimumCacheTTL: 31536000, // 1 year
     remotePatterns: [
       {
-        protocol: "http", // Or 'https' if they are served over HTTPS
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
         hostname: "googleusercontent.com",
-        port: "", // Leave empty if default ports (80 for http, 443 for https)
-        pathname: "/profile/picture/**", // Use a wildcard if paths can vary widely
+        port: "",
+        pathname: "/profile/picture/**",
       },
       {
-        protocol: "http", // Or 'https' if they are served over HTTPS
+        protocol: "http",
         hostname: "lh3.googleusercontent.com",
-        port: "", // Leave empty if default ports (80 for http, 443 for https)
-        pathname: "/**", // Use a wildcard if paths can vary widely
+        port: "",
+        pathname: "/**",
       },
       {
-        protocol: "https", // Or 'https' if they are served over HTTPS
+        protocol: "https",
         hostname: "www.ietdavv.edu.in",
-        port: "", // Leave empty if default ports (80 for http, 443 for https)
-        pathname: "/**", // Use a wildcard if paths can vary widely
+        port: "",
+        pathname: "/**",
       },
     ],
   },
   compress: true,
-
-  // Optimize CSS
   experimental: {
     optimizeCss: true,
   },

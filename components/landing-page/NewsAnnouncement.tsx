@@ -55,7 +55,7 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
 
   const startResumeTimeout = () => {
     setTimeout(() => {
-      if (!isHovering) {
+      if (isHovering) {
         setIsUserScrolling(false);
       }
     }, 2000);
