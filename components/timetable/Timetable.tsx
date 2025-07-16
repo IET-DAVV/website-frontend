@@ -1,17 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Playfair } from "next/font/google";
 import { timetableData } from "../../constants/timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
 import BranchSelector from "../common/academics/BranchSelector";
 import YearSelector from "../common/academics/YearSelector";
 import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
-
-const playfair = Playfair({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 
 const Timetable = () => {
   const courses = Object.keys(timetableData.courses);
@@ -22,6 +16,23 @@ const Timetable = () => {
   const [sections, setSections] = useState<
     { sectionName: string; PdfLink: string | null }[]
   >([]);
+
+  // Initialize selectedBranch and selectedYear when selectedCourse changes
+  React.useEffect(() => {
+    const branches = Object.keys(timetableData.courses[selectedCourse]?.branches || {});
+    if (branches.length > 0) {
+      setSelectedBranch(branches[0]);
+      const years = Object.keys(timetableData.courses[selectedCourse]?.branches[branches[0]]?.years || {});
+      if (years.length > 0) {
+        setSelectedYear(years[0]);
+      } else {
+        setSelectedYear("");
+      }
+    } else {
+      setSelectedBranch("");
+      setSelectedYear("");
+    }
+  }, [selectedCourse]);
 
   const courseList = Object.keys(timetableData.courses).map((courseKey) => ({
     courseKey,
@@ -55,9 +66,9 @@ const Timetable = () => {
   }, [selectedCourse, selectedBranch, selectedYear]);
 
   return (
-    <div className="text-black">
+    <div className="text-black text-center">
       <Title title="CLASS TIMETABLE" />
-      <div className="p-4">
+      <div className="p-4 flex flex-col items-center">
         <CourseSelector
           courses={courseList}
           selectedCourse={selectedCourse}
@@ -77,11 +88,13 @@ const Timetable = () => {
         />
 
         {showSections && (
-          <SectionSelector
-            sections={sections}
-            showName={true}
-            hideIfShortName={true}
-          />
+          <div className="w-full">
+            <SectionSelector
+              sections={sections}
+              showName={true}
+              hideIfShortName={true}
+            />
+          </div>
         )}
       </div>
     </div>

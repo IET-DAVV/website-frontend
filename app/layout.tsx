@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import "@/styles/fonts.css";
 import Footer from "@/components/common/footer/Footer";
 import HeaderContainer from "@/containers/header/Header";
 
@@ -12,6 +13,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "IET-DAVV",
   description: "IET-DAVV",
+  icons: {
+    icon: "/favicon.ico", // this points to public/favicon.ico
+  },
 };
 
 export default function RootLayout({
@@ -20,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${manrope.className} bg-white`}>
         <HeaderContainer />
         {children}

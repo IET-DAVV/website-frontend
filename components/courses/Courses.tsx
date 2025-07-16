@@ -21,7 +21,7 @@ const Courses = () => {
 
   return (
     <section className="">
-      <Title title="PROGRAMS OFFERED" />
+      <Title title="" />
       <Header onSelectCourse={handleSelectCourse} />
       <CoursesContent selectedCourse={selectedCourse} />
       <ProgramOutcome />

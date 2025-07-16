@@ -1,6 +1,5 @@
 "use client";
-
-import React from "react";
+import React, { useState } from "react";
 import { Manrope } from "next/font/google";
 import { MdOutlineFileDownload } from "react-icons/md";
 import Title from "../common/academics/Title";
@@ -23,16 +22,20 @@ const EnrollmentComponent = () => {
         <p className="font-semibold mb-2">IMPORTANT NOTE</p>
         <ul className="list-disc pl-4 space-y-1 text-sm">
           <li>
-            All students who are admitted in year 2021 compulsorily required to check their data as uploaded on MP-online.
+            All students who are admitted in year 2021 compulsorily required to
+            check their data as uploaded on MP-online.
           </li>
           <li>
-            Contact Admn. Officer for corrections (if any), failing which, no corrections will be entertained later and enrollment data will be sent to all corresponding departments of IET and DAVV.
+            Contact Admn. Officer for corrections (if any), failing which, no
+            corrections will be entertained later and enrollment data will be
+            sent to all corresponding departments of IET and DAVV.
           </li>
         </ul>
       </div>
 
-
-      <div className={`flex flex-col gap-4 w-11/12 md:w-3/5 mx-auto my-10 ${manrope.className}`}>
+      <div
+        className={`flex flex-col gap-4 w-11/12 md:w-3/5 mx-auto my-10 ${manrope.className}`}
+      >
         <div className="flex justify-end items-center">
           <a
             href={pdfLink}

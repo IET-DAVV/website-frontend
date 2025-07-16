@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import Image from "next/image";
 import { FaMedal, FaTrophy, FaAward } from "react-icons/fa";
 
 const achievements = [

@@ -1,5 +1,4 @@
-import React from "react";
-import FreshersCorner from "@/components/freshers/Fresherscorner";
+import FreshersCorner from "@/components/freshers/fresherscorner";
 
 const FreshersPage = () => {
   return <FreshersCorner />;

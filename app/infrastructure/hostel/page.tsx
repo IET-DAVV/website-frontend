@@ -1,4 +1,3 @@
-import React from "react";
 import Hostel from "@/components/infrastructure/hostel";
 
 const page = () => {

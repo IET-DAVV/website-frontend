@@ -1,4 +1,3 @@
-import React from "react";
 import EnrollmentList from "@/components/enrollment/EnrollmentList";
 
 const EnrollmentPage = () => {
@@ -10,6 +9,3 @@ const EnrollmentPage = () => {
 };
 
 export default EnrollmentPage;
-
-
-

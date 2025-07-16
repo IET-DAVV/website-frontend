@@ -3,122 +3,69 @@ import React from "react";
 import Masonry from "react-responsive-masonry";
 import { imagesMap } from "@/constants/landing/events/data";
 import Image from "next/image";
-import { Playfair } from "next/font/google";
+import "@/styles/fonts.css";
 import { motion } from "framer-motion";
-const playfair = Playfair({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
+
 const Events: React.FC = () => {
   return (
-    <div className="bg-black grid grid-cols-3 justify-between items-center h-screen overflow-hidden">
+    <div className="bg-black px-4 py-10 md:py-20 md:px-16 flex flex-col lg:grid lg:grid-cols-3 lg:items-center gap-8">
+      {/* Text Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-col mx-auto col-span-1 justify-center items-start"
+        className="flex flex-col items-start text-left"
       >
-        <div
-          className={`text-[#6b6b6b] text-7xl font-normal ${playfair.className}`}
-        >
+        <div className="text-[#6b6b6b] text-5xl md:text-7xl font-normal font-newyork">
           IET
         </div>
-        <div
-          className={`text-[#f9f6ff] text-9xl font-normal ml-[73px] ${playfair.className}`}
-        >
+        <div className="text-[#f9f6ff] text-6xl md:text-9xl font-normal ml-4 md:ml-[73px] font-newyork">
           Events
         </div>
       </motion.div>
 
-      <div className="w-full -mr-40 -mt-20 mx-auto col-span-2">
-        <Masonry columnsCount={3} gutter="25px">
-          <motion.div
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-[#1C1C1C] h-[150px] rounded-lg w-full"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Image
-              src={imagesMap["image1"]}
-              alt="Event 1"
-              width={300}
-              height={300}
-              className="rounded-lg w-full h-[300px] object-cover"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <Image
-              src={imagesMap["image2"]}
-              alt="Event 2"
-              width={300}
-              height={300}
-              className="rounded-lg w-full h-[300px] object-cover"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-          >
-            <Image
-              src={imagesMap["image3"]}
-              alt="Event 3"
-              width={300}
-              height={300}
-              className="rounded-lg w-full h-[300px] object-cover"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="bg-[#1C1C1C] h-[300px] rounded-lg w-full"
-          />
+      {/* Masonry Image Grid */}
+      <div className="w-full lg:col-span-2">
+        <Masonry
+          columnsCountBreakPoints={{ 350: 1, 750: 2, 1024: 3 }}
+          gutter="20px"
+        >
+          {[
+            null,
+            null,
+            null,
+            "image1",
+            "image2",
+            null,
+            null,
+            "image3",
+            null,
+          ].map((key, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`rounded-lg w-full overflow-hidden ${
+                index % 2 === 1 ? "h-[150px]" : "h-[250px] md:h-[300px]"
+              }`}
+            >
+              {key ? (
+                <Image
+                  src={imagesMap[key]}
+                  alt={`Event ${key}`}
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="bg-[#1C1C1C] w-full h-full rounded-lg" />
+              )}
+            </motion.div>
+          ))}
         </Masonry>
       </div>
     </div>

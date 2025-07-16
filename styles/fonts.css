@@ -1,20 +1,11 @@
+/* styles/fonts.css */
 @font-face {
   font-family: 'New York';
-  src: url('/fonts/NewYork/NewYork-Regular.otf') format('opentype');
+  src: url('/fonts/NewYork-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'New York';
-  src: url('/fonts/NewYork/NewYork-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'New York';
-  src: url('/fonts/NewYork/NewYork-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
+body {
+  font-family: 'New York', serif;
 }

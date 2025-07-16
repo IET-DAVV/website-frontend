@@ -1,17 +1,26 @@
+"use client";
+import React, { useState, useEffect } from "react";
+import "@/styles/fonts.css";
 export default function ProcessContent() {
   return (
     <section className="text-gray-800 space-y-10">
-      {/* UG ADMISSION */}
+      <div className="mt-10">
+        <p className="text-lg font-medium text-bold text-center text-gray-700">
+          Note: For More Information Regarding Admissions Contact : Dr Paresh
+          Atri (m): 9893593622
+        </p>
+        <hr className="my-6 border-gray-300" />
+      </div>
+
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-2xl text-black font-newyork font-bold mb-5">
           Admission Process B.E. (FULL–TIME)
         </h2>
 
         <div>
-          <h3 className="font-semibold text-[#06779B]">
+          <h3 className="font-bold text-[#06779B]">
             Eligibility For Admission:
           </h3>
-
           <p>
             Admission is offered to a candidate who has qualified in 10+2
             examination and appeared in IIT-JEE examination. Admission process
@@ -30,7 +39,7 @@ export default function ProcessContent() {
           <h3 className="font-semibold text-[#06779B]">Admission Process:</h3>
           <p>
             Admission process shall take place through counselling conducted by
-            DTE, Bhopal through Counselling Authority and its nodal centers in
+            DTE, Bhopal through Counselling Authority and its nodal centres in
             MP.
           </p>
         </div>
@@ -46,9 +55,10 @@ export default function ProcessContent() {
         </div>
       </div>
 
-      {/* PG ADMISSION */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">FOR POSTGRADUATE PROGRAM (M.E.)</h2>
+        <h2 className="text-2xl font-bold font-newyork mb-5">
+          FOR POSTGRADUATE PROGRAM (M.E.)
+        </h2>
 
         <p>
           I.E.T. is presently offering 2-year full time & 3-year part time post
@@ -56,7 +66,7 @@ export default function ProcessContent() {
           Specialization as given below:
         </p>
 
-        <ul className="list-disc list-inside space-y-1">
+        <ul className="list-disc list-outside pl-6">
           <li>
             Computer Engineering with specialization in Software Engineering
           </li>
@@ -64,16 +74,19 @@ export default function ProcessContent() {
             Information Technology with specialization in Information Security
           </li>
           <li>
+            {" "}
             Electronics Engineering with specialization in Digital
-            Instrumentation
+            Instrumentation{" "}
           </li>
           <li>
+            {" "}
             Electronics Engineering with specialization in Digital Communication
           </li>
-          <li>Industrial Engineering & Management</li>
+          <li> Industrial Engineering & Management</li>
           <li>
+            {" "}
             Mechanical Engineering with specialization in Design & Thermal
-            Engineering
+            Engineering{" "}
           </li>
         </ul>
 
@@ -81,22 +94,32 @@ export default function ProcessContent() {
           <h3 className="font-semibold text-[#06779B]">
             Eligibility for Admission:
           </h3>
-          <ul className="list-disc list-inside text-base space-y-1">
-            <li>60% in BE/BTech in relevant field</li>
-            <li>Valid GATE Score (for regular candidates)</li>
-            <li>2 years experience (for sponsored candidates)</li>
+          <ul className="list-disc list-outside text-base pl-6">
+            <li>
+              A candidate seeking admission to the program should have passed
+              with 60% (or equivalent) in BE/BTech (or equivalent) in an allied
+              branch of engineering from a recognized/ University.{" "}
+            </li>
+            <li>
+              Regular candidates should have a valid GATE Score in the relevant/
+              allied branch of Engg/ Tech.{" "}
+            </li>
+            <li>
+              The sponsored candidates should have two years of work experience
+              after BE/BTech degree.{" "}
+            </li>
           </ul>
         </div>
 
         <div>
           <h3 className="font-semibold text-[#06779B]">Note:</h3>
-          <ul className="list-disc list-inside text-base text-gray-700 space-y-1">
+          <ul className="list-disc list-outside text-base text-gray-700 pl-6">
             <li>
               There is relaxation of 5% in the eligibility for SC/ ST/ Sponsored
               candidates.
             </li>
             <li>
-              Candidates appearing in final year exam or non-GATE students may
+              Candidates appearing in final year examor non-GATE students may
               also apply. Such candidates must mention the cumulative % marks as
               per norms of their University while filling the application form.
               Preference shall be given to GATE qualified candidates.{" "}
@@ -114,7 +137,7 @@ export default function ProcessContent() {
             </li>
             <li>
               ME Program in Part Time shall be conducted in the evening (6-9PM)
-              and is offered to only to working sponsored candidates.{" "}
+              and is offered to only to working sponsored candidates.
             </li>
             <li>
               In case, the candidate is changing the employment, it shall be the

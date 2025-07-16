@@ -1,4 +1,3 @@
-import React from "react";
 import Library from "@/components/infrastructure/library";
 
 const page = () => {
