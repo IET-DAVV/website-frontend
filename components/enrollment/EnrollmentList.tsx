@@ -1,9 +1,8 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { Manrope } from "next/font/google";
 import { MdOutlineFileDownload } from "react-icons/md";
 import Title from "../common/academics/Title";
-import { EnrollmentData } from "@/constants/enrollment/data";
+import { EnrollmentPdfLink } from "@/constants/enrollment/data";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -11,13 +10,10 @@ const manrope = Manrope({
 });
 
 const EnrollmentComponent = () => {
-  const pdfLink = EnrollmentData.years["2023"].PdfLink;
-
   return (
     <div className="text-black">
       <Title title="Enrollment List" />
 
-      {/* 🧾 Notice Card (Styled like image) */}
       <div className="border border-black rounded-xl px-6 py-4 mx-auto w-11/12 md:w-3/5 my-6">
         <p className="font-semibold mb-2">IMPORTANT NOTE</p>
         <ul className="list-disc pl-4 space-y-1 text-sm">
@@ -38,7 +34,7 @@ const EnrollmentComponent = () => {
       >
         <div className="flex justify-end items-center">
           <a
-            href={pdfLink}
+            href={EnrollmentPdfLink}
             className="bg-black rounded-full p-2 ml-auto hover:scale-105 transition-all duration-200"
             target="_blank"
             rel="noopener noreferrer"
@@ -47,7 +43,7 @@ const EnrollmentComponent = () => {
           </a>
         </div>
         <iframe
-          src={pdfLink}
+          src={EnrollmentPdfLink}
           title="Enrollment PDF"
           className="border-2 border-blue-500 h-[500px] w-full rounded-md"
         ></iframe>
