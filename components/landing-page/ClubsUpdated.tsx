@@ -62,8 +62,8 @@ const StackCards: React.FC = () => {
       subtitle: "“Not Me, But You”",
       description: "Rooted in the spirit of service, NSS at IET DAVV encourages students to step beyond themselves. From blood donation drives and plantation efforts to awareness campaigns and community outreach, each initiative offers a chance to engage with real-world issues. Students don’t just participate they immerse, often stepping into communities and staying on ground to create lasting impact. NSS isn’t just about volunteering it’s about becoming the kind of leader who lifts others while growing from the experience.",
       twoImages: {
-        imgz1: "/landing/Clubs/NSS_1.png",
-        imgz2: "/landing/Clubs/NSS_2.png"
+        imgz1: "/landing/Clubs/NSS_1n.png",
+        imgz2: "/landing/Clubs/NSS_2n.png"
       },
       backgroundImage: "/landing/Clubs/NSS_bg.png",
       exploreNow: "https://robotics-ietdavv.com/",
@@ -99,7 +99,7 @@ const StackCards: React.FC = () => {
       rightRectangleName: "RUDRA"
     },
     {
-      id: 7,
+      id: 6,
       title: "IET Visuals (Glance of IET)",
       subtitle: "",
       description: "Every fest, every celebration, every quiet candid you’ve ever seen of IET through a story, reel, or photo, chances are it came from the lens of IET Visuals. As the official production team of the college, they don’t just shoot events—they document memories. Whether it’s photography, cinematography, or just a creative spark waiting to be lit, this is where you get to build something lasting with a team that sees stories in everything.\nYou bring the vision. They’ll help you frame it.",
@@ -107,13 +107,13 @@ const StackCards: React.FC = () => {
         imgz1: "/landing/Clubs/Visuals_1.png",
         imgz2: "/landing/Clubs/Visuals_2.png"
       },
-      backgroundImage: "/landing/Clubs/Visuals_bg.png",
+      backgroundImage: "/landing/Clubs/Visuals_bgn.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
       rightRectangleName: "IET\nVisuals"
     },
     {
-      id: 8,
+      id: 7,
       title: "CEAC IET DAVV ",
       subtitle: "Be the missing component of our circuit",
       description: "The Core Electronics Awareness Club (CEAC) is IET DAVV’s hub for all things hardware. Whether it’s working on real-time projects, attending speaker sessions, or visiting industries, CEAC helps students get hands-on with the field beyond textbooks. This year, the team secured 2nd place at the Startup Expo, turning their ideas into something bigger. So if you’re someone who’s curious about circuits, driven by design, or just figuring out where electronics fits into your journey this is a great place to begin.",
@@ -127,7 +127,7 @@ const StackCards: React.FC = () => {
       rightRectangleName: "CEAC"
     },
     {
-      id: 10,
+      id: 8,
       title: "The Tech-Driven Tribe of IET-DAVV ",
       subtitle: "Be the missing component of our circuit",
       description: "Three teams. One shared drive to build what most just imagine.\nIntroducing Team Hawk, Spark Ignited, and Team Elektronin from IET’s core technical crew turning ideas into drones, electric rides, and autonomous machines. They may share the same lab tables, tools, and tech spirit, but each team branches into its own world:\na. Hawk flies into aeronautics,\nb. Spark ignite drives electric innovation,\nc. Elektronin takes on self-driving terrain.\nFor freshers with curiosity and a maker mindset  this is where the building begins.",
@@ -141,7 +141,7 @@ const StackCards: React.FC = () => {
       rightRectangleName: "TTDT"
     },
     {
-      id: 6,
+      id: 9,
       title: "Cultural Club  (The Heartbeat of Celebrations) ",
       subtitle: "",
       description: "From hosting grand stages like E-Sangam and Induction to lighting up campus life with Tarang, Nidanam, and flash mobs, Cultural Club is where tradition meets energy. Be it fresher parties or university-level festivals, this legacy club curates experiences that stay with you long after the lights dim. If you’ve ever felt the pulse of a crowd or dreamed of crafting unforgettable moments, this is your cue.\nBecause culture isn’t just followed, it’s created.",
@@ -173,7 +173,7 @@ const StackCards: React.FC = () => {
         </div>
 
         {/* Stack Cards Section */}
-        <div ref={containerRef} className="relative" style={{ height: `${totalCards * 110}vh` }}>
+        <div ref={containerRef} className="relative" style={{ height: `${totalCards * 70}vh` }}>
           <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
             <div className="relative w-full max-w-6xl mx-auto h-[80vh]">
               
@@ -212,8 +212,8 @@ const StackCards: React.FC = () => {
 
               {/* Dynamic Stack Cards */}
               {cards.map((card, index) => {
-                const cardStart = (index + 1) * 0.07;
-                const cardEnd = cardStart + 0.07;
+                const cardStart = (index + 1) * 0.09;
+                const cardEnd = cardStart + 0.09;
 
                 const cardProgress = useTransform(
                   scrollYProgress,
