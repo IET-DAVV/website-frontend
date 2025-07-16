@@ -99,20 +99,6 @@ const StackCards: React.FC = () => {
       rightRectangleName: "RUDRA"
     },
     {
-      id: 6,
-      title: "Cultural Club  (The Heartbeat of Celebrations) ",
-      subtitle: "",
-      description: "From hosting grand stages like E-Sangam and Induction to lighting up campus life with Tarang, Nidanam, and flash mobs, Cultural Club is where tradition meets energy. Be it fresher parties or university-level festivals, this legacy club curates experiences that stay with you long after the lights dim. If you’ve ever felt the pulse of a crowd or dreamed of crafting unforgettable moments, this is your cue.\nBecause culture isn’t just followed, it’s created.",
-      twoImages: {
-        imgz1: "/landing/Clubs/Cultural_1.png",
-        imgz2: "/landing/Clubs/Cultural_2.png"
-      },
-      backgroundImage: "/landing/Clubs/cultural_bg.png",
-      exploreNow: "https://designclub-ietdavv.com/",
-      socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "Cultural "
-    },
-    {
       id: 7,
       title: "IET Visuals (Glance of IET)",
       subtitle: "",
@@ -141,20 +127,6 @@ const StackCards: React.FC = () => {
       rightRectangleName: "CEAC"
     },
     {
-      id: 9,
-      title: "POART Club ",
-      subtitle: "Where voices rise and stay heard.",
-      description: "Born out of DAVV’s student community, POART celebrates creativity through open mics, jamming sessions, debates, and theatre. With hundreds of students tuning in and an official backing from DARPAN & NITI Aayog, POART isn’t just a club it’s a campus-wide canvas for expression. Expanding that spirit, OBSYRA its new esports wing builds a digital stage for gaming, casting, and all things competitive. From high-stakes BGMI scrims to full-on tournament vibes, this is where passion meets play.",
-      twoImages: {
-        imgz1: "/landing/Clubs/POART_1.jpg",
-        imgz2: "/landing/Clubs/POART_2.jpg"
-      },
-      backgroundImage: "/landing/Clubs/POART_bg.png",
-      exploreNow: "https://designclub-ietdavv.com/",
-      socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "POART"
-    },
-    {
       id: 10,
       title: "The Tech-Driven Tribe of IET-DAVV ",
       subtitle: "Be the missing component of our circuit",
@@ -169,32 +141,18 @@ const StackCards: React.FC = () => {
       rightRectangleName: "TTDT"
     },
     {
-      id: 11,
-      title: "Engineers Without Borders, IET Chapter",
-      subtitle: "Where technical skills meet real social change. ",
-      description: "Part of a global humanitarian network, EWB IET DAVV has been driving impact since 2009, from creating educational audio content for visually impaired students to organizing donation drives and building digital platforms. Their initiatives blend purpose with practical problem-solving, showing how engineering can support inclusion, sustainability, and grassroots action. For freshers who want to apply their knowledge beyond labs and classrooms this is where real-world impact begins.",
+      id: 6,
+      title: "Cultural Club  (The Heartbeat of Celebrations) ",
+      subtitle: "",
+      description: "From hosting grand stages like E-Sangam and Induction to lighting up campus life with Tarang, Nidanam, and flash mobs, Cultural Club is where tradition meets energy. Be it fresher parties or university-level festivals, this legacy club curates experiences that stay with you long after the lights dim. If you’ve ever felt the pulse of a crowd or dreamed of crafting unforgettable moments, this is your cue.\nBecause culture isn’t just followed, it’s created.",
       twoImages: {
-        imgz1: "/landing/Clubs/EWB_1.jpg",
-        imgz2: "/landing/Clubs/EWB_2.jpg"
+        imgz1: "/landing/Clubs/Rudra_1.png",
+        imgz2: "/landing/Clubs/Rudra_2.png"
       },
-      backgroundImage: "/landing/Clubs/EWB_bg.png",
+      backgroundImage: "/landing/Clubs/cultural_bg.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "EWB"
-    },
-    {
-      id: 12,
-      title: "National Cadet Corps (NCC) – DAVV Unit",
-      subtitle: "Learn leadership, discipline, and service, all while wearing the uniform.",
-      description: "DAVV’s NCC unit offers students the chance to join India’s premier cadet organisation, blending military-style training with community action. From drills and camps to medical camps and national cadet expos, NCC builds character and confidence. Cadets also earn certificates that open doors in both defence and civilian sectors. For freshers who want to grow in discipline, teamwork, and purpose this is where transformation begins.",
-      twoImages: {
-        imgz1: "/landing/Clubs/NCC_1.jpg",
-        imgz2: "/landing/Clubs/NCC_2.jpg"
-      },
-      backgroundImage: "/landing/Clubs/NCC_bg.png",
-      exploreNow: "https://designclub-ietdavv.com/",
-      socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "NCC"
+      rightRectangleName: "Cultural "
     }
   ];
 
