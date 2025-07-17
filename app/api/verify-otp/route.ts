@@ -11,6 +11,8 @@ export async function POST(req: NextRequest) {
 
     // 🔍 FETCH the stored OTP for this email
     const record = otpStore.get(email);
+
+    // ✅ Uncomment this block to ENABLE actual OTP verification and comment to block
     
     if (!record) {
       return NextResponse.json({ error: "No OTP found for this email" }, { status: 404 });
