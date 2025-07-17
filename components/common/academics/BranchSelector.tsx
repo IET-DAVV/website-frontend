@@ -16,7 +16,12 @@ const BranchSelector: React.FC<BranchSelectorProps> = ({
 
     <div className="mt-2 w-full border-b-2 border-[#D4D4D4] mb-6 sm:mb-8"></div>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-4 sm:w-full md:w-fit max-w-full">
+    <div
+      className="
+        grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-4 sm:w-full md:w-fit max-w-full
+        lg:flex lg:flex-wrap lg:justify-center lg:gap-4 lg:space-x-0
+      "
+    >
       {branches.map((branch) => (
         <button
           key={branch}

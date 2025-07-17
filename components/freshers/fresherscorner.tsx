@@ -9,7 +9,10 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { Manrope } from "next/font/google";
 import "@/app/globals.css";
 
-const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const FreshersCorner = () => {
   const [selectedBranch, setSelectedBranch] = useState<string>("");
@@ -50,27 +53,50 @@ const FreshersCorner = () => {
           : typeof yearData.classTimeTable === "string"
           ? yearData.classTimeTable
           : null;
-
       case "calendar":
         return yearData.calendar;
-
       case "testTimeTable":
         return yearData.testTimeTable;
-
       case "syllabus":
         return typeof yearData.syllabus === "object"
           ? yearData.syllabus?.[selectedSemester]
           : typeof yearData.syllabus === "string"
           ? yearData.syllabus
           : null;
-
       case "examTimeTable":
         return yearData.examTimeTable;
-
       default:
         return null;
     }
   };
+
+  const renderTabs = (
+    items: { key: string; label: string }[],
+    selected: string,
+    onSelect: (val: string) => void
+  ) => (
+    <div className="flex justify-center gap-6 mt-4 mb-2">
+      {items.map(({ key, label }) => {
+        const isActive = selected === key;
+        return (
+          <button
+            key={key}
+            onClick={() => onSelect(key)}
+            className={`relative pb-2 text-lg sm:text-xl transition-all duration-300 ${
+              isActive ? "text-[#3B799E] font-semibold" : "text-gray-400 font-light"
+            }`}
+          >
+            {label}
+            <span
+              className={`absolute left-0 bottom-0 transition-all duration-300 ${
+                isActive ? "w-full h-[3px] bg-[#3B799E]" : "w-full h-[1px] bg-gray-300"
+              }`}
+            ></span>
+          </button>
+        );
+      })}
+    </div>
+  );
 
   const renderPdfSection = (
     title: string,
@@ -90,32 +116,25 @@ const FreshersCorner = () => {
       <div className="flex flex-col gap-4 w-full md:w-2/3 mx-auto mb-12">
         <h2 className="text-6xl font-newyork text-center mt-10">{title}</h2>
 
-        {shouldShowSelector && selectorType === "section" && (
-        <CourseSelector
-            courses={[
-            { courseKey: "A", courseName: "Section A" },
-            { courseKey: "B", courseName: "Section B" },
-            ]}
-            selectedCourse={selectedSection}
-            onSelect={(key) => setSelectedSection(key)}
-            setSelectedBranch={() => {}}
-            setSelectedYear={() => {}}
-        />
-        )}
+        {shouldShowSelector && selectorType === "section" &&
+          renderTabs(
+            [
+              { key: "A", label: "Section A" },
+              { key: "B", label: "Section B" },
+            ],
+            selectedSection,
+            setSelectedSection
+          )}
 
-        {shouldShowSelector && selectorType === "semester" && (
-        <CourseSelector
-            courses={[
-            { courseKey: "I", courseName: "Semester I" },
-            { courseKey: "II", courseName: "Semester II" },
-            ]}
-            selectedCourse={selectedSemester}
-            onSelect={(key) => setSelectedSemester(key)}
-            setSelectedBranch={() => {}}
-            setSelectedYear={() => {}}
-        />
-        )}
-
+        {shouldShowSelector && selectorType === "semester" &&
+          renderTabs(
+            [
+              { key: "I", label: "Semester I" },
+              { key: "II", label: "Semester II" },
+            ],
+            selectedSemester,
+            setSelectedSemester
+          )}
 
         <div className="flex justify-end items-center">
           <a
