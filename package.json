@@ -10,6 +10,7 @@
     "prepare": "node scripts/prepare.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.51.0",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
     "fuse.js": "^7.1.0",
@@ -17,6 +18,7 @@
     "grommet-icons": "^4.12.1",
     "lucide-react": "^0.525.0",
     "next": "14.2.6",
+    "nodemailer": "^7.0.5",
     "prettier": "^3.6.2",
     "react": "^18.3.1",
     "react-dom": "^18",
@@ -29,11 +31,13 @@
     "recharts": "^2.12.7",
     "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
+    "supabase": "^2.31.4",
     "vercel": "^37.4.2"
   },
   "devDependencies": {
     "@types/he": "^1.2.3",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-responsive-masonry": "^2.1.3",
