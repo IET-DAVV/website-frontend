@@ -6,6 +6,7 @@ import BranchSelector from "../common/academics/BranchSelector";
 import YearSelector from "../common/academics/YearSelector";
 import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
+import { motion } from "framer-motion";
 
 const Timetable = () => {
   const courses = Object.keys(timetableData.courses);
@@ -17,8 +18,8 @@ const Timetable = () => {
     { sectionName: string; PdfLink: string | null }[]
   >([]);
 
-  // Initialize selectedBranch and selectedYear when selectedCourse changes
-  React.useEffect(() => {
+  // Update branch/year on course change
+  useEffect(() => {
     const branches = Object.keys(timetableData.courses[selectedCourse]?.branches || {});
     if (branches.length > 0) {
       setSelectedBranch(branches[0]);
@@ -40,20 +41,16 @@ const Timetable = () => {
   }));
 
   const branches = Object.keys(
-    timetableData.courses[selectedCourse]?.branches || {},
+    timetableData.courses[selectedCourse]?.branches || {}
   );
   const years = Object.keys(
-    timetableData.courses[selectedCourse]?.branches[selectedBranch]?.years ||
-      {},
+    timetableData.courses[selectedCourse]?.branches[selectedBranch]?.years || {}
   );
 
-  console.log(courseList);
   useEffect(() => {
     if (selectedCourse && selectedBranch && selectedYear) {
       const sectionList = Object.entries(
-        timetableData.courses[selectedCourse]?.branches[selectedBranch]?.years[
-          selectedYear
-        ]?.sections || {},
+        timetableData.courses[selectedCourse]?.branches[selectedBranch]?.years[selectedYear]?.sections || {}
       ).map(([sectionName, { PdfLink }]) => ({
         sectionName,
         PdfLink: PdfLink || null,
@@ -66,38 +63,98 @@ const Timetable = () => {
   }, [selectedCourse, selectedBranch, selectedYear]);
 
   return (
-    <div className="text-black text-center">
+    <motion.div
+      className="text-black text-center"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Title title="CLASS TIMETABLE" />
-      <div className="p-4 flex flex-col items-center">
-        <CourseSelector
-          courses={courseList}
-          selectedCourse={selectedCourse}
-          onSelect={setSelectedCourse}
-          setSelectedBranch={setSelectedBranch}
-          setSelectedYear={setSelectedYear}
-        />
-        <BranchSelector
-          branches={branches}
-          selectedBranch={selectedBranch}
-          onSelect={setSelectedBranch}
-        />
-        <YearSelector
-          years={years}
-          selectedYear={selectedYear}
-          onSelect={setSelectedYear}
-        />
+      <div className="p-4 flex flex-col items-center space-y-8">
+        
+        {/* Course Selector */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="w-full"
+        >
+          <CourseSelector
+            courses={courseList}
+            selectedCourse={selectedCourse}
+            onSelect={setSelectedCourse}
+            setSelectedBranch={setSelectedBranch}
+            setSelectedYear={setSelectedYear}
+          />
+        </motion.div>
 
+        {/* Branch Selector */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className="w-full"
+        >
+          <h2 className="text-xl font-semibold mb-4">Branch</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-center">
+            {branches.map((branch) => (
+              <button
+                key={branch}
+                onClick={() => setSelectedBranch(branch)}
+                className={`px-4 py-2 rounded-lg border font-medium transition-all duration-300 ease-in-out ${
+                  selectedBranch === branch
+                    ? "bg-teal-600 text-white"
+                    : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
+                }`}
+              >
+                {branch}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Year Selector */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full"
+        >
+          <h2 className="text-xl font-semibold mb-4">Year</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {years.map((year) => (
+              <button
+                key={year}
+                onClick={() => setSelectedYear(year)}
+                className={`px-5 py-2 rounded-md border transition-all duration-300 ease-in-out font-medium ${
+                  selectedYear === year
+                    ? "bg-teal-600 text-white"
+                    : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
+                }`}
+              >
+                {year}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Section Selector */}
         {showSections && (
-          <div className="w-full">
+          <motion.div
+            className="w-full"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
             <SectionSelector
               sections={sections}
               showName={true}
               hideIfShortName={true}
             />
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
