@@ -1,5 +1,5 @@
 import React from "react";
-import RollList from "@/components/roll-list/RollList";
+import RollList from "@/components/Roll-List/RollList";
 
 const page = () => {
   return (

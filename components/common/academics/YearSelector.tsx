@@ -16,15 +16,16 @@ const YearSelector: React.FC<YearSelectorProps> = ({
 
     <div className="mt-2 w-full border-b-2 border-[#D4D4D4] mb-6 sm:mb-8"></div>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 md:gap-10 sm:w-full md:w-fit max-w-full">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
       {years.map((year) => (
         <button
           key={year}
           onClick={() => onSelect(year)}
-          className={`px-4 py-2 w-full rounded border-2 font-semibold text-sm sm:text-base transition-all duration-300 ease-in-out transform ${
+          // This className is from your Timetable component's Year Selector
+          className={`px-5 py-2 rounded-md border transition-all duration-300 ease-in-out font-medium ${
             selectedYear === year
-              ? "bg-[#06779B] text-white border-[#06779B] scale-105 shadow-md"
-              : "text-black border-black hover:bg-[#06779B] hover:text-white hover:border-[#06779B] hover:scale-105"
+              ? "bg-teal-600 text-white" // Selected style
+              : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105" // Unselected style
           }`}
         >
           {year}

@@ -1,5 +1,5 @@
-import AdmissionBox from "@/components/process/process";
-import ProcessContent from "@/components/process/processcontent";
+import AdmissionBox from "@/components/Process/process";
+import ProcessContent from "@/components/Process/processcontent";
 
 export default function ProcessPage() {
   return (

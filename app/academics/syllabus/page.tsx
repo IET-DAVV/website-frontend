@@ -1,4 +1,4 @@
-import Syllabus from "@/components/syllabus/Syllabus";
+import Syllabus from "@/components/Syllabus/Syllabus";
 
 const page = () => {
   return (
