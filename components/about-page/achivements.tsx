@@ -22,7 +22,7 @@ const AchievementsSlider = () => {
     return () => clearInterval(interval);
   }, [totalPages]);
 
-  const handleDragEnd = (event: any, info: { offset: { x: number } }) => {
+  const handleDragEnd = (_event: any, info: { offset: { x: number } }) => {
     if (info.offset.x < -100 && page < totalPages - 1) {
       setPage(page + 1);
       setSelectedId(null);
@@ -44,6 +44,11 @@ const AchievementsSlider = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center overflow-hidden">
+      {/* Section Heading */}
+      <h2 className="text-3xl font-bold text-center mb-4 mt-6 text-dark-blue font-newyork underline underline-offset-4 decoration-[3px] decoration-dark-blue">
+        Achievements
+      </h2>
+
       <AnimatePresence mode="wait">
         <motion.div
           key={page}
@@ -51,7 +56,7 @@ const AchievementsSlider = () => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -300, opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 py-10"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 py-4"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           onDragEnd={handleDragEnd}
@@ -64,22 +69,27 @@ const AchievementsSlider = () => {
                 key={achieve.id}
                 onClick={() => setSelectedId(achieve.id)}
                 whileHover={{ scale: 1.05 }}
-                className={`w-[280px] min-h-[300px] flex flex-col items-center text-center p-6 border-2 rounded-2xl shadow-sm transition-all duration-300 cursor-pointer ${
+                className={`w-[280px] h-[320px] flex flex-col justify-center items-center text-center p-6 border-2 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer ${
                   isSelected
                     ? "border-[#3B799E] text-[#3B799E]"
                     : "border-black text-black hover:border-[#3B799E] hover:text-[#3B799E]"
                 }`}
               >
                 <BsTrophy size={48} className="mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{achieve.title}</h3>
-                <p className="text-sm">{achieve.description}</p>
+                <h3 className="text-xl font-semibold mb-2 font-newyork">
+                  {achieve.title}
+                </h3>
+                <p className="text-sm font-sans font-light">
+                  {achieve.description}
+                </p>
               </motion.div>
             );
           })}
         </motion.div>
       </AnimatePresence>
 
-      <div className="flex gap-2 pb-4">
+      {/* Pagination Dots */}
+      <div className="flex gap-2 mt-2 mb-6">
         {Array.from({ length: totalPages }).map((_, i) => (
           <button
             key={i}

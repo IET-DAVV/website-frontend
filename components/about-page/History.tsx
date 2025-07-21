@@ -9,8 +9,8 @@ const History = () => {
     <div>
       <div className="flex flex-col space-y-12 md:space-y-20 h-full px-6 py-16 md:p-20 w-full bg-[#3B799E]">
         {/* Heading */}
-        <div className="text-center text-3xl md:text-5xl font-light">
-          <h1 className="font-newyork text-white font-extralight">
+        <div className="text-center">
+          <h1 className="font-newyork text-white text-3xl md:text-5xl font-extralight underline underline-offset-4 decoration-white decoration-[2.5px] mb-6">
             IET HISTORY
           </h1>
         </div>
@@ -27,17 +27,17 @@ const History = () => {
               </h1>
             </div>
           ))}
+        </div>
 
-          {/* Timeline Image */}
-          <div className="col-span-1 md:col-span-4 mx-auto md:px-20">
-            <Image
-              src={timeline}
-              alt="history"
-              width={1000}
-              height={1000}
-              className="w-full h-auto object-contain"
-            />
-          </div>
+        {/* Timeline Image */}
+        <div className="mx-auto w-full md:px-20 pt-6">
+          <Image
+            src={timeline}
+            alt="history"
+            width={1000}
+            height={1000}
+            className="w-full h-auto object-contain"
+          />
         </div>
       </div>
     </div>
