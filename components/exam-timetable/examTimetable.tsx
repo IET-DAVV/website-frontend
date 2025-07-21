@@ -1,96 +1,138 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { examtimetableData } from "@/constants/exam-timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
-import BranchSelector from "../common/academics/BranchSelector";
 import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
-import { useRouter } from "next/navigation";
 import ExamNotice from "./examNotice";
 
 const ExamTimetable = () => {
-  const router = useRouter();
-
   const courseList = Object.keys(examtimetableData.courses).map((courseKey) => ({
     courseKey,
-    courseName: courseKey, // Use actual course name if available in data
+    // Agar aapko data mein poora naam milta hai to use karein, warna key hi theek hai
+   courseName: (examtimetableData.courses[courseKey] as any)?.courseName || courseKey,
   }));
 
-  const [selectedCourse, setSelectedCourse] = useState<string>(Object.keys(examtimetableData.courses)[0] || "");
+  const [selectedCourse, setSelectedCourse] = useState<string>(courseList[0]?.courseKey || "");
   const [selectedBranch, setSelectedBranch] = useState<string>("");
-  const [sections, setSections] = useState<
-    { sectionName: string; PdfLink: string | null }[]
-  >([]);
+  const [sections, setSections] = useState<{ sectionName: string; PdfLink: string | null }[]>([]);
+  console.log("Course List: ", courseList);
+  
 
-  const branches = Object.keys(
-    examtimetableData.courses[selectedCourse]?.branches || {}
-  );
+  // Jab bhi course badle, branch aur sections ko reset kar dein
+  useEffect(() => {
+    setSelectedBranch("");
+    setSections([]);
+  }, [selectedCourse]);
 
+  // Jab branch select ho, tab sections ko fetch karein
   useEffect(() => {
     if (selectedCourse && selectedBranch) {
       const sectionList = Object.entries(
-        examtimetableData.courses[selectedCourse]?.branches[selectedBranch]
-          ?.sections || {}
+        examtimetableData.courses[selectedCourse]?.branches[selectedBranch]?.sections || {}
       ).map(([sectionName, { PdfLink }]) => ({
         sectionName,
         PdfLink: PdfLink || null,
       }));
       setSections(sectionList);
-    } else {
-      setSections([]);
     }
-  }, [selectedCourse, selectedBranch]);
+  }, [selectedBranch]); // Sirf branch change par chalayein
 
-useEffect(() => {
-  if (selectedCourse === "Exam Notice") {
-    
-  } else {
-    const availableBranches =
-      Object.keys(examtimetableData.courses[selectedCourse]?.branches || {});
-    setSelectedBranch(""); // ✅ Keep this
-    setSections([]); // ✅ Clear old sections
-  }
-}, [selectedCourse]);
+  const branches = Object.keys(examtimetableData.courses[selectedCourse]?.branches || {});
 
   return (
-    <div className="text-black">
-      <Title title="Exam Time Table" />
+    <motion.div
+      className="text-black text-center"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Title title="EXAM TIMETABLE" />
+      <div className="p-4 flex flex-col items-center space-y-8">
+        {/* Course Selector */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="w-full"
+        >
+          <CourseSelector
+            courses={courseList}
+            selectedCourse={selectedCourse}
+            onSelect={setSelectedCourse}
+            // In props ki zaroorat nahi hai, to empty function de sakte hain
+            setSelectedBranch={() => {}} 
+            setSelectedYear={() => {}}
+          />
+        </motion.div>
 
-      <div className="p-4">
-        <CourseSelector
-          courses={courseList}
-          selectedCourse={selectedCourse}
-          onSelect={setSelectedCourse}
-          setSelectedBranch={() => { }}
-          setSelectedYear={() => { }}
-        />
-
+        {/* Conditional Rendering: Exam Notice ya Timetable */}
         {selectedCourse === "Exam Notice" ? (
-          <div className="mt-6">
-            <ExamNotice/>
-          </div>
+          <motion.div
+            key="exam-notice"
+            className="w-full"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <ExamNotice />
+          </motion.div>
         ) : (
           <>
-            {selectedCourse && (
-              <BranchSelector
-                branches={branches}
-                selectedBranch={selectedBranch}
-                onSelect={setSelectedBranch}
-              />
+            {/* Branch Selector */}
+            {branches.length > 0 && (
+              <motion.div
+    key="branch-selector"
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.45 }}
+    className="w-full"
+  >
+    <h2 className="text-xl font-semibold mb-4">Branch</h2>
+    <div className="flex flex-wrap justify-center gap-4">
+      {branches.map((branch) => (
+        <div
+          key={branch}
+          onClick={() => setSelectedBranch(branch)}
+          className={`cursor-pointer px-4 py-2 rounded-lg border font-medium transition-all duration-300 ease-in-out ${
+            selectedBranch === branch
+              ? "bg-teal-600 text-white shadow-lg"
+              : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
+          }`}
+        >
+          {branch}
+        </div>
+      ))}
+    </div>
+  </motion.div>
             )}
 
-            {sections.length > 0 && (
-              <SectionSelector
-                sections={sections}
-                showName={true}
-                hideIfShortName={false}
-              />
+            {/* Section Selector */}
+            {selectedBranch && (
+              <motion.div
+                key="section-selector"
+                className="w-full"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {sections.length > 0 ? (
+                  <SectionSelector
+                    sections={sections}
+                    showName={true}
+                    hideIfShortName={false}
+                  />
+                ) : (
+                  <p className="text-gray-500 mt-4">No exam schedules found for this selection.</p>
+                )}
+              </motion.div>
             )}
           </>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

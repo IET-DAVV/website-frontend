@@ -6,6 +6,7 @@ import BranchSelector from "../common/academics/BranchSelector";
 import YearSelector from "../common/academics/YearSelector";
 import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
+import { motion } from "framer-motion";
 
 const Timetable = () => {
   const courses = Object.keys(testtimetableData.courses);
@@ -17,22 +18,36 @@ const Timetable = () => {
     { sectionName: string; PdfLink: string | null }[]
   >([]);
 
-  const courseList = Object.keys(testtimetableData.courses).map(
-    (courseKey) => ({
-      courseKey,
-      courseName: testtimetableData.courses[courseKey].courseName,
-    }),
-  );
+  // Initialize selectedBranch and selectedYear when selectedCourse changes
+  useEffect(() => {
+    const branches = Object.keys(testtimetableData.courses[selectedCourse]?.branches || {});
+    if (branches.length > 0) {
+      setSelectedBranch(branches[0]);
+      const years = Object.keys(testtimetableData.courses[selectedCourse]?.branches[branches[0]]?.years || {});
+      if (years.length > 0) {
+        setSelectedYear(years[0]);
+      } else {
+        setSelectedYear("");
+      }
+    } else {
+      setSelectedBranch("");
+      setSelectedYear("");
+    }
+  }, [selectedCourse]);
+
+  const courseList = Object.keys(testtimetableData.courses).map((courseKey) => ({
+    courseKey,
+    courseName: testtimetableData.courses[courseKey].courseName,
+  }));
 
   const branches = Object.keys(
     testtimetableData.courses[selectedCourse]?.branches || {},
   );
   const years = Object.keys(
-    testtimetableData.courses[selectedCourse]?.branches[selectedBranch]
-      ?.years || {},
+    testtimetableData.courses[selectedCourse]?.branches[selectedBranch]?.years ||
+      {},
   );
 
-  console.log(courseList);
   useEffect(() => {
     if (selectedCourse && selectedBranch && selectedYear) {
       const sectionList = Object.entries(
@@ -50,35 +65,82 @@ const Timetable = () => {
   }, [selectedCourse, selectedBranch, selectedYear]);
 
   return (
-    <div className="text-black">
+    <motion.div
+      className="text-black text-center"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Title title="TEST TIMETABLE" />
-      <div className="p-4">
-        <CourseSelector
-          courses={courseList}
-          selectedCourse={selectedCourse}
-          onSelect={setSelectedCourse}
-          setSelectedBranch={setSelectedBranch}
-          setSelectedYear={setSelectedYear}
-        />
-        <BranchSelector
-          branches={branches}
-          selectedBranch={selectedBranch}
-          onSelect={setSelectedBranch}
-        />
-        <YearSelector
-          years={years}
-          selectedYear={selectedYear}
-          onSelect={setSelectedYear}
-        />
-        {showSections && (
-          <SectionSelector
-            sections={sections}
-            showName={true}
-            hideIfShortName={false}
+      <div className="p-4 flex flex-col items-center space-y-8">
+        {/* Course Selector */}
+        <div className="w-full">
+          <CourseSelector
+            courses={courseList}
+            selectedCourse={selectedCourse}
+            onSelect={setSelectedCourse}
+            setSelectedBranch={setSelectedBranch}
+            setSelectedYear={setSelectedYear}
           />
+        </div>
+
+        {/* Branch Selector */}
+        <div className="w-full">
+          <h2 className="text-xl font-semibold mb-4">Branch</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-center">
+            {branches.map((branch) => (
+              <button
+                key={branch}
+                onClick={() => setSelectedBranch(branch)}
+                className={`px-4 py-2 rounded-lg border font-medium transition-all duration-300 ease-in-out ${
+                  selectedBranch === branch
+                    ? "bg-teal-600 text-white"
+                    : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
+                }`}
+              >
+                {branch}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Year Selector */}
+        <div className="w-full">
+          <h2 className="text-xl font-semibold mb-4">Year</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {years.map((year) => (
+              <button
+                key={year}
+                onClick={() => setSelectedYear(year)}
+                className={`px-5 py-2 rounded-md border transition-all duration-300 ease-in-out font-medium ${
+                  selectedYear === year
+                    ? "bg-teal-600 text-white"
+                    : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
+                }`}
+              >
+                {year}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Section Selector */}
+        {showSections && (
+          <motion.div
+            className="w-full"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <SectionSelector
+              sections={sections}
+              showName={true}
+              hideIfShortName={true}
+            />
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
