@@ -38,7 +38,7 @@ const EnrollmentComponent = () => {
             onClick={() => signIn("google")} // This triggers the Google sign-in flow
             className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-all"
           >
-            Continue with Google
+            Continue with College ID
           </button>
         </div>
       )}
