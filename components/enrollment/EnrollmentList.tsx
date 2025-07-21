@@ -12,7 +12,7 @@ const manrope = Manrope({
 const EnrollmentComponent = () => {
   return (
     <div className="text-black">
-      <Title title="Enrollment List" />
+      <Title title="ENROLLMENT LIST" />
 
       <div className="border border-black rounded-xl px-6 py-4 mx-auto w-11/12 md:w-3/5 my-6">
         <p className="font-semibold mb-2">IMPORTANT NOTE</p>

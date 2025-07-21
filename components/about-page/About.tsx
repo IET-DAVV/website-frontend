@@ -23,7 +23,7 @@ const About = () => {
         <div className="flex flex-row text-black px-6 py-4 md:p-10">
           <div className="flex flex-col space-y-4 md:space-y-5">
             <h1 className="font-newyork text-3xl md:text-5xl text-black text-justify">
-              About IET DAVV Indore
+              ABOUT IET DAVV
             </h1>
             <p className="text-sm md:text-base break-words text-black text-justify">
               {aboutIET}

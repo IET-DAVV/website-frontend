@@ -21,7 +21,7 @@ export const ACHIEVEMENTS_DATA = [
   },
   {
     id: 4,
-    title: "Smart India Hackathon Winners",
+    title: "Smart India Hackathon Winnings",
     description:
       "Teams from IET secured top positions in national-level hackathons.",
   },
@@ -59,13 +59,13 @@ export const ACHIEVEMENTS_DATA = [
     id: 10,
     title: "International Collaborations",
     description:
-      "Partnered with universities in Germany, UK, and Singapore for exchange programs.",
+      "Partnered with IITs, NITs, IIITs, SGSITS for exchange programs.",
   },
   {
     id: 11,
     title: "Student Clubs & Chapters",
     description:
-      "Active Google DSC, IETE, IEEE, and E-Cell chapters thriving on campus.",
+      "Active Google Developer Groups, National Service Scheme, Society of Automotive Engineers, and E-Cell chapters thriving on campus.",
   },
   {
     id: 12,
