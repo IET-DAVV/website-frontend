@@ -23,7 +23,7 @@ import HELPSHIFT from "./HELPSHIFT.svg";
 import HOTWAX_SYSTEM from "./HOTWAX_SYSTEM.png";
 import IMPETUS from "./IMPETUS.png";
 import INCEDO from "./INCEDO.png";
-import JOHN_DEERE_INDIA from "./JOHN_DEERE_INDIA.png";
+import JOHN_DEERE_INDIA from "./John_Deere_India.png";
 import JUSPAY from "./JUSPAY.png";
 import LTTS from "./LTTS.png";
 import MERCOR from "./MERCOR.png";
