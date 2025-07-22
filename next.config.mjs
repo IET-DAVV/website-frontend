@@ -6,7 +6,6 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 const nextConfig = {
   reactStrictMode: false, // Optional: disable in production for slight speedup
-  swcMinify: true,        // Enable SWC minification
   eslint: {
     ignoreDuringBuilds: true,
   },
