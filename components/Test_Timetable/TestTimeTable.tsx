@@ -84,45 +84,18 @@ const Timetable = () => {
           />
         </div>
 
-        {/* Branch Selector */}
-        <div className="w-full">
-          <h2 className="text-xl font-semibold mb-4">Branch</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-center">
-            {branches.map((branch) => (
-              <button
-                key={branch}
-                onClick={() => setSelectedBranch(branch)}
-                className={`px-4 py-2 rounded-lg border font-medium transition-all duration-300 ease-in-out ${
-                  selectedBranch === branch
-                    ? "bg-teal-600 text-white"
-                    : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
-                }`}
-              >
-                {branch}
-              </button>
-            ))}
-          </div>
-        </div>
+        <BranchSelector
+  branches={branches}
+  selectedBranch={selectedBranch}
+  onSelect={setSelectedBranch}
+/>
 
-        {/* Year Selector */}
-        <div className="w-full">
-          <h2 className="text-xl font-semibold mb-4">Year</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {years.map((year) => (
-              <button
-                key={year}
-                onClick={() => setSelectedYear(year)}
-                className={`px-5 py-2 rounded-md border transition-all duration-300 ease-in-out font-medium ${
-                  selectedYear === year
-                    ? "bg-teal-600 text-white"
-                    : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
-                }`}
-              >
-                {year}
-              </button>
-            ))}
-          </div>
-        </div>
+
+        <YearSelector
+  years={years}
+  selectedYear={selectedYear}
+  onSelect={setSelectedYear}
+/>
 
         {/* Section Selector */}
         {showSections && (
