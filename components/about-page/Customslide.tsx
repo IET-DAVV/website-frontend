@@ -8,13 +8,13 @@ const manrope = Manrope({
   weight: ["200", "300", "400", "500"],
 });
 
-interface Slideprops {
-  id: string;
+interface SlideProps {
+  id: string; // ✅ Added this
   heading: string;
   paragraph: string;
 }
 
-const Customslide = ({ id, heading, paragraph }: Slideprops) => {
+const Customslide = ({ id, heading, paragraph }: SlideProps) => {
   return (
     <div
       className={`border border-light-gray hover:border-2 hover:border-dark-blue hover:text-dark-blue 

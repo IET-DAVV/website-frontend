@@ -1,10 +1,8 @@
-import { aboutVC, aboutVCText } from "@/constants/about-page/about";
+import React from "react";
 import About from "@/components/about-page/About";
 import History from "@/components/about-page/History";
 import Navbar from "@/containers/navbar/Navbar";
-import React from "react";
 import { Playfair_Display } from "next/font/google";
-import Image from "next/image";
 import Director from "@/components/about-page/Director";
 import VC from "@/components/about-page/VC";
 import Mission from "@/components/about-page/Mission";
