@@ -29,7 +29,7 @@ import LTTS from "./LTTS.png";
 import MERCOR from "./MERCOR.png";
 import METAFIC from "./METAFIC.png";
 import MINDRUBY from "./MINDRUBY.png";
-import NRI_FINTECH from "./NRI_FINTECH.png";
+import NRI_FINTECH from "./NRI_Fintech.png";
 import NUCLEI from "./NUCLEI.png";
 import NUCLEUSTEQ from "./NucleusTeq.png";
 import PRINCIPAL_GLOBAL_SERVICES from "./PRINCIPAL_GLOBAL_SERVICES.webp";
