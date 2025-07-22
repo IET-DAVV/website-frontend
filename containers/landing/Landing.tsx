@@ -16,7 +16,6 @@ const Achievements = dynamic(() => import("@/components/achievements-carousel/Ac
   loading: () => <div className="h-96 animate-pulse bg-gray-200 rounded"></div>
 })
 
-const Chart = dynamic(() => import("@/components/chart/Chart"))
 const Events = dynamic(() => import("@/components/landing-page/events/Events"))
 const StackCards = dynamic(() => import("@/components/landing-page/ClubsUpdated"))
 
