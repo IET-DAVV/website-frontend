@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const SearchPageClient = dynamic(() => import("@/components/search/SearchPageClient"), {
+const SearchPageClient = dynamic(() => import("./SearchPageClient"), {
   ssr: false,
 });
 
