@@ -10,39 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔐 Start SSH Agent
+      - name: ��� Start SSH Agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: 🚀 Deploy to Server
+      - name: ��� Deploy to Server
         run: |
           ssh -o StrictHostKeyChecking=no webuser@117.239.195.147 << 'EOF'
-            echo "✅ Setting up Node v20..."
-            export NVM_DIR="\$HOME/.nvm"
-            source "\$NVM_DIR/nvm.sh"
-            nvm install 20.17.0
-            nvm use 20.17.0
+           export NVM_DIR="$HOME/.nvm"
+           source "$NVM_DIR/nvm.sh"
+           nvm use 18
 
-            echo "📂 Navigating to project directory..."
-            cd /var/www/website
+           cd /var/www/website
+           git fetch origin dev
+           git reset --hard origin/dev
 
-            echo "🔄 Pulling latest code from dev branch..."
-            git fetch origin dev
-            git reset --hard origin/dev
+           node -v   # ✅ Add this to verify you're using 18.x
+           npm -v    # ✅ Confirm npm is 10+
 
-            echo "🧼 Cleaning previous builds..."
-            rm -rf node_modules package-lock.json
-
-            echo "📦 Installing dependencies..."
-            npm install --omit=dev
-            npm install --save-dev typescript @types/react @types/node
-
-            echo "🏗️ Building project..."
-            npm run build
-
-            echo "🔁 Restarting PM2 service..."
-            pm2 restart next-dev
-
-            echo "✅ Deployment completed successfully."
+           export CI=true  
+           npm install --omit=dev
+           pm2 restart next-dev
           EOF
