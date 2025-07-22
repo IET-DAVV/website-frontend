@@ -1,11 +1,10 @@
-import ProgramsOffered from "@/components/programs/programsoffered";
+import { Suspense } from "react";
+import ProgramOfferedClient from "@/components/programs/programsoffered"; // adjust import path
 
-const ProgramsPage = () => {
+export default function ProgramsOfferedPage() {
   return (
-    <main>
-      <ProgramsOffered />
-    </main>
+    <Suspense fallback={<div>Loading programs...</div>}>
+      <ProgramOfferedClient />
+    </Suspense>
   );
-};
-
-export default ProgramsPage;
+}
