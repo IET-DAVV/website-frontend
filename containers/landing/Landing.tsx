@@ -31,7 +31,6 @@ const LandingContainer = () => {
       
       {/* Below the fold - lazy load */}
       <Achievements />
-      <Chart />
       <Events />
       <StackCards />
     </div>
