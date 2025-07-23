@@ -16,7 +16,7 @@ const History = () => {
       </div>
 
       {/* History Timeline Scroll Section */}
-      <div className="flex flex-col space-y-16 md:space-y-24 relative border-l-2 border-white pl-6 md:pl-10 max-h-[80vh] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-white/50 scrollbar-track-white/10">
+      <div className="flex flex-col space-y-16 md:space-y-15 relative border-l-2 border-white pl-6 md:pl-10 max-h-[80vh] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-white/50 scrollbar-track-white/10">
         {history.map((item: any, index: number) => (
           <motion.div
             key={item.id}
@@ -30,14 +30,15 @@ const History = () => {
             <span className="absolute -left-[1.05rem] top-1 w-4 h-4 bg-white rounded-full border-2 border-[#3B799E]" />
 
             {/* Content */}
-            <div className="text-white text-sm md:text-base font-light leading-relaxed">
+            <div
+              className="text-white text-sm md:text-base font-light"
+              style={{ lineHeight: "1.2", marginBottom: "0.25rem" }}
+            >
               {item.title}
             </div>
           </motion.div>
         ))}
       </div>
-
-      
 
       {/* Timeline Image */}
       <div className="mx-auto w-full md:px-20 pt-20">
