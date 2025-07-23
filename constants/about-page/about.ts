@@ -40,6 +40,37 @@ export const history = [
     title:
       "IET became PG Institute in 2002 and presently it is conducting ME Programmes with six specializations. In year 2006, MSc program in Applied Mathematics was also started.",
   },
+  {
+    id: 5,
+    title:
+      "In 2010, IET saw a major infrastructure upgrade with new academic blocks, modern laboratories, and expanded hostel facilities to accommodate growing student intake.",
+  },
+  {
+    id: 6,
+    title:
+      "The institute hosted its first national-level technical fest 'Invento' in 2013, drawing participants from colleges across India, and establishing itself as a hub of innovation.",
+  },
+  {
+    id: 7,
+    title:
+      "In 2016, IET celebrated its 20th anniversary with alumni meets, academic conferences, and a renewed vision to strengthen research and industry collaboration.",
+  },
+  {
+    id: 8,
+    title:
+      "IET students built a fully functional electric vehicle prototype under the EV Club in 2018, winning accolades in Smart India Hackathon and eBAJA competitions.",
+  },
+  {
+    id: 9,
+    title:
+      "During the COVID-19 pandemic in 2020, IET swiftly transitioned to hybrid learning, conducted virtual fests, and launched online innovation challenges.",
+  },
+  {
+    id: 10,
+    title:
+      "In 2023, IET launched an in-house innovation & entrepreneurship cell, supported by Startup India, to nurture student-led startups and technology ventures.",
+  },
 ];
+
 
 export const timeline = "/about/timeline.svg";

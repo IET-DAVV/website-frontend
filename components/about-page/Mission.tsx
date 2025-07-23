@@ -34,14 +34,17 @@ const Mission = () => {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[18rem] h-[1px] bg-gray-300 z-0" />
 
         {missions.map((value, id) => {
+          const tabName = value.name === "MISSION–IET" ? "IET" : "DAVV";
           const isActive = preview === value.link;
+
+
           return (
             <motion.button
               key={id}
               variants={fadeUp}
               onClick={() => {
                 setPreview(value.link);
-                setActiveTab(value.name === "MISSION–IET" ? "IET" : "DAVV");
+                setActiveTab(tabName);
               }}
               className={`relative text-lg sm:text-2xl md:text-3xl transition-all duration-300 pb-2 ${
                 isActive
@@ -50,13 +53,13 @@ const Mission = () => {
               }`}
             >
               {value.name}
-              <span
-                className={`absolute left-0 bottom-0 transition-all duration-300 ${
-                  isActive
-                    ? "w-full h-[3px] bg-[#3B799E]"
-                    : "w-full h-[1px] bg-gray-300"
-                }`}
-              ></span>
+              {isActive && (
+                <motion.span
+                  layoutId="underline"
+                  className="absolute left-0 bottom-0 w-full h-[3px] bg-[#3B799E]"
+                  transition={{ type: "spring", stiffness: 390, damping: 26 }}
+                />
+              )}
             </motion.button>
           );
         })}
@@ -64,11 +67,11 @@ const Mission = () => {
 
       {/* Cards Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-4"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ staggerChildren: 0.1 }}
+        transition={{ staggerChildren: 0.25 }}
       >
         {preview?.map((item: any) => (
           <motion.div key={item.id} variants={fadeUp}>
