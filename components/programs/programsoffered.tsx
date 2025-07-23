@@ -22,7 +22,7 @@ const ProgramsOffered: React.FC = () => {
   return (
     <div className="space-y-8  py-10">
       <Title title="PROGRAMS OFFERED" />
-      <Header onSelectCourse={handleSelectCourse} />
+      <Header onSelectCourse={handleSelectCourse} selectedCourse={selectedCourse} />
       <Content selectedCourse={selectedCourse} />
     </div>
   );
