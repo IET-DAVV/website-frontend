@@ -17,9 +17,10 @@ const config: Config = {
       },
       fontFamily: {
         newyork: ['"NewYork"', 'serif'],
+        playfair: ['"Playfair Display"', 'serif'],
       },
       colors: {
-        // FOR HOME PAGE
+        // Custom Colors (adds to default colors)
         "dark-gray": "#2F2F2F",
         "light-blue": "#0EAADB",
         yellow: "#FFC90B",
@@ -28,22 +29,7 @@ const config: Config = {
         black: "#000000",
         "light-gray": "#8C8C8C",
         white: "#FFFFFF",
-
-        // FOR THE REMAINING PAGES
       },
-    },
-    colors: {
-      // FOR HOME PAGE
-      "dark-gray": "#2F2F2F",
-      "light-blue": "#0EAADB",
-      yellow: "#FFC90B",
-      "light-yellow": "#FFEDC3",
-      "dark-blue": "#06779B",
-      black: "#000000",
-      "light-gray": "#8C8C8C",
-      white: "#FFFFFF",
-
-      // FOR THE REMAINING PAGES
     },
   },
   plugins: [],

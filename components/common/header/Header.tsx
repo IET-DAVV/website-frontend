@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { LOGO } from "@/constants/header/data";
+import { LOGO, LOGO_SUBTITLE } from "@/constants/header/data";
 import { HeaderLinksType } from "@/typings.d";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
@@ -25,10 +25,13 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
-
+  
   return (
     <header
-      className={`w-full px-6 py-2 bg-[#3B7A9E] text-white`}
+      className={`w-full px-6 py-2 ${
+        isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
+      }`}
+
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
@@ -40,9 +43,10 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             width={1000}
             height={1000}
           />
-          <p className={`${manrope.className} text-sm w-44 font-bold`}>
-            {LOGO}
-          </p>
+          <div className={`${manrope.className} leading-tight`}>
+            <p className="text-sm font-bold whitespace-nowrap">{LOGO}</p>
+            <p className="text-xs text-gray-600">{LOGO_SUBTITLE}</p>
+          </div>
         </div>
 
         {/* Hamburger (Mobile Only) */}
@@ -53,27 +57,43 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
           {menuOpen ? <IoClose /> : <IoMenu />}
         </div>
 
-        {/* Links */}
-        <ul className="flex flex-row justify-center items-center space-x-10 relative">
+
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex flex-row justify-center items-center space-x-4 relative">
           {links.map((link, idx) => (
             <li key={link.name} className="relative">
-              <Link
-                href={link.href}
-                className={`text-sm bg-transparent hover:border-b-2 ${
-                  isHome ? "border-black" : "border-white/80"
-                }`}
-                onMouseEnter={() => {
-                  clearTimeout(hoverTimeout);
-                  setOpenDropdown(idx);
-                }}
-                onMouseLeave={() => {
-                  hoverTimeout = setTimeout(() => {
-                    setOpenDropdown(null);
-                  }, 200);
-                }}
-              >
-                {link.name}
-              </Link>
+              {link.dropdown ? (
+                <button
+                  className={`text-sm bg-transparent bg-[#f8f8f8B3] hover:border-b-2 flex items-center gap-1 ${
+                    isHome ? "border-black" : "border-white/80"
+                  }`}
+                  onMouseEnter={() => {
+                    clearTimeout(hoverTimeout);
+                    setOpenDropdown(idx);
+                  }}
+                  onMouseLeave={() => {
+                    hoverTimeout = setTimeout(() => {
+                      setOpenDropdown(null);
+                    }, 200);
+                  }}
+                  onClick={(e) => e.preventDefault()}
+                >
+                  {link.name}
+                  <span className="text-xs">
+                    {openDropdown === idx ? "▲" : "▼"}
+                  </span>
+                </button>
+
+              ) : (
+                <Link
+                  href={link.href}
+                  className={`text-sm bg-transparent hover:border-b-2 ${
+                    isHome ? "border-black" : "border-white/80"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )}
 
               {link.dropdown && openDropdown === idx && (
                 <ul

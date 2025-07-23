@@ -21,7 +21,7 @@ const SectionSelector: React.FC<SectionSelectorProps> = ({
       {/* Toggle Button */}
       <div className="flex justify-center mb-6">
         <button
-          className="bg-[#06779B] text-white px-4 py-2 rounded flex items-center font-semibold hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#06779B] transition-all duration-200"
+          className="bg-[#06779B] text-white px-4 py-2 rounded-[10px] flex items-center font-semibold hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#06779B] transition-all duration-200"
           onClick={() => setShowSections(!showSections)}
         >
           {showSections ? "Hide" : "Show"}

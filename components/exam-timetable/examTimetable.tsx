@@ -1,67 +1,118 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { examTimeTableData } from "@/constants/exam-timetable/examTimeTabledata";
-import Title from "../common/academics/Title";
+import { motion } from "framer-motion";
+import { examtimetableData } from "@/constants/exam-timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
+import BranchSelector from "../common/academics/BranchSelector";
 import SectionSelector from "../common/academics/SectionSelector";
-import { ReceiptRussianRuble } from "lucide-react";
+import Title from "../common/academics/Title";
+import ExamNotice from "./examNotice";
 
-function ExamTimetable() {
-    const [selectedCourse, setSelectedCourse] = useState<string>("");
+const ExamTimetable = () => {
+  const courseList = Object.keys(examtimetableData.courses).map((courseKey) => ({
+    courseKey,
+    courseName:
+      (examtimetableData.courses[courseKey] as any)?.courseName || courseKey,
+  }));
+
+  const [selectedCourse, setSelectedCourse] = useState<string>(
+    courseList[0]?.courseKey || ""
+  );
   const [selectedBranch, setSelectedBranch] = useState<string>("");
-  const [selectedYear, setSelectedYear] = useState<string>("");
-const [showSections, setShowSections] = useState<boolean>(false);
   const [sections, setSections] = useState<
     { sectionName: string; PdfLink: string | null }[]
   >([]);
+  const [showSections, setShowSections] = useState<boolean>(false);
 
-  const courseList = Object.keys(examTimeTableData.courses).map(
-    (courseKey) => ({
-      courseKey,
-      courseName: examTimeTableData.courses[courseKey].courseName,
-    }),
+  useEffect(() => {
+    setSelectedBranch("");
+    setSections([]);
+    setShowSections(false);
+  }, [selectedCourse]);
+
+  const branches = Object.keys(
+    examtimetableData.courses[selectedCourse]?.branches || {}
   );
 
-useEffect(()=>{
-    if(selectedCourse ){
-          const sectionList = Object.entries(examTimeTableData.courses[selectedCourse]?.sections || {}).map(
-  ([sectionName, { PdfLink }]) => ({
-    sectionName,
-    PdfLink: PdfLink || null,
-  })
-);
-
-setSections(sectionList);
-      setShowSections(true);
+  useEffect(() => {
+    if (selectedCourse && selectedBranch) {
+      const sectionList = Object.entries(
+        examtimetableData.courses[selectedCourse]?.branches[selectedBranch]
+          ?.sections || {}
+      ).map(([sectionName, { PdfLink }]) => ({
+        sectionName,
+        PdfLink: PdfLink || null,
+      }));
+      setSections(sectionList);
+      setShowSections(sectionList.length > 0);
     } else {
-        setShowSections(false)
+      setShowSections(false);
     }
-}, [selectedCourse])
+  }, [selectedBranch, selectedCourse]);
 
-   return(
-    <div className="">
-    <div>
-        <Title title="EXAM TIMETABLE" />
-    </div>
-    <div className="p-4 pb-16">
-     <CourseSelector
-        courses={courseList}
-        selectedCourse={selectedCourse}
-        onSelect={setSelectedCourse}
-        setSelectedBranch={setSelectedBranch}
-        setSelectedYear={setSelectedYear}
-      />
-       {showSections && (
-          <SectionSelector
-            sections={sections}
-            showName={true}
-            hideIfShortName={false}
+  return (
+    <motion.div
+      className="text-black text-center"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Title title="EXAM TIMETABLE" />
+
+      <div className="p-4 flex flex-col items-center space-y-8">
+        {/* Course Selector */}
+        <div className="w-full">
+          <CourseSelector
+            courses={courseList}
+            selectedCourse={selectedCourse}
+            onSelect={setSelectedCourse}
+            setSelectedBranch={setSelectedBranch}
+            setSelectedYear={() => {}}
           />
-        )}</div>
-    </div>
-   )
+        </div>
 
-}
+        {/* Exam Notice Page */}
+        {selectedCourse === "Exam Notice" ? (
+          <motion.div
+            key="exam-notice"
+            className="w-full"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <ExamNotice />
+          </motion.div>
+        ) : (
+          <>
+            {/* Branch Selector */}
+            <BranchSelector
+  branches={branches}
+  selectedBranch={selectedBranch}
+  onSelect={setSelectedBranch}
+/>
+
+
+            {/* Section Selector */}
+            {showSections && (
+              <motion.div
+                className="w-full"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <SectionSelector
+                  sections={sections}
+                  showName={true}
+                  hideIfShortName={true}
+                />
+              </motion.div>
+            )}
+          </>
+        )}
+      </div>
+    </motion.div>
+  );
+};
 
 export default ExamTimetable;

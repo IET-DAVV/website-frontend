@@ -1,28 +1,39 @@
-import Achievements from "@/components/achievements-carousel/Achievements";
-import Chart from "@/components/chart/Chart";
-import Recruiters from "@/components/chart/Recruiters";
-import About from "@/components/landing-page/about/About";
-import AcademicPrograms from "@/components/landing-page/academic-programs/AcademicPrograms";
-import Clubs from "@/components/landing-page/clubs/Clubs";
-import Events from "@/components/landing-page/events/Events";
-import HeroSection from "@/components/landing-page/HeroSection";
-import Landing from "@/components/landing-page/Landing";
-import React from "react";
+// components/landing-page/LandingContainer.tsx
+import dynamic from 'next/dynamic'
+import { memo } from 'react'
+import HeroSection from "@/components/landing-page/HeroSection"
+import About from "@/components/landing-page/about/About"
+import Recruiters from "@/components/chart/Recruiters"
+import AcademicPrograms from "@/components/landing-page/academic-programs/AcademicPrograms"
+
+// Memoize components that don't change
+const MemoizedAbout = memo(About)
+const MemoizedRecruiters = memo(Recruiters)
+const MemoizedAcademicPrograms = memo(AcademicPrograms)
+
+// Lazy load components below the fold
+const Achievements = dynamic(() => import("@/components/achievements-carousel/Achievements"), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-200 rounded"></div>
+})
+
+const Events = dynamic(() => import("@/components/landing-page/events/Events"))
+const StackCards = dynamic(() => import("@/components/landing-page/ClubsUpdated"))
 
 const LandingContainer = () => {
   return (
     <div>
-      {/* <Landing /> */}
-      <HeroSection/>
-      <About />
-      <Recruiters />
-      <AcademicPrograms />
+      {/* Above the fold - load immediately */}
+      <HeroSection />
+      <MemoizedAbout />
+      <MemoizedRecruiters />
+      <MemoizedAcademicPrograms />
+      
+      {/* Below the fold - lazy load */}
       <Achievements />
-      <Chart />
       <Events />
-      {/* <Clubs /> */}
+      <StackCards />
     </div>
-  );
-};
+  )
+}
 
-export default LandingContainer;
+export default LandingContainer

@@ -6,15 +6,16 @@ import Image from "next/image";
 
 const VC = () => {
   return (
-    <div className="px-4 md:px-20 py-8 md:py-0 flex flex-col md:flex-row bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden md:h-[450px]">
-      {/* Image Section */}
-      <div className="w-fit md:w-1/3 h-64 md:h-full border-b md:border-b-0 md:border-r border-black">
+    <div className="px-4 md:px-20 py-8 md:py-0 flex flex-col md:flex-row-reverse bg-[#F5F5F5] rounded-md border border-gray-300 overflow-hidden md:h-[450px]">
+      {/* Image Section - right on desktop, centered on mobile */}
+      <div className="w-full md:w-1/3 h-64 md:h-full border-b md:border-b-0  flex justify-center items-center ">
+
         <Image
           src={aboutVC}
           alt="Dr. Rakesh Singhai"
-          width={500}
+          width={1200}
           height={500}
-          className="w-full h-full object-cover"
+          className="h-full object-cover w-auto"
         />
       </div>
 
@@ -24,9 +25,13 @@ const VC = () => {
         <hr className="border-t border-gray-400 mb-6 md:mb-11 mt-2" />
 
         {/* Heading */}
-        <h2 className="font-newyork text-xl md:text-5xl font-light mb-3">
+        <h2 className="font-newyork text-xl md:text-5xl font-light mb-1">
+
           Dr. Rakesh Singhai
         </h2>
+
+        {/* Designation */}
+        <p className="text-gray-500 text-sm md:text-base mb-3">Vice Chancellor</p>
 
         {/* Paragraph */}
         <p className="text-sm md:text-base text-gray-800 leading-relaxed">
