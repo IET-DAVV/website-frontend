@@ -9,7 +9,7 @@ const HeroInfra = () => {
   const campusBlocks = [
   {
     id: 1,
-    name: "M BLOCK",
+    name: "M Block",
     image: "/infrastructure/blocks/mblock aerial.jpg",
     alt: "M Block aerial view",
     description: `Administrative &amp; Institutional Backbone
@@ -26,7 +26,7 @@ It is the nerve center of campus operations, leadership, and large gatherings.`,
   },
   {
     id: 2,
-    name: "A BLOCK",
+    name: "A Block",
     image: "/infrastructure/blocks/ablock aerial.png",
     alt: "A Block aerial view",
     description: `Academic Core + Civil &amp; Mechanical Base
@@ -34,7 +34,7 @@ A-Block is one of the oldest academic blocks at IET DAVV, historically used for 
   },
   {
     id: 3,
-    name: "B BLOCK",
+    name: "B Block",
     image: "/infrastructure/blocks/bBlock aerial.jpg",
     alt: "B Block aerial view",
     description: `Computer Science + Cyber &amp; IT Infrastructure Hub
@@ -42,7 +42,7 @@ B-Block is dedicated to the Computer Science and Information Technology departme
   },
   {
     id: 4,
-    name: "D BLOCK",
+    name: "D Block",
     image: "/infrastructure/blocks/dblock aerial.png",
     alt: "D Block aerial view",
     description: `Electronics &amp; Instrumentation Lab Complex
@@ -50,7 +50,7 @@ D-Block serves as the practical zone for Electronics and Communication Engineeri
   },
   {
     id: 5,
-    name: "E BLOCK",
+    name: "E Block",
     image: "/infrastructure/blocks/eblock aerial.png",
     alt: "E Block aerial view",
     description: `Mechanical/Civil Support + E-Cell &amp; Innovation Space
@@ -58,7 +58,7 @@ E-Block supports both Mechanical and Civil Engineering departments with project 
   },
   {
     id: 6,
-    name: "F BLOCK",
+    name: "F Block",
     image: "/infrastructure/blocks/fblock aerial.png",
     alt: "F Block aerial view",
     description: `IT Block with Modern Infrastructure
