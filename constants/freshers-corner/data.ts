@@ -119,7 +119,22 @@ export const freshersCornerData: FreshersCornerData = {
                     examTimeTable: "https://example.com/ce-exam.pdf", },
         },
       },
+      CSBS: {
+        branchName: "Computer Science and Business Studies",
+        years: {
+          "1st": { classTimeTable:"https://example.com/cse-1st-year-section-a.pdf",
+                    
+                    syllabus: {
+                    I: "https://example.com/cse-1st-sem1.pdf",
+                    II: "https://example.com/cse-1st-sem2.pdf"
+                    },
+                    calendar: "https://example.com/cse-calendar.pdf",
+                    testTimeTable: "https://example.com/cse-test.pdf",
+                   
+                    examTimeTable: "https://example.com/cse-exam.pdf", },
+        },
     },
+  },
   },
 
   BTECH_PART_TIME: {
@@ -213,7 +228,22 @@ export const freshersCornerData: FreshersCornerData = {
                     examTimeTable: "https://example.com/ce-exam.pdf", },
         },
       },
+      CSBS: {
+        branchName: "Computer Science and Business Studies",
+        years: {
+          "1st": { classTimeTable:"https://example.com/csbs-1st-year-section-a.pdf",
+                  
+                    syllabus: {
+                    I: "https://example.com/cse-1st-sem1.pdf",
+                    II: "https://example.com/cse-1st-sem2.pdf"
+                    },
+                    calendar: "https://example.com/cse-calendar.pdf",
+                    testTimeTable: "https://example.com/cse-test.pdf",
+                   
+                    examTimeTable: "https://example.com/cse-exam.pdf", },
+        },
     },
+  },
   },
 
   MTECH_FULL_TIME: {

@@ -1,4 +1,4 @@
-import ProgramsOffered from "@/components/Programs/programsoffered";
+import ProgramsOffered from "@/components/programs/programsoffered";
 
 const ProgramsPage = () => {
   return (

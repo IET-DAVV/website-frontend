@@ -4,8 +4,6 @@ import "./globals.css";
 import "@/styles/fonts.css";
 import Footer from "@/components/common/footer/Footer";
 import HeaderContainer from "@/containers/header/Header";
-
-// 1. Import the AuthProvider
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const manrope = Manrope({
@@ -28,13 +26,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.className} bg-white`}>
-        {/* 2. Wrap your components with AuthProvider */}
-        <AuthProvider>
-          <HeaderContainer />
-          <main>{children}</main>
-          <Footer />
-        </AuthProvider>
+      {/* Added suppressHydrationWarning here to ignore mismatches from extensions like Grammarly */}
+      <body className="bg-white" suppressHydrationWarning>
+        <div className={manrope.className}>
+          <AuthProvider>
+            <HeaderContainer />
+            <main>{children}</main>
+            <Footer />
+          </AuthProvider>
+        </div>
       </body>
     </html>
   );

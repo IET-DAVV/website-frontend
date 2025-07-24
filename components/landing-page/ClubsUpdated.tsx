@@ -65,7 +65,7 @@ const StackCards: React.FC = () => {
         imgz1: "/landing/Clubs/NSS_1n.png",
         imgz2: "/landing/Clubs/NSS_2n.png"
       },
-      backgroundImage: "/landing/Clubs/NSS_bg.png",
+      backgroundImage: "/landing/Clubs/NSS_bgn.png",
       exploreNow: "https://robotics-ietdavv.com/",
       socialLink: "https://nssietdavv.epizy.com/",
       rightRectangleName: "NSS"
