@@ -1,3 +1,5 @@
+// /components/common/academics/CourseSelector.tsx
+
 import React from "react";
 import { Manrope } from "next/font/google";
 import { motion } from "framer-motion";
@@ -7,12 +9,13 @@ interface Course {
   courseName: string;
 }
 
+// 1. Make setSelectedBranch and setSelectedYear optional by adding a '?'
 interface CourseSelectorProps {
   courses: Course[];
   selectedCourse: string;
   onSelect: (courseKey: string) => void;
-  setSelectedBranch: (branch: string) => void;
-  setSelectedYear: (year: string) => void;
+  setSelectedBranch?: (branch: string) => void;
+  setSelectedYear?: (year: string) => void;
 }
 
 const manrope = Manrope({
@@ -24,13 +27,19 @@ const CourseSelector: React.FC<CourseSelectorProps> = ({
   courses,
   selectedCourse,
   onSelect,
-  setSelectedBranch,
-  setSelectedYear,
+  setSelectedBranch, // This prop may or may not be passed in
+  setSelectedYear,   // This prop may or may not be passed in
 }) => {
   function handleCourseChange(courseKey: string) {
     onSelect(courseKey);
-    setSelectedBranch("");
-    setSelectedYear("");
+
+    // 2. Only call these functions if they were actually provided
+    if (setSelectedBranch) {
+      setSelectedBranch("");
+    }
+    if (setSelectedYear) {
+      setSelectedYear("");
+    }
   }
 
   return (

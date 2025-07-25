@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { imagesMap } from "@/constants/landing/events/data";
 import Image from "next/image";
@@ -8,6 +8,12 @@ import "@/styles/fonts.css";
 import { motion } from "framer-motion";
 
 const Events: React.FC = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className="bg-black px-4 py-10 md:py-20 md:px-16 flex flex-col lg:grid lg:grid-cols-3 lg:items-center gap-8">
       {/* Text Section */}
@@ -29,44 +35,49 @@ const Events: React.FC = () => {
 
       {/* Masonry Image Grid */}
       <div className="w-full lg:col-span-2">
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 1024: 3 }}>
-          <Masonry gutter="20px">
-            {[
-              null,
-              null,
-              null,
-              "image1",
-              "image2",
-              null,
-              null,
-              "image3",
-              null,
-            ].map((key, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`rounded-lg w-full overflow-hidden ${
-                  index % 2 === 1 ? "h-[150px]" : "h-[250px] md:h-[300px]"
-                }`}
-              >
-                {key ? (
-                  <Image
-                    src={imagesMap[key]}
-                    alt={`Event ${key}`}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="bg-[#1C1C1C] w-full h-full rounded-lg" />
-                )}
-              </motion.div>
-            ))}
-          </Masonry>
-        </ResponsiveMasonry>
+        {/* This check prevents the masonry from rendering on the server, fixing the error */}
+        {isClient && (
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 350: 1, 750: 2, 1024: 3 }}
+          >
+            <Masonry gutter="20px">
+              {[
+                null,
+                null,
+                null,
+                "image1",
+                "image2",
+                null,
+                null,
+                "image3",
+                null,
+              ].map((key, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`rounded-lg w-full overflow-hidden ${
+                    index % 2 === 1 ? "h-[150px]" : "h-[250px] md:h-[300px]"
+                  }`}
+                >
+                  {key ? (
+                    <Image
+                      src={imagesMap[key]}
+                      alt={`Event ${key}`}
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="bg-[#1C1C1C] w-full h-full rounded-lg" />
+                  )}
+                </motion.div>
+              ))}
+            </Masonry>
+          </ResponsiveMasonry>
+        )}
       </div>
     </div>
   );
