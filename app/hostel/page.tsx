@@ -1,11 +1,15 @@
-import GalleryCarousel from "./HostelGallery";
-import HostelComponent from "./HostelHero";
-import AdmissionComponent from "./HostelInfo";
+import GalleryCarousel from "@/components/hostel/HostelGallery";
+import HostelComponent from "@/components/hostel/HostelHero";
+import AdmissionComponent from "@/components/hostel/HostelInfo";
 
-export default function HostelPage() {
-  return <div>
-        <HostelComponent/>
-        <AdmissionComponent/>
-        <GalleryCarousel/>
-  </div>;
-}
+const page = () => {
+  return (
+    <div>
+      <HostelComponent />
+      <AdmissionComponent />
+      <GalleryCarousel />
+    </div>
+  );
+};
+
+export default page;

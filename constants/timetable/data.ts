@@ -68,6 +68,50 @@ export const timetableData: TimetableData = {
             },
           },
         },
+        "Computer Science and Business System": {
+          years: {
+            "Year 1": {
+              sections: {
+                "Section A": {
+                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                },
+                "Section B": {
+                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                },
+              },
+            },
+            "Year 2": {
+              sections: {
+                "Section A": {
+                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                },
+                "Section B": {
+                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                },
+              },
+            },
+            "Year 3": {
+              sections: {
+                "Section A": {
+                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                },
+                "Section B": {
+                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                },
+              },
+            },
+            "Year 4": {
+              sections: {
+                "Section A": {
+                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                },
+                "Section B": {
+                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                },
+              },
+            },
+          },
+        },
         "Information Technology": {
           years: {
             "Year 1": {
@@ -250,6 +294,50 @@ export const timetableData: TimetableData = {
       courseName: "B.E (PART TIME)",
       branches: {
         "Computer Science": {
+          years: {
+            "Year 1": {
+              sections: {
+                "Section A": {
+                  PdfLink: "https://example.com/BE_PT_CS_Y1_SA.pdf",
+                },
+                "Section B": {
+                  PdfLink: "https://example.com/BE_PT_CS_Y1_SB.pdf",
+                },
+              },
+            },
+            "Year 2": {
+              sections: {
+                "Section A": {
+                  PdfLink: "https://example.com/BE_PT_CS_Y2_SA.pdf",
+                },
+                "Section B": {
+                  PdfLink: "https://example.com/BE_PT_CS_Y2_SB.pdf",
+                },
+              },
+            },
+            "Year 3": {
+              sections: {
+                "Section A": {
+                  PdfLink: "https://example.com/BE_PT_CS_Y3_SA.pdf",
+                },
+                "Section B": {
+                  PdfLink: "https://example.com/BE_PT_CS_Y3_SB.pdf",
+                },
+              },
+            },
+            "Year 4": {
+              sections: {
+                "Section A": {
+                  PdfLink: "https://example.com/BE_PT_CS_Y4_SA.pdf",
+                },
+                "Section B": {
+                  PdfLink: "https://example.com/BE_PT_CS_Y4_SB.pdf",
+                },
+              },
+            },
+          },
+        },
+        "Computer Science and Business Systems": {
           years: {
             "Year 1": {
               sections: {

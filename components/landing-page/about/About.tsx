@@ -31,14 +31,14 @@ const About = () => {
           <Image
             src={"/landing/line.svg"}
             alt="line"
-            width={80}
+            width={175}
             height={80}
           />
           <span className="uppercase text-white text-sm sm:text-base">
             Welcome to
           </span>
         </h4>
-        <h1 className={`py-2 sm:py-4 font-extralight text-4xl sm:text-6xl text-white font-newyork`}>
+        <h1 className={`py-2 sm:py-4 font-newyork text-4xl sm:text-6xl text-white font-newyork`}>
           {collegeName}
         </h1>
         <p className="font-extralight text-white text-sm sm:text-base">

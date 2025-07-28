@@ -1,49 +1,57 @@
-export const quickLinks = [
+export const importantLinks = [
   {
-    name: "Home",
+    name: "Digital Initiative by MHRD",
     url: "/",
   },
   {
-    name: "About",
-    url: "/about",
+    name: "Devi Ahilya Vishwavidyalaya",
+    url: "https://www.dauniv.ac.in/",
   },
   {
-    name: "Clubs",
-    url: "/clubs",
+    name: "Directorate of Technical Education",
+    url: "http://www.mptechedu.org/",
   },
   {
-    name: "Academic Programs",
-    url: "/academic-programs",
+    name: "AICTE",
+    url: "http://www.mptechedu.org/",
   },
   {
-    name: "Contact Us",
-    url: "/contact-us",
+    name: "University Grants Commission",
+    url: "https://www.ugc.gov.in/",
   },
   {
-    name: "Student Corner",
-    url: "/student-corner",
+    name: "MPOnline",
+    url: "https://www.mponline.gov.in/portal/",
   },
 ];
 
-export const information = [
+export const quickFindings = [
   {
-    name: "University Website",
-    value: "https://dauniv.ac.in/",
+    name: "Anti Ragging Committee & Squad",
+    value: "/footer/antiRagging",
   },
   {
-    name: "Contact Directory",
+    name: "TEQIP",
     value: "0731-2471200",
   },
   {
-    name: "Forms",
-    value: "info@ietdavv.ac.in",
+    name: "Grievance",
+    value: "/footer/grievance",
   },
   {
-    name: "Mandatory Disclosure",
+    name: "AICTE Feedback",
     value: "https://dauniv.ac.in/",
   },
   {
-    name: "Administration",
+    name: "ICC",
+    value: "/footer/administration",
+  },
+  {
+    name: "Discipline Committee",
+    value: "/footer/administration",
+  },
+  {
+    name: "IPR Cell",
     value: "/footer/administration",
   },
   {
@@ -52,29 +60,45 @@ export const information = [
   },
 ];
 
-export const sitemap = [
+export const moreInformation = [
   {
-    name: "Home",
+    name: "Copyright Policy",
     url: "/",
   },
   {
-    name: "About",
+    name: "Hyper Linking Policy",
     url: "/about",
   },
   {
-    name: "Clubs",
+    name: "Terms & Conditions",
     url: "/clubs",
   },
   {
-    name: "Academic Programs",
+    name: "Privacy Policy",
     url: "/academic-programs",
   },
   {
-    name: "Contact Us",
+    name: "Security Policy",
     url: "/contact-us",
   },
   {
-    name: "Student Corner",
+    name: "Archival Policy",
     url: "/student-corner",
+  },
+  {
+    name: "Accessibility Statement",
+    url: "/student-corner",
+  },
+  {
+    name: "COMA Policy",
+    url: "/student-corner",
+  },
+  {
+    name: "Content Review Policy",
+    url: "/student-corner",
+  },
+  {
+    name: "Scholar Page",
+    url: "/footer/scholarPage",
   },
 ];

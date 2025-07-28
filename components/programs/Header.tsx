@@ -1,9 +1,10 @@
 "use client";
 import { Manrope } from "next/font/google";
-import React, { useState } from "react";
+import React from "react";
 
 interface HeaderProps {
   onSelectCourse: (courseName: string) => void;
+  selectedCourse: string;
 }
 
 const manrope = Manrope({
@@ -11,11 +12,8 @@ const manrope = Manrope({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
-  const [selectedCourse, setSelectedCourse] = useState<string>("B.TECH (FULL-TIME)");
-
+const Header: React.FC<HeaderProps> = ({ onSelectCourse, selectedCourse }) => {
   const handleCourseClick = (courseName: string) => {
-    setSelectedCourse(courseName);
     onSelectCourse(courseName);
   };
 
@@ -25,14 +23,14 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
     "M.TECH (FULL-TIME)",
     "M.TECH (PART-TIME)",
     "PHD",
-    "MSc."
+    "MSc.",
   ];
 
   return (
     <div>
       <ul className={`${manrope.className} flex justify-evenly text-base font-medium`}>
         {courseOptions.map((course) => (
-          <li key={course} className="underline-offset-[14px] ">
+          <li key={course} className="underline-offset-[14px]">
             <button
               type="button"
               onClick={() => handleCourseClick(course)}

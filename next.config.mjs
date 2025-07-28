@@ -1,38 +1,48 @@
-/** @type {import('next').NextConfig} */
+import withBundleAnalyzer from '@next/bundle-analyzer';
+
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 const nextConfig = {
+  reactStrictMode: false, // Optional: disable in production for slight speedup
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 31536000, // 1 year,
-
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
-        protocol: "http", // Or 'https' if they are served over HTTPS
-        hostname: "googleusercontent.com",
-        port: "", // Leave empty if default ports (80 for http, 443 for https)
-        pathname: "/profile/picture/**", // Use a wildcard if paths can vary widely
-      },
-      {
-        protocol: "http", // Or 'https' if they are served over HTTPS
-        hostname: "lh3.googleusercontent.com",
-        port: "", // Leave empty if default ports (80 for http, 443 for https)
-        pathname: "/**", // Use a wildcard if paths can vary widely
-      },
-      {
-        protocol: "https", // Or 'https' if they are served over HTTPS
+        protocol: "https",
         hostname: "images.unsplash.com",
-        port: "", // Leave empty if default ports (80 for http, 443 for https)
-        pathname: "/**", // Use a wildcard if paths can vary widely
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "googleusercontent.com",
+        port: "",
+        pathname: "/profile/picture/**",
+      },
+      {
+        protocol: "http",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.ietdavv.edu.in",
+        port: "",
+        pathname: "/**",
       },
     ],
-
-    domains: ["www.ietdavv.edu.in"],
   },
   compress: true,
-
-  // Optimize CSS
   experimental: {
     optimizeCss: true,
   },
 };
 
-export default nextConfig;
+export default bundleAnalyzer(nextConfig);

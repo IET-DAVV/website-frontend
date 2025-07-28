@@ -1,15 +1,19 @@
-import FacilityShowcase from "./FacilityShowcase";
-import HeroInfra from "./HeroForInfra";
-import HostelsPage from "./HostelInfra";
-import IncubationCentre from "./IncubationCenter";
-import LibraryPage from "./Library";
+import FacilityShowcase from "@/components/infrastructure/FacilityShowcase";
+import HeroInfra from "@/components/infrastructure/HeroForInfra";
+import HostelsPage from "@/components/infrastructure/HostelInfra";
+import IncubationCentre from "@/components/infrastructure/IncubationCenter";
+import LibraryPage from "@/components/infrastructure/library";
 
-export default function Infra() {
-  return <div>
-    <HeroInfra/>
-    <HostelsPage/>
-    <LibraryPage/>
-    <IncubationCentre/>
-    <FacilityShowcase/>
-  </div>;
-}
+const page = () => {
+  return (
+    <div>
+      <HeroInfra />
+      <HostelsPage />
+      <LibraryPage />
+      <IncubationCentre />
+      <FacilityShowcase />
+    </div>
+  );
+};
+
+export default page;
