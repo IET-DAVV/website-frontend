@@ -1,4 +1,12 @@
-export const achievements: Object[] = [
+interface AchievementsObj{
+  index:number,
+  year:string,
+  title:string,
+  description:string,
+  imgAddress:string
+}
+
+export const achievements: AchievementsObj[] = [
   {
     index: 1,
     year: "2022",
