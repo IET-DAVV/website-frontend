@@ -40,7 +40,7 @@ const Achievements = () => {
         {data.map((item, idx) => (
           <div
             key={idx}
-            className="bg-white border border-gray-300 rounded-xl px-6 py-8 mx-4 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-[300px] max-w-sm mx-auto"
+            className="bg-white border border-gray-300 rounded-xl px-6 py-8 coration-violet-50shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-[300px] max-w-sm mx-auto"
           >
             <div className="text-blue-600 mb-4">{item.icon}</div>
             <h3 className="text-lg font-semibold mb-2">{item.title}</h3>

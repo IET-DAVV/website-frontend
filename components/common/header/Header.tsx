@@ -25,13 +25,12 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
-  
+
   return (
     <header
       className={`w-full px-6 py-2 ${
         isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
       }`}
-
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
@@ -56,7 +55,6 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
         >
           {menuOpen ? <IoClose /> : <IoMenu />}
         </div>
-
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex flex-row justify-center items-center space-x-4 relative">
@@ -83,7 +81,6 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                     {openDropdown === idx ? "▲" : "▼"}
                   </span>
                 </button>
-
               ) : (
                 <Link
                   href={link.href}
@@ -137,21 +134,32 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
         >
           {links.map((link, idx) => (
             <li key={link.name} className="relative">
-              <button
-                className={`w-full text-left text-sm py-2 border-b border-gray-300 flex justify-between items-center ${
-                  isHome ? "hover:text-black" : "hover:text-white"
-                }`}
-                onClick={() => {
-                  setOpenDropdown(openDropdown === idx ? null : idx);
-                }}
-              >
-                {link.name}
-                {link.dropdown && (
-                  <span className="text-sm">
-                    {openDropdown === idx ? "▲" : "▼"}
-                  </span>
-                )}
-              </button>
+              {link.dropdown ? (
+                <button
+                  className={`w-full text-left text-sm py-2 border-b border-gray-300 flex justify-between items-center ${
+                    isHome ? "hover:text-black" : "hover:text-white"
+                  }`}
+                  onClick={() => {
+                    setOpenDropdown(openDropdown === idx ? null : idx);
+                  }}
+                >
+                  {link.name}
+                  {link.dropdown && (
+                    <span className="text-sm">
+                      {openDropdown === idx ? "▲" : "▼"}
+                    </span>
+                  )}
+                </button>
+              ) : (
+                <Link
+                  href={link.href}
+                  className={`text-sm bg-transparent hover:border-b-2 ${
+                    isHome ? "border-black" : "border-white/80"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )}
 
               {link.dropdown && openDropdown === idx && (
                 <ul className="ml-2 mt-1 space-y-1">

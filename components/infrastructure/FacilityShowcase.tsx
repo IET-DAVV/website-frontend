@@ -30,11 +30,7 @@ const FacilityShowcase = () => {
       image: '/infrastructure/auditorium.jpg',
       alt: 'Large auditorium with seating and presentation screen'
     },
-    'ELECTRONICS LAB': {
-      title: 'Electronics Lab',
-      image: '/infrastructure/electronics-lab.png',
-      alt: 'Electronics laboratory with circuit boards and testing equipment'
-    },
+    
     'WORKSHOP': {
       title: 'Workshop',
       image: '/infrastructure/workshop.jpg',
