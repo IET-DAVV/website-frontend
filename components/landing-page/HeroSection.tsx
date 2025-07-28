@@ -64,14 +64,13 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full top-32 px-4 sm:px-6 lg:px-8 h-full relative ">
-      <div className="grid h-screen grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-        {/* News Section */}
-        <NewsAnnouncement title="News" items={newsItems} />
-
-        {/* Carousel Section */}
-        <div className="lg:col-span-3">
-          <div className="carousel-container relative overflow-hidden rounded-lg w-full h-[455px] sm:h-[555px] mx-auto bg-gray-200" style={{ isolation: 'isolate' }}>
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-48 sm:py-6 lg:py-32">
+      {/* Mobile Layout - Stack vertically */}
+      <div className="block lg:hidden space-y-4 sm:space-y-6">
+        {/* Carousel Section - Full width on mobile */}
+        <div className="w-full">
+          <div className="carousel-container relative overflow-hidden rounded-lg w-full 
+                         h-[250px] sm:h-[350px] md:h-[400px] mx-auto bg-gray-200">
             {slides.map((src, index) => (
               <div
                 key={index}
@@ -87,69 +86,120 @@ const HeroSection: React.FC = () => {
               </div>
             ))}
             
-            {/* Navigation Buttons Container */}
-            <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none" style={{ zIndex: 100 }}>
-              {/* Previous Button */}
+            {/* Navigation Buttons */}
+            <div className="absolute inset-0 flex items-center justify-between px-2 sm:px-4 pointer-events-none">
               <button
                 type="button"
                 onClick={handlePrevSlide}
-                onMouseEnter={() => console.log("Mouse enter previous")}
-                onMouseLeave={() => console.log("Mouse leave previous")}
-                className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white p-3 rounded-full transition-all duration-200 pointer-events-auto focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white 
+                          p-2 sm:p-3 rounded-full transition-all duration-200 pointer-events-auto 
+                          focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
                 aria-label="Previous slide"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
+                <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
 
-              {/* Next Button */}
               <button
                 type="button"
                 onClick={handleNextSlide}
-                onMouseEnter={() => console.log("Mouse enter next")}
-                onMouseLeave={() => console.log("Mouse leave next")}
-                className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white p-3 rounded-full transition-all duration-200 pointer-events-auto focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white 
+                          p-2 sm:p-3 rounded-full transition-all duration-200 pointer-events-auto 
+                          focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
                 aria-label="Next slide"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
+                <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </div>
 
             {/* Slide Counter */}
-            <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm z-20">
+            <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 bg-black bg-opacity-50 
+                           text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
+              {currentSlide + 1} / {slides.length}
+            </div>
+          </div>
+        </div>
+
+        {/* News and Announcements - Two columns on tablets, single column on phones */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <NewsAnnouncement title="News" items={newsItems} />
+          <NewsAnnouncement title="Announcement" items={announcementItems} />
+        </div>
+      </div>
+
+      {/* Desktop Layout - Original 3-column layout */}
+      <div className="hidden lg:grid lg:grid-cols-5 gap-6 xl:gap-8 items-start min-h-[600px]">
+        {/* News Section */}
+        <div className="lg:col-span-1">
+          <NewsAnnouncement title="News" items={newsItems} />
+        </div>
+
+        {/* Carousel Section */}
+        <div className="lg:col-span-3">
+          <div className="carousel-container relative overflow-hidden rounded-lg w-full 
+                         h-[500px] xl:h-[555px] mx-auto bg-gray-200">
+            {slides.map((src, index) => (
+              <div
+                key={index}
+                className={`carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <img
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover object-center"
+                  src={src}
+                />
+              </div>
+            ))}
+            
+            {/* Navigation Buttons */}
+            <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+              <button
+                type="button"
+                onClick={handlePrevSlide}
+                className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white p-3 rounded-full 
+                          transition-all duration-200 pointer-events-auto focus:outline-none 
+                          focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                aria-label="Previous slide"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleNextSlide}
+                className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white p-3 rounded-full 
+                          transition-all duration-200 pointer-events-auto focus:outline-none 
+                          focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                aria-label="Next slide"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Slide Counter */}
+            <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
               {currentSlide + 1} / {slides.length}
             </div>
           </div>
         </div>
 
         {/* Announcement Section */}
-        <NewsAnnouncement title="Announcement" items={announcementItems} />
+        <div className="lg:col-span-1">
+          <NewsAnnouncement title="Announcement" items={announcementItems} />
+        </div>
       </div>
     </div>
   );
 };
+
 
 export default HeroSection;

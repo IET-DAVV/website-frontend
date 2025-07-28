@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="h-full w-[90%] mx-auto bg-white flex justify-center border-[#3B799E] border-4 my-24">
+    <div className="h-full w-[90%] mx-auto bg-white flex justify-center border-[#3B799E] border-4 mt-10 mb-20 rounded-xl shadow-md">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-full place-items-center">
         {/* Image */}
         <div className="w-full h-full flex justify-center items-center p-6 md:p-8">
@@ -15,7 +15,7 @@ const About = () => {
             width={600}
             height={400}
             alt="About IET"
-            className="rounded-md object-cover w-full h-auto"
+            className="rounded-lg object-cover w-full h-auto"
           />
         </div>
 
@@ -25,7 +25,7 @@ const About = () => {
             <h1 className="font-newyork text-3xl md:text-5xl text-black text-justify">
               ABOUT IET DAVV
             </h1>
-            <p className="text-sm md:text-base break-words text-black text-justify">
+            <p className="text-base sm:text-lg text-gray-700 text-justify leading-relaxed">
               {aboutIET}
             </p>
           </div>

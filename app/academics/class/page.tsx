@@ -1,4 +1,4 @@
-import Timetable from "@/components/timetable/Timetable";
+import Timetable from "@/components/class-timetable/Timetable";
 
 const page = () => {
   return (

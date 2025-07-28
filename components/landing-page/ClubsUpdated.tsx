@@ -1,7 +1,7 @@
 "use client";
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 interface TwoImages {
   imgz1: string;
@@ -22,9 +22,11 @@ interface Card {
 
 const StackCards: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [showAllClubs, setShowAllClubs] = useState(false); 
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
   const cards: Card[] = [
@@ -32,133 +34,144 @@ const StackCards: React.FC = () => {
       id: 1,
       title: "GDG IET DAVV (Google Developer Group- Tech with Purpose)",
       subtitle: "(Formerly known as GDSC)",
-      description: "From contests like CodeQuest to bootcamps like LearnAIML, GDG IET DAVV is where tech-loving students come together to learn, build, and grow. Whether it’s exploring AI/ML or working on real-world dev projects, you’ll always find something exciting to be a part of. It’s a place that pushes you but also helps you settle in, learn with peers, and find your pace.\nNo prior experience needed – just bring your curiosity!",
+      description:
+        "From contests like CodeQuest to bootcamps like LearnAIML, GDG IET DAVV is where tech-loving students come together to learn, build, and grow. Whether it’s exploring AI/ML or working on real-world dev projects, you’ll always find something exciting to be a part of. It’s a place that pushes you but also helps you settle in, learn with peers, and find your pace.\nNo prior experience needed – just bring your curiosity!",
       twoImages: {
         imgz1: "/landing/Clubs/GDG_1.png",
-        imgz2: "/landing/Clubs/GDG_2.png"
+        imgz2: "/landing/Clubs/GDG_2.png",
       },
       backgroundImage: "/landing/Clubs/GDG_bg.png",
       exploreNow: "https://gdsc.ietdavv.edu.in/",
       socialLink: "https://www.instagram.com/gdgoc.ietdavv/",
-      rightRectangleName: "GDGOC"
+      rightRectangleName: "GDGOC",
     },
     {
       id: 2,
       title: "E-Cell IET DAVV (Think. Feel. Collaborate.)",
       subtitle: "",
-      description: "The entrepreneurship engine of IET. E-Cell isn’t just a club it’s a mindset. From ideathons to startup showcases, members don’t just attend events, they build, lead, and grow through them. The club nurtures future founders with exposure, mentorship, and a collaborative ecosystem. E-cell is where passion meets purpose, and your potential finds a platform.\nStill figuring things out? This is the place that helps you figure yourself out too",
+      description:
+        "The entrepreneurship engine of IET. E-Cell isn’t just a club it’s a mindset. From ideathons to startup showcases, members don’t just attend events, they build, lead, and grow through them. The club nurtures future founders with exposure, mentorship, and a collaborative ecosystem. E-cell is where passion meets purpose, and your potential finds a platform.\nStill figuring things out? This is the place that helps you figure yourself out too",
       twoImages: {
         imgz1: "/landing/Clubs/ECell_1.png",
-        imgz2: "/landing/Clubs/ECell_2.png"
+        imgz2: "/landing/Clubs/ECell_2.png",
       },
       backgroundImage: "/landing/Clubs/ECell_bg.png",
       exploreNow: "https://www.ecellietdavv.in/",
       socialLink: "https://www.instagram.com/ecell_ietdavv/",
-      rightRectangleName: "Ecell"
+      rightRectangleName: "Ecell",
     },
     {
       id: 3,
       title: "NSS IET DAVV",
       subtitle: "“Not Me, But You”",
-      description: "Rooted in the spirit of service, NSS at IET DAVV encourages students to step beyond themselves. From blood donation drives and plantation efforts to awareness campaigns and community outreach, each initiative offers a chance to engage with real-world issues. Students don’t just participate they immerse, often stepping into communities and staying on ground to create lasting impact. NSS isn’t just about volunteering it’s about becoming the kind of leader who lifts others while growing from the experience.",
+      description:
+        "Rooted in the spirit of service, NSS at IET DAVV encourages students to step beyond themselves. From blood donation drives and plantation efforts to awareness campaigns and community outreach, each initiative offers a chance to engage with real-world issues. Students don’t just participate they immerse, often stepping into communities and staying on ground to create lasting impact. NSS isn’t just about volunteering it’s about becoming the kind of leader who lifts others while growing from the experience.",
       twoImages: {
         imgz1: "/landing/Clubs/NSS_1n.png",
-        imgz2: "/landing/Clubs/NSS_2n.png"
+        imgz2: "/landing/Clubs/NSS_2n.png",
       },
-      backgroundImage: "/landing/Clubs/NSS_bg.png",
+      backgroundImage: "/landing/Clubs/NSS_bgn.png",
       exploreNow: "https://robotics-ietdavv.com/",
       socialLink: "https://nssietdavv.epizy.com/",
-      rightRectangleName: "NSS"
+      rightRectangleName: "NSS",
     },
     {
       id: 4,
       title: "Robotronics Club  (Innovation in Motion)",
       subtitle: "",
-      description: "From Arduino and Raspberry Pi to drones and autonomous robots, Robotronics Club fuses tech curiosity with hands-on creation. Through national-level workshops like CPS (in collab with IIT Ropar) and events like Tech Think Tank, members explore embedded systems, PCB design, automation, and more. Whether you’re into designing circuits or launching drones, this club offers the tools, guidance, and stage to build, tinker, and lead.\nHere, your ideas don’t stay on paper — they move.\nSharpen your programming skills and compete at the highest level. We focus on competitive programming, algorithm design, and problem-solving techniques. Regular contests, workshops, and mentorship programs help students excel in coding interviews and programming competitions.",
+      description:
+        "From Arduino and Raspberry Pi to drones and autonomous robots, Robotronics Club fuses tech curiosity with hands-on creation. Through national-level workshops like CPS (in collab with IIT Ropar) and events like Tech Think Tank, members explore embedded systems, PCB design, automation, and more. Whether you’re into designing circuits or launching drones, this club offers the tools, guidance, and stage to build, tinker, and lead.\nHere, your ideas don’t stay on paper — they move.\nSharpen your programming skills and compete at the highest level. We focus on competitive programming, algorithm design, and problem-solving techniques. Regular contests, workshops, and mentorship programs help students excel in coding interviews and programming competitions.",
       twoImages: {
         imgz1: "/landing/Clubs/Robotronics_1.png",
-        imgz2: "/landing/Clubs/Robotronics_2.png"
+        imgz2: "/landing/Clubs/Robotronics_2.png",
       },
       backgroundImage: "/landing/Clubs/Robotronics_bg.png",
       exploreNow: "https://codingclub-ietdavv.com/",
       socialLink: "https://www.instagram.com/robotronics._iet/",
-      rightRectangleName: "Robotronics"
+      rightRectangleName: "Robotronics",
     },
     {
       id: 5,
       title: "Rudra Dance Club ",
       subtitle: "(Where rhythm meets legacy)",
-      description: "From owning the stage at Fluxus IIT Indore, to winning hearts at Acropolis, CDGI, and homegrown events like Sfoorti and TEDxDAVV, Rudra Dance Club has become the pulse of IET’s cultural scene. With performances that blend classical, hip-hop, contemporary and everything in between, it’s a stage where every dance form finds a voice. For those who speak through movement and live for the spotlight, this is where your rhythm finds its roar.\nThe beat begins here.",
+      description:
+        "From owning the stage at Fluxus IIT Indore, to winning hearts at Acropolis, CDGI, and homegrown events like Sfoorti and TEDxDAVV, Rudra Dance Club has become the pulse of IET’s cultural scene. With performances that blend classical, hip-hop, contemporary and everything in between, it’s a stage where every dance form finds a voice. For those who speak through movement and live for the spotlight, this is where your rhythm finds its roar.\nThe beat begins here.",
       twoImages: {
         imgz1: "/landing/Clubs/Rudra_1.png",
-        imgz2: "/landing/Clubs/Rudra_2.png"
+        imgz2: "/landing/Clubs/Rudra_2.png",
       },
       backgroundImage: "/landing/Clubs/Rudra_bg.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://www.instagram.com/rudra_iet.davv/",
-      rightRectangleName: "RUDRA"
+      rightRectangleName: "RUDRA",
     },
     {
       id: 6,
       title: "IET Visuals (Glance of IET)",
       subtitle: "",
-      description: "Every fest, every celebration, every quiet candid you’ve ever seen of IET through a story, reel, or photo, chances are it came from the lens of IET Visuals. As the official production team of the college, they don’t just shoot events—they document memories. Whether it’s photography, cinematography, or just a creative spark waiting to be lit, this is where you get to build something lasting with a team that sees stories in everything.\nYou bring the vision. They’ll help you frame it.",
+      description:
+        "Every fest, every celebration, every quiet candid you’ve ever seen of IET through a story, reel, or photo, chances are it came from the lens of IET Visuals. As the official production team of the college, they don’t just shoot events—they document memories. Whether it’s photography, cinematography, or just a creative spark waiting to be lit, this is where you get to build something lasting with a team that sees stories in everything.\nYou bring the vision. They’ll help you frame it.",
       twoImages: {
         imgz1: "/landing/Clubs/Visuals_1.png",
-        imgz2: "/landing/Clubs/Visuals_2.png"
+        imgz2: "/landing/Clubs/Visuals_2.png",
       },
       backgroundImage: "/landing/Clubs/Visuals_bgn.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "IET\nVisuals"
+      rightRectangleName: "IET\nVisuals",
     },
     {
       id: 7,
       title: "CEAC IET DAVV ",
       subtitle: "Be the missing component of our circuit",
-      description: "The Core Electronics Awareness Club (CEAC) is IET DAVV’s hub for all things hardware. Whether it’s working on real-time projects, attending speaker sessions, or visiting industries, CEAC helps students get hands-on with the field beyond textbooks. This year, the team secured 2nd place at the Startup Expo, turning their ideas into something bigger. So if you’re someone who’s curious about circuits, driven by design, or just figuring out where electronics fits into your journey this is a great place to begin.",
+      description:
+        "The Core Electronics Awareness Club (CEAC) is IET DAVV’s hub for all things hardware. Whether it’s working on real-time projects, attending speaker sessions, or visiting industries, CEAC helps students get hands-on with the field beyond textbooks. This year, the team secured 2nd place at the Startup Expo, turning their ideas into something bigger. So if you’re someone who’s curious about circuits, driven by design, or just figuring out where electronics fits into your journey this is a great place to begin.",
       twoImages: {
         imgz1: "/landing/Clubs/CEAC_1.jpg",
-        imgz2: "/landing/Clubs/CEAC_2.jpg"
+        imgz2: "/landing/Clubs/CEAC_2.jpg",
       },
       backgroundImage: "/landing/Clubs/CEAC_bg.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "CEAC"
+      rightRectangleName: "CEAC",
     },
     {
       id: 8,
       title: "The Tech-Driven Tribe of IET-DAVV ",
       subtitle: "Be the missing component of our circuit",
-      description: "Three teams. One shared drive to build what most just imagine.\nIntroducing Team Hawk, Spark Ignited, and Team Elektronin from IET’s core technical crew turning ideas into drones, electric rides, and autonomous machines. They may share the same lab tables, tools, and tech spirit, but each team branches into its own world:\na. Hawk flies into aeronautics,\nb. Spark ignite drives electric innovation,\nc. Elektronin takes on self-driving terrain.\nFor freshers with curiosity and a maker mindset  this is where the building begins.",
+      description:
+        "Three teams. One shared drive to build what most just imagine.\nIntroducing Team Hawk, Spark Ignited, and Team Elektronin from IET’s core technical crew turning ideas into drones, electric rides, and autonomous machines. They may share the same lab tables, tools, and tech spirit, but each team branches into its own world:\na. Hawk flies into aeronautics,\nb. Spark ignite drives electric innovation,\nc. Elektronin takes on self-driving terrain.\nFor freshers with curiosity and a maker mindset  this is where the building begins.",
       twoImages: {
         imgz1: "/landing/Clubs/TTDT_1.jpg",
-        imgz2: "/landing/Clubs/TTDT_2.jpg"
+        imgz2: "/landing/Clubs/TTDT_2.jpg",
       },
       backgroundImage: "/landing/Clubs/TTDT_bg.jpg",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "TTDT"
+      rightRectangleName: "TTDT",
     },
     {
       id: 9,
       title: "Cultural Club  (The Heartbeat of Celebrations) ",
       subtitle: "",
-      description: "From hosting grand stages like E-Sangam and Induction to lighting up campus life with Tarang, Nidanam, and flash mobs, Cultural Club is where tradition meets energy. Be it fresher parties or university-level festivals, this legacy club curates experiences that stay with you long after the lights dim. If you’ve ever felt the pulse of a crowd or dreamed of crafting unforgettable moments, this is your cue.\nBecause culture isn’t just followed, it’s created.",
+      description:
+        "From hosting grand stages like E-Sangam and Induction to lighting up campus life with Tarang, Nidanam, and flash mobs, Cultural Club is where tradition meets energy. Be it fresher parties or university-level festivals, this legacy club curates experiences that stay with you long after the lights dim. If you’ve ever felt the pulse of a crowd or dreamed of crafting unforgettable moments, this is your cue.\nBecause culture isn’t just followed, it’s created.",
       twoImages: {
         imgz1: "/landing/Clubs/Rudra_1.png",
-        imgz2: "/landing/Clubs/Rudra_2.png"
+        imgz2: "/landing/Clubs/Rudra_2.png",
       },
       backgroundImage: "/landing/Clubs/cultural_bg.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "Cultural "
-    }
+      rightRectangleName: "Cultural ",
+    },
   ];
 
   // Calculate total cards including the base card
-  const totalCards = cards.length + 1;
-
+  const totalCards = showAllClubs ? cards.length + 1 : 1;
+  const handleExploreClick = () => {
+    setShowAllClubs(true);
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100">
       <div className="container mx-auto px-4 py-8">
@@ -173,12 +186,24 @@ const StackCards: React.FC = () => {
         </div>
 
         {/* Stack Cards Section */}
-        <div ref={containerRef} className="relative" style={{ height: `${totalCards * 70}vh` }}>
-          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        <div
+          ref={containerRef}
+          className="relative"
+          style={{ height: showAllClubs ? `${totalCards * 70}vh` : "100vh" }}
+        >
+          <div
+            className={`sticky top-0 h-screen flex items-center justify-center overflow-hidden ${
+              !showAllClubs ? "relative" : ""
+            }`}
+          >
             <div className="relative w-full max-w-6xl mx-auto h-[80vh]">
-              
               {/* Static Base Card */}
-              <div className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+              <div
+                className={`absolute inset-0 w-full h-full ${
+                  !showAllClubs ? "relative" : ""
+                }`}
+                style={{ zIndex: 1 }}
+              >
                 <div className="w-full h-full bg-white rounded-3xl shadow-2xl overflow-hidden">
                   <div className="flex flex-col lg:flex-row h-full">
                     {/* Content Section */}
@@ -191,7 +216,13 @@ const StackCards: React.FC = () => {
                       <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
                         IET CLUBS
                       </h2>
-                      
+                      <button
+                        onClick={handleExploreClick}
+                        className="rounded-md bg-purple-500 text-white p-2 w-32 transition-all duration-300 hover:transform hover:-translate-y-2 hover:scale-105"
+                        disabled={showAllClubs}
+                      >
+                        {showAllClubs ? "Exploring..." : "Explore Now"}
+                      </button>
                     </div>
 
                     {/* Image Section */}
@@ -221,7 +252,7 @@ const StackCards: React.FC = () => {
                   [0, 1]
                 );
 
-                const stackOffset = Math.max(8, 20 - (index * 3));
+                const stackOffset = Math.max(8, 20 - index * 3);
                 const y = useTransform(
                   cardProgress,
                   [0, 1],
@@ -234,11 +265,12 @@ const StackCards: React.FC = () => {
                   [0.9, 1, 1.01]
                 );
 
-                const rotateX = useTransform(
-                  cardProgress,
-                  [0, 0.5],
-                  [5, 0]
-                );
+                const rotateX = useTransform(cardProgress, [0, 0.5], [5, 0]);
+
+                // Only conditionally render the JSX, not the hooks
+                if (!showAllClubs) {
+                  return null;
+                }
 
                 return (
                   <motion.div
@@ -305,7 +337,8 @@ const StackCards: React.FC = () => {
 
                           {/* Additional Text */}
                           <p className="text-white text-sm mb-6 opacity-90">
-                            No prior experience needed – just bring your curiosity!
+                            No prior experience needed – just bring your
+                            curiosity!
                           </p>
 
                           {/* Buttons */}
@@ -320,7 +353,7 @@ const StackCards: React.FC = () => {
                             >
                               Explore Now!
                             </motion.a>
-                            
+
                             <motion.a
                               href={card.socialLink}
                               target="_blank"
@@ -329,19 +362,27 @@ const StackCards: React.FC = () => {
                               whileTap={{ scale: 0.95 }}
                               className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
                             >
-                              <svg className="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                              <svg
+                                className="w-6 h-6 text-pink-600"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                               </svg>
                             </motion.a>
-                            
+
                             <motion.a
                               href="#"
                               whileHover={{ scale: 1.1 }}
                               whileTap={{ scale: 0.95 }}
                               className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
                             >
-                              <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                              <svg
+                                className="w-6 h-6 text-blue-600"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                               </svg>
                             </motion.a>
                           </div>
@@ -352,11 +393,16 @@ const StackCards: React.FC = () => {
                           <div className="bg-gray-800 bg-opacity-70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-600">
                             <div className="text-center">
                               <div className="text-white text-4xl lg:text-5xl font-bold tracking-wider transform rotate-0">
-                                {card.rightRectangleName.split('').map((letter, i) => (
-                                  <div key={i} className="block leading-tight">
-                                    {letter}
-                                  </div>
-                                ))}
+                                {card.rightRectangleName
+                                  .split("")
+                                  .map((letter, i) => (
+                                    <div
+                                      key={i}
+                                      className="block leading-tight"
+                                    >
+                                      {letter}
+                                    </div>
+                                  ))}
                               </div>
                             </div>
                           </div>

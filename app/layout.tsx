@@ -4,6 +4,7 @@ import "./globals.css";
 import "@/styles/fonts.css";
 import Footer from "@/components/common/footer/Footer";
 import HeaderContainer from "@/containers/header/Header";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title: "IET-DAVV",
   description: "IET-DAVV",
   icons: {
-    icon: "/favicon.ico", // this points to public/favicon.ico
+    icon: "/favicon.ico",
   },
 };
 
@@ -25,10 +26,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.className} bg-white`}>
-        <HeaderContainer />
-        {children}
-        <Footer />
+      {/* Added suppressHydrationWarning here to ignore mismatches from extensions like Grammarly */}
+      <body className="bg-white" suppressHydrationWarning>
+        <div className={manrope.className}>
+          <AuthProvider>
+            <HeaderContainer />
+            <main>{children}</main>
+            <Footer />
+          </AuthProvider>
+        </div>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import { timetableData } from "../../constants/timetable/data";
 import CourseSelector from "../common/academics/CourseSelector";
@@ -6,6 +7,7 @@ import BranchSelector from "../common/academics/BranchSelector";
 import YearSelector from "../common/academics/YearSelector";
 import SectionSelector from "../common/academics/SectionSelector";
 import Title from "../common/academics/Title";
+import { motion } from "framer-motion";
 
 const Timetable = () => {
   const courses = Object.keys(timetableData.courses);
@@ -17,12 +19,16 @@ const Timetable = () => {
     { sectionName: string; PdfLink: string | null }[]
   >([]);
 
-  // Initialize selectedBranch and selectedYear when selectedCourse changes
-  React.useEffect(() => {
-    const branches = Object.keys(timetableData.courses[selectedCourse]?.branches || {});
+  useEffect(() => {
+    const branches = Object.keys(
+      timetableData.courses[selectedCourse]?.branches || {}
+    );
     if (branches.length > 0) {
       setSelectedBranch(branches[0]);
-      const years = Object.keys(timetableData.courses[selectedCourse]?.branches[branches[0]]?.years || {});
+      const years = Object.keys(
+        timetableData.courses[selectedCourse]?.branches[branches[0]]?.years ||
+          {}
+      );
       if (years.length > 0) {
         setSelectedYear(years[0]);
       } else {
@@ -40,20 +46,19 @@ const Timetable = () => {
   }));
 
   const branches = Object.keys(
-    timetableData.courses[selectedCourse]?.branches || {},
+    timetableData.courses[selectedCourse]?.branches || {}
   );
   const years = Object.keys(
     timetableData.courses[selectedCourse]?.branches[selectedBranch]?.years ||
-      {},
+      {}
   );
 
-  console.log(courseList);
   useEffect(() => {
     if (selectedCourse && selectedBranch && selectedYear) {
       const sectionList = Object.entries(
         timetableData.courses[selectedCourse]?.branches[selectedBranch]?.years[
           selectedYear
-        ]?.sections || {},
+        ]?.sections || {}
       ).map(([sectionName, { PdfLink }]) => ({
         sectionName,
         PdfLink: PdfLink || null,
@@ -66,38 +71,54 @@ const Timetable = () => {
   }, [selectedCourse, selectedBranch, selectedYear]);
 
   return (
-    <div className="text-black text-center">
+    <motion.div
+      className="text-black text-center"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Title title="CLASS TIMETABLE" />
-      <div className="p-4 flex flex-col items-center">
-        <CourseSelector
-          courses={courseList}
-          selectedCourse={selectedCourse}
-          onSelect={setSelectedCourse}
-          setSelectedBranch={setSelectedBranch}
-          setSelectedYear={setSelectedYear}
-        />
+      <div className="p-4 flex flex-col items-center space-y-8">
+        {/* Course Selector */}
+        <div className="w-full">
+          <CourseSelector
+            courses={courseList}
+            selectedCourse={selectedCourse}
+            onSelect={setSelectedCourse}
+            setSelectedBranch={setSelectedBranch}
+            setSelectedYear={setSelectedYear}
+          />
+        </div>
+
         <BranchSelector
           branches={branches}
           selectedBranch={selectedBranch}
           onSelect={setSelectedBranch}
         />
+
         <YearSelector
           years={years}
           selectedYear={selectedYear}
           onSelect={setSelectedYear}
         />
 
+        {/* Section Selector */}
         {showSections && (
-          <div className="w-full">
+          <motion.div
+            className="w-full"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
             <SectionSelector
               sections={sections}
               showName={true}
               hideIfShortName={true}
             />
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,3 @@
-import React from "react";
 import RollList from "@/components/roll-list/RollList";
 
 const page = () => {
