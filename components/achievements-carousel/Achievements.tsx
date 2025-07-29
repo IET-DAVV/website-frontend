@@ -14,9 +14,8 @@ const Achievements = () => {
             <div className="text-center lg:text-left">
               <Heading
                 title="ACHIEVEMENTS"
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 
-                          font-extrabold text-transparent bg-clip-text 
-                          bg-gradient-to-r from-blue-600 to-purple-600 
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl 
+                          font-extrabold  bg-clip-text 
                           drop-shadow-sm"
               />
               <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-gray-600 
