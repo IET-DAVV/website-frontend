@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 const HostelsPage = () => {
   const hostelsData = [
     {
@@ -64,9 +65,10 @@ const HostelsPage = () => {
                 />
                 <div className="absolute inset-0 bg-opacity-50 flex flex-col justify-end p-6 text-white transition-opacity duration-300">
                   <h2 className="text-2xl font-bold mb-2">{hostel.name}</h2>
-                  <p className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {hostel.description}
-                  </p>
+                  <p className="text-sm opacity-0 group-hover:opacity-100 group-hover:[animation:typing_2s_steps(40,_end)_forwards] overflow-hidden whitespace-nowrap border-r-2 border-white">
+  {hostel.description}
+</p>
+
                 </div>
               </div>
             ))}
