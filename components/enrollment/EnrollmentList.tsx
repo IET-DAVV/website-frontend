@@ -27,7 +27,7 @@ const EnrollmentComponent = () => {
 
   return (
     <div className="text-black">
-      <Title title="Enrollment List" />
+      <Title title="ENROLLMENT LIST" />
 
       {/* Show Sign-In button if user is not authenticated */}
       {status === "unauthenticated" && (
