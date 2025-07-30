@@ -42,7 +42,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
-    "framer-motion": "^12.23.6",
+    "framer-motion": "^12.23.12",
     "he": "^1.2.0",
     "lint-staged": "^16.1.2",
     "postcss": "^8.5.6",
