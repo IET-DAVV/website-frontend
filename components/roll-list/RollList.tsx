@@ -1,134 +1,101 @@
-// RollList.tsx
 "use client";
-
-import React, { useState } from "react";
-import { Manrope } from "next/font/google";
+import React, { useState, useEffect } from "react";
 import { rolllistData } from "@/constants/roll-list/data"; // Adjust the import path as necessary
 import Title from "../common/academics/Title";
+import YearSelector from "../common/academics/YearSelector"; // Assuming this component exists
+import BranchSelector from "../common/academics/BranchSelector"; // CORRECTED: Using BranchSelector now
 import { MdOutlineFileDownload } from "react-icons/md";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-type YearKeys =
-  | "B.E. I YEAR"
-  | "B.E. II YEAR"
-  | "B.E. III YEAR"
-  | "B.E. IV YEAR"
-  | "M.E."
-  | "M.Sc.";
+import { motion, AnimatePresence } from "framer-motion";
 
 const RollList = () => {
-  const [selectedYear, setSelectedYear] = useState<YearKeys>("B.E. I YEAR");
-  const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
-  const years = Object.keys(rolllistData) as YearKeys[]; // Use type assertion here
+  // State management
+  const [selectedYear, setSelectedYear] = useState<string>("");
+  const [selectedBranch, setSelectedBranch] = useState<string | null>(null);
 
-  const handleYearSelect = (year: YearKeys) => {
-    // Use YearKeys type here
-    setSelectedYear(year);
-    setSelectedCourse(null);
-  };
+  // Derivations from data
+  const years = Object.keys(rolllistData);
+  const yearData = selectedYear ? rolllistData[selectedYear as keyof typeof rolllistData] : null;
+  
+  // Branches are the keys of the year object, but only if it doesn't have a direct PdfLink
+  const branches = yearData && !("PdfLink" in yearData) ? Object.keys(yearData) : [];
+  
+  // Determine the correct PDF link to display
+  let pdfLink: string | null = null;
+  if (yearData) {
+    if ("PdfLink" in yearData) {
+      pdfLink = typeof yearData.PdfLink === "string" ? yearData.PdfLink : null; // Direct link for years like M.E., M.Sc.
+    } else if (selectedBranch && yearData[selectedBranch as keyof typeof yearData]) {
+      pdfLink = (yearData[selectedBranch as keyof typeof yearData] as any).PdfLink; // Link for a selected branch
+    }
+  }
 
-  const handleCourseSelect = (course: string) => {
-    setSelectedCourse(course);
-  };
+  // Set default year on initial load
+  useEffect(() => {
+    if (years.length > 0) {
+      setSelectedYear(years[0]);
+    }
+  }, []);
+
+  // When year changes, reset the selected branch
+  useEffect(() => {
+    setSelectedBranch(null);
+    // If the new year has branches, select the first one by default
+    const newYearData = rolllistData[selectedYear as keyof typeof rolllistData];
+    const newBranches = newYearData && !("PdfLink" in newYearData) ? Object.keys(newYearData) : [];
+    if (newBranches.length > 0) {
+      setSelectedBranch(newBranches[0]);
+    }
+  }, [selectedYear]);
 
   return (
     <div className="text-black">
       <Title title="ROLL LIST" />
 
-      {/* Year Selector */}
-      <div className={`flex justify-center ${manrope.className}`}>
-        <div className="inline-block">
-          <ul className="flex justify-center space-x-6 text-base font-medium relative pb-2 gap-12">
-            {years.map((year) => (
-              <li key={year} className="relative inline-block">
-                <button
-                  onClick={() => handleYearSelect(year)}
-                  className={`px-4 py-2 ${
-                    selectedYear === year
-                      ? "font-semibold text-[#06779B]"
-                      : "text-black hover:text-[#06779B]"
-                  }`}
-                >
-                  {year}
-                </button>
-                {selectedYear === year && (
-                  <div className="absolute bottom-[-8px] left-0 w-full h-[2px] bg-[#06779B]"></div>
-                )}
-              </li>
-            ))}
-          </ul>
-          <div className="h-[1px] bg-[#C5C5C5] w-full mt-[-1px]"></div>
-        </div>
-      </div>
+      {/* Reusable Year Selector */}
+      <YearSelector
+        years={years}
+        selectedYear={selectedYear}
+        onSelect={setSelectedYear}
+      />
 
-      {/* Course Selector */}
-      {selectedYear === "B.E. I YEAR" ? (
-        <div>
-          <div className="grid grid-cols-6 gap-4 w-fit py-10">
-            {Object.keys(rolllistData["B.E. I YEAR"]).map((course) => (
-              <button
-                key={course}
-                onClick={() => handleCourseSelect(course)}
-                className={`px-4 w-fit rounded border-2 font-semibold ${
-                  selectedCourse === course
-                    ? "bg-[#06779B] text-white border-[#06779B] rounded-lg"
-                    : "text-black border-black hover:bg-[#06779B] hover:text-white hover:border-[#06779B] rounded-lg"
-                }`}
-              >
-                {course}
-              </button>
-            ))}
-          </div>
-
-          <div>
-            {selectedCourse && selectedYear && (
-              <div className="flex flex-col gap-4 w-3/4 mx-auto mb-4 py-">
-                <div className="flex justify-end items-center">
-                  <a
-                    href={rolllistData["B.E. I YEAR"][selectedCourse].PdfLink}
-                    className="bg-black rounded-full p-1 ml-auto hover:scale-105 focus:outline-none transition-all duration-200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MdOutlineFileDownload className="text-white" />
-                  </a>
-                </div>
-                <iframe
-                  src={rolllistData["B.E. I YEAR"][selectedCourse].PdfLink}
-                  title={`PDF Viewer for ${rolllistData["B.E. I YEAR"][selectedCourse].PdfLink}`}
-                  className="border-2 border-blue-500 h-[500px] w-full"
-                ></iframe>
-              </div>
-            )}
-          </div>
-        </div>
-      ) : (
-        <div>
-          {selectedYear && (
-            <div className="flex flex-col gap-4 w-3/4 mx-auto mb-4 py-8">
-              <div className="flex justify-end items-center">
-                <a
-                  href={rolllistData[selectedYear].PdfLink}
-                  className="bg-black rounded-full p-1 ml-auto hover:scale-105 focus:outline-none transition-all duration-200"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MdOutlineFileDownload className="text-white" />
-                </a>
-              </div>
-              <iframe
-                src={rolllistData[selectedYear].PdfLink}
-                title={`PDF Viewer for ${rolllistData[selectedYear].PdfLink}`}
-                className="border-2 border-blue-500 h-[500px] w-full"
-              ></iframe>
-            </div>
-          )}
-        </div>
+      {/* Conditionally render the reusable Branch Selector */}
+      {branches.length > 0 && (
+        <BranchSelector
+          branches={branches}
+          selectedBranch={selectedBranch || ""}
+          onSelect={setSelectedBranch}
+        />
       )}
+      
+      {/* PDF Viewer Section */}
+      <AnimatePresence mode="wait">
+        {pdfLink && (
+          <motion.div
+            key={pdfLink} // Animate when the link changes
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="flex flex-col gap-4 w-full md:w-3/4 lg:w-1/2 mx-auto mb-4 px-4"
+          >
+            <div className="flex justify-end items-center">
+              <a
+                href={pdfLink}
+                className="bg-black rounded-full p-2 ml-auto hover:scale-110 focus:outline-none transition-transform duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MdOutlineFileDownload className="text-white text-xl" />
+              </a>
+            </div>
+            <iframe
+              src={pdfLink}
+              title={`PDF Viewer for ${selectedBranch || selectedYear}`}
+              className="border-2 border-gray-300 h-[500px] w-full rounded-xl shadow-lg"
+            ></iframe>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

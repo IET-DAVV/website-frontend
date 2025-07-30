@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
+// Define the props for the BranchSelector component
 interface BranchSelectorProps {
   branches: string[];
   selectedBranch: string;
@@ -11,33 +13,43 @@ const BranchSelector: React.FC<BranchSelectorProps> = ({
   branches,
   selectedBranch,
   onSelect,
-}) => (
-  <motion.div
-    className="flex flex-col px-4 sm:px-6 md:px-8 mb-14 mt-10"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, ease: "easeOut" }}
-  >
-    <h2 className="text-xl sm:text-2xl mb-6 sm:mb-8 font-semibold">Branch</h2>
+}) => {
+  // If there are no branches to show, render nothing.
+  if (!branches || branches.length === 0) {
+    return null;
+  }
 
-    <div className="mt-2 w-full border-b-2 border-[#D4D4D4] mb-6 sm:mb-8"></div>
-
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-      {branches.map((branch) => (
-        <button
-          key={branch}
-          onClick={() => onSelect(branch)}
-          className={`px-4 py-2 rounded-lg border font-medium transition-all duration-300 ease-in-out ${
-            selectedBranch === branch
-              ? "bg-teal-600 text-white"
-              : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
-          }`}
-        >
-          {branch}
-        </button>
-      ))}
-    </div>
-  </motion.div>
-);
+  return (
+    <motion.div
+      className="flex flex-col mb-8 px-4 sm:px-6 md:px-8 w-full"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      {/* Centered, bold, and larger title for the section */}
+      <h2 className="text-2xl sm:text-3xl mb-6 font-bold text-center text-gray-800">
+        Branch
+      </h2>
+      
+      {/* Grid layout for the buttons, matching the semester selector's style */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {branches.map((branch) => (
+          <button
+            key={branch}
+            onClick={() => onSelect(branch)}
+            // Apply conditional styling based on whether the branch is selected
+            className={`px-5 py-3 rounded-md border transition-all duration-300 ease-in-out font-medium text-sm sm:text-base ${
+              selectedBranch === branch
+                ? "bg-[#3B7A9E] text-white shadow-lg scale-105" // Style for the selected button
+                : "bg-white text-gray-700 hover:bg-[#E2EDF3] hover:shadow-md hover:scale-105" // Style for non-selected buttons
+            }`}
+          >
+            {branch}
+          </button>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
 
 export default BranchSelector;
