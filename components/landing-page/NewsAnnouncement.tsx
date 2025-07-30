@@ -81,42 +81,48 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
     startResumeTimeout();
   };
 
-  const togglePause = () => {
-    setIsPaused(!isPaused);
-  };
-
   return (
     <div
-      className="bg-white text-black rounded-lg shadow-lg overflow-hidden h-[455px] sm:h-[555px] mb-8 sm:mb-12 relative"
+      className="bg-white text-black rounded-lg shadow-lg overflow-hidden 
+                 h-[300px] sm:h-[400px] md:h-[455px] lg:h-[500px] xl:h-[555px]
+                 mb-4 sm:mb-6 lg:mb-8 xl:mb-12 relative w-full"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <h2 className="text-2xl text-white flex justify-center bg-black font-bold rounded-md mb-4">
+      <h2 className="text-lg sm:text-xl md:text-2xl text-white flex justify-center 
+                     bg-black font-bold rounded-md mb-2 sm:mb-4 py-2 sm:py-3">
         {title}
       </h2>
       <div
         ref={scrollRef}
-        className={`p-6 relative h-[calc(100%-3rem)] overflow-y-auto ${isPaused ? 'overflow-y-scroll' : 'overflow-hidden'}`}
+        className={`px-3 sm:px-4 md:px-6 relative h-[calc(100%-3rem)] sm:h-[calc(100%-4rem)] 
+                   overflow-y-auto ${isPaused ? 'overflow-y-scroll' : 'overflow-hidden'}`}
         onWheel={handleUserInteraction}
         onTouchStart={handleUserInteraction}
         onClick={handleClick}
       >
         <div>
-          <ul ref={listRef} className="space-y-4">
+          <ul ref={listRef} className="space-y-2 sm:space-y-3 md:space-y-4">
             {items.map((item, index) => (
-              <li key={`original-${index}`}>&rsaquo; {item}</li>
+              <li key={`original-${index}`} 
+                  className="text-sm sm:text-base leading-relaxed break-words">
+                &rsaquo; {item}
+              </li>
             ))}
           </ul>
-          <ul className="space-y-4">
+          <ul className="space-y-2 sm:space-y-3 md:space-y-4">
             {items.map((item, index) => (
-              <li key={`duplicate-${index}`}>&rsaquo; {item}</li>
+              <li key={`duplicate-${index}`} 
+                  className="text-sm sm:text-base leading-relaxed break-words">
+                &rsaquo; {item}
+              </li>
             ))}
           </ul>
         </div>
       </div>
-      
     </div>
   );
 };
+
 
 export default NewsAnnouncement;

@@ -80,7 +80,7 @@ const AchievementsSlider = () => {
                     : "border-black text-black hover:border-[#3B799E] hover:text-[#3B799E]"
                 }`}
               >
-                <Icon size={48} className="mb-4" />
+                {Icon && <Icon size={48} className="mb-4" />}
                 <h3 className="text-xl font-semibold mb-2 font-newyork">
                   {achieve.title}
                 </h3>

@@ -1,53 +1,46 @@
+// components/achievements-carousel/CustomSlide.tsx
+
 "use client";
 import React from "react";
-import Image from "next/image";
-import { FaMedal, FaTrophy, FaAward } from "react-icons/fa";
 
-const achievements = [
-  {
-    icon: <FaMedal className="text-blue-500 text-4xl mb-4" />,
-    title: "National Finalist",
-    description:
-      "Secured top 5 position at a prestigious tech event, competing with 500+ teams.",
-  },
-  {
-    icon: <FaTrophy className="text-blue-500 text-4xl mb-4" />,
-    title: "Hackathon Winner",
-    description:
-      "Won first place in a national hackathon with an AI-based smart solution.",
-  },
-  {
-    icon: <FaAward className="text-blue-500 text-4xl mb-4" />,
-    title: "Research Recognition",
-    description:
-      "Our project paper was selected in the top IEEE research publications.",
-  },
-];
+type CustomSlideProps = {
+  title: string;
+  year: string;
+  imgAddress: string;
+  description: string;
+};
 
-const AchievementsSection = () => {
+const CustomSlide = ({ title, year, imgAddress, description }: CustomSlideProps) => {
   return (
-    <section className="bg-white py-16 px-6">
-      <h2 className="text-3xl font-bold text-center text-black mb-4">
-        Achievements
-      </h2>
-      <div className="w-24 h-1 bg-blue-500 mx-auto mb-12 rounded-full"></div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {achievements.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white border border-gray-200 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300"
-          >
-            {item.icon}
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              {item.title}
+    <div className="bg-white p-3 sm:p-4 md:p-6 rounded-xl shadow-lg 
+                   max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 
+                   mx-auto text-center text-black h-full">
+      <div className="flex flex-col h-full">
+        <img
+          src={imgAddress}
+          alt={title}
+          className="w-full h-32 sm:h-40 md:h-48 lg:h-56 object-cover rounded-md mb-3 sm:mb-4 
+                     transition-transform duration-300 hover:scale-105"
+        />
+        <div className="flex-grow flex flex-col justify-between">
+          <div>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-1 sm:mb-2 
+                          leading-tight text-gray-800">
+              {title}
             </h3>
-            <p className="text-sm text-gray-600">{item.description}</p>
+            <p className="text-xs sm:text-sm md:text-base text-blue-600 font-medium mb-2 sm:mb-3">
+              {year}
+            </p>
           </div>
-        ))}
+          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-gray-600 
+                       line-clamp-4 sm:line-clamp-none">
+            {description}
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default AchievementsSection;
+
+export default CustomSlide;

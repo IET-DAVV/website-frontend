@@ -50,11 +50,11 @@ const UpperHeader = () => {
         {/* Left: Contact Info */}
         <div className="flex flex-col md:flex-row md:items-center md:space-x-10 space-y-1 md:space-y-0">
           <a
-            href="mailto:webmaster@ietdavv.edu.in"
+            href="mailto:contactiet@ietdavv.edu.in"
             className="flex items-center space-x-2 cursor-pointer text-white"
           >
             <IoMail />
-            <p className="hover:border-b-2 hover:border-white">webmaster@ietdavv.edu.in</p>
+            <p className="hover:border-b-2 hover:border-white">contactiet@ietdavv.edu.in</p>
           </a>
           <a href="tel:+919826000000" className="flex items-center space-x-2 border-b-2 border-transparent hover:border-white cursor-pointer transition-all duration-200 pb-1">
             <IoCall />

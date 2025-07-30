@@ -1,113 +1,118 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { syllabusDataData } from "@/constants/syllabus/data";
+import { syllabusData } from "@/constants/syllabus/data";
 import Title from "../common/academics/Title";
-import SectionSelector from "../common/academics/SectionSelector";
+import CourseSelector from "../common/academics/CourseSelector";
+import BranchSelector from "../common/academics/BranchSelector";
+import SemesterSelector from "../common/academics/SemesterSelector"; // Re-importing the semester selector
+import SyllabusAccordion from "../common/academics/SyllabusAccordion";
 import { motion } from "framer-motion";
 
 const Syllabus = () => {
-  const [selectedCourse, setSelectedCourse] = useState("BE_FULL_TIME");
+  const [selectedCourse, setSelectedCourse] = useState("be_full_time");
   const [selectedBranch, setSelectedBranch] = useState("");
-  const [selectedYear, setSelectedYear] = useState("");
-  const [showSections, setShowSections] = useState(false);
-  const [sections, setSections] = useState<
-    { sectionName: string; PdfLink: string | null }[]
-  >([]);
+  const [selectedSemester, setSelectedSemester] = useState(""); // State for semester selection is back
+  const [openSubjectCode, setOpenSubjectCode] = useState<string | null>(null);
 
-  const courseList = Object.keys(syllabusDataData.courses).map((courseKey) => ({
+  // --- Data Derivations ---
+  const courseList = Object.keys(syllabusData.courses).map((courseKey) => ({
     courseKey,
-    courseName: syllabusDataData.courses[courseKey].courseName,
+    courseName: syllabusData.courses[courseKey].courseName,
   }));
 
   const branches = Object.keys(
-    syllabusDataData.courses[selectedCourse]?.branches || {}
+    syllabusData.courses[selectedCourse]?.branches || {}
   );
-  const years = Object.keys(
-    syllabusDataData.courses[selectedCourse]?.branches[selectedBranch]?.years ||
-      {}
+  
+  // Get the list of available semesters for the selected branch
+  const semesters = Object.keys(
+    syllabusData.courses[selectedCourse]?.branches[selectedBranch]?.semesters || {}
   );
 
+  // Get the subjects only for the selected semester
+  const subjects =
+    syllabusData.courses[selectedCourse]?.branches[selectedBranch]?.semesters[
+      selectedSemester
+    ]?.subjects || [];
+
+  // --- Effects to manage state changes ---
+
+  // On Course Change -> Update Branch
   useEffect(() => {
-    if (selectedCourse && selectedBranch && selectedYear) {
-      const sectionList = Object.entries(
-        syllabusDataData.courses[selectedCourse]?.branches[selectedBranch]
-          ?.years[selectedYear]?.sections || {}
-      ).map(([sectionName, { PdfLink }]) => ({
-        sectionName,
-        PdfLink: PdfLink || null,
-      }));
-      setSections(sectionList);
-      setShowSections(true);
-    } else {
-      setShowSections(false);
-    }
-  }, [selectedCourse, selectedBranch, selectedYear]);
+    const firstBranch = branches[0] || "";
+    setSelectedBranch(firstBranch);
+    // The next effect will handle the semester update
+  }, [selectedCourse]);
+
+  // On Branch Change -> Update Semester
+  useEffect(() => {
+    const firstSemester = semesters[0] || "";
+    setSelectedSemester(firstSemester);
+    setOpenSubjectCode(null); // Close any open accordion
+  }, [selectedBranch]);
+
+  // On Semester Change -> Close any open accordion
+  useEffect(() => {
+    setOpenSubjectCode(null);
+  }, [selectedSemester]);
+  
+  // Toggles an accordion open or closed
+  const handleToggleSubject = (subjectCode: string) => {
+    setOpenSubjectCode(prevCode => (prevCode === subjectCode ? null : subjectCode));
+  };
 
   return (
     <motion.div
-      className="text-black text-center"
+      className="text-black"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <Title title="SYLLABUS" />
-      <div className="p-4 flex flex-col items-center space-y-8">
-
-        {/* Branch Selector */}
-        <div className="w-full">
-          <h2 className="text-xl font-semibold mb-4">Branch</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-center">
-            {branches.map((branch) => (
-              <button
-                key={branch}
-                onClick={() => setSelectedBranch(branch)}
-                className={`px-4 py-2 rounded-lg border font-medium transition-all duration-300 ease-in-out ${
-                  selectedBranch === branch
-                    ? "bg-teal-600 text-white"
-                    : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
-                }`}
-              >
-                {branch}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Year Selector */}
-        <div className="w-full">
-          <h2 className="text-xl font-semibold mb-4">Year</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {years.map((year) => (
-              <button
-                key={year}
-                onClick={() => setSelectedYear(year)}
-                className={`px-5 py-2 rounded-md border transition-all duration-300 ease-in-out font-medium ${
-                  selectedYear === year
-                    ? "bg-teal-600 text-white"
-                    : "bg-white text-black hover:bg-teal-100 hover:shadow-md hover:scale-105"
-                }`}
-              >
-                {year}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Section Selector */}
-        {showSections && (
-          <motion.div
-            className="w-full"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <SectionSelector
-              sections={sections}
-              showName={true}
-              hideIfShortName={false}
-            />
-          </motion.div>
+      <div className="p-4 flex flex-col items-center space-y-6 md:space-y-8">
+        
+        <CourseSelector
+          courses={courseList}
+          selectedCourse={selectedCourse}
+          onSelect={setSelectedCourse}
+        />
+        
+        {branches.length > 0 && (
+          <BranchSelector
+            branches={branches}
+            selectedBranch={selectedBranch}
+            onSelect={setSelectedBranch}
+          />
         )}
+        
+        {/* SEMESTER SELECTOR IS BACK IN THE UI */}
+        {semesters.length > 0 && (
+          <SemesterSelector
+            semesters={semesters}
+            selectedSemester={selectedSemester}
+            onSelect={setSelectedSemester}
+          />
+        )}
+        
+        {/* UPDATED: Render the list of subjects based on the selected semester */}
+        <div className="w-full md:w-5/6 lg:w-4/5 mt-4 text-left">
+          {subjects.length > 0 ? (
+            <div className="flex flex-col rounded-lg shadow-md overflow-hidden border">
+              {subjects.map((subject) => (
+                 <SyllabusAccordion
+                    key={subject.code}
+                    subject={subject}
+                    isOpen={openSubjectCode === subject.code}
+                    onToggle={() => handleToggleSubject(subject.code)}
+                 />
+              ))}
+            </div>
+          ) : (
+            selectedBranch && (
+              <p className="mt-8 text-gray-500 text-center">Syllabus details for this selection will be available soon.</p>
+            )
+          )}
+        </div>
       </div>
     </motion.div>
   );
