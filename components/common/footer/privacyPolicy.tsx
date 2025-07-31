@@ -4,7 +4,7 @@ import React from 'react';
 const PrivacyPolicy = (): JSX.Element => {
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-[#06779B]">Privacy Policy</h1>
 
       <p className="mb-4">
         As a general rule, this website does not collect Personal Information about you when you visit the site.

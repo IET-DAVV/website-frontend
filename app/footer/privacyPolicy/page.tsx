@@ -1,5 +1,5 @@
 import React from 'react'
-import  PrivacyPolicy from '@/components/common/footer/privacy-policy';
+import  PrivacyPolicy from '@/components/common/footer/privacyPolicy';
 const PrivacyPolicypage = () => {
   return (
     <div>

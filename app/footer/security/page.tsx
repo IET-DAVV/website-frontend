@@ -1,5 +1,5 @@
 import React from 'react'
-import Security from '@/components/common/footer/security-policy';
+import Security from '@/components/common/footer/security';
 const security = () => {
     return (
     <div>

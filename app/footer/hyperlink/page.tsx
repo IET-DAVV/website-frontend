@@ -1,5 +1,5 @@
 import React from 'react'
-import HyperLink from '@/components/common/footer/hyper-linking';
+import HyperLink from '@/components/common/footer/hyperlink';
 const hyperlink = () => {
     return (
     <div>
