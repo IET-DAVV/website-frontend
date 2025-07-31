@@ -1,5 +1,5 @@
 import React from 'react'
-import TermC from '@/components/common/footer/terms-conditions.jsx';
+import TermC from '@/components/common/footer/termsCondition';
 
 const termc = () => {
     return (

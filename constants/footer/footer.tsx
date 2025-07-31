@@ -63,39 +63,39 @@ export const quickFindings = [
 export const moreInformation = [
   {
     name: "Copyright Policy",
-    url: "/",
+    url: "/footer/copyright",
   },
   {
     name: "Hyper Linking Policy",
-    url: "/about",
+    url: "/footer/hyperlink",
   },
   {
     name: "Terms & Conditions",
-    url: "/clubs",
+    url: "/footer/termsCondition",
   },
   {
     name: "Privacy Policy",
-    url: "/academic-programs",
+    url: "/footer/privacyPolicy",
   },
   {
     name: "Security Policy",
-    url: "/contact-us",
+    url: "/footer/security",
   },
   {
     name: "Archival Policy",
-    url: "/student-corner",
+    url: "/footer/archivalPolicy",
   },
   {
     name: "Accessibility Statement",
-    url: "/student-corner",
+    url: "/footer/accessibility",
   },
   {
     name: "COMA Policy",
-    url: "/student-corner",
+    url: "/footer/comaPolicy",
   },
   {
     name: "Content Review Policy",
-    url: "/student-corner",
+    url: "/footer/contentReview",
   },
   {
     name: "Scholar Page",

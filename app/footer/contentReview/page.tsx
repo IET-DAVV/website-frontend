@@ -1,5 +1,5 @@
 import React from 'react'
-import Content from '@/components/common/footer/content-review';
+import Content from '@/components/common/footer/contentReview';
 const content = () => {
     return (
     <div>

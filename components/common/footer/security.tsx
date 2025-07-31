@@ -4,7 +4,7 @@ import React from 'react';
 const SecurityPolicy = (): JSX.Element => {
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Security Policy</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-[#06779B]">Security Policy</h1>
 
       <h2 className="text-xl font-semibold mb-2">Purpose of Policy</h2>
       <p className="mb-4">

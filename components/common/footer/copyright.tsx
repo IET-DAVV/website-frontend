@@ -4,7 +4,7 @@ import React from 'react';
 const CopyrightPolicy = (): JSX.Element => {
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Copyright Policy</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-[#06779B]">Copyright Policy</h1>
 
       <p>
         Images/Videos/Tender Information and other Important Documents/Software featured on this website may be reproduced free of charge after taking proper permission by sending a mail to us.

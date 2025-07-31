@@ -4,7 +4,7 @@ import React from 'react';
 const AccessibilityStatement = (): JSX.Element => {
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Accessibility Statement</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-[#06779B]">Accessibility Statement</h1>
 
       <p className="mb-4">
         We are committed to ensuring that the IET DAVV website is accessible to all users, irrespective of the device in use, technology, or ability.
