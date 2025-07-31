@@ -2,7 +2,7 @@ export const aboutIET =
   "Established in 1996, the Institute of Engineering & Technology (IET-DAVV) is an autonomous institute under Devi Ahilya University, Indore. It offers UG, PG, and PhD programs, known for academic excellence, research output, and strong placement opportunities across top industries.";
 
 export const aboutImage = "/about/aboutietimg.png";
-export const aboutDirector = "/about/about_director.png";
+export const aboutDirector = "/about/about_director.jpg";
 export const aboutVC = "/about/aboutVC.png";
 export const visionIET = "/about/visionietimg.png";
 export const visionDAVV = "/about/visiondavvimg.png";
