@@ -105,7 +105,7 @@ const Footer = () => {
         {/* Sitemap */}
         <div className="flex flex-col items-start space-y-5 p-5">
           <h1 className="font-bold text-white text-2xl">More Information</h1>
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-row flex-wrap gap-4">
             {moreInformation.map((link, index) => (
               <motion.div
                 key={link.name}
