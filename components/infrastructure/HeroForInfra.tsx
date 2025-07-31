@@ -1,18 +1,19 @@
 "use client";
 import Image from "next/image";
-import he from 'he';
+import he from "he";
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HeroInfra = () => {
   const [hoveredBlock, setHoveredBlock] = useState<number | null>(null);
 
   const campusBlocks = [
-  {
-    id: 1,
-    name: "M BLOCK",
-    image: "/infrastructure/blocks/mblock aerial.jpg",
-    alt: "M Block aerial view",
-    description: `Administrative &amp; Institutional Backbone
+    {
+      id: 1,
+      name: "M-Block",
+      image: "/infrastructure/blocks/mblock aerial.jpg",
+      alt: "M Block aerial view",
+      description: `Administrative &amp; Institutional Backbone
 M - Block is the central administrative and utility block of IET DAVV. It includes:
 
 The main auditorium for events, inductions, and seminars
@@ -23,53 +24,54 @@ The IT server room, which handles all networking, online systems, and college-wi
 
 A hub for official documentation, academic records, and student services
 It is the nerve center of campus operations, leadership, and large gatherings.`,
-  },
-  {
-    id: 2,
-    name: "A BLOCK",
-    image: "/infrastructure/blocks/ablock aerial.png",
-    alt: "A Block aerial view",
-    description: `Academic Core + Civil &amp; Mechanical Base
-A-Block is one of the oldest academic blocks at IET DAVV, historically used for Civil and Mechanical Engineering classes. It includes core lecture halls, shared classrooms, and labs that support interdisciplinary academic activities. Its central position makes it a vital learning space across departments, fostering collaborative teaching environments.`,
-  },
-  {
-    id: 3,
-    name: "B BLOCK",
-    image: "/infrastructure/blocks/bBlock aerial.jpg",
-    alt: "B Block aerial view",
-    description: `Computer Science + Cyber &amp; IT Infrastructure Hub
-B-Block is dedicated to the Computer Science and Information Technology departments. In addition to smart classrooms and coding labs, this block handles several technical backend responsibilities such as the institute&#8217;s website management, Wi-Fi ID generation, and cyber systems coordination. It plays a key role in digital administration and student tech access.`,
-  },
-  {
-    id: 4,
-    name: "D BLOCK",
-    image: "/infrastructure/blocks/dblock aerial.png",
-    alt: "D Block aerial view",
-    description: `Electronics &amp; Instrumentation Lab Complex
-D-Block serves as the practical zone for Electronics and Communication Engineering (ECE). It houses various electronic instruments and specialized labs for circuit design, embedded systems, signal processing, and instrumentation. This block is critical for ECE lab courses and minor hardware project development.`,
-  },
-  {
-    id: 5,
-    name: "E BLOCK",
-    image: "/infrastructure/blocks/eblock aerial.png",
-    alt: "E Block aerial view",
-    description: `Mechanical/Civil Support + E-Cell &amp; Innovation Space
+    },
+    {
+      id: 2,
+      name: "A-Block",
+      image: "/infrastructure/blocks/ablock aerial.png",
+      alt: "A-Block aerial view",
+      description: `Academic Core + Civil &amp; Mechanical Base
+A-Block is one of the oldest academic-Blocks at IET DAVV, historically used for Civil and Mechanical Engineering classes. It includes core lecture halls, shared classrooms, and labs that support interdisciplinary academic activities. Its central position makes it a vital learning space across departments, fostering collaborative teaching environments.`,
+    },
+    {
+      id: 3,
+      name: "B-Block",
+      image: "/infrastructure/blocks/bBlock aerial.jpg",
+      alt: "B-Block aerial view",
+      description: `Computer Science + Cyber &amp; IT Infrastructure Hub
+B-Block is dedicated to the Computer Science and Information Technology departments. In addition to smart classrooms and coding labs, this-Block handles several technical backend responsibilities such as the institute&#8217;s website management, Wi-Fi ID generation, and cyber systems coordination. It plays a key role in digital administration and student tech access.`,
+    },
+    {
+      id: 4,
+      name: "D-Block",
+      image: "/infrastructure/blocks/dblock aerial.png",
+      alt: "D-Block aerial view",
+      description: `Electronics &amp; Instrumentation Lab Complex
+D-Block serves as the practical zone for Electronics and Communication Engineering (ECE). It houses various electronic instruments and specialized labs for circuit design, embedded systems, signal processing, and instrumentation. This-Block is critical for ECE lab courses and minor hardware project development.`,
+    },
+    {
+      id: 5,
+      name: "E-Block",
+      image: "/infrastructure/blocks/eblock aerial.png",
+      alt: "E-Block aerial view",
+      description: `Mechanical/Civil Support + E-Cell &amp; Innovation Space
 E-Block supports both Mechanical and Civil Engineering departments with project labs and design facilities. It also houses spaces related to the Entrepreneurship Cell (E-Cell) and student innovation clubs, encouraging ideation, prototyping, and teamwork.`,
-  },
-  {
-    id: 6,
-    name: "F BLOCK",
-    image: "/infrastructure/blocks/fblock aerial.png",
-    alt: "F Block aerial view",
-    description: `IT Block with Modern Infrastructure
+    },
+    {
+      id: 6,
+      name: "F-Block",
+      image: "/infrastructure/blocks/fblock aerial.png",
+      alt: "F-Block aerial view",
+      description: `IT-Block with Modern Infrastructure
 F-Block is one of the newest and most technologically advanced blocks on campus. It supports the Information Technology department and features modern labs, high-speed network setups, and upgraded classrooms equipped with the latest smart learning tools. It represents the forward-looking infrastructure development at IET DAVV.`,
-  },
-];
+    },
+  ];
 
   const getDisplayContent = () => {
     if (hoveredBlock !== null) {
       const block = campusBlocks.find((b) => b.id === hoveredBlock);
       return {
+        key: block?.id,
         heading: block?.name || "Campus",
         subheading: "",
         description:
@@ -78,6 +80,7 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
       };
     }
     return {
+      key: "default",
       heading: "Campus",
       subheading: "Blocks",
       description:
@@ -99,24 +102,33 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
 
         {/* Content Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
-          {/* Left Column - Text Content */}
+          {/* Left Column - Text Content with animation */}
           <div className="space-y-8 col-span-1">
-            <div>
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-light text-black mb-6 leading-tight font-newyork transition-all duration-300">
-                {displayContent.heading}
-              </h2>
-              {displayContent.subheading && (
-                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-light text-black mb-8 leading-tight font-newyork transition-all duration-300">
-                  {displayContent.subheading}
-                </h2>
-              )}
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={displayContent.key}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+                exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
+              >
+                <div>
+                  <h2 className="text-5xl sm:text-6xl lg:text-7xl font-light text-black mb-6 leading-tight font-newyork transition-all duration-300">
+                    {displayContent.heading}
+                  </h2>
+                  {displayContent.subheading && (
+                    <h2 className="text-5xl sm:text-6xl lg:text-7xl font-light text-black mb-8 leading-tight font-newyork transition-all duration-300">
+                      {displayContent.subheading}
+                    </h2>
+                  )}
+                </div>
 
-            <div className="max-w-md">
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed transition-all duration-300">
-                {he.decode(displayContent.description)}
-              </p>
-            </div>
+                <div className="max-w-md">
+                  <p className="text-base sm:text-lg text-gray-700 leading-relaxed transition-all duration-300">
+                    {he.decode(displayContent.description)}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Right Column - Campus Blocks Grid */}
