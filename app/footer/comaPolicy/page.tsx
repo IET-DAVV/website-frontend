@@ -1,5 +1,5 @@
 import React from 'react'
-import Coma from '@/components/common/footer/coma-policy';
+import Coma from '@/components/common/footer/comaPolicy';
 const coma = () => {
     return (
     <div>
@@ -9,3 +9,5 @@ const coma = () => {
 }
 
 export default coma
+
+

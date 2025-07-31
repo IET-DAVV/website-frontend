@@ -4,7 +4,7 @@ import React from 'react';
 const HyperLinkingPolicy = (): JSX.Element => {
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Hyper Linking Policy</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-[#06779B]">Hyper Linking Policy</h1>
 
       <p>
         We do not object to you linking directly to the information that is hosted on the IET DAVV website and no prior permission is required for the same.

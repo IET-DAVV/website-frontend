@@ -4,7 +4,7 @@ import React from 'react';
 const ContentArchivalPolicy = (): JSX.Element => {
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Archival Policy</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-[#06779B]">Archival Policy</h1>
 
       <p className="mb-4">
         Content Archival Mechanism is in place to ensure that all outdated website URLs and documents are to be removed from the website or moved to archive. 

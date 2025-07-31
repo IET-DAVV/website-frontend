@@ -4,7 +4,7 @@ import React from 'react';
 const TermsAndConditions = (): JSX.Element => {
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Terms & Conditions</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-[#06779B]">Terms & Conditions</h1>
 
       <p className="mb-4">
         This website is designed, developed, and maintained by IET DAVV.
