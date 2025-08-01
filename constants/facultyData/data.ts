@@ -1781,7 +1781,7 @@ export const facultyData = [
     ]
   },
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
     "image": "https://www.ietdavv.edu.in/images/Faculty/ajayverma.jpg",
     "name": "Dr. Ajay Verma",
     "position": "Professor",
@@ -1848,7 +1848,7 @@ export const facultyData = [
     ]
   },
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
     "image": "https://www.ietdavv.edu.in/images/Faculty/sp.jpg",
     "name": "Dr. Shashi Prakash",
     "position": "Professor",
@@ -1915,8 +1915,8 @@ export const facultyData = [
     ]
   },
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/lalit.jpg",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
+    "image": "https://www.ietdavv.edu.in/images/Faculty/Shivangi.jpg",
     "name": "Ms.Shivangi Bande",
     "position": "Professor",
     "description": "Image Processing, Embedded System, Computer Network",
@@ -1983,7 +1983,7 @@ export const facultyData = [
   },
 
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
     "image": "https://www.ietdavv.edu.in/images/Faculty/shahid.jpg",
     "name": "Mr. Shahid Khilji",
     "position": "Assistant Professor",
@@ -2050,7 +2050,7 @@ export const facultyData = [
     ]
   },
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
     "image": "https://www.ietdavv.edu.in/images/Faculty/akj.jpg",
     "name": "Mr. Amit Kumar Jha",
     "position": "",
@@ -2117,7 +2117,7 @@ export const facultyData = [
     ]
   },
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
     "image": "https://www.ietdavv.edu.in/images/Faculty/Shailendra.jpg",
     "name": "Mr. Shailendra Kumar Pathak",
     "position": "",
@@ -2184,7 +2184,7 @@ export const facultyData = [
     ]
   },
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
     "image": "https://www.ietdavv.edu.in/images/Faculty/hemlata.jpg",
     "name": "Mrs.Hemlata Pal",
     "position": "",
@@ -2251,7 +2251,7 @@ export const facultyData = [
     ]
   },
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
     "image": "https://www.ietdavv.edu.in/images/Faculty/priyanka_Image.jpg",
     "name": "Miss. Priyanka Sharma",
     "position": "",
@@ -2318,7 +2318,7 @@ export const facultyData = [
     ]
   },
   {
-    "branch": "ELECTRONICS & INSTRUMENTATION TECHNOLOGY",
+    "branch": "ELECTRONIC & INSTRUMENTATION",
     "image": "https://www.ietdavv.edu.in/images/Faculty/Tapesh-Sarsodia.jpg",
     "name": "Mr. Tapesh Sarsodia",
     "position": "",
