@@ -1,23 +1,61 @@
 // constants/HeroSection/data.ts
 
 export const newsItems = [
-  "Councelling schedule session 2025-26 (for B.Tech CSBS and BDesign program)",
-  "Timetable coming soon.",
-  'Hackathon "CodeSprint 2025" registrations open till 10th July.',
-  "AI/ML Workshop on 6-7 July. Limited seats.",
-  "Internship applications open on the Placement Cell Portal.",
-  'Tech Fest "Innovatia 2025" scheduled for 20-22 August.',
-  "Convocation registration deadline: 12th July.",
+  {
+    label: "BE I Year Regular Results" ,
+    url: "https://ietdavv.edu.in/index.php/results",
+    description: "(for session April-May 2025)",
+  },
+    {
+    label: "Counseling schedule session 2025-26 ",
+    url: "https://ietdavv.edu.in/index.php/admission/admission-2025-26",
+    description: "(For B.Tech CSBS and BDesign program)",
+  },
+  {
+    label: "Branch / College Transfer Notification 2025-26",
+    url: "https://ietdavv.edu.in/index.php/admission/admission-2025-26",
+    description: "(Branch / College Transfer Notification 2025-26)",
+  },
+  {
+    label: "Academic Calendar 2025-26",
+    url: "https://ietdavv.edu.in/index.php/academics/calender/i-yr-calender",
+    description: "(for B.Tech / M.Tech/ MSc/ PTDC)",
+  },
+  {
+    label: "Notice For Observation of answer book ",
+    url: "https://ietdavv.edu.in/index.php/examination",
+    description: "(for BE III Year students)",
+  },
+  {
+    label: "BE II Year Regular Results",
+    url: "https://ietdavv.edu.in/index.php/results",
+    description: "(Except E & TC Branch)",
+  }
 ];
 
 export const announcementItems = [
-  "Mid-sem Exams start from 15th July 2025.",
-  "Timetable coming soon.",
-  'Hackathon "CodeSprint 2025" registrations open till 10th July.',
-  "AI/ML Workshop on 6-7 July. Limited seats.",
-  "Internship applications open on the Placement Cell Portal.",
-  'Tech Fest "Innovatia 2025" scheduled for 20-22 August.',
-  "Convocation registration deadline: 12th July.",
+  {
+    label: "Girls Hostel allotment list-July 2025",
+    url: "https://ietdavv.edu.in/index.php/academics/notices",
+    description: "(for BE I year students)",
+  },{
+    label: "Mandatory Registration for IKS on SWAYAM portal",
+    url: "https://ietdavv.edu.in/index.php/academics/notices",
+    description: "(Notice for B.Tech. 2nd Year Students) ",
+  },{
+    label: "Admission Guidelines 2025-26",
+    url: "https://ietdavv.edu.in/index.php/admission/admission-2025-26",
+    description: "(for candidates seeking admission in B.Tech) ",
+  },{
+    label: "Centralized placement cell guidelines",
+    url: "https://ietdavv.edu.in/index.php/academics/notices",
+    description: " (by DAVV)",
+  },
+  {
+    label: "Admission open in B Des program",
+    url: "https://ietdavv.edu.in/index.php/admission/admission-2025-26",
+    description: "(Last date for  BDes is extended up to 30/07/2025 )",
+  }
 ];
 
 export const slides = [
