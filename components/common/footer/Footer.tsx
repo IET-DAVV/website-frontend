@@ -125,22 +125,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Miscellaneous */}
-        <div className="flex flex-col items-start justify-start space-y-5 p-5">
-          <h1 className="font-medium text-white text-lg">Miscellaneous</h1>
-          <Link
-            href="/footer/grievance"
-            className="font-light text-light-gray text-sm hover:text-light-blue"
-          >
-            Grievance
-          </Link>
-        </div>
+        
       </div>
 
       {/* Bottom Strip */}
       <div className="flex flex-col md:flex-row justify-between items-center border-t border-[#D9D9D9] pt-5 mt-8 space-y-4 md:space-y-0">
         <p className="font-medium text-white text-xs text-center md:text-left">
-          © 2024 IET-DAVV. All rights reserved.
+          © 2025 IET-DAVV. All rights reserved.
         </p>
         <div className="flex items-center space-x-3">
           {[CiFacebook, CiInstagram, CiTwitter, CiLinkedin, CiYoutube].map(

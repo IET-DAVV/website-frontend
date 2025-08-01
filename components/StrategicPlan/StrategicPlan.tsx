@@ -14,7 +14,7 @@ const StrategicPlan: React.FC = () => {
 
       {/* Description with inline link */}
       <p className="text-lg text-center text-gray-800">
-        To view the strategic plan{" "}
+        To view the strategic plan of IET DAVV{" "}
         <a
           href="/about/strategic-plans.pdf"
           target="_blank"

@@ -1,28 +1,33 @@
 export const importantLinks = [
   {
-    name: "Digital Initiative by MHRD",
-    url: "/",
-  },
-  {
-    name: "Devi Ahilya Vishwavidyalaya",
-    url: "https://www.dauniv.ac.in/",
+    name: "Ministry of Education",
+    url: "https://www.education.gov.in/",
   },
   {
     name: "Directorate of Technical Education",
     url: "http://www.mptechedu.org/",
   },
   {
-    name: "AICTE",
-    url: "http://www.mptechedu.org/",
+    name: "Devi Ahilya Vishwavidyalaya",
+    url: "https://www.dauniv.ac.in/",
   },
   {
-    name: "University Grants Commission",
-    url: "https://www.ugc.gov.in/",
+    name: "DAVV MPOnline",
+    url: "https://www.https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx.gov.in/portal/",
   },
   {
     name: "MPOnline",
     url: "https://www.mponline.gov.in/portal/",
   },
+  {
+    name: "AICEE",
+    url: "",
+  },
+  {
+    name: "University Grants Commission",
+    url: "https://www.ugc.gov.in/",
+  },
+  
 ];
 
 export const quickFindings = [
@@ -39,10 +44,6 @@ export const quickFindings = [
     value: "/footer/grievance",
   },
   {
-    name: "AICTE Feedback",
-    value: "https://dauniv.ac.in/",
-  },
-  {
     name: "ICC",
     value: "/footer/administration",
   },
@@ -51,13 +52,22 @@ export const quickFindings = [
     value: "/footer/administration",
   },
   {
-    name: "IPR Cell",
-    value: "/footer/administration",
+    name: "Administration",
+    value: "../../components/administration/administration",
   },
   {
-    name: "Anti Ragging",
-    value: "/footer/antiRagging",
+    name: "Student Feedback",
+    value: "https://www.ietdavv.edu.in/index.php/student-feedback",
   },
+  {
+    name: "Spoken Tutorial",
+    value: "https://www.ietdavv.edu.in/index.php/spoken-tutorial",
+  },
+  {
+    name: "E books",
+    value: "https://www.ietdavv.edu.in/index.php/ebooks",
+  },
+  
 ];
 
 export const moreInformation = [

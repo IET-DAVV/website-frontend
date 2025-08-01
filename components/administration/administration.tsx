@@ -5,6 +5,9 @@ import Director from "./Director";
 import Departments from "./Departments";
 import AdminOffice from "./AdminOffice";
 import Title from "../common/academics/Title";
+import { DirectorProfile } from "../../constants/administration/data";
+import { Admindata } from "../../constants/administration/data";
+import { Department } from "../../constants/administration/data";
 
 const Administration = () => {
   const [selectedPage, setSelectedPage] = useState<string>("Director");

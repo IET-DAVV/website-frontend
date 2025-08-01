@@ -1,4 +1,4 @@
-// components/administration/directorData.ts
+// import components/administration/directorData.ts
 
 export interface DirectorProfile {
   name: string;
