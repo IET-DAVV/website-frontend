@@ -3,13 +3,13 @@ import { image } from "../landing/about"
 
 export const subject = [
     { subject: "COMPUTER SCIENCE", link: "/faculty/computerScience" ,image:"/faculty/computerScience.png",},
-    { subject: "INFORMATION TECHNOLOY", link: "/faculty/informationTechnology" ,image:"/faculty/informationTechnology.png",},
-    { subject: "ELECTRONICS & TELECOMUNICATION", link: "/faculty/electronicsTelecommunication" ,image:"/faculty/electronicTelecomunication.png",},
-    { subject: "ELCTRONIC & INSTRUMENTAION", link: "/faculty/electronicsInstrumentation" ,image:"/faculty/electronicEnstruments.png",},
+    { subject: "INFORMATION TECHNOLOGY", link: "/faculty/informationTechnology" ,image:"/faculty/informationTechnology.png",},
+    { subject: "ELECTRONICS & TELECOMMUNICATION", link: "/faculty/electronicsTelecommunication" ,image:"/faculty/electronicTelecomunication.png",},
+    { subject: "ELECTRONIC & INSTRUMENTATION", link: "/faculty/electronicsInstrumentation" ,image:"/faculty/electronicEnstruments.png",},
     { subject: "CIVIL ENGINEERING", link: "/faculty/civilEngineering" ,image:"/faculty/civilEngineer.png",},
-    { subject: "MECHINICAL ENGINEERING", link: "/faculty/mechanicalEngineering" ,image:"/faculty/mechinicalEngineer.png",},
+    { subject: "MECHANICAL ENGINEERING", link: "/faculty/mechanicalEngineering" ,image:"/faculty/mechanicalEngineer.png",},
     { subject: "APPLIED SCIENCE", link: "/faculty/appliedScience" ,image:"/faculty/appliedScience.png",},
-    { subject: "COMPUTER SCIENCE & BUSINESS STUDY", link: "/faculty/businessStudies" ,image:"/faculty/bussinessStudy.png",},
+    { subject: "COMPUTER SCIENCE & BUSINESS STUDY", link: "/faculty/businessStudies" ,image:"/faculty/businessStudy.png",},
 ]
 
 export const facultyData = [
@@ -2699,48 +2699,31 @@ export const facultyData = [
         "key": "publications",
         "label": "Publications",
         "content": [
-          "1. Uma Rathore Bhatt , Nitin Chouhan, Raksha Upadhyay, Chanchal Agrawal, “ONU Placement in Fiber-Wireless (FiWi) Access Networks using Teacher Phase of Teaching Learning Based Optimization (TLBO) Algorithm”, 3rd IEEE International Conference on "Computational Intelligence and Communication Technology" (IEEE-CICT 2017), during 9-10 February, 2017.",
-          "2.Uma Rathore Bhatt , Aakash Chhabra, Nitin Chouhan and Raksha Upadhyay, “ Efficient Placement of ONUs via Ant Colony Optimization Algorithm in Fiber Wireless (FiWi) Access Networks”, Proceedings of 1st ICACIE 2016 will be published by Advances in Intelligent Systems and Computing (AISC) series of Springer , during 21-23 December, 2016.",
-          "3.Raksha Upadhyay Upadhyay, Shweta Pandey, Uma Rathore Bhatt, “Low Delay Routing Algorithm for Fi-Wi Access Network”, Proceedings of 1st ICACIE 2016 will be published by Advances in Intelligent Systems and Computing (AISC) series of Springer , during 21-23 December, 2016.",
-          "4.Vijendra Mishra, Raksha Upadhyay and Uma Rathore Bhatt , “A Review of Recent Energy Efficient Mechanisms for Fiber Wireless (FiWi) Access Network” , Proceedings of 1st ICACIE 2016 will be published by Advances in Intelligent Systems and Computing (AISC) series of Springer , during 21-23 December, 2016.",
-          "5.Uma Rathore Bhatt , Aakash Chabra, Nitin Chouhan, Raksha Upadhyay, “Fiber-Wireless (Fi-Wi) Architectural Technologies: A Survey” , International Conference on Electrical, Electronics, and Optimization Techniques (ICEEOT) – 2016 held at, DMI College of Engineering, Chennai, during 03-05 March 2016.",
-          "6.Uma Rathore Bhatt, Nitin Chouhana, RakshaUpadhyay(2016), “Energy Efficient Segmentation for Green FiWi network”, Procedia Computer Science ,vol. 78 pp. 75-81, ISSN 1877-0509, Elsevier.",
-          "7.Raksha Upadhyaya, Uma Rathore Bhatt, Harendra Tripathia (2016), “DDOS Attack Aware DSR Routing Protocol in WSN”,Procedia Computer Science , vol. 78, pp. 68-74, ISSN 1877-0509, Elsevier.",
-          "8.Amrita Pahadia, Uma Rathore Bhatt (2015), “Layout Design, Analysis and Implementation of Combinational and Sequential Circuits using Microwind”, SSRG International Journal of VLSI &Signal Processing (SSRG-IJVSP ), vol. 2, issue -4, pp. 6-14, ISSN - 2394 -2584",
-          "9.Uma Rathore Bhatt , Tapesh Sarsodia, Raksha Upadhyay(2015), “Multi-way Protection Scheme to Handle Multiple Failures for Cost-Efficient Fiber-Wireless (FiWi) Access Networks”,Trends in Opto-Electro and Optical Comm., vol 5, issue 3, pp. 1-15, ISSN- 2231-0401(online).",
-          "10.Uma Rathore Bhatt, Nitin Chouhan, Raksha Upadhyay(2015), “Cost Efficient Algorithm for ONU Placement in Fiber-Wireless (FiWi) Access Networks”,Procedia Computer Science , vol. 46, pp. 1303-1310, ISSN 1877-0509, Elsevier.",
-          "11.Uma Rathore Bhatt , Tapesh Sarsodia, Raksha Upadhyay(2015), “Performance Evaluation of Survivable Fiber-Wireless (FiWi) Access Network”,Procedia Computer Science , vol. 46, pp. 1049-1055,ISSN 1877-0509, Elsevier.",
-          "12.Uma Rathore Bhatt , Nitin Chouhan, Raksha Upadhyay(2015), “Hybrid algorithm: A cost efficient solution for ONU placement in Fiber Wireless (FiWi) network”, Optical Fiber Technology, vol. 22, pp. 76-83., 2015 (ISSN-1068-5200, Thomson Router Impact Factor – 1.30), Elsevier.",
-          "13.Uma Rathore Bhatt, Sanjiv Tokekar (2013), “Path length based wavelength assignment strategy: An algorithm for efficient system performance in wavelength routed WDM networks”,Optik - Int. J. Light Electron Opt.(ISSN-0030-4026 Thomson Router Impact Factor - .769) vol. 24, pp. 483– 486, Elsevier.",
-          "International Conferences: All below mentioned papers are on IEEE xplore (except publication no. 1 9). Publication no. 1 9 is available in the proceding of Photonics 2010.",
+          `1. Uma Rathore Bhatt, Nitin Chouhan, Raksha Upadhyay, Chanchal Agrawal, "ONU Placement in Fiber-Wireless (FiWi) Access Networks using Teacher Phase of Teaching Learning Based Optimization (TLBO) Algorithm", 3rd IEEE International Conference on Computational Intelligence and Communication Technology (IEEE-CICT 2017), during 9-10 February, 2017.`,
+          `2. Uma Rathore Bhatt, Aakash Chhabra, Nitin Chouhan and Raksha Upadhyay, "Efficient Placement of ONUs via Ant Colony Optimization Algorithm in Fiber Wireless (FiWi) Access Networks", Proceedings of 1st ICACIE 2016 published by Advances in Intelligent Systems and Computing (AISC), Springer, 21-23 December, 2016.`,
+          `3. Raksha Upadhyay, Shweta Pandey, Uma Rathore Bhatt, "Low Delay Routing Algorithm for Fi-Wi Access Network", Proceedings of 1st ICACIE 2016 published by Advances in Intelligent Systems and Computing (AISC), Springer, 21-23 December, 2016.`,
+          `4. Vijendra Mishra, Raksha Upadhyay and Uma Rathore Bhatt, "A Review of Recent Energy Efficient Mechanisms for Fiber Wireless (FiWi) Access Network", Proceedings of 1st ICACIE 2016 published by Advances in Intelligent Systems and Computing (AISC), Springer, 21-23 December, 2016.`,
+          `5. Uma Rathore Bhatt, Aakash Chabra, Nitin Chouhan, Raksha Upadhyay, "Fiber-Wireless (Fi-Wi) Architectural Technologies: A Survey", International Conference on Electrical, Electronics, and Optimization Techniques (ICEEOT – 2016), DMI College of Engineering, Chennai, 3-5 March, 2016.`,
+          `6. Uma Rathore Bhatt, Sada Hirve, Nitin Chouhan, Raksha Upadhyay, "Computation of Performance Parameters of ONU Placement Algorithms for FiWi Network", CoConet-2015, IIITM Kerala, 16-19 December, 2015.`,
+          `7. Uma Rathore Bhatt, Tapesh Sarsodia, Aashu Kori, Raksha Upadhyay, "Reliability Analysis and Evaluation for Various Protection Schemes for FiWi Networks", CoConet-2015, IIITM Kerala, 16-19 December, 2015.`,
+          `8. Raksha Upadhyay, Salman Khan, Harendra Tripathi, Uma Rathore Bhatt, "Detection and Prevention of DDOS Attack in WSN for AODV and DSR using Battery Drain", CoConet-2015, IIITM Kerala, 16-19 December, 2015.`,
+          `9. Bhatt U R, Nema N, Upadhyay R, "Enhanced DSR: An Efficient Routing Protocol for MANET", International Conference on Issues and Challenges in Intelligent Computing Techniques (ICICT -2014), KIET Ghaziabad, 07-08 February, 2014.`,
+          `10. Bhatt U R, Sarsodia T, Upadhyay R, "Survivability of an Integrated Fiber Wireless (Fi-Wi) Access Networks", International Conference on Issues and Challenges in Intelligent Computing Techniques (ICICT -2014), KIET Ghaziabad, 07-08 February, 2014.`,
+          `11. Gupta A, Upadhyay R, Bhatt U R, "MIKBIT-Modified DSR for MANET", International Conference on Issues and Challenges in Intelligent Computing Techniques (ICICT -2014), KIET Ghaziabad, 07-08 February, 2014.`,
+          `12. Pathak S, Upadhyay R, Bhatt U R, "An Efficient Query Packets Forward Algorithm in ZRP Protocol", International Conference on Issues and Challenges in Intelligent Computing Techniques (ICICT -2014), KIET Ghaziabad, 07-08 February, 2014.`,
+          `13. Bhatt U R, Dangarh A, Kashyap A, Vyas A, "Performance analysis of AODV & DSR Routing protocols for MANET", Fourth International Conference on Communication Systems and Network Technologies (CSNT-2014), NITTTR Bhopal, 07-09 April, 2014.`,
+          `14. Bhatt U R, Jain P, Upadhyay R, "Enhanced AODV - An Energy Efficient Routing Protocol for MANET", Nirma University International Conference on Engineering (NUiCONE-2013), 28-30 November, 2013.`,
+          `15. Bhatt U R, Chouhan N, "ONU Placement in Fiber-Wireless (FiWi) Networks", Nirma University International Conference on Engineering (NUiCONE-2013), 28-30 November, 2013.`,
+          `16. Pandey K, Bhatt U R, Upadhyay R, "Investigation effect of phase noise of OFDM system and realisation LO (local Oscillator) with and without phase locked loop(PLL)", Ninth International conference on Wireless and Optical Communication Systems (WOCN-2012), 20-22 September, 2012, Indore, India.`,
+          `17. Bhatt U R, Tokekar S, "Analysis of wavelength conversion in wavelength routed WDM networks", International Conference on Communication & Signal Processing (ICCSP-2011), NIT Calicut, Kerala, February, 2011.`,
+          `18. Bhatt U R, Tokekar S, "Survivable routing and wavelength assignment strategy for multiclass WDM optical networks", International Conference on Computational Intelligence and Communication Systems (CICN-2011), 07-09 October, 2011, Gwalior, India.`,
+          `19. Bhatt U R, Tokekar S, "Wavelength Conversion in Multiclass WDM Networks", PHOTONICS 2010: 10th International Conference on Fiber Optics & Photonics, IIT Guwahati, India, 11-15 December, 2010.`,
+          `20. Bhatt U R, Tokekar S, "Traffic engineering in multi domain optical networks", International Conference on Emerging Trend in Electronic and Photonic Devices & Systems (ELECTRO-2009), 22-24 December, 2009, IT-BHU, Varanasi, India.`
+  ]
+},
 
-
-          "1.Uma Rathore Bhatt , Sanjiv Tokekar (2011), “Routing and wavelength assignment algorithms for multiclass WDM optical networks”,Optik - Int. J. Light Electron Opt.(ISSN-0030-4026, Thomson Router Impact Factor -.769) vol. 122, pp. 1466-1469, Elsevier.",
-          "2.Uma Rathore Bhatt, Nitin Chouhan, Raksha Upadhyay, Chanchal Agrawal, “ONU Placement in Fiber-Wireless (FiWi) Access Networks using Teacher Phase of Teaching Learning Based Optimization (TLBO) Algorithm”, 3rd IEEE International Conference on Computational Intelligence and Communication Technology (IEEE-CICT 2017), 9-10 February, 2017.",
-"3.Uma Rathore Bhatt, Aakash Chhabra, Nitin Chouhan and Raksha Upadhyay, “Efficient Placement of ONUs via Ant Colony Optimization Algorithm in Fiber Wireless (FiWi) Access Networks”, Proceedings of 1st ICACIE 2016 published by Advances in Intelligent Systems and Computing (AISC), Springer, 21-23 December, 2016.",
-"4.Raksha Upadhyay, Shweta Pandey, Uma Rathore Bhatt, “Low Delay Routing Algorithm for Fi-Wi Access Network”, Proceedings of 1st ICACIE 2016 published by Advances in Intelligent Systems and Computing (AISC), Springer, 21-23 December, 2016.",
-"5.Vijendra Mishra, Raksha Upadhyay and Uma Rathore Bhatt, “A Review of Recent Energy Efficient Mechanisms for Fiber Wireless (FiWi) Access Network”, Proceedings of 1st ICACIE 2016 published by Advances in Intelligent Systems and Computing (AISC), Springer, 21-23 December, 2016.",
-"6.Uma Rathore Bhatt, Aakash Chabra, Nitin Chouhan, Raksha Upadhyay, “Fiber-Wireless (Fi-Wi) Architectural Technologies: A Survey”, International Conference on Electrical, Electronics, and Optimization Techniques (ICEEOT – 2016), DMI College of Engineering, Chennai, 3-5 March, 2016.",
-"7.Uma Rathore Bhatt, Sada Hirve, Nitin Chouhan, Raksha Upadhyay, “Computation of Performance Parameters of ONU Placement Algorithms for FiWi Network”, CoConet-2015, IIITM Kerala, 16-19 December, 2015.",
-"8.Uma Rathore Bhatt, Tapesh Sarsodia, Aashu Kori, Raksha Upadhyay, “Reliability Analysis and Evaluation for Various Protection Schemes for FiWi Networks”, CoConet-2015, IIITM Kerala, 16-19 December, 2015.",
-"9.Raksha Upadhyay, Salman Khan, Harendra Tripathi, Uma Rathore Bhatt, “Detection and Prevention of DDOS Attack in WSN for AODV and DSR using Battery Drain”, CoConet-2015, IIITM Kerala, 16-19 December, 2015.",
-"10.Bhatt U R, Nema N, Upadhyay R, “Enhanced DSR: An Efficient Routing Protocol for MANET”, International Conference on Issues and Challenges in Intelligent Computing Techniques (ICICT -2014), KIET Ghaziabad, 07-08 February, 2014.",
-"11.Bhatt U R, Sarsodia T, Upadhyay R, “Survivability of an Integrated Fiber Wireless (Fi-Wi) Access Networks”, International Conference on Issues and Challenges in Intelligent Computing Techniques (ICICT -2014), KIET Ghaziabad, 07-08 February, 2014.",
-"12.Gupta A, Upadhyay R, Bhatt U R, “MIKBIT-Modified DSR for MANET”, International Conference on Issues and Challenges in Intelligent Computing Techniques (ICICT -2014), KIET Ghaziabad, 07-08 February, 2014.",
-"13.Pathak S, Upadhyay R, Bhatt U R, “An Efficient Query Packets Forward Algorithm in ZRP Protocol”, International Conference on Issues and Challenges in Intelligent Computing Techniques (ICICT -2014), KIET Ghaziabad, 07-08 February, 2014.",
-"14.Bhatt U R, Dangarh A, Kashyap A, Vyas A, “Performance analysis of AODV & DSR Routing protocols for MANET”, Fourth International Conference on Communication Systems and Network Technologies (CSNT-2014), NITTTR Bhopal, 07-09 April, 2014.",
-"15.Bhatt U R, Jain P, Upadhyay R, “Enhanced AODV - An Energy Efficient Routing Protocol for MANET”, Nirma University International Conference on Engineering (NUiCONE-2013), 28-30 November, 2013.",
-"16.Bhatt U R, Chouhan N, “ONU Placement in Fiber-Wireless (FiWi) Networks”, Nirma University International Conference on Engineering (NUiCONE-2013), 28-30 November, 2013.",
-"17.Pandey K, Bhatt U R, Upadhyay R, “Investigation effect of phase noise of OFDM system and realisation LO (local Oscillator) with and without phase locked loop(PLL)”, Ninth International conference on Wireless and Optical Communication Systems (WOCN-2012), 20-22 September, 2012, Indore, India.",
-"18.Bhatt U R, Tokekar S, “Analysis of wavelength conversion in wavelength routed WDM networks”, International Conference on Communication & Signal Processing (ICCSP-2011), NIT Calicut, Kerala, February, 2011.",
-"19.Bhatt U R, Tokekar S, “Survivable routing and wavelength assignment strategy for multiclass WDM optical networks”, International Conference on Computational Intelligence and Communication Systems (CICN-2011), 07-09 October, 2011, Gwalior, India.",
-"20.Bhatt U R, Tokekar S, “Wavelength Conversion in Multiclass WDM Networks”, PHOTONICS 2010: 10th International Conference on Fiber Optics & Photonics, IIT Guwahati, India, 11-15 December, 2010.",
-"21.Bhatt U R, Tokekar S, “Traffic engineering in multi domain optical networks”, International Conference on Emerging Trend in Electronic and Photonic Devices & Systems (ELECTRO-2009), 22-24 December, 2009, IT-BHU, Varanasi, India."
-
-        ]
-      },
-      {
-        "key": "projects",
+{
+  "key": "projects",
         "label": "Projects",
         "content": [
           "AI-Powered Health Monitoring System",
@@ -3638,6 +3621,7 @@ export const facultyData = [
           "Held the responsibility of Astt. Superintendent in Central Valuation.",
           "Held the responsibility of Astt. Coordinator of M.E.P. Course",
           "Conducted for Eicher Motors Ltd."
+        ]
       }
     ]
   },
@@ -3982,7 +3966,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "MECHANICAL ENGINEERING",
     "image": "https://www.ietdavv.edu.in/images/Faculty/akhilesh.png",
@@ -4049,7 +4033,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "MECHANICAL ENGINEERING",
     "image": "https://www.ietdavv.edu.in/images/Faculty/Ibrahim.jpg",
@@ -4116,7 +4100,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "MECHANICAL ENGINEERING",
     "image": "https://www.ietdavv.edu.in/images/Faculty/ajeet.jpg",
@@ -4183,8 +4167,8 @@ export const facultyData = [
         ]
       }
     ]
-  }
-{
+  },
+  {
     "branch": "MECHANICAL ENGINEERING",
     "image": "https://www.ietdavv.edu.in/images/Faculty/santosh.jpg",
     "name": "Dr. Santosh Kansal",
@@ -4250,8 +4234,8 @@ export const facultyData = [
         ]
       }
     ]
-  }
-{
+  },
+  {
     "branch": "MECHANICAL ENGINEERING",
     "image": "https://www.ietdavv.edu.in/images/Faculty/Jyoti-Soni.jpeg",
     "name": "Mrs. Jyoti Soni",
@@ -4317,7 +4301,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "MECHANICAL ENGINEERING",
     "image": "https://www.ietdavv.edu.in/images/Faculty/Om-prakash.jpg",
@@ -4384,7 +4368,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "APPLIED SCIENCE",
     "image": "https://www.ietdavv.edu.in/images/Faculty/sp.jpg",
@@ -4451,7 +4435,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "APPLIED SCIENCE",
     "image": "https://www.ietdavv.edu.in/images/Faculty/ssk.jpg",
@@ -4518,7 +4502,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "APPLIED SCIENCE",
     "image": "https://www.ietdavv.edu.in/images/Faculty/sufia.jpg",
@@ -4585,7 +4569,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "APPLIED SCIENCE",
     "image": "https://www.ietdavv.edu.in/images/Faculty/rp.jpg",
@@ -4652,7 +4636,7 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
     "branch": "APPLIED SCIENCE",
     "image": "https://www.ietdavv.edu.in/images/Faculty/CSC.jpg",
@@ -4719,16 +4703,16 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
+    "branch": "APPLIED SCIENCE",
+    "image": "https://www.ietdavv.edu.in/images/Faculty/DM.gif",
+    "name": "Dr. Dheeraj Mandloi",
+    "position": "",
+    "description": "Engineering Chemistry, Environmental Engineering Computational Chemistry",
+    "email": "dmandloi@ietdavv.edu.in",
+    "phone": "",
+    "designation": "",
     "dob": "",
     "qualifications": [
       "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
@@ -4786,16 +4770,16 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
+    "branch": "APPLIED SCIENCE",
+    "image": "https://www.ietdavv.edu.in/images/Faculty/Jitendra-Singh.jpg",
+    "name": "Dr.Jitendra Singh",
+    "position": "",
+    "description": "Organic Synthesis, Chemical Kinetics, QSAR and Drug Design, Molecular Modeling, Computational Chemistry",
+    "email": " jsingh@ietdavv.edu.in",
+    "phone": "91 98933 59141",
+    "designation": "",
     "dob": "",
     "qualifications": [
       "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
@@ -4853,16 +4837,16 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
+    "branch": "APPLIED SCIENCE",
+    "image": "https://www.ietdavv.edu.in/images/Faculty/rs.jpg",
+    "name": "Dr. Ruchi Singh",
+    "position": "",
+    "description": "Communication Skills, Astrology & Spiritualism",
+    "email": " rsingh@ietdavv.edu.in",
+    "phone": "7898916163",
+    "designation": "",
     "dob": "",
     "qualifications": [
       "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
@@ -4920,16 +4904,16 @@ export const facultyData = [
         ]
       }
     ]
-  }
+  },
 {
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
+    "branch": "APPLIED SCIENCE",
+    "image": "https://www.ietdavv.edu.in/images/Faculty/rg.jpg",
+    "name": "Dr. Rachana Gupta",
+    "position": "",
+    "description": "",
+    "email": " rgupta@ietdavv.edu.in",
+    "phone": "9425059372",
+    "designation": "",
     "dob": "",
     "qualifications": [
       "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
@@ -4987,1614 +4971,5 @@ export const facultyData = [
         ]
       }
     ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-{
-    "branch": "MECHANICAL ENGINEERING",
-    "image": "https://www.ietdavv.edu.in/images/Faculty/Amit.jpg",
-    "name": "Dr. Amit Kumar Gupta",
-    "position": "Associate Professor",
-    "description": "Nanotechnology, Vibration Analysis, FEA (Meshing), CAD/CAE, Machine Design",
-    "email": "akgupta@ietdavv.edu.in",
-    "phone": "91 94066 53327",
-    "designation": "Associate Professor",
-    "dob": "",
-    "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
-      "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
-    ],
-    "tabs": [
-      {
-        "key": "work",
-        "label": "Work Experience",
-        "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
-        ]
-      },
-      {
-        "key": "research",
-        "label": "Research Details",
-        "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
-        ]
-      },
-      {
-        "key": "phd",
-        "label": "PhD Supervision",
-        "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
-        ]
-      },
-      {
-        "key": "publications",
-        "label": "Publications",
-        "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
-        ]
-      },
-      {
-        "key": "projects",
-        "label": "Projects",
-        "content": [
-          "AI-Powered Health Monitoring System",
-          "MHRD Sponsored Cloud Simulation Project"
-        ]
-      },
-      {
-        "key": "testing",
-        "label": "Testing & Consultancy",
-        "content": [
-          "Consultancy for Indore IT Hub",
-          "Software QA testing for real-time industrial systems"
-        ]
-      }
-    ]
-  }
-
+  },
 ]
