@@ -23,14 +23,14 @@ const BranchSelector: React.FC<BranchSelectorProps> = ({
     <motion.div
       className="flex flex-col mb-8 px-4 sm:px-6 md:px-8 w-full"
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      animate={{ opacity: 0.95, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeIn" }}
     >
       {/* Centered, bold, and larger title for the section */}
       
       
       {/* Grid layout for the buttons, matching the semester selector's style */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
         {branches.map((branch) => (
           <button
             key={branch}

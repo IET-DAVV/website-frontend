@@ -32,7 +32,7 @@ const History = () => {
             {/* Content */}
             <div
               className="text-white text-sm md:text-base font-light"
-              style={{ lineHeight: "1.2", marginBottom: "0.25rem" }}
+              style={{ lineHeight: "1.2", marginBottom: "0.35rem" }}
             >
               {item.title}
             </div>
@@ -40,16 +40,7 @@ const History = () => {
         ))}
       </div>
 
-      {/* Timeline Image */}
-      <div className="mx-auto w-full md:px-20 pt-20">
-        <Image
-          src={timeline}
-          alt="history"
-          width={1000}
-          height={1000}
-          className="w-full h-auto object-contain"
-        />
-      </div>
+      
     </div>
   );
 };
