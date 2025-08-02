@@ -58,6 +58,10 @@ export const quickFindings = [
     name: "Anti Ragging",
     value: "/footer/antiRagging",
   },
+  {
+    name: "Administration",
+    value: "/footer/administration",
+  },
 ];
 
 export const moreInformation = [
