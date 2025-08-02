@@ -7,9 +7,9 @@ export const subject = [
     { subject: "ELECTRONICS & TELECOMMUNICATION", link: "/faculty/electronicsTelecommunication" ,image:"/faculty/electronicTelecomunication.png",},
     { subject: "ELECTRONIC & INSTRUMENTATION", link: "/faculty/electronicsInstrumentation" ,image:"/faculty/electronicEnstruments.png",},
     { subject: "CIVIL ENGINEERING", link: "/faculty/civilEngineering" ,image:"/faculty/civilEngineer.png",},
-    { subject: "MECHANICAL ENGINEERING", link: "/faculty/mechanicalEngineering" ,image:"/faculty/mechanicalEngineer.png",},
+    { subject: "MECHANICAL ENGINEERING", link: "/faculty/mechanicalEngineering" ,image:"/faculty/mechinicalEngineer.png",},
     { subject: "APPLIED SCIENCE", link: "/faculty/appliedScience" ,image:"/faculty/appliedScience.png",},
-    { subject: "COMPUTER SCIENCE & BUSINESS STUDY", link: "/faculty/businessStudies" ,image:"/faculty/businessStudy.png",},
+    { subject: "COMPUTER SCIENCE & BUSINESS STUDY", link: "/faculty/businessStudies" ,image:"/faculty/bussinessStudy.png",},
 ]
 
 export const facultyData = [
