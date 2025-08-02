@@ -32,13 +32,13 @@ const HostelsPage = () => {
   const girlsHostelData = [
     {
       id: 5,
-      name: 'A-Block (Girls)',
+      name: 'A-BLOCK (Girls)',
       image: '/infrastructure/hostels/b5.png',
       description: 'Well-Maintained with Security & Warden Presence. Designed for comfort and safety, this hostel has clean washrooms, CCTV surveillance, and in-hostel laundry. Ideal'
     },
     {
       id: 6,
-      name: 'A-Block (Girls)',
+      name: 'A-BLOCK (Girls)',
       image: '/infrastructure/hostels/b5.png',
       description: 'Well-Maintained with Security & Warden Presence. Designed for comfort and safety, this hostel has clean washrooms, CCTV surveillance, and in-hostel laundry. Ideal'
     }
@@ -48,7 +48,7 @@ const HostelsPage = () => {
     <div className="bg-white">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-7xl font-newyork text-center text-gray-800 mb-12" >
-          Hostels
+          HOSTELS
         </h1>
         <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <div className="grid m-2 grid-cols-2">
