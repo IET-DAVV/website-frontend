@@ -25,15 +25,17 @@ const AcademicPrograms = () => {
         animationFrameId = requestAnimationFrame(scrollStep);
         return;
       }
+      
+// Scroll the container by a small amount
 
-      if (
-        scrollContainer.scrollLeft + scrollContainer.clientWidth >=
-        scrollContainer.scrollWidth
-      ) {
-        scrollContainer.scrollLeft = 0; // Reset to beginning
-      } else {
-        scrollContainer.scrollLeft += 1;
-      }
+      // if (
+      //   scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+      //   scrollContainer.scrollWidth
+      // ) {
+      //   scrollContainer.scrollLeft = 0; // Reset to beginning
+      // } else {
+      //   scrollContainer.scrollLeft += 1;
+      // }
 
       animationFrameId = requestAnimationFrame(scrollStep);
     };

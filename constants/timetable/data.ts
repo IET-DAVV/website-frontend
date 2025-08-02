@@ -29,40 +29,40 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrCSA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrCSB.pdf",
                 },
               },
             },
             "Year 2": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrCSA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrCSB.pdf",
                 },
               },
             },
             "Year 3": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIIyrCSA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIIyrCSB.pdf",
                 },
               },
             },
             "Year 4": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrCSA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrCSB.pdf",
                 },
               },
             },
@@ -73,10 +73,7 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
-                },
-                "Section B": {
-                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrCSBS.pdf",
                 },
               },
             },
@@ -117,40 +114,40 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrITA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrITB.pdf",
                 },
               },
             },
             "Year 2": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrITA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrITB.pdf",
                 },
               },
             },
             "Year 3": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIIyrITA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIIyrITB.pdf",
                 },
               },
             },
             "Year 4": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrITA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "https://example.com/BE_FT_IT_Y4_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrITB.pdf",
                 },
               },
             },
@@ -161,40 +158,28 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_ME_Y1_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_FT_ME_Y1_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrMech.pdf",
                 },
               },
             },
             "Year 2": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_ME_Y2_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_FT_ME_Y2_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrMech.pdf",
                 },
               },
             },
             "Year 3": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_ME_Y3_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_FT_ME_Y3_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIIyrMech.pdf",
                 },
               },
             },
             "Year 4": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_ME_Y4_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_FT_ME_Y4_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrMech.pdf",
                 },
               },
             },
@@ -205,40 +190,60 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_EI_Y1_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_FT_EI_Y1_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrEI.pdf",
                 },
               },
             },
             "Year 2": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_EI_Y2_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_FT_EI_Y2_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrEI.pdf",
                 },
               },
             },
             "Year 3": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_EI_Y3_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_FT_EI_Y3_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIIyrEI.pdf",
                 },
               },
             },
             "Year 4": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_EI_Y4_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrEI.pdf",
                 },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_FT_EI_Y4_SB.pdf",
+              },
+            },
+          },
+        },
+        "Civil Engineering": {
+          years: {
+            "Year 1": {
+              sections: {
+                "Section A": {
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrCIV.pdf",
+                },
+              },
+            },
+            "Year 2": {
+              sections: {
+                "Section A": {
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrCIV.pdf",
+                },
+              },
+            },
+            "Year 3": {
+              sections: {
+                "Section A": {
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIIyrCIV.pdf",
+                },
+              },
+            },
+            "Year 4": {
+              sections: {
+                "Section A": {
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrCIV.pdf",
                 },
               },
             },
@@ -249,40 +254,40 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_ET_Y1_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrTCA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "https://example.com/BE_FT_ET_Y1_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IyrTCB.pdf",
                 },
               },
             },
             "Year 2": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_ET_Y2_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrTCA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "https://example.com/BE_FT_ET_Y2_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIyrTCB.pdf",
                 },
               },
             },
             "Year 3": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_ET_Y3_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIiyrTCA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "https://example.com/BE_FT_ET_Y3_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IIiyrTCB.pdf",
                 },
               },
             },
             "Year 4": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_FT_ET_Y4_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrTCA.pdf",
                 },
                 "Section B": {
-                  PdfLink: "https://example.com/BE_FT_ET_Y4_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/IVyrTCB.pdf",
                 },
               },
             },
@@ -568,7 +573,7 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/MEFT_CS.pdf",
                 },
               },
             },
@@ -600,7 +605,7 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/ME_IT_IS_Y1_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/MEFT_IT.pdf",
                 },
               },
             },
@@ -733,28 +738,28 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/MSC_AM_CI_Y1_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/MSc_Iyr.pdf",
                 },
               },
             },
             "Year 2": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/MSC_AM_CI_Y2_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/MSc_IIyr.pdf",
                 },
               },
             },
             "Year 3": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/MSC_AM_CI_Y3_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/MSc_IIIyr.pdf",
                 },
               },
             },
             "Year 4": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/MSC_AM_CI_Y4_SA.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/MSc_IVyr.pdf",
                 },
               },
             },

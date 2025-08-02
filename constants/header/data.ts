@@ -6,7 +6,11 @@ export const headerLinks: HeaderLinksType = [
   },
   {
     name: "About Us",
-    href: "/about",
+    href: "",
+    dropdown: [
+      { name: "About Us", href: "/about" },
+      { name: "Faculty", href: "/facultyPage" },
+    ],
   },
   {
     name: "Academics",

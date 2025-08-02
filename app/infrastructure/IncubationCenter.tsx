@@ -8,7 +8,7 @@ export default function IncubationCentre() {
         {/* Top border line */}
         <div className="border-t border-black mb-12"></div>
         <h1 className="text-center text-[80px] font-newyork leading-[120px] font-manrope text-black mb-12">
-          Incubation Centre
+          INCUBATION CANTRE
         </h1>
 
         {/* Main content */}
@@ -38,7 +38,7 @@ export default function IncubationCentre() {
           {/* Right image and button */}
           <div className="flex flex-col items-center">
             <Image
-              src="/infrastructure/incubation aerial.png"
+              src="/infrastructure/incubation/incubation aerial.jpg"
               alt="DAVV Incubation Centre Building"
               width={745}
               height={371}

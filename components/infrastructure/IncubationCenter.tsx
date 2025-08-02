@@ -38,7 +38,7 @@ export default function IncubationCentre() {
           {/* Right image and button */}
           <div className="flex flex-col items-center">
             <Image
-              src="/infrastructure/incubation aerial.png"
+              src="/infrastructure/incubation/incubation aerial.jpg"
               alt="DAVV Incubation Centre Building"
               width={745}
               height={371}

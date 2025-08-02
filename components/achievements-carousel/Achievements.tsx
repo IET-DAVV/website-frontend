@@ -18,11 +18,11 @@ const Achievements = () => {
                           font-extrabold  bg-clip-text 
                           drop-shadow-sm"
               />
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-gray-600 
+              <h1 className="mt-3 sm:mt-4 text-sm text-left sm:text-base md:text-lg text-gray-600 
                            max-w-2xl mx-auto lg:mx-0">
                 Celebrating excellence, innovation, and outstanding contributions 
                 that shape our community and drive progress forward.
-              </p>
+              </h1>
             </div>
             
             {/* Optional decorative element */}
