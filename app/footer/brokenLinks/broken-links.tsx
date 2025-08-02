@@ -1,9 +1,9 @@
 import React from 'react'
-import BrokenLink from '@/components/common/footer/broken-links';
+import BrokenLinksPolicy from '@/components/common/footer/page';
 const brokenlink = () => {
     return (
     <div>
-      <BrokenLink/>
+      <BrokenLinksPolicy/>
     </div>
   )
 }

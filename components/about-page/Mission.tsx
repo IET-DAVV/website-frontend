@@ -24,11 +24,11 @@ const Mission = () => {
     <div className="my-20 mx-4 sm:mx-8 md:mx-16">
       {/* Tabs */}
       <motion.div
-        className="relative flex justify-center items-center gap-12 sm:gap-20 md:gap-40 mb-8"
+        className="relative flex justify-center items-center gap-12 sm:gap-20 md:gap-40 mb-9"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ staggerChildren: 0.1 }}
+        transition={{ staggerChildren: 0.15 }}
       >
         {/* Baseline line */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[18rem] h-[1px] bg-gray-300 z-0" />

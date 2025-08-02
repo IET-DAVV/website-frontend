@@ -5,6 +5,7 @@ import "@/styles/fonts.css";
 import Footer from "@/components/common/footer/Footer";
 import HeaderContainer from "@/containers/header/Header";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
+import PageWrapper from "@/components/animations/PageWrapper"; // ✅ Add this
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -26,12 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* Added suppressHydrationWarning here to ignore mismatches from extensions like Grammarly */}
       <body className="bg-white" suppressHydrationWarning>
         <div className={manrope.className}>
           <AuthProvider>
             <HeaderContainer />
-            <main>{children}</main>
+            {/* ✅ Wrap main content with PageWrapper */}
+            <PageWrapper>
+              <main>{children}</main>
+            </PageWrapper>
             <Footer />
           </AuthProvider>
         </div>
