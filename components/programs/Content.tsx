@@ -1,11 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Manrope } from "next/font/google";
 import { programsData } from "@/constants/Programs/programsdata";
 import "@/styles/fonts.css";
 import ProgramOutcomes from "./programoutcomes";
 import Image from "next/image";
-
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -36,10 +35,17 @@ const labelToKeyMap: Record<string, string> = {
   "B.TECH (PART-TIME)": "btech-part",
   "M.TECH (FULL-TIME)": "me-full",
   "M.TECH (PART-TIME)": "me-part",
-  "PHD":"phd",
-  "MSc.":"msc",
+  "PHD": "phd",
+  "MSc.": "msc",
 };
 
+// 🎯 Default branches
+const defaultBranches: Record<string, string> = {
+  "B.TECH (FULL-TIME)": "Computer Science Engineering",
+  "B.TECH (PART-TIME)": "Computer Science Engineering",
+  "M.TECH (FULL-TIME)": "Computer Engineering with specialization in Software Engineering",
+  "M.TECH (PART-TIME)": "Computer Engineering with specialization in Software Engineering",
+};
 
 const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
   const [selectedBranch, setSelectedBranch] = useState<string | null>(null);
@@ -48,7 +54,11 @@ const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
   const dataObject = programsData[0] as Record<string, Course>;
   const course = dataObject[key] || dataObject["btech-full"];
 
-
+  // 🎯 Set default branch when selectedCourse changes
+  useEffect(() => {
+    const defaultBranch = defaultBranches[selectedCourse] || null;
+    setSelectedBranch(defaultBranch);
+  }, [selectedCourse]);
 
   return (
     <div className="flex flex-col px-10 pb-10">
@@ -77,28 +87,30 @@ const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
 
         {/* Right Content */}
         <div className={`${manrope.className} ml-10 mt-10`}>
-          <div className="grid grid-cols-3 gap-4 ">
+          <div className="grid grid-cols-3 gap-4">
             {course.specializations.map((spec) => {
               const isActive = selectedBranch === spec.name;
               return (
                 <button
                   key={spec.name}
                   onClick={() => setSelectedBranch(spec.name)}
-                  className={`group w-full min-w-[250px] min-h-[200px] mx-auto border border-[#06779B] rounded-lg p-6 flex flex-col items-center text-center transition-all duration-300 ${isActive
+                  className={`group w-full min-w-[250px] min-h-[200px] mx-auto border border-[#06779B] rounded-lg p-6 flex flex-col items-center text-center transition-all duration-300 ${
+                    isActive
                       ? "bg-[#06779B] text-white"
                       : "bg-white text-black hover:bg-[#06779B] hover:text-white"
-                    }`}
+                  }`}
                 >
-
                   <Image
                     src={`/icons/${spec.icon}`}
                     alt={spec.name}
                     width={48}
                     height={48}
-                    className={`mb-4 transition-all duration-300 ${isActive ? "invert brightness-0" : "group-hover:invert group-hover:brightness-0"
-                      }`}
+                    className={`mb-4 transition-all duration-300 ${
+                      isActive
+                        ? "invert brightness-0"
+                        : "group-hover:invert group-hover:brightness-0"
+                    }`}
                   />
-
                   <p className="text-lg font-bold font-medium">{spec.name}</p>
                 </button>
               );

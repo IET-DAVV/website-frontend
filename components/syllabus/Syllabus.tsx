@@ -1,20 +1,20 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { syllabusData } from "@/constants/syllabus/data"; // Updated import name
+import { syllabusData } from "@/constants/syllabus/data";
 import Title from "../common/academics/Title";
 import CourseSelector from "../common/academics/CourseSelector";
 import BranchSelector from "../common/academics/BranchSelector";
-import SemesterSelector from "../common/academics/SemesterSelector"; // New import
-import { motion, AnimatePresence } from "framer-motion";
-import { MdOutlineFileDownload } from "react-icons/md";
+import SemesterSelector from "../common/academics/SemesterSelector"; // Re-importing the semester selector
+import SyllabusAccordion from "../common/academics/SyllabusAccordion";
+import { motion } from "framer-motion";
 
 const Syllabus = () => {
   const [selectedCourse, setSelectedCourse] = useState("be_full_time");
   const [selectedBranch, setSelectedBranch] = useState("");
-  const [selectedSemester, setSelectedSemester] = useState("");
-  const [pdfLink, setPdfLink] = useState<string | null>(null);
+  const [selectedSemester, setSelectedSemester] = useState(""); // State for semester selection is back
+  const [openSubjectCode, setOpenSubjectCode] = useState<string | null>(null);
 
-  // Derivations from data based on selections
+  // --- Data Derivations ---
   const courseList = Object.keys(syllabusData.courses).map((courseKey) => ({
     courseKey,
     courseName: syllabusData.courses[courseKey].courseName,
@@ -23,51 +23,53 @@ const Syllabus = () => {
   const branches = Object.keys(
     syllabusData.courses[selectedCourse]?.branches || {}
   );
-
+  
+  // Get the list of available semesters for the selected branch
   const semesters = Object.keys(
     syllabusData.courses[selectedCourse]?.branches[selectedBranch]?.semesters || {}
   );
 
-  // Effect to update branch and semester when course changes
+  // Get the subjects only for the selected semester
+  const subjects =
+    syllabusData.courses[selectedCourse]?.branches[selectedBranch]?.semesters[
+      selectedSemester
+    ]?.subjects || [];
+
+  // --- Effects to manage state changes ---
+
+  // On Course Change -> Update Branch
   useEffect(() => {
     const firstBranch = branches[0] || "";
     setSelectedBranch(firstBranch);
-    setPdfLink(null); // Hide PDF on change
+    // The next effect will handle the semester update
   }, [selectedCourse]);
 
-  // Effect to update semester when branch changes
+  // On Branch Change -> Update Semester
   useEffect(() => {
-    const firstSemester =
-      Object.keys(
-        syllabusData.courses[selectedCourse]?.branches[selectedBranch]?.semesters || {}
-      )[0] || "";
+    const firstSemester = semesters[0] || "";
     setSelectedSemester(firstSemester);
-    setPdfLink(null); // Hide PDF on change
+    setOpenSubjectCode(null); // Close any open accordion
   }, [selectedBranch]);
-  
-  // Effect to hide PDF when semester changes
+
+  // On Semester Change -> Close any open accordion
   useEffect(() => {
-    setPdfLink(null);
+    setOpenSubjectCode(null);
   }, [selectedSemester]);
-
-
-  const handleShowSyllabus = () => {
-    const link =
-      syllabusData.courses[selectedCourse]?.branches[selectedBranch]?.semesters[
-        selectedSemester
-      ]?.PdfLink || null;
-    setPdfLink(link);
+  
+  // Toggles an accordion open or closed
+  const handleToggleSubject = (subjectCode: string) => {
+    setOpenSubjectCode(prevCode => (prevCode === subjectCode ? null : subjectCode));
   };
 
   return (
     <motion.div
-      className="text-black text-center"
+      className="text-black"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <Title title="SYLLABUS" />
-      <div className="p-4 flex flex-col items-center space-y-4 md:space-y-8">
+      <div className="p-4 flex flex-col items-center space-y-6 md:space-y-8">
         
         <CourseSelector
           courses={courseList}
@@ -83,6 +85,7 @@ const Syllabus = () => {
           />
         )}
         
+        {/* SEMESTER SELECTOR IS BACK IN THE UI */}
         {semesters.length > 0 && (
           <SemesterSelector
             semesters={semesters}
@@ -90,41 +93,26 @@ const Syllabus = () => {
             onSelect={setSelectedSemester}
           />
         )}
-
-        <motion.button
-          onClick={handleShowSyllabus}
-          className="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Show Syllabus
-        </motion.button>
         
-        <AnimatePresence>
-          {pdfLink && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="w-full md:w-3/4 lg:w-1/2 flex flex-col items-center gap-4 mt-8"
-            >
-              <a
-                href={pdfLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="self-end bg-black text-white p-2 rounded-full hover:scale-110 transition-transform"
-              >
-                <MdOutlineFileDownload size={24} />
-              </a>
-              <iframe
-                src={pdfLink}
-                title={`Syllabus for ${selectedBranch} - ${selectedSemester}`}
-                className="w-full h-[600px] border-2 border-gray-300 rounded-lg shadow-xl"
-              ></iframe>
-            </motion.div>
+        {/* UPDATED: Render the list of subjects based on the selected semester */}
+        <div className="w-full md:w-5/6 lg:w-4/5 mt-4 text-left">
+          {subjects.length > 0 ? (
+            <div className="flex flex-col rounded-lg shadow-md overflow-hidden border">
+              {subjects.map((subject) => (
+                 <SyllabusAccordion
+                    key={subject.code}
+                    subject={subject}
+                    isOpen={openSubjectCode === subject.code}
+                    onToggle={() => handleToggleSubject(subject.code)}
+                 />
+              ))}
+            </div>
+          ) : (
+            selectedBranch && (
+              <p className="mt-8 text-gray-500 text-center">Syllabus details for this selection will be available soon.</p>
+            )
           )}
-        </AnimatePresence>
+        </div>
       </div>
     </motion.div>
   );
