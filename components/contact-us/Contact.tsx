@@ -1,7 +1,10 @@
+'use client';
 import React from "react";
+import { motion, Variants } from "framer-motion";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { Manrope, Playfair } from "next/font/google";
 import Title from "../common/academics/Title";
+import { useEffect, useState } from "react";
 
 const playfair = Playfair({
   subsets: ["latin"],
@@ -12,61 +15,126 @@ const manrope = Manrope({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
+const underlineVariants: Variants = {
+  hidden: { scaleX: 0 },
+  visible: {
+    scaleX: 1,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 10,
+      delay: 0.3, // adjust delay if needed
+    },
+  },
+};
+
+
+
+// Animation Variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+};
+
 
 const ContactUs = () => {
   return (
     <div className="flex flex-col space-y-10 mx-auto p-16">
-      <div className="flex flex-col ">
-          <Title title="CONTACT US" />
-        <p className="text-center text-light-blue ">
+      {/* Title Section */}
+      <motion.div
+        className="flex flex-col"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+      >
+        <Title title="CONTACT US" />
+        <p className="text-center text-light-blue">
           Do you have any questions? Don&apos;t hesitate to contact us
         </p>
-      </div>
-      <div
-        className={`${playfair.className} grid grid-cols-1 md:grid-cols-2 gap-20 h-full `}
-      >
-        <div className="space-y-6">
-          <div>
-            <h2 className={`${playfair.className} text-4xl text-black`}>
-              Get in Touch
-            </h2>
-          </div>
+      </motion.div>
 
-          {/* Address Section */}
-          <div className="text-black flex flex-col space-y-2">
+      {/* Grid Section */}
+      <motion.div
+        className={`${playfair.className} grid grid-cols-1 md:grid-cols-2 gap-20 h-full`}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.2 }}
+      >
+        {/* Contact Info */}
+        <motion.div className="space-y-6" variants={fadeUp}>
+          <h2 className="text-4xl text-black">Get in Touch</h2>
+
+          {/* Address */}
+          <motion.div className="text-black flex flex-col space-y-2" variants={fadeUp}>
             <div className="flex items-center text-light-blue">
               <FaMapMarkerAlt className="mr-2" size={20} />
-              <h3 className={`${manrope.className} font-medium`}>Address</h3>
+              <div className="flex flex-col">
+  <h3 className={`${manrope.className} font-medium`}>Address</h3>
+  <motion.div
+  className="h-[2px] bg-light-blue w-full"
+  style={{ transformOrigin: "left" }}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={underlineVariants}
+/>
+
+</div>
+
             </div>
-            <p className={`${manrope.className}  text-black`}>
-              Institute of Engineering and Technology, Devi Ahilya
-              Vishwavidyalaya, <br />
+            <p className={`${manrope.className}`}>
+              Institute of Engineering and Technology, Devi Ahilya Vishwavidyalaya,
+              <br />
               Khandwa Road Indore-452017 (M.P)
             </p>
-          </div>
+          </motion.div>
 
-          {/* Email Section */}
-          <div className="text-black flex flex-col space-y-2">
+          {/* Email */}
+          <motion.div className="text-black flex flex-col space-y-2" variants={fadeUp}>
             <div className="flex items-center text-light-blue">
               <FaEnvelope className="mr-2" size={20} />
-              <h3 className={`${manrope.className} font-medium`}>Email</h3>
-            </div>
-            <p className={`${manrope.className} text-black `}>
-              contactiet@ietdavv.edu.in
-            </p>
-          </div>
+              <div className="flex flex-col">
+  <h3 className={`${manrope.className} font-medium`}>Email</h3>
+  <motion.div
+  className="h-[2px] bg-light-blue w-full"
+  style={{ transformOrigin: "left" }}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={underlineVariants}
+/>
 
-          {/* Phone Section */}
-          <div className="text-black flex flex-col space-y-2">
+</div>
+
+            </div>
+            <p className={`${manrope.className}`}>contactiet@ietdavv.edu.in</p>
+          </motion.div>
+
+          {/* Phone */}
+          <motion.div className="text-black flex flex-col space-y-2" variants={fadeUp}>
             <div className="flex items-center text-light-blue">
               <FaPhoneAlt className="mr-2" size={20} />
-              <h3 className={`${manrope.className} font-medium`}>Call Us</h3>
-            </div>
-            <p className={`${manrope.className} text-black`}>0731-2352678</p>
-          </div>
+              <div className="flex flex-col">
+  <h3 className={`${manrope.className} font-medium`}>Call Us</h3>
+  <motion.div
+  className="h-[2px] bg-light-blue w-full"
+  style={{ transformOrigin: "left" }}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={underlineVariants}
+/>
 
-          {/* Map Section */}
-          <div>
+</div>
+
+            </div>
+            <p className={`${manrope.className}`}>0731-2352678</p>
+          </motion.div>
+
+          {/* Map */}
+          <motion.div variants={fadeUp}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.6346805629755!2d75.87664765623428!3d22.681014494832198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcc03e36712d%3A0xb6f3c2bf734a7c!2sInstitute%20of%20Engineering%20%26%20Technology%2C%20DAVV!5e0!3m2!1sen!2sin!4v1752181961945!5m2!1sen!2sin"
               width="100%"
@@ -75,47 +143,39 @@ const ContactUs = () => {
               loading="lazy"
               title="Map Location"
             ></iframe>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Send Message Section */}
-        <div className="space-y-6 h-full">
-          <h2 className={`${playfair.className} text-4xl text-black`}>
-            Send us a message
-          </h2>
-          <form className={`${manrope.className} space-y-7`}>
-            <div>
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full border text-black text-sans border-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full border text-black text-sans border-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
-              />
-            </div>
-            <div>
-              <textarea
-                placeholder="Type your message here"
-                rows={13}
-                className="w-full border text-black text-sans border-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
-              ></textarea>
-            </div>
-            <div>
-              <button
-                type="submit"
-                className="bg-dark-blue text-white text-center w-full text-xl py-2 hover:bg-light-blue transition duration-300 ease-linear rounded-md hover:bg-sky-700"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+        {/* Form */}
+        <motion.div className="space-y-6 h-full" variants={fadeUp}>
+          <h2 className="text-4xl text-black">Send us a message</h2>
+          <motion.form className={`${manrope.className} space-y-7`} variants={fadeUp}>
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="w-full border text-black text-sans border-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full border text-black text-sans border-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
+            />
+            <textarea
+              placeholder="Type your message here"
+              rows={13}
+              className="w-full border text-black text-sans border-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
+            ></textarea>
+            <motion.button
+              type="submit"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-dark-blue text-white text-center w-full text-xl py-2 transition duration-300 ease-in-out rounded-md hover:bg-sky-700"
+            >
+              Submit
+            </motion.button>
+          </motion.form>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

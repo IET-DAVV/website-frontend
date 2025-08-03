@@ -17,33 +17,33 @@ const FacilityShowcase = () => {
   const facilities:Facilities = {
     'COMPUTER LAB': {
       title: 'Computer Lab',
-      image: '/infrastructure/computer-lab.jpg',
+      image: '/infrastructure/labs/computer-lab.jpg',
       alt: 'Students working in computer lab with desktop computers'
     },
     'VLSI LAB': {
       title: 'VLSI Lab',
-      image: '/infrastructure/vlsi_lab.jpg',
+      image: '/infrastructure/labs/vlsi_lab.jpg',
       alt: 'VLSI laboratory with electronic equipment and workstations'
     },
     'AUDITORIUM': {
       title: 'Auditorium',
-      image: '/infrastructure/auditorium.jpg',
+      image: '/infrastructure/labs/auditorium.jpg',
       alt: 'Large auditorium with seating and presentation screen'
     },
     
     'WORKSHOP': {
       title: 'Workshop',
-      image: '/infrastructure/workshop.jpg',
+      image: '/infrastructure/labs/workshop.jpg',
       alt: 'Workshop area with tools and workbenches'
     },
     'AIML LAB': {
       title: 'AIML Lab',
-      image: '/infrastructure/aiml.png',
+      image: '/infrastructure/labs/aiml.png',
       alt: 'AI/ML laboratory with high-performance computing systems'
     },
     'CANTEEN': {
       title: 'Canteen',
-      image: '/infrastructure/canteen.jpg',
+      image: '/infrastructure/labs/canteen.jpg',
       alt: 'Student canteen with dining tables and food service area'
     }
   };

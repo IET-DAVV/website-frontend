@@ -128,13 +128,17 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@next/bundle-analyzer@^15.4.1":
-  version "15.4.2"
-  resolved "https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-15.4.2.tgz"
-  integrity sha512-kgjecwKDgJ50DZXjVllawD6MuTyxaREB5EUBKbG9NLBHjYu10O/OPL5JqKrBrYdQ9BNVxjGEQoDGcHB76ZjViQ==
+"@next/bundle-analyzer@^15.4.5":
+  version "15.4.5"
+  resolved "https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-15.4.5.tgz"
+  integrity sha512-S2o5Zn5u1iKdn9GrsUd86jvjXRXmKNT/JpQuovfLgUigPC+fshyKvNebvnYSshmztsZL1U7AuUPg71PzAaiHcg==
   dependencies:
     webpack-bundle-analyzer "4.10.1"
 
+"@next/env@15.4.3":
+  version "15.4.3"
+  resolved "https://registry.npmjs.org/@next/env/-/env-15.4.3.tgz"
+  integrity sha512-lKJ9KJAvaWzqurIsz6NWdQOLj96mdhuDMusLSYHw9HBe2On7BjUwU1WeRvq19x7NrEK3iOgMeSBV5qEhVH1cMw==
 "@next/env@15.4.3":
   version "15.4.3"
   resolved "https://registry.npmjs.org/@next/env/-/env-15.4.3.tgz"
@@ -147,41 +151,10 @@
   dependencies:
     glob "10.3.10"
 
-"@next/swc-darwin-arm64@15.4.3":
+"@next/swc-win32-x64-msvc@15.4.3":
   version "15.4.3"
-  resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-15.4.3.tgz"
-  integrity sha512-YAhZWKeEYY7LHQJiQ8fe3Y6ymfcDcTn7rDC8PDu/pdeIl1Z2LHD4uyPNuQUGCEQT//MSNv6oZCeQzZfTCKZv+A==
-
-"@next/swc-darwin-x64@15.4.3":
-  version "15.4.3"
-  resolved "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-15.4.3.tgz"
-  integrity sha512-ZPHRdd51xaxCMpT4viQ6h8TgYM1zPW1JIeksPY9wKlyvBVUQqrWqw8kEh1sa7/x0Ied+U7pYHkAkutrUwxbMcg==
-
-"@next/swc-linux-arm64-gnu@15.4.3":
-  version "15.4.3"
-  resolved "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-15.4.3.tgz"
-  integrity sha512-QUdqftCXC5vw5cowucqi9FeOPQ0vdMxoOHLY0J5jPdercwSJFjdi9CkEO4Xkq1eG4t1TB/BG81n6rmTsWoILnw==
-
-"@next/swc-linux-arm64-musl@15.4.3":
-  version "15.4.3"
-  resolved "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-15.4.3.tgz"
-  integrity sha512-HTL31NsmoafX+r5g91Yj3+q34nrn1xKmCWVuNA+fUWO4X0pr+n83uGzLyEOn0kUqbMZ40KmWx+4wsbMoUChkiQ==
-
-"@next/swc-linux-x64-gnu@15.4.3":
-  version "15.4.3"
-  resolved "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-15.4.3.tgz"
-  integrity sha512-HRQLWoeFkKXd2YCEEy9GhfwOijRm37x4w5r0MMVHxBKSA6ms3JoPUXvGhfHT6srnGRcEUWNrQ2vzkHir5ZWTSw==
-
-"@next/swc-linux-x64-musl@15.4.3":
-  version "15.4.3"
-  resolved "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-15.4.3.tgz"
-  integrity sha512-NyXUx6G7AayaRGUsVPenuwhyAoyxjQuQPaK50AXoaAHPwRuif4WmSrXUs8/Y0HJIZh8E/YXRm9H7uuGfiacpuQ==
-
-"@next/swc-win32-arm64-msvc@15.4.3":
-  version "15.4.3"
-  resolved "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-15.4.3.tgz"
-  integrity sha512-2CUTmpzN/7cL1a7GjdLkDFlfH3nwMwW8a6JiaAUsL9MtKmNNO3fnXqnY0Zk30fii3hVEl4dr7ztrpYt0t2CcGQ==
-
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.4.3.tgz"
+  integrity sha512-i54YgUhvrUQxQD84SjAbkfWhYkOdm/DNRAVekCHLWxVg3aUbyC6NFQn9TwgCkX5QAS2pXCJo3kFboSFvrsd7dA==
 "@next/swc-win32-x64-msvc@15.4.3":
   version "15.4.3"
   resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.4.3.tgz"
@@ -1746,12 +1719,12 @@ fraction.js@^4.3.7:
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-framer-motion@^12.23.6:
-  version "12.23.6"
-  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-12.23.6.tgz"
-  integrity sha512-dsJ389QImVE3lQvM8Mnk99/j8tiZDM/7706PCqvkQ8sSCnpmWxsgX+g0lj7r5OBVL0U36pIecCTBoIWcM2RuKw==
+framer-motion@^12.23.12:
+  version "12.23.12"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-12.23.12.tgz"
+  integrity sha512-6e78rdVtnBvlEVgu6eFEAgG9v3wLnYEboM8I5O5EXvfKC8gxGQB8wXJdhkMy10iVcn05jl6CNw7/HTsTCfwcWg==
   dependencies:
-    motion-dom "^12.23.6"
+    motion-dom "^12.23.12"
     motion-utils "^12.23.6"
     tslib "^2.4.0"
 
@@ -2546,10 +2519,10 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://registry.npmjs.org/minipass/-/minipass-7.1.2.tgz"
   integrity sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==
 
-motion-dom@^12.23.6:
-  version "12.23.6"
-  resolved "https://registry.npmjs.org/motion-dom/-/motion-dom-12.23.6.tgz"
-  integrity sha512-G2w6Nw7ZOVSzcQmsdLc0doMe64O/Sbuc2bVAbgMz6oP/6/pRStKRiVRV4bQfHp5AHYAKEGhEdVHTM+R3FDgi5w==
+motion-dom@^12.23.12:
+  version "12.23.12"
+  resolved "https://registry.npmjs.org/motion-dom/-/motion-dom-12.23.12.tgz"
+  integrity sha512-RcR4fvMCTESQBD/uKQe49D5RUeDOokkGRmz4ceaJKDBgHYtZtntC/s2vLvY38gqGaytinij/yi3hMcWVcEF5Kw==
   dependencies:
     motion-utils "^12.23.6"
 
@@ -2618,11 +2591,20 @@ next-auth@^4.24.11:
   integrity sha512-uW7Qe6poVasNIE1X382nI29oxSdFJzjQzTgJFLD43MxyPfGKKxCMySllhBpvqr48f58Om+tLMivzRwBpXEytvA==
   dependencies:
     "@next/env" "15.4.3"
+    "@next/env" "15.4.3"
     "@swc/helpers" "0.5.15"
     caniuse-lite "^1.0.30001579"
     postcss "8.4.31"
     styled-jsx "5.1.6"
   optionalDependencies:
+    "@next/swc-darwin-arm64" "15.4.3"
+    "@next/swc-darwin-x64" "15.4.3"
+    "@next/swc-linux-arm64-gnu" "15.4.3"
+    "@next/swc-linux-arm64-musl" "15.4.3"
+    "@next/swc-linux-x64-gnu" "15.4.3"
+    "@next/swc-linux-x64-musl" "15.4.3"
+    "@next/swc-win32-arm64-msvc" "15.4.3"
+    "@next/swc-win32-x64-msvc" "15.4.3"
     "@next/swc-darwin-arm64" "15.4.3"
     "@next/swc-darwin-x64" "15.4.3"
     "@next/swc-linux-arm64-gnu" "15.4.3"
@@ -3626,6 +3608,10 @@ strip-json-comments@^3.1.1:
     stylis "4.3.2"
     tslib "2.6.2"
 
+styled-jsx@5.1.6:
+  version "5.1.6"
+  resolved "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz"
+  integrity sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA==
 styled-jsx@5.1.6:
   version "5.1.6"
   resolved "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz"

@@ -1,8 +1,14 @@
-import React, { useEffect, useRef, FC, useState } from 'react';
+import React, { useEffect, useRef, FC, useState } from "react";
+
+interface NewsAnnouncementItem {
+  label: string;
+  url: string;
+  description?: string; // Optional
+}
 
 interface NewsAnnouncementProps {
   title: string;
-  items: string[];
+  items: NewsAnnouncementItem[];
 }
 
 const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
@@ -89,14 +95,18 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <h2 className="text-lg sm:text-xl md:text-2xl text-white flex justify-center 
-                     bg-black font-bold rounded-md mb-2 sm:mb-4 py-2 sm:py-3">
+      <h2
+        className="text-lg sm:text-xl md:text-2xl text-white flex justify-center 
+                     bg-black font-bold rounded-md mb-2 sm:mb-4 py-2 sm:py-3"
+      >
         {title}
       </h2>
       <div
         ref={scrollRef}
         className={`px-3 sm:px-4 md:px-6 relative h-[calc(100%-3rem)] sm:h-[calc(100%-4rem)] 
-                   overflow-y-auto ${isPaused ? 'overflow-y-scroll' : 'overflow-hidden'}`}
+                   overflow-y-auto ${
+                     isPaused ? "overflow-y-scroll" : "overflow-hidden"
+                   }`}
         onWheel={handleUserInteraction}
         onTouchStart={handleUserInteraction}
         onClick={handleClick}
@@ -104,17 +114,47 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
         <div>
           <ul ref={listRef} className="space-y-2 sm:space-y-3 md:space-y-4">
             {items.map((item, index) => (
-              <li key={`original-${index}`} 
-                  className="text-sm sm:text-base leading-relaxed break-words">
-                &rsaquo; {item}
+              <li
+                key={`original-${index}`}
+                className="text-sm sm:text-base leading-relaxed break-words"
+              >
+                &rsaquo;{" "}
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  {item.label}
+                </a>
+                {item.description && (
+                  <div className="text-xs text-gray-500 mt-1">
+                    {item.description}
+                  </div>
+                )}
               </li>
             ))}
           </ul>
           <ul className="space-y-2 sm:space-y-3 md:space-y-4">
             {items.map((item, index) => (
-              <li key={`duplicate-${index}`} 
-                  className="text-sm sm:text-base leading-relaxed break-words">
-                &rsaquo; {item}
+              <li
+                key={`duplicate-${index}`}
+                className="text-sm sm:text-base leading-relaxed break-words"
+              >
+                &rsaquo;{" "}
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  {item.label}
+                </a>
+                {item.description && (
+                  <div className="text-xs text-gray-500 mt-1">
+                    {item.description}
+                  </div>
+                )}
               </li>
             ))}
           </ul>
@@ -123,6 +163,5 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
     </div>
   );
 };
-
 
 export default NewsAnnouncement;

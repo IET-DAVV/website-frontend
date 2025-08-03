@@ -24,9 +24,9 @@ const YearSelector: React.FC<YearSelectorProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <h2 className="text-2xl sm:text-3xl mb-6 font-bold text-center text-gray-800">
+      {/* <h2 className="text-2xl sm:text-3xl mb-6 font-bold text-center text-gray-800">
         Year
-      </h2>
+      </h2> */}
       <div className="mt-2 w-full border-b-2 border-gray-200 mb-8"></div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {years.map((year) => (

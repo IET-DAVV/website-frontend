@@ -18,7 +18,7 @@ const LibraryPage = () => {
       {/* Header Section */}
       <div className="text-center pt-16 pb-8">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light text-black tracking-wide font-newyork">
-          Library
+          LIBRARY
         </h1>
       </div>
 
@@ -29,7 +29,7 @@ const LibraryPage = () => {
           <div className="relative rounded-lg overflow-hidden shadow-2xl">
             <div className="relative h-96 sm:h-[500px] lg:h-[600px]">
               <Image
-                src="/infrastructure/library aerial.png"
+                src="/infrastructure/library/library aerial.jpg"
                 alt="IET DAVV Central Library aerial view"
                 fill
                 className="object-cover"
@@ -40,32 +40,29 @@ const LibraryPage = () => {
               <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
               {/* Content overlay */}
-              <div className="absolute inset-0 flex items-end">
-                <div className="w-full p-6 sm:p-8 lg:p-12">
-                  <div className="max-w-4xl grid grid-cols-1 lg:grid-cols-3 gap-8 items-end">
-                    {/* Text content */}
-                    <div className="lg:col-span-2">
-                      <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed font-light">
-                        The IET DAVV Central Library is a newly renovated,
-                        state-of-the-art facility designed to support students'
-                        academic and research endeavors. Relocated from its
-                        original 1997 space in A-Block, it now features modern
-                        interiors, comfortable reading areas, and individual
-                        study desks backed by high-speed Wi-Fi and digital
-                        access.
-                      </p>
-                    </div>
+<div className="absolute inset-0 flex items-center justify-center">
+  <div className="w-full px-6 sm:px-8 lg:px-12 flex flex-col items-center text-center space-y-6">
+    {/* Text content */}
+    <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed font-light max-w-4xl">
+      The IET DAVV Central Library is a newly renovated, state-of-the-art
+      facility designed to support students' academic and research endeavors.
+      Relocated from its original 1997 space in A-Block, it now features modern
+      interiors, comfortable reading areas, and individual study desks backed by
+      high-speed Wi-Fi and digital access.
+    </p>
 
-                    {/* E Books button */}
-                    <div className="lg:col-span-1 flex justify-start lg:justify-end">
-                      <button onClick={handleEBooksClick} className="bg-light-blue hover:bg-dark-blue text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 text-lg shadow-lg">
-                        E Books
-                      </button>
-                      <EBooksModal isOpen={isModalOpen} onClose={handleCloseModal}/>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    {/* E Books button */}
+    <button
+      onClick={handleEBooksClick}
+      className="bg-light-blue hover:bg-dark-blue text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 text-lg shadow-lg"
+    >
+      E Books
+    </button>
+
+    <EBooksModal isOpen={isModalOpen} onClose={handleCloseModal} />
+  </div>
+</div>
+
             </div>
           </div>
         </div>

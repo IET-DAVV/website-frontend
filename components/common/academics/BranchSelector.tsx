@@ -27,9 +27,7 @@ const BranchSelector: React.FC<BranchSelectorProps> = ({
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {/* Centered, bold, and larger title for the section */}
-      <h2 className="text-2xl sm:text-3xl mb-6 font-bold text-center text-gray-800">
-        Branch
-      </h2>
+      
       
       {/* Grid layout for the buttons, matching the semester selector's style */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
