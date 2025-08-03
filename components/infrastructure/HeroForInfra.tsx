@@ -80,6 +80,8 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
       };
     }
     return {
+      heading: "CAMPUS",
+      subheading: "BLOCKS",
       key: "default",
       heading: "Campus",
       subheading: "Blocks",

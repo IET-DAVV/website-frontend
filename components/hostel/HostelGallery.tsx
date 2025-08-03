@@ -50,7 +50,7 @@ const GalleryCarousel = () => {
       {/* Header */}
       <div className="text-center py-16">
         <h1 className="text-6xl font-light text-light-blue font-newyork tracking-wider">
-          Gallery
+          GALLERY
         </h1>
       </div>
 

@@ -30,7 +30,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.4.5",
+    "@next/bundle-analyzer": "^15.4.4",
     "@types/he": "^1.2.3",
     "@types/next": "^8.0.7",
     "@types/node": "^24.1.0",

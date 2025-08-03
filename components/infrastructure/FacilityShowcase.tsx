@@ -51,7 +51,7 @@ const FacilityShowcase = () => {
   const facilityList = Object.keys(facilities);
 
   return (
-    <div className="flex bg-gray-100 h-full max-w-8xl mx-auto">
+    <div className="flex bg-gray-100 h-full max-w-8xl mx-auto mb-10 pl-10">
       {/* Main Content Area */}
       <div className="flex-1 relative h-screen">
         {/* Image Container */}
