@@ -28,7 +28,7 @@ const CustomSlide = ({ title, year, imgAddress, description }: CustomSlideProps)
                           leading-tight text-gray-800">
               {title}
             </h3>
-            <p className="text-xs sm:text-sm md:text-base text-blue-600 font-medium mb-2 sm:mb-3">
+            <p className="text-xs sm:text-sm md:text-base text-[#3B7A9E] font-medium mb-2 sm:mb-3">
               {year}
             </p>
           </div>

@@ -24,8 +24,8 @@ const LandingContainer = () => {
     <div>
       {/* Above the fold - load immediately */}
       <HeroSection />
-      <MemoizedAbout />
       <MemoizedRecruiters />
+      <MemoizedAbout />
       <MemoizedAcademicPrograms />
       
       {/* Below the fold - lazy load */}

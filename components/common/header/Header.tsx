@@ -27,11 +27,12 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const isHome = pathname === "/";
 
   return (
-    <header
-      className={`w-full px-6 py-2 ${
-        isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
-      }`}
-    >
+    <header className={`${
+      isHome ? 'absolute' : 'relative' 
+    } z-[999] w-full px-6 py-2 ${
+      isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
+    }`}>
+      
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -44,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
           />
           <div className={`${manrope.className} leading-tight`}>
             <p className="text-sm font-bold whitespace-nowrap">{LOGO}</p>
-            <p className="text-xs text-gray-600">{LOGO_SUBTITLE}</p>
+            <p className="text-xs text-black/80">{LOGO_SUBTITLE}</p>
           </div>
         </div>
 
@@ -83,10 +84,13 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                 </button>
               ) : (
                 <Link
-                  href={link.href}
-                  className={`text-sm bg-transparent hover:border-b-2 ${
-                    isHome ? "border-black" : "border-white/80"
-                  }`}
+                  href={link.href} // Ensure href is correctly passed
+                  className={`block w-full text-left text-sm py-2 border-b border-gray-300 ${
+                    isHome ? "hover:text-black" : "hover:text-white"
+                  }`} // Added block and w-full for proper click area
+                  onClick={() => { // Added onClick to close menu on navigation
+ setMenuOpen(false);
+                  }}
                 >
                   {link.name}
                 </Link>
