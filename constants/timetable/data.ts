@@ -435,40 +435,28 @@ export const timetableData: TimetableData = {
             "Year 1": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_PT_ME_Y1_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_PT_ME_Y1_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/BEPTDC_MECH_Iyr.pdf",
                 },
               },
             },
             "Year 2": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_PT_ME_Y2_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_PT_ME_Y2_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/BEPTDC_MECH_IIyr.pdf",
                 },
               },
             },
             "Year 3": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_PT_ME_Y3_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_PT_ME_Y3_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/BEPTDC_MECH_IIIyr.pdf",
                 },
               },
             },
             "Year 4": {
               sections: {
                 "Section A": {
-                  PdfLink: "https://example.com/BE_PT_ME_Y4_SA.pdf",
-                },
-                "Section B": {
-                  PdfLink: "https://example.com/BE_PT_ME_Y4_SB.pdf",
+                  PdfLink: "https://www.ietdavv.edu.in/images/timetable/BEPTDC_MECH_IVyr.pdf",
                 },
               },
             },

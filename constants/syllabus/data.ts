@@ -1252,13 +1252,14 @@ export const syllabusData: SyllabusData = {
             "Semester 2": {
               subjects:
                 [
-                  { "s_no": 1, "code": "ISP1C1", "name": "Advanced Algorithms", "type": "PC1", "credits": "3-1-1", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP1C1.pdf" },
-                  { "s_no": 2, "code": "ISP1C2", "name": "Secure Computing Techniques", "type": "PC2", "credits": "3-1-1", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP1C2.pdf" },
-                  { "s_no": 3, "code": "ISP1Gx", "name": "Generic Elective I", "type": "GE1", "credits": "3-1-0", "pdfLink": "" },
-                  { "s_no": 4, "code": "ISP1V1", "name": "Comprehensive Viva I", "type": "Viva", "credits": "0-0-2", "pdfLink": "" },
-                  { "s_no": 5, "code": "ISP1G1", "name": "Advanced Data Base Management Systems", "type": "GE1", "credits": "3-1-0", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP1G1.pdf" },
-                  { "s_no": 6, "code": "ISP1G2", "name": "Complexity of Security Algorithms", "type": "GE1", "credits": "3-1-0", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP1G2.pdf" },
-                  { "s_no": 7, "code": "ISP1G3", "name": "Agent Technology", "type": "GE1", "credits": "3-1-0", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP1G3.pdf" }
+                  { "s_no": 1, "code": "ISP2C3", "name": "Advanced Computer Networks", "type": "PC1", "credits": "3-1-1", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP2C3.pdf" },
+                  { "s_no": 2, "code": "ISP2EX", "name": "Elective 1", "type": "PC2", "credits": "3-1-1", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP2EX.pdf" },
+                  { "s_no": 3, "code": "ISP2W1", "name": "Seminar/ Workshop-I", "type": "GE1", "credits": "0-2-0", "pdfLink": "" },
+                  { "s_no": 4, "code": "ISP2V2", "name": "Comprehensive Viva II", "type": "Viva", "credits": "0-0-2", "pdfLink": "" },
+                  { "s_no": 5, "code": "ASP2S1", "name": "Soft Skills-1", "type": "GE1", "credits": "2-0-0", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ASP2S1.pdf" },
+                  { "s_no": 6, "code": "ISP2E1", "name": "Data Security", "type": "GE1", "credits": "3-1-1", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP2E1.pdf" },
+                  { "s_no": 7, "code": "ISP2E2", "name": "Information Theory and Coding", "type": "GE1", "credits": "3-1-1", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP2E2.pdf" },
+                  { "s_no": 8, "code": "ISP2E3", "name": "Data Compression and Stagnography", "type": "GE1", "credits": "3-1-1", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/ISP2E3.pdf" }
                 ]
 
             },
@@ -1345,7 +1346,18 @@ export const syllabusData: SyllabusData = {
                 ]
 
             },
-            "Semester 2": { subjects: [] },
+            "Semester 2": {
+              subjects: [
+                { "s_no": 1, "code": "IMP2C3", "name": "Production & Operations Management", "type": "PC3", "credits": "3-1-1 =5", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2C3.pdf" },
+                { "s_no": 2, "code": "IMP2Ex", "name": "Elective I", "type": "PE1", "credits": "3-1-1 =5", "pdfLink": "" },
+                { "s_no": 3, "code": "IMP2W1", "name": "Seminar/Res. Tool/Work Shop-1", "type": "", "credits": "0-2-0 =2", "pdfLink": "" },
+                { "s_no": 4, "code": "IMP2V2", "name": "Comprehensive Viva II", "type": "", "credits": "0-0-2 =2", "pdfLink": "" },
+                { "s_no": 5, "code": "ASP2S1", "name": "Soft Skills -1", "type": "", "credits": "2-0-0 =2", "pdfLink": "" },
+                { "s_no": 6, "code": "IMP2E1", "name": "Statistical Quality Control and Total Quality Management", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2E1.pdf" },
+                { "s_no": 7, "code": "IMP2E2", "name": "Strategic Management", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2E2.pdf" },
+                { "s_no": 8, "code": "IMP2E3", "name": "Business Process Reengineering", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2E3.pdf" }
+              ]
+            },
           },
         },
         "Mechanical (Design & Thermal)": {
@@ -1353,14 +1365,14 @@ export const syllabusData: SyllabusData = {
             "Semester 1": {
               subjects:
                 [
-                  { "s_no": 1, "code": "IMP2C3", "name": "Production & Operations Management", "type": "PC3", "credits": "3-1-1 =5", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2C3.pdf" },
-                  { "s_no": 2, "code": "IMP2Ex", "name": "Elective I", "type": "PE1", "credits": "3-1-1 =5", "pdfLink": "" },
-                  { "s_no": 3, "code": "IMP2W1", "name": "Seminar/Res. Tool/Work Shop-1", "type": "", "credits": "0-2-0 =2", "pdfLink": "" },
-                  { "s_no": 4, "code": "IMP2V2", "name": "Comprehensive Viva II", "type": "", "credits": "0-0-2 =2", "pdfLink": "" },
-                  { "s_no": 5, "code": "ASP2S1", "name": "Soft Skills -1", "type": "", "credits": "2-0-0 =2", "pdfLink": "" },
-                  { "s_no": 6, "code": "IMP2E1", "name": "Statistical Quality Control and Total Quality Management", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2E1.pdf" },
-                  { "s_no": 7, "code": "IMP2E2", "name": "Strategic Management", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2E2.pdf" },
-                  { "s_no": 8, "code": "IMP2E3", "name": "Business Process Reengineering", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2E3.pdf" }
+                  { "s_no": 1, "code": "DTP1C1", "name": "Tribology	", "type": "PC3", "credits": "3-1-1 =5", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/DTP1C1.pdf" },
+                  { "s_no": 2, "code": "DTP1C2", "name": "	Design of Inernet Combustion Engine Systems", "type": "PE1", "credits": "3-1-1 =5", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/DTP1C2.pdf" },
+                  { "s_no": 3, "code": "DTP1V1", "name": "	Comprehensive Viva I", "type": "", "credits": "0-2-0 =2", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/DTP1V1.pdf" },
+                  { "s_no": 4, "code": "DTP1G1", "name": "Advance Thermodynamics", "type": "", "credits": "0-0-2 =2", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/DTP1G1.pdf" },
+                  { "s_no": 5, "code": "DTP1G2", "name": "Non Conventional Energy Systems", "type": "", "credits": "2-0-0 =2", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/DTP1G2.pdf" },
+                  { "s_no": 6, "code": "DTP1G3", "name": "Management Information System", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/DTP1G3.pdf" },
+                  { "s_no": 7, "code": "DTP1G4", "name": "Finite Elements Analysis", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/DTP1G4.pdf" },
+                  // { "s_no": 8, "code": "DTP1C1", "name": "Business Process Reengineering", "type": "PE1", "credits": "", "pdfLink": "https://www.ietdavv.edu.in/images/downloads/syllabus/ME_Syllabus/IMP2E3.pdf" }
                 ]
 
             },
