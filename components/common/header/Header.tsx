@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             <li key={link.name} className="relative">
               {link.dropdown ? (
                 <button
-                  className={`text-sm bg-transparent bg-[#f8f8f8B3] hover:border-b-2 flex items-center gap-1 ${
+                  className={`text-sm bg-[#f8f8f8B3] hover:border-b-2 flex items-center gap-1 ${
                     isHome ? "border-black" : "border-white/80"
                   }`}
                   onMouseEnter={() => {
