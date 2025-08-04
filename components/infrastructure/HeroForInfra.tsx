@@ -82,9 +82,6 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
     return {
       heading: "CAMPUS",
       subheading: "BLOCKS",
-      key: "default",
-      heading: "Campus",
-      subheading: "Blocks",
       description:
         "IET's overall academics part takes place in this 6 blocks. Have a glimpse to each one of them",
     };

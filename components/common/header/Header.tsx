@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               {link.dropdown && openDropdown === idx && (
                 <ul
                   className={`absolute left-0 mt-5 p-2 w-[200px] ${
-                    isHome ? "bg-[#f8f8f8B3]" : "text-black bg-white"
+                    isHome ? " bg-[#f8f8f8ca]" : "text-black bg-white"
                   } shadow-md border border-gray-200 rounded-b-md z-50`}
                   onMouseEnter={() => {
                     clearTimeout(hoverTimeout);
