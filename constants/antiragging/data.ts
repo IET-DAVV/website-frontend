@@ -1,3 +1,5 @@
+import { fileURLToPath } from "url";
+
 export interface AntiRagging {
     sections: {
         [courseKey: string]: {
@@ -52,34 +54,34 @@ export const antiRaggingGuidelines = {
         `What is ragging? Ragging means causing, inducing, compelling or forcing a student, whether by way of a practical joke or otherwise, to do any act which detracts from human dignity or exposes him to ridicule or to forbear from doing any lawful act, by injuring him or by using criminal force to him.`,
     ],
 
-    subContent1:{heading:"In view of the directions of the Hon’ble Supreme Court ",content:"in the matter of “University of Kerala v/s. Council, Principals, Colleges and others” in SLP no. 24295 of 2006 dated 16.05.2007 and that dated 8.05.2009 in Civil Appeal number 887 of 2009, to prohibit, prevent and eliminate the scourge of ragging including any conduct by any student or students whether by words spoken or written or by an act which has the effect of teasing, treating or handling with rudeness a fresher or any other student, or indulging in rowdy or indisciplined activities by any student or students which causes or is likely to cause annoyance, hardship or psychological harm or to raise fear or apprehension thereof in any fresher or any other student or asking any student to do any act which such student will not in the ordinary course do and which has the effect of causing or generating a sense of shame, or torment or embarrassment so as to adversely affect the physique or psyche of such fresher or any other student, with or without an intent to derive a sadistic pleasure or showing off power, authority or superiority by a student over any fresher or any other student; and thereby, to eliminate ragging in all its forms from universities, deemed universities and other higher educational Institutions in the country by prohibiting it under these Regulations, preventing its occurrence and punishing those who indulge in ragging as provided for in these Regulations and the appropriate law in force."},
+    subContent1: { heading: "In view of the directions of the Hon’ble Supreme Court ", content: "in the matter of “University of Kerala v/s. Council, Principals, Colleges and others” in SLP no. 24295 of 2006 dated 16.05.2007 and that dated 8.05.2009 in Civil Appeal number 887 of 2009, to prohibit, prevent and eliminate the scourge of ragging including any conduct by any student or students whether by words spoken or written or by an act which has the effect of teasing, treating or handling with rudeness a fresher or any other student, or indulging in rowdy or indisciplined activities by any student or students which causes or is likely to cause annoyance, hardship or psychological harm or to raise fear or apprehension thereof in any fresher or any other student or asking any student to do any act which such student will not in the ordinary course do and which has the effect of causing or generating a sense of shame, or torment or embarrassment so as to adversely affect the physique or psyche of such fresher or any other student, with or without an intent to derive a sadistic pleasure or showing off power, authority or superiority by a student over any fresher or any other student; and thereby, to eliminate ragging in all its forms from universities, deemed universities and other higher educational Institutions in the country by prohibiting it under these Regulations, preventing its occurrence and punishing those who indulge in ragging as provided for in these Regulations and the appropriate law in force." },
 
     punishments: {
-        content:`On receipt of the recommendation of the Anti Ragging Squad or on receipt of any information concerning any reported incident of ragging, the Head of Institution shall immediately proceed to file a First Information Report (FIR), within twenty four hours...`,
+        content: `On receipt of the recommendation of the Anti Ragging Squad or on receipt of any information concerning any reported incident of ragging, the Head of Institution shall immediately proceed to file a First Information Report (FIR), within twenty four hours...`,
 
-        subContent:["i. Suspension from attending classes and academic privileges.",
-        "ii. Withholding/ withdrawing scholarship/ fellowship and other benefits.",
-        "iii. Debarring from appearing in any test/ examination or other evaluation process.",
-        "iv. Withholding results.",
-        "v. Suspension/ expulsion from the hostel.",
-        "vi. Cancellation of admission.",
-        "vii. Rustication from the Institution for period ranging from one to four semesters. etc"],
+        subContent: ["i. Suspension from attending classes and academic privileges.",
+            "ii. Withholding/ withdrawing scholarship/ fellowship and other benefits.",
+            "iii. Debarring from appearing in any test/ examination or other evaluation process.",
+            "iv. Withholding results.",
+            "v. Suspension/ expulsion from the hostel.",
+            "vi. Cancellation of admission.",
+            "vii. Rustication from the Institution for period ranging from one to four semesters. etc"],
 
-        ending:"Read (cf. clause 9) for other punishment given on the site www.dauniv.ac.in under the link Prevention of Ragging on the left hand side of the page and in the Circulars of UGC Dated 17-June-2009 (English & Hindi Version) ."
+        ending: "Read (cf. clause 9) for other punishment given on the site www.dauniv.ac.in under the link Prevention of Ragging on the left hand side of the page and in the Circulars of UGC Dated 17-June-2009 (English & Hindi Version) ."
     },
     links: [
-      {
-        label: "Measures ",
-        file: "https://www.ietdavv.edu.in/images/new_images/download.png",
-      },
-      {
-        label: "Afiidavit in English",
-        file: "https://www.ietdavv.edu.in/images/new_images/download.png",
-      },
-      {
-        label: "Affidavit in Hindi",
-        file: "https://www.ietdavv.edu.in/images/new_images/download.png",
-      },
+        {
+            label: "Measures ",
+            file: "https://www.ietdavv.edu.in/images/new_images/download.png",
+        },
+        {
+            label: "Afiidavit in English",
+            file: "https://www.ietdavv.edu.in/images/downloads/antiragging/AICTE_PUBIC--NOTICE.pdf",
+        },
+        {
+            label: "Affidavit in Hindi",
+            file: "https://www.ietdavv.edu.in/images/downloads/antiragging/hindi_format.pdf",
+        },
     ]
 };
 
@@ -88,7 +90,7 @@ export const antiRaggingCurbing = {
     sectino1: {
         label: "AICTE Public Notice-2017 ",
         extralabel: "(by DAVV)",
-        file: "https://www.ietdavv.edu.in/images/Notices/Notices_2025/CPC_DAVV_Guideline_2025.pdf",
+        file: "https://www.ietdavv.edu.in/images/downloads/antiragging/AICTE_PUBIC--NOTICE.pdf",
     },
     title2: "Format",
     section2: [
@@ -121,16 +123,20 @@ export const antiRaggingCurbing = {
             label: "Contact details of in-charge (name, address, phone no., email ID)",
             subLabel: "Copy enclosed",
             Highlight: " (Enclosure II)",
+            file: "https://www.ietdavv.edu.in/images/downloads/antiragging/Enclosure-II.pdf",
         },
         {
             label: "Date of constitution of Anti-Ragging Squad",
             subLabel: "01 July 2009, July-2018 ",
             Highlight: "(Revised Every Year) (Enclosure I)",
+            link: "https://www.ietdavv.edu.in/images/downloads/antiragging/Enclosure-II.pdf" // <-- relative or absolute link to your PDF
         },
+
         {
             label: "Number of surprise raids conducted by squad",
             subLabel: "Daily in hostel",
             Highlight: " (Enclosure III)",
+            file: "https://www.ietdavv.edu.in/images/downloads/antiragging/Enclosure-III.pdf"
         },
         {
             label: "Number of ragging incident reported",
@@ -151,11 +157,13 @@ export const antiRaggingCurbing = {
             label: "Incorporation of directions as provisioned under clause 11(a) of the regulation in the prospectus / advertisement issued for admission",
             subLabel: "Copy enclosed",
             Highlight: " (Enclosure IV)",
+            file: "https://www.ietdavv.edu.in/images/downloads/antiragging/Enclosure-IV.pdf"
         },
         {
             label: "Receipts of affidavits from the student and parents as envisaged under the regulation.",
             subLabel: "Sample copy of two students is enclosed",
             Highlight: " (Enclosure V)",
+            file: "https://www.ietdavv.edu.in/images/downloads/antiragging/Enclosure-V.pdf",
         },
     ]
 
