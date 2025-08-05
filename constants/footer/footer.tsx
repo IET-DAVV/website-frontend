@@ -23,6 +23,11 @@ export const importantLinks = [
     name: "MPOnline",
     url: "https://www.mponline.gov.in/portal/",
   },
+  {
+    name: "DAVV MPOnline",
+    url: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
+  },
+
 ];
 
 export const quickFindings = [
