@@ -9,7 +9,8 @@ import SyllabusAccordion from "../common/academics/SyllabusAccordion";
 import { motion } from "framer-motion";
 
 const Syllabus = () => {
-  const [selectedCourse, setSelectedCourse] = useState("be_full_time");
+  const defaultCourse = Object.keys(syllabusData.courses)[0] || "";
+const [selectedCourse, setSelectedCourse] = useState(defaultCourse);
   const [selectedBranch, setSelectedBranch] = useState("");
   const [selectedSemester, setSelectedSemester] = useState(""); // State for semester selection is back
   const [openSubjectCode, setOpenSubjectCode] = useState<string | null>(null);
