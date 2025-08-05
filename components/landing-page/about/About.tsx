@@ -38,7 +38,7 @@ const About = () => {
             Welcome to
           </span>
         </h4>
-        <h1 className={`py-2 sm:py-4 font-newyork text-4xl sm:text-6xl text-white font-newyork`}>
+        <h1 className={`py-2 sm:py-4 font-newyork text-4xl sm:text-6xl text-white`}>
           {collegeName}
         </h1>
         <p className="font-extralight text-white text-sm sm:text-base">

@@ -173,7 +173,7 @@ const StackCards: React.FC = () => {
     setShowAllClubs(true);
   };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100">
+    <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
         <div className="text-center mb-8">
@@ -218,7 +218,7 @@ const StackCards: React.FC = () => {
                       </h2>
                       <button
                         onClick={handleExploreClick}
-                        className="rounded-md bg-purple-500 text-white p-2 w-32 transition-all duration-300 hover:transform hover:-translate-y-2 hover:scale-105"
+                        className="rounded-md bg-blue-500 text-white p-2 w-32 transition-all duration-300 hover:transform hover:-translate-y-2 hover:scale-105"
                         disabled={showAllClubs}
                       >
                         {showAllClubs ? "Exploring..." : "Explore Now"}
@@ -227,7 +227,7 @@ const StackCards: React.FC = () => {
 
                     {/* Image Section */}
                     <div className="flex-1 relative overflow-hidden lg:rounded-r-3xl">
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-blue-600 opacity-20 z-10" />
+                      <div className="absolute inset-0 opacity-20 z-10" />
                       <Image
                         src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop"
                         alt="IET Clubs"

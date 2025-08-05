@@ -27,7 +27,7 @@ const Achievements = () => {
             
             {/* Optional decorative element */}
             <div className="hidden lg:flex justify-center items-center">
-              <div className="w-64 h-64 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 
+              <div className="w-64 h-64 rounded-full bg-[#3B7A9E]
                              opacity-10 blur-3xl"></div>
             </div>
           </div>
@@ -35,7 +35,7 @@ const Achievements = () => {
       </div>
 
       {/* Carousel Section */}
-      <div className="bg-gradient-to-br from-blue-800 via-blue-700 to-blue-900 
+      <div className="bg-[#3B7A9E]
                      px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto">
           <Slides />

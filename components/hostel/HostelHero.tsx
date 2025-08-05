@@ -183,90 +183,31 @@ const HostelComponent = () => {
           ))}
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Manager and Warden Information */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-              <h2 className="text-xl font-semibold mb-6 text-gray-800">
-                Manager and Warden Information
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Manager */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-24 h-24 bg-gray-500 rounded-full mb-4 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-gray-500 rounded-full"></div>
-                  </div>
-                  <h3 className="font-semibold text-gray-800 mb-1">Manager</h3>
-                  <p className="text-gray-600">{currentHostel.managerName}</p>
-                  <p className="text-sm text-gray-500 mt-2">{currentHostel.managerInformation}</p>
+            {/* Hostel Staff Section */}
+            {/* Hostel Staff Section */}
+            <h2 className="text-6xl font-newyork font-light text-center mb-12 text-light-blue tracking-widest">
+              HOSTEL STAFF
+            </h2>
+
+            {/* Centered Warden Info Card */}
+            <div className="flex justify-center mb-12">
+              <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 max-w-md w-full text-center">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+                  Warden Information
+                </h2>
+
+                {/* Image Placeholder */}
+                <div className="w-28 h-28 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gray-500 rounded-full" />
                 </div>
 
-                {/* Warden */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-24 h-24 bg-gray-300 rounded-full mb-4 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-gray-500 rounded-full"></div>
-                  </div>
-                  <h3 className="font-semibold text-gray-800 mb-1">Warden</h3>
-                  <p className="text-gray-600">{currentHostel.wardenName}</p>
-                  <p className="text-sm text-gray-500 mt-2">{currentHostel.wardenInformation}</p>
-                </div>
+                <h3 className="text-lg font-medium text-gray-800 mb-1">Warden</h3>
+                <p className="text-gray-700">{currentHostel.wardenName}</p>
+                <p className="text-sm text-gray-500 mt-2">{currentHostel.wardenInformation}</p>
               </div>
             </div>
-          </div>
 
-          {/* Intake Capacity Information */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-              <h2 className="text-xl font-semibold mb-6 text-gray-800">
-                Intake Capacity Information
-              </h2>
-              
-              <div className="flex justify-center mb-6">
-                <div className="relative w-40 h-40">
-                  {/* Pie Chart */}
-                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="35"
-                      fill="none"
-                      stroke="#e5e7eb"
-                      strokeWidth="8"
-                    />
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="35"
-                      fill="none"
-                      stroke="#9ca3af"
-                      strokeWidth="8"
-                      strokeDasharray={`${(currentHostel.filled / 100) * 220} 220`}
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-gray-800">
-                      {currentHostel.filled}%
-                    </span>
-                  </div>
-                </div>
-              </div>
 
-              <div className="flex justify-center gap-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-gray-500 rounded-sm"></div>
-                  <span className="text-sm text-gray-600">Filled</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-gray-300 rounded-sm"></div>
-                  <span className="text-sm text-gray-600">Vacant</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Hostel Description */}
         <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
