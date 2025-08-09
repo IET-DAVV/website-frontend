@@ -6,7 +6,7 @@ import LibraryPage from "@/components/infrastructure/library";
 
 const page = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-8 px-4 md:px-8 lg:px-16">
       <HeroInfra />
       <HostelsPage />
       <LibraryPage />
