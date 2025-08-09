@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
-import he from 'he';
+import he from "he";
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Computer } from "lucide-react";
 
 const HeroInfra = () => {
   const [hoveredBlock, setHoveredBlock] = useState<number | null>(null);
 
-  const campusBlocks = [
+const campusBlocks = [
   {
     id: 1,
     name: "M Block",
@@ -66,6 +68,7 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
   },
 ];
 
+
   const getDisplayContent = () => {
     if (hoveredBlock !== null) {
       const block = campusBlocks.find((b) => b.id === hoveredBlock);
@@ -90,69 +93,116 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
   return (
     <div className="min-h-screen bg-white px-4 py-8 sm:py-12 md:py-16 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-8 sm:mb-12 md:mb-16"
+        >
           <h1 className="text-3xl font-newyork sm:text-4xl md:text-5xl lg:text-6xl font-light text-light-blue mb-4 tracking-wide">
             INFRASTRUCTURE
           </h1>
-        </div>
+        </motion.div>
 
-        {/* Content Section */}
         <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 items-start">
-          {/* Left Column - Text Content */}
+          {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 col-span-1 w-full">
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-4 sm:mb-6 leading-tight font-newyork transition-all duration-300">
-                {displayContent.heading}
-              </h2>
-              {displayContent.subheading && (
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-6 sm:mb-8 leading-tight font-newyork transition-all duration-300">
-                  {displayContent.subheading}
-                </h2>
-              )}
-            </div>
-
-            <div className="max-w-full lg:max-w-md">
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed transition-all duration-300">
-                {he.decode(displayContent.description)}
-              </p>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={displayContent.heading}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <motion.h2
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-4 sm:mb-6 leading-tight font-newyork"
+                >
+                  {displayContent.heading}
+                </motion.h2>
+                {displayContent.subheading && (
+                  <motion.h2
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-6 sm:mb-8 leading-tight font-newyork"
+                  >
+                    {displayContent.subheading}
+                  </motion.h2>
+                )}
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed"
+                >
+                  {he.decode(displayContent.description)}
+                </motion.p>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
-          {/* Right Column - Campus Blocks Grid */}
+          {/* Right Blocks */}
           <div className="w-full col-span-1 lg:col-span-2">
-            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+            <motion.div
+              className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.1 } },
+              }}
+            >
               {campusBlocks.map((block) => (
-                <div
+                <motion.div
                   key={block.id}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                   className="group cursor-pointer"
                   onMouseEnter={() => setHoveredBlock(block.id)}
                   onMouseLeave={() => setHoveredBlock(null)}
-                  // Add touch support for mobile devices
                   onTouchStart={() => setHoveredBlock(block.id)}
                 >
-                  <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 active:scale-95">
+                  <div className="relative overflow-hidden rounded-lg shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
                     <div className="aspect-[4/3] bg-gray-200">
                       <Image
                         src={block.image}
                         alt={block.alt}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         width={500}
                         height={300}
-                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 50vw, 33vw"
-                        priority={block.id <= 3} // Prioritize loading for first 3 images
                       />
                     </div>
-                    {/* Block Name Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-2 sm:p-3 lg:p-4">
-                      <h3 className="text-sm sm:text-base lg:text-lg font-newyork font-semibold text-center tracking-wide">
+                    {/* Overlay with Text Animation */}
+                    <motion.div
+                      className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center"
+                      whileHover={{ backgroundColor: "rgba(75, 74, 74, 0.5)" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <motion.h3
+                        initial={{ opacity: 0, y: 10 }}
+                        whileHover={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="text-white font-newyork font-semibold tracking-wide text-center"
+                      >
                         {block.name}
-                      </h3>
-                    </div>
+                      </motion.h3>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
