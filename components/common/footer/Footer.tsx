@@ -10,11 +10,18 @@ import {
   CiInstagram,
   CiTwitter,
   CiLinkedin,
-  CiYoutube,
   CiMap,
   CiImageOn,
 } from "react-icons/ci";
 import { motion } from "framer-motion";
+
+const socialLinks = [
+  { label: "Facebook", href: "https://www.facebook.com/davv.iet?mibextid=rS40aB7S9Ucbxw6v", icon: CiFacebook },
+  { label: "Instagram", href: "https://www.instagram.com/ietdavvofficial?igsh=MWVsdHI3d2E3ZXppNw==", icon: CiInstagram },
+  { label: "Twitter", href: "https://x.com/ietdavv?s=08", icon: CiTwitter },
+  { label: "LinkedIn", href: "https://www.linkedin.com/school/ietdavv/", icon: CiLinkedin },
+  
+];
 
 const Footer = () => {
   return (
@@ -131,18 +138,20 @@ const Footer = () => {
         <p className="font-medium text-white text-xs text-center md:text-left">
           © 2025 IET-DAVV. All rights reserved.
         </p>
-        <div className="flex items-center space-x-3">
-          {[CiFacebook, CiInstagram, CiTwitter, CiLinkedin, CiYoutube].map(
-            (Icon, idx) => (
-              <Link href="/" key={idx}>
-                <Icon
-                  className="text-white border border-[#D9D9D9] p-1 rounded-full hover:text-light-blue hover:border-light-blue transition"
-                  size={30}
-                />
-              </Link>
-            )
-          )}
-        </div>
+       <div className="flex items-center space-x-3">
+       {socialLinks.map(({ label, href, icon: Icon }, idx) => (
+      <a
+      key={idx}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="border border-[#D9D9D9] p-1 rounded-full hover:text-light-blue hover:border-light-blue transition"
+    >
+      <Icon className="text-white" size={30} />
+    </a>
+      ))}
+      </div>
       </div>
     </motion.div>
   );
