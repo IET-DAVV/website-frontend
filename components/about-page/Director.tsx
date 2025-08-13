@@ -30,7 +30,27 @@ const Director = () => {
         <h2 className="font-newyork text-xl md:text-5xl font-light mb-1">
           Dr. Pratosh Bansal
         </h2>
-        <p className="text-gray-500 text-sm md:text-base mb-3">Director</p>
+
+        {/* UNDERLINED TITLE */}
+        <div className="relative inline-block mb-3">
+          <motion.p
+            className="text-gray-500 text-sm md:text-base"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Director
+          </motion.p>
+          <motion.span
+            className="absolute left-0 -bottom-0.7 h-[2px] bg-gray-500"
+            initial={{ width: 0 }}
+            whileInView={{ width: "8.6%" }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
+            viewport={{ once: true }}
+          />
+        </div>
+
         <p className="text-sm md:text-base text-gray-800 leading-relaxed">
           {aboutDirectorText}
         </p>
