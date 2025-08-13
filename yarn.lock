@@ -128,10 +128,79 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+<<<<<<< HEAD
 "@next/bundle-analyzer@^15.4.5":
   version "15.4.5"
   resolved "https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-15.4.5.tgz"
   integrity sha512-S2o5Zn5u1iKdn9GrsUd86jvjXRXmKNT/JpQuovfLgUigPC+fshyKvNebvnYSshmztsZL1U7AuUPg71PzAaiHcg==
+=======
+"@motionone/animation@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.npmjs.org/@motionone/animation/-/animation-10.18.0.tgz"
+  integrity sha512-9z2p5GFGCm0gBsZbi8rVMOAJCtw1WqBTIPw3ozk06gDvZInBPIsQcHgYogEJ4yuHJ+akuW8g1SEIOpTOvYs8hw==
+  dependencies:
+    "@motionone/easing" "^10.18.0"
+    "@motionone/types" "^10.17.1"
+    "@motionone/utils" "^10.18.0"
+    tslib "^2.3.1"
+
+"@motionone/dom@^10.16.4":
+  version "10.18.0"
+  resolved "https://registry.npmjs.org/@motionone/dom/-/dom-10.18.0.tgz"
+  integrity sha512-bKLP7E0eyO4B2UaHBBN55tnppwRnaE3KFfh3Ps9HhnAkar3Cb69kUCJY9as8LrccVYKgHA+JY5dOQqJLOPhF5A==
+  dependencies:
+    "@motionone/animation" "^10.18.0"
+    "@motionone/generators" "^10.18.0"
+    "@motionone/types" "^10.17.1"
+    "@motionone/utils" "^10.18.0"
+    hey-listen "^1.0.8"
+    tslib "^2.3.1"
+
+"@motionone/easing@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.npmjs.org/@motionone/easing/-/easing-10.18.0.tgz"
+  integrity sha512-VcjByo7XpdLS4o9T8t99JtgxkdMcNWD3yHU/n6CLEz3bkmKDRZyYQ/wmSf6daum8ZXqfUAgFeCZSpJZIMxaCzg==
+  dependencies:
+    "@motionone/utils" "^10.18.0"
+    tslib "^2.3.1"
+
+"@motionone/generators@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.npmjs.org/@motionone/generators/-/generators-10.18.0.tgz"
+  integrity sha512-+qfkC2DtkDj4tHPu+AFKVfR/C30O1vYdvsGYaR13W/1cczPrrcjdvYCj0VLFuRMN+lP1xvpNZHCRNM4fBzn1jg==
+  dependencies:
+    "@motionone/types" "^10.17.1"
+    "@motionone/utils" "^10.18.0"
+    tslib "^2.3.1"
+
+"@motionone/react@^10.16.4":
+  version "10.16.4"
+  resolved "https://registry.npmjs.org/@motionone/react/-/react-10.16.4.tgz"
+  integrity sha512-LLGmXT+nPOKAVs5DQI89yRgefUoFG1NAftf1GVej3Rx8V/O0ORGbNwMoYL7fvC3BO7YbCG/4w8zoyU8dUiOVxQ==
+  dependencies:
+    "@motionone/dom" "^10.16.4"
+    hey-listen "^1.0.8"
+    tslib "^2.3.1"
+
+"@motionone/types@^10.17.1":
+  version "10.17.1"
+  resolved "https://registry.npmjs.org/@motionone/types/-/types-10.17.1.tgz"
+  integrity sha512-KaC4kgiODDz8hswCrS0btrVrzyU2CSQKO7Ps90ibBVSQmjkrt2teqta6/sOG59v7+dPnKMAg13jyqtMKV2yJ7A==
+
+"@motionone/utils@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.npmjs.org/@motionone/utils/-/utils-10.18.0.tgz"
+  integrity sha512-3XVF7sgyTSI2KWvTf6uLlBJ5iAgRgmvp3bpuOiQJvInd4nZ19ET8lX5unn30SlmRH7hXbBbH+Gxd0m0klJ3Xtw==
+  dependencies:
+    "@motionone/types" "^10.17.1"
+    hey-listen "^1.0.8"
+    tslib "^2.3.1"
+
+"@next/bundle-analyzer@^15.4.4":
+  version "15.4.4"
+  resolved "https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-15.4.4.tgz"
+  integrity sha512-/jDIIgLhzErHv36+DBymfMSMrmBq8EPfTGwBCjfz9DZFN9sdUC+4dJcu9OuDKpna+EuznAJnVTrMLd9NSBFVwg==
+>>>>>>> c4dc24a (feat: some animations and fixes in Infra)
   dependencies:
     webpack-bundle-analyzer "4.10.1"
 
@@ -209,6 +278,11 @@
   integrity sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==
   dependencies:
     tslib "^2.8.0"
+
+"@types/animejs@^3.1.13":
+  version "3.1.13"
+  resolved "https://registry.npmjs.org/@types/animejs/-/animejs-3.1.13.tgz"
+  integrity sha512-yWg9l1z7CAv/TKpty4/vupEh24jDGUZXv4r26StRkpUPQm04ztJaftgpto8vwdFs8SiTq6XfaPKCSI+wjzNMvQ==
 
 "@types/d3-array@^3.0.3":
   version "3.2.1"
@@ -482,6 +556,11 @@ ajv@^6.12.4:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
+
+animejs@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.npmjs.org/animejs/-/animejs-3.2.1.tgz"
+  integrity sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==
 
 ansi-escapes@^7.0.0:
   version "7.0.0"
@@ -1954,6 +2033,11 @@ he@^1.2.0:
   resolved "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
+hey-listen@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/hey-listen/-/hey-listen-1.0.8.tgz"
+  integrity sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==
+
 hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz"
@@ -2540,6 +2624,14 @@ motion-utils@^12.23.6:
   version "12.23.6"
   resolved "https://registry.npmjs.org/motion-utils/-/motion-utils-12.23.6.tgz"
   integrity sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ==
+
+motion@^12.23.12:
+  version "12.23.12"
+  resolved "https://registry.npmjs.org/motion/-/motion-12.23.12.tgz"
+  integrity sha512-8jCD8uW5GD1csOoqh1WhH1A6j5APHVE15nuBkFeRiMzYBdRwyAHmSP/oXSuW0WJPZRXTFdBoG4hY9TFWNhhwng==
+  dependencies:
+    framer-motion "^12.23.12"
+    tslib "^2.4.0"
 
 mrmime@^2.0.0:
   version "2.0.1"
@@ -3738,7 +3830,7 @@ tsconfig-paths@^3.15.0:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@^2.4.0, tslib@^2.8.0:
+tslib@^2.3.1, tslib@^2.4.0, tslib@^2.8.0:
   version "2.8.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
