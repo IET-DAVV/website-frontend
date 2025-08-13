@@ -128,12 +128,6 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-<<<<<<< HEAD
-"@next/bundle-analyzer@^15.4.5":
-  version "15.4.5"
-  resolved "https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-15.4.5.tgz"
-  integrity sha512-S2o5Zn5u1iKdn9GrsUd86jvjXRXmKNT/JpQuovfLgUigPC+fshyKvNebvnYSshmztsZL1U7AuUPg71PzAaiHcg==
-=======
 "@motionone/animation@^10.18.0":
   version "10.18.0"
   resolved "https://registry.npmjs.org/@motionone/animation/-/animation-10.18.0.tgz"
