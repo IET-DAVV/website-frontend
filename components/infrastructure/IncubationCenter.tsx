@@ -16,71 +16,86 @@ export default function IncubationCentre() {
   const buttonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const textWrapper = titleRef.current;
-            if (textWrapper && textWrapper.textContent) {
-              
-              textWrapper.innerHTML = textWrapper.textContent.replace(
-                /\S/g,
-                "<span class='letter'>$&</span>"
-              );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const tl = anime.timeline({
+            easing: "easeOutExpo",
+            duration: 1000,
+          });
 
-              const tl = anime.timeline({
-                easing: "easeOutExpo",
-                duration: 1200,
-              });
-
-              tl.add({
-                targets: topLineRef.current,
+          tl.add({
+            targets: topLineRef.current,
+            scaleX: [0, 1],
+            duration: 800,
+          })
+            .add(
+              {
+                targets: titleRef.current,
+                translateY: [40, 0],
+                opacity: [0, 1],
+                duration: 800,
+              },
+              "-=600"
+            )
+            .add(
+              {
+                targets: [p1Ref.current, p2Ref.current],
+                translateY: [20, 0],
+                opacity: [0, 1],
+                duration: 800,
+                delay: anime.stagger(150),
+              },
+              "-=600"
+            )
+            .add(
+              {
+                targets: imageRef.current,
+                scale: [0.8, 1],
+                opacity: [0, 1],
+                duration: 1000,
+              },
+              "-=1000"
+            )
+            .add(
+              {
+                targets: buttonRef.current,
+                translateY: [20, 0],
+                opacity: [0, 1],
+                duration: 800,
+              },
+              "-=800"
+            )
+            .add(
+              {
+                targets: bottomLineRef.current,
                 scaleX: [0, 1],
                 duration: 800,
-              })
-              .add(
-                {
-                  targets: textWrapper.querySelectorAll(".letter"),
-                  translateY: [40, 0],
-                  opacity: [0, 1],
-                  duration: 1000,
-                  delay: anime.stagger(30),
-                },
-                "-=600"
-              )
-              .add(
-                {
-                  targets: [p1Ref.current, p2Ref.current],
-                  translateY: [20, 0],
-                  opacity: [0, 1],
-                  duration: 800,
-                  delay: anime.stagger(150),
-                },
-                "-=800"
-              )
-              .add({ targets: imageRef.current, scale: [0.8, 1], opacity: [0, 1], duration: 1000, }, "-=1000")
-              .add({ targets: buttonRef.current, translateY: [20, 0], opacity: [0, 1], duration: 800, }, "-=800")
-              .add({ targets: bottomLineRef.current, scaleX: [0, 1], duration: 800, }, "-=1000");
-            }
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
+              },
+              "-=1000"
+            );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
     }
+  );
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current);
+  }
+
+  return () => {
+    if (sectionRef.current) {
+      observer.unobserve(sectionRef.current);
+    }
+  };
+}, []);
+
 
   return (
     <div ref={sectionRef} className="bg-[#CCCCCC80] backdrop-blur-md py-16 px-8 overflow-hidden">
