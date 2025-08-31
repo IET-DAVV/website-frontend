@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Title from '../common/academics/Title';
 
 interface GalleryImage {
   id: number;
@@ -50,9 +51,7 @@ const GalleryCarousel = () => {
     <div className="py-12 bg-white">
       {/* Header */}
       <div className="text-center py-8">
-        <h1 className="text-6xl font-light text-light-blue font-newyork tracking-wider">
-          GALLERY
-        </h1>
+        <Title title="GALLERY" className="text-7xl leading-tight font-newyork" />
       </div>
 
       {/* Carousel Container */}

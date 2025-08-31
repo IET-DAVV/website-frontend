@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@motionone/react": "^10.16.4",
-    "animejs": "^3.2.1",
+    "animejs": "^3.2.2",
     "fuse.js": "^7.1.0",
     "grommet-icons": "^4.12.1",
     "lucide-react": "^0.525.0",

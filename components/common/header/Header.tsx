@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
     <header className={`${
       isHome ? 'absolute' : 'relative' 
-    } z-[999] w-full px-6 py-2 ${
+    } z-[30] w-full px-6 py-2 ${
       isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
     }`}>
       
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             <li key={link.name} className="relative">
               {link.dropdown ? (
                 <button
-                  className={`text-sm bg-[#f8f8f8B3] hover:border-b-2 flex items-center gap-1 ${
+                  className={`text-sm hover:border-b-2 flex items-center gap-1 ${
                     isHome ? "border-black" : "border-white/80"
                   }`}
                   onMouseEnter={() => {
@@ -99,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               {link.dropdown && openDropdown === idx && (
                 <ul
                   className={`absolute left-0 mt-5 p-2 w-[200px] ${
-                    isHome ? " bg-[#f8f8f8ca]" : "text-black bg-white"
+                    isHome ? " bg-[#f8f8f8]" : "text-black bg-white"
                   } shadow-md border border-gray-200 rounded-b-md z-50`}
                   onMouseEnter={() => {
                     clearTimeout(hoverTimeout);
@@ -133,7 +133,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
       {menuOpen && (
         <ul
           className={`md:hidden mt-4 flex flex-col space-y-2 transition-all duration-300 ${
-            isHome ? "bg-[#f8f8f8B3] text-black" : "bg-[#3B7A9E] text-white"
+            isHome ? "bg-[#f8f8f8] text-black" : "bg-[#3B7A9E] text-white"
           } p-4 rounded shadow-md z-50`}
         >
           {links.map((link, idx) => (

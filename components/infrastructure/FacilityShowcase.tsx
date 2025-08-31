@@ -51,7 +51,7 @@ const FacilityShowcase = () => {
   const facilityList = Object.keys(facilities);
 
   return (
-    <div className="flex bg-gray-100 h-full max-w-8xl mx-auto mb-10 pl-10">
+    <div className="flex bg-gray-100 h-full mb-10 pl-10">
       {/* Main Content Area */}
       <div className="flex-1 relative h-screen">
         {/* Image Container */}
@@ -63,6 +63,7 @@ const FacilityShowcase = () => {
             className="object-cover"
             priority
           />
+
           
           {/* Overlay Title */}
           <div className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm px-6 py-4 rounded-lg shadow-lg">

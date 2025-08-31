@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Title from '@/components/common/academics/Title';
 const HostelsPage = () => {
   const hostelsData = [
     {
@@ -47,9 +48,7 @@ const HostelsPage = () => {
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-7xl font-newyork text-center text-gray-800 mb-12" >
-          Hostels
-        </h1>
+        <Title title="HOSTELS" className="text-7xl leading-tight font-newyork" />
         <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <div className="grid m-2 grid-cols-2">
             {hostelsData.map((hostel) => (
@@ -95,7 +94,7 @@ const HostelsPage = () => {
 
         <div className="text-center mt-12">
           <Link href="/hostel">
-          <button className="bg-light-blue text-black font-semibold py-3 px-8 rounded-lg hover:bg-dark-blue transition-colors duration-300">
+          <button className="bg-light-blue text-white font-semibold py-3 px-8 rounded-lg hover:bg-dark-blue transition-colors duration-300">
             View More
           </button>
           </Link>

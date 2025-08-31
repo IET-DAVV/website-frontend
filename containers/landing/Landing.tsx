@@ -29,7 +29,7 @@ const LandingContainer = () => {
       <MemoizedAcademicPrograms />
       
       {/* Below the fold - lazy load */}
-      <Achievements />
+      {/* <Achievements /> */}
       <Events />
       <StackCards />
     </div>
