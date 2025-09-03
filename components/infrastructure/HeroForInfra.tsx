@@ -37,7 +37,7 @@ A-Block is one of the oldest academic blocks at IET DAVV, historically used for 
   {
     id: 3,
     name: "B Block",
-    image: "/infrastructure/blocks/bBlock aerial.jpg",
+  image: "/infrastructure/blocks/Bblock_aerial.jpg",
     alt: "B Block aerial view",
     description: `Computer Science + Cyber &amp; IT Infrastructure Hub
 B-Block is dedicated to the Computer Science and Information Technology departments. In addition to smart classrooms and coding labs, this block handles several technical backend responsibilities such as the institute&#8217;s website management, Wi-Fi ID generation, and cyber systems coordination. It plays a key role in digital administration and student tech access.`,

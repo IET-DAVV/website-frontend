@@ -45,7 +45,7 @@ const HostelsPage = () => {
     {
       id: 6,
       name: "B-Block (Girls)",
-      image: "/infrastructure/hostels/b6.png",
+  image: "/infrastructure/hostels/b5.png",
       description:
         "Comfortable rooms with modern amenities, dedicated study areas, and mess facilities.",
     },

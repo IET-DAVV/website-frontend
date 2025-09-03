@@ -50,7 +50,7 @@ viewport={{ once: true }}
       viewport={{ once: true }}
     >
       <Image
-        src="/infrastructure/library aerial.png"
+  src="/infrastructure/library_aerial.png"
         alt="IET DAVV Central Library"
         width={745}
         height={371}
