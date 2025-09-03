@@ -1,4 +1,8 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -43,6 +47,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
+    outputFileTracingRoot: __dirname,
 };
 
 export default bundleAnalyzer(nextConfig);
