@@ -23,7 +23,7 @@ const underlineVariants: Variants = {
       type: "spring",
       stiffness: 80,
       damping: 10,
-      delay: 0.3, // adjust delay if needed
+      delay: 0.5,
     },
   },
 };
@@ -71,7 +71,7 @@ const ContactUs = () => {
             <div className="flex items-center text-light-blue">
               <FaMapMarkerAlt className="mr-2" size={20} />
               <div className="flex flex-col">
-  <h3 className={`${manrope.className} font-medium`}>Address</h3>
+  <h3 className={`${manrope.className} font-medium`}>Address </h3>
   <motion.div
   className="h-[2px] bg-light-blue w-full"
   style={{ transformOrigin: "left" }}
@@ -96,9 +96,9 @@ const ContactUs = () => {
             <div className="flex items-center text-light-blue">
               <FaEnvelope className="mr-2" size={20} />
               <div className="flex flex-col">
-  <h3 className={`${manrope.className} font-medium`}>Email</h3>
+  <h3 className={`${manrope.className} font-medium`}>Email </h3>
   <motion.div
-  className="h-[2px] bg-light-blue w-full"
+  className="h-[3px] bg-light-blue w-full"
   style={{ transformOrigin: "left" }}
   initial="hidden"
   whileInView="visible"
@@ -117,7 +117,7 @@ const ContactUs = () => {
             <div className="flex items-center text-light-blue">
               <FaPhoneAlt className="mr-2" size={20} />
               <div className="flex flex-col">
-  <h3 className={`${manrope.className} font-medium`}>Call Us</h3>
+  <h3 className={`${manrope.className} font-medium`}>Call Us </h3>
   <motion.div
   className="h-[2px] bg-light-blue w-full"
   style={{ transformOrigin: "left" }}
