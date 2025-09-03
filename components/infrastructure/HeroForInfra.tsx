@@ -4,6 +4,7 @@ import he from "he";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Computer } from "lucide-react";
+import Title from "../common/academics/Title";
 
 const HeroInfra = () => {
   const [hoveredBlock, setHoveredBlock] = useState<number | null>(null);
@@ -101,9 +102,7 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h1 className="text-3xl font-newyork sm:text-4xl md:text-5xl lg:text-6xl font-light text-light-blue mb-4 tracking-wide">
-            INFRASTRUCTURE
-          </h1>
+          <Title title="INFRASTRUCTURE" className=" leading-tight font-newyork" />
         </motion.div>
 
         <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 items-start">

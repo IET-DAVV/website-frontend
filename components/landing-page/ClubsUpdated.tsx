@@ -288,14 +288,14 @@ const StackCards: React.FC = () => {
                     <div className="w-full h-full rounded-3xl shadow-2xl overflow-hidden border-2 border-gray-100 relative">
                       {/* Background Image */}
                       <div className="absolute inset-0">
-                        <Image
+                        {/* <Image
                           src={card.backgroundImage}
                           alt={card.title}
                           fill
                           className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-teal-600/20 to-blue-900/30 z-10" />
+                        /> */}
+                        <div className="absolute inset-0 bg-[#3B7A9E]  z-10" />
+                        {/* <div className="absolute inset-0 bg-gradient-to-br from-teal-600/20 to-blue-900/30 z-10" /> */}
                       </div>
 
                       {/* Content Container */}
