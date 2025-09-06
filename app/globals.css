@@ -2,27 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
 
-/* In globals.css or a dedicated CSS file */
+/* Optimize font loading - handled by Next.js */
 
+/* Optimize image loading */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimize animations */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Optimize scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize focus states - only show on keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #3B799E;
+  outline-offset: 2px;
+}
+
+/* Remove default focus outline for mouse interactions */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Optimize loading states */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Custom scrollbar styles */
 .custom-scrollbar::-webkit-scrollbar {
-  height: 6px;             /* Thin scrollbar */
+  height: 6px;
   margin-top: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f0f0f0;     /* Light gray background */
+  background: #f0f0f0;
   border-radius: 100vh;
   margin-top: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #b0b0b0; /* Gray thumb */
+  background-color: #b0b0b0;
   border-radius: 100vh;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #f8f8f8; /* Darker on hover */
+  background-color: #f8f8f8;
 }
 
 ::-webkit-scrollbar {
@@ -42,17 +99,23 @@
   background: #02a3bb;
 }
 
- @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* NEW indicator 3D animation */
+@keyframes newBlink {
+  0%, 100% { 
+    color: white; 
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
   }
-} 
-
-/* Hide scrollbar for all browsers */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+  50% { 
+    color: #fbbf24; 
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.7);
+  }
 }
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+@keyframes newPulse {
+  0%, 100% { transform: scale(1) skewX(-6deg); }
+  50% { transform: scale(1.05) skewX(-6deg); }
+}
+
+.new-indicator-3d {
+  animation: newBlink 1.2s ease-in-out infinite, newPulse 2s ease-in-out infinite;
 }

@@ -3,7 +3,8 @@ import React, { useEffect, useRef, FC, useState } from "react";
 interface NewsAnnouncementItem {
   label: string;
   url: string;
-  description?: string; // Optional
+  description?: string;
+  isNew?: boolean;
 }
 
 interface NewsAnnouncementProps {
@@ -18,7 +19,7 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
   const scrollPosition = useRef(0);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const scrollStep = 0.5; // pixels per frame for smoother scrolling
+  const scrollStep = 0.15; // Even slower scrolling for better readability
   const [isPaused, setIsPaused] = useState(false);
 
   const clearAnimationFrame = () => {
@@ -123,9 +124,18 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
+                  className="text-blue-600 hover:underline flex items-center gap-2"
                 >
                   {item.label}
+                  {item.isNew && (
+                    <span className="new-indicator-3d inline-flex items-center px-2 py-0.5 text-xs font-bold bg-red-600 text-white border-2 border-red-800 shadow-lg transform -skew-x-6 hover:skew-x-0 transition-transform duration-200" 
+                          style={{
+                            boxShadow: '2px 2px 0px #991b1b, 4px 4px 0px #7f1d1d, inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.3)',
+                            textShadow: '1px 1px 0px rgba(0,0,0,0.5)'
+                          }}>
+                      NEW
+                    </span>
+                  )}
                 </a>
                 {item.description && (
                   <div className="text-xs text-gray-500 mt-1">
@@ -146,9 +156,18 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
+                  className="text-blue-600 hover:underline flex items-center gap-2"
                 >
                   {item.label}
+                  {item.isNew && (
+                    <span className="new-indicator-3d inline-flex items-center px-2 py-0.5 text-xs font-bold bg-red-600 text-white border-2 border-red-800 shadow-lg transform -skew-x-6 hover:skew-x-0 transition-transform duration-200" 
+                          style={{
+                            boxShadow: '2px 2px 0px #991b1b, 4px 4px 0px #7f1d1d, inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.3)',
+                            textShadow: '1px 1px 0px rgba(0,0,0,0.5)'
+                          }}>
+                      NEW
+                    </span>
+                  )}
                 </a>
                 {item.description && (
                   <div className="text-xs text-gray-500 mt-1">

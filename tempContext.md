@@ -1,4 +1,0 @@
-- Conditional rendering for blocks 
-- Hostel explore more page
-- Provide redirection links to E-books and Incubation centre
-- Facility section , add other tab for rest of the images ?

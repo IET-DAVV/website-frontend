@@ -9,7 +9,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 const nextConfig = {
-  reactStrictMode: false, // Optional: disable in production for slight speedup
+  reactStrictMode: false,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -42,12 +42,21 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+    // Optimize image loading
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   compress: true,
   experimental: {
     optimizeCss: true,
   },
-    outputFileTracingRoot: __dirname,
+  // Performance optimizations - swcMinify is now default in Next.js 15
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Enable modern features
+  poweredByHeader: false,
+  outputFileTracingRoot: __dirname,
 };
 
 export default bundleAnalyzer(nextConfig);

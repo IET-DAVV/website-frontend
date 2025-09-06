@@ -27,7 +27,7 @@ It is the nerve center of campus operations, leadership, and large gatherings.`,
   {
     id: 2,
     name: "A Block",
-    image: "/infrastructure/blocks/ablock_aerial.png",
+    image: "/infrastructure/blocks/ablock aerial.png",
     alt: "A Block aerial view",
     description: `Academic Core + Civil &amp; Mechanical Base
 A-Block is one of the oldest academic blocks at IET DAVV, historically used for Civil and Mechanical Engineering classes. It includes core lecture halls, shared classrooms, and labs that support interdisciplinary academic activities. Its central position makes it a vital learning space across departments, fostering collaborative teaching environments.`,
@@ -43,7 +43,7 @@ B-Block is dedicated to the Computer Science and Information Technology departme
   {
     id: 4,
     name: "D Block",
-    image: "/infrastructure/blocks/dblock_aerial.png",
+    image: "/infrastructure/blocks/dblock aerial.png",
     alt: "D Block aerial view",
     description: `Electronics &amp; Instrumentation Lab Complex
 D-Block serves as the practical zone for Electronics and Communication Engineering (ECE). It houses various electronic instruments and specialized labs for circuit design, embedded systems, signal processing, and instrumentation. This block is critical for ECE lab courses and minor hardware project development.`,
@@ -51,7 +51,7 @@ D-Block serves as the practical zone for Electronics and Communication Engineeri
   {
     id: 5,
     name: "E Block",
-    image: "/infrastructure/blocks/eblock_aerial.png",
+    image: "/infrastructure/blocks/eblock aerial.png",
     alt: "E Block aerial view",
     description: `Mechanical/Civil Support + E-Cell &amp; Innovation Space
 E-Block supports both Mechanical and Civil Engineering departments with project labs and design facilities. It also houses spaces related to the Entrepreneurship Cell (E-Cell) and student innovation clubs, encouraging ideation, prototyping, and teamwork.`,
@@ -59,7 +59,7 @@ E-Block supports both Mechanical and Civil Engineering departments with project 
   {
     id: 6,
     name: "F Block",
-    image: "/infrastructure/blocks/fblock_aerial.png",
+    image: "/infrastructure/blocks/fblock aerial.png",
     alt: "F Block aerial view",
     description: `IT Block with Modern Infrastructure
 F-Block is one of the newest and most technologically advanced blocks on campus. It supports the Information Technology department and features modern labs, high-speed network setups, and upgraded classrooms equipped with the latest smart learning tools. It represents the forward-looking infrastructure development at IET DAVV.`,

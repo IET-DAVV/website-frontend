@@ -12,7 +12,7 @@ export const calenderData: CalenderData = {
       PdfLink: "",
     },
     "2nd YEAR ONWARDS....": {
-      PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
+      PdfLink: "https://ietdavv.edu.in/images/downloads/Admission/Academic_Calendar_2025-26.jpeg",
     },
     
   },
