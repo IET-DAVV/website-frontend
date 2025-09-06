@@ -21,15 +21,19 @@ const StackCards = dynamic(() => import("@/components/landing-page/ClubsUpdated"
 
 const LandingContainer = () => {
   return (
-    <div>
+    <div className="bg-white">
       {/* Above the fold - load immediately */}
       <HeroSection />
-      <MemoizedRecruiters />
+      <div className="-mt-16 sm:-mt-28 lg:-mt-46 xl:-mt-52">
+        <MemoizedRecruiters />
+      </div>
       <MemoizedAbout />
       <MemoizedAcademicPrograms />
       
       {/* Below the fold - lazy load */}
-      {/* <Achievements /> */}
+      <div className="-mt-16 sm:-mt-20 lg:-mt-21 xl:-mt-24">
+        <Achievements />
+      </div>
       <Events />
       <StackCards />
     </div>
