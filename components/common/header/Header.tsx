@@ -29,23 +29,23 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
     <header className={`${
       isHome ? 'absolute' : 'relative' 
-    } z-[30] w-full px-6 py-2 ${
+    } z-[30] w-full px-6 py-2 md:py-4 ${
       isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
     }`}>
       
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 md:space-x-3">
           <Image
             src="/logo.svg"
-            className="w-12 h-12"
+            className="w-12 h-12 md:w-16 md:h-16"
             alt="logo"
-            width={48}
-            height={48}
+            width={64}
+            height={64}
           />
           <div className={`${manrope.className} leading-tight`}>
-            <p className="text-sm font-bold whitespace-nowrap">{LOGO}</p>
-            <p className="text-xs text-black/80">{LOGO_SUBTITLE}</p>
+            <p className="text-sm font-bold md:text-lg md:font-extrabold whitespace-nowrap">{LOGO}</p>
+            <p className="text-xs md:text-sm font-semibold text-black/80">{LOGO_SUBTITLE}</p>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             <li key={link.name} className="relative">
               {link.dropdown ? (
                 <button
-                  className={`text-sm hover:border-b-2 flex items-center gap-1 ${
+                  className={`text-sm md:text-base hover:border-b-2 flex items-center gap-1 ${
                     isHome ? "border-black" : "border-white/80"
                   }`}
                   onMouseEnter={() => {
@@ -83,7 +83,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               ) : (
                 <Link
                   href={link.href}
-                  className={`block text-sm py-2 transition-colors duration-200 ${
+                  className={`block text-sm md:text-base py-2 transition-colors duration-200 ${
                     isHome ? "hover:text-black text-black" : "hover:text-white"
                   }`}
                   onClick={() => setMenuOpen(false)}
@@ -110,7 +110,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="block px-3 py-2 text-sm rounded hover:bg-gray-100 transition-colors duration-200"
+                        className="block px-3 py-2 text-sm md:text-base rounded hover:bg-gray-100 transition-colors duration-200"
                         onClick={() => setOpenDropdown(null)}
                       >
                         {item.name}

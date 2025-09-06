@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 pt-32 sm:pt-42 pb-42 sm:py-6 lg:py-32">
+    <div className="w-full px-4 sm:px-6 lg:px-8 pt-32 sm:pt-42 md:pt-48 pb-42 sm:py-6 lg:py-32">
       {/* Mobile Layout */}
       <div className="block lg:hidden space-y-4 sm:space-y-6">
         <div className="w-full">
