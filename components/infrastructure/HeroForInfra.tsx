@@ -74,7 +74,7 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
     if (hoveredBlock !== null) {
       const block = campusBlocks.find((b) => b.id === hoveredBlock);
       return {
-        heading: block?.name || "Campus",
+        heading: block?.name || "Academic",
         subheading: "",
         description:
           block?.description ||
@@ -82,7 +82,7 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
       };
     }
     return {
-      heading: "Campus",
+      heading: "Academic",
       subheading: "Blocks",
       description:
         "IET's overall academics part takes place in this 6 blocks. Have a glimpse to each one of them",
@@ -102,7 +102,7 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <Title title="INFRASTRUCTURE" className=" leading-tight font-newyork" />
+          <Title title="FACILITIES" className=" leading-tight font-newyork" />
         </motion.div>
 
         <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 items-start">
