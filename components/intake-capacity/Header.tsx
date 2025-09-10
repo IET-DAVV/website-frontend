@@ -13,7 +13,7 @@ const manrope = Manrope({
 });
 
 const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
-  const [selectedCourse, setSelectedCourse] = useState<string>("B.E. (FULL-TIME)");
+  const [selectedCourse, setSelectedCourse] = useState<string>("BE/BTECH. (FULL-TIME)");
 
   const handleCourseClick = (courseName: string) => {
     setSelectedCourse(courseName);
@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ onSelectCourse }) => {
       transition={{ duration: 0.5 }}
     >
       <ul className={`${manrope.className} flex justify-evenly text-base font-medium`}>
-        {["B.E. (FULL-TIME)", "B.E. (PART-TIME)", "M.E. (FULL-TIME)", "M.E. (PART-TIME)"].map((course) => (
+        {["BE/BTECH. (FULL-TIME)", "BE/BTECH. (PART-TIME)", "MTECH. (FULL-TIME)", "MTECH. (PART-TIME)"].map((course) => (
           <li key={course} className="relative px-2">
             <button
               onClick={() => handleCourseClick(course)}

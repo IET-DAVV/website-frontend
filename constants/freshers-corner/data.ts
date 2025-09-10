@@ -34,7 +34,7 @@ export type FreshersCornerData = {
 // data.ts
 export const freshersCornerData: FreshersCornerData = {
   BTECH_FULL_TIME: {
-    courseName: "B.Tech (Full Time)",
+    courseName: "BE/BTECH (Full Time)",
     branches: {
       CSE: {
         branchName: "Computer Science and Engineering",
@@ -144,7 +144,7 @@ export const freshersCornerData: FreshersCornerData = {
   },
 
   BTECH_PART_TIME: {
-    courseName: "B.Tech (Part Time)",
+    courseName: "BE/BTECH (Part Time)",
     branches: {
       CSE: {
         branchName: "Computer Science and Engineering",
@@ -253,7 +253,7 @@ export const freshersCornerData: FreshersCornerData = {
   },
 
   MTECH_FULL_TIME: {
-    courseName: "M.Tech (Full Time)",
+    courseName: "MTECH (Full Time)",
     branches: {
       CSES: {
         branchName: "Computer Engineering (Software Engg.)",
@@ -337,7 +337,7 @@ export const freshersCornerData: FreshersCornerData = {
   },
 
   MTECH_PART_TIME: {
-    courseName: "M.Tech (Part Time)",
+    courseName: "MTECH (Part Time)",
     branches: {
       CSES: {
         branchName: "Computer Engineering (Software Engg.)",

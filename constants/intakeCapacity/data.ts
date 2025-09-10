@@ -1,26 +1,26 @@
 export const courseData = [
   {
-    name: "B.E. (FULL-TIME)",
+    name: "BE/BTECH. (FULL-TIME)",
     time: "FULL TIME",
     fullName: "Bachelor of Engineering",
     description:
-      "IET is presently offering B.E. (FULL TIME) 4-year Degree Programs in Six branches with the intake strength",
-    total: 510,
+      "IET is presently offering BE/BTECH. (FULL TIME) 4-year Degree Programs in Six branches with the intake strength",
+    total: 540,
     coursesOffered: [
       { name: "Computer Science", seats: 120 },
-      { name: "Information Technology", seats: 90 },
-      { name: "Mechanical Engineering", seats: 80 },
+      { name: "Information Technology", seats: 120 },
+      { name: "Mechanical Engineering", seats: 60 },
       { name: "Civil Engineering", seats: 60 },
-      { name: "Electronics & Telecommunication Engineering", seats: 100 },
+      { name: "Electronics & Telecommunication Engineering", seats: 120 },
       { name: "Electronics & Instrumentation Engineering", seats: 60 },
     ],
   },
   {
-    name: "B.E. (PART-TIME)",
+    name: "BE/BTECH. (PART-TIME)",
     time: "PART TIME",
     fullName: "Bachelor of Engineering",
     description:
-      "IET is presently offering B.E. (PART TIME) 4-year Degree Programs in Six branches with the intake strength",
+      "IET is presently offering BE/BTECH. (PART TIME) 4-year Degree Programs in Six branches with the intake strength",
     total: 150,
     coursesOffered: [
       { name: "Computer Science", seats: 40 },
@@ -31,11 +31,11 @@ export const courseData = [
     ],
   },
   {
-    name: "M.E. (FULL-TIME)",
+    name: "MTECH. (FULL-TIME)",
     time: "FULL TIME",
     fullName: "Master of Engineering",
     description:
-      "IET is presently offering M.E. (FULL TIME) 2-year Degree Programs in Six branches with the intake strength",
+      "IET is presently offering MTECH. (FULL TIME) 2-year Degree Programs in Six branches with the intake strength",
     total: 108,
     coursesOffered: [
       {
@@ -62,11 +62,11 @@ export const courseData = [
     ],
   },
   {
-    name: "M.E. (PART-TIME)",
+    name: "MTECH. (PART-TIME)",
     time: "PART TIME",
     fullName: "Master of Engineering",
     description:
-      "IET is presently offering M.E. (PART TIME) 4-year Degree Programs in Six branches with the intake strength",
+      "IET is presently offering MTECH. (PART TIME) 4-year Degree Programs in Six branches with the intake strength",
     total: 60,
     coursesOffered: [
       {

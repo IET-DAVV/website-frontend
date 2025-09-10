@@ -12,11 +12,16 @@ interface Facilities {
   [key: string]: Facility;
 }
 const FacilityShowcase = () => {
-  const [selectedFacility, setSelectedFacility] = useState('COMPUTER LAB');
+  const [selectedFacility, setSelectedFacility] = useState('COMPUTER LAB 1F');
 
   const facilities:Facilities = {
-    'COMPUTER LAB': {
-      title: 'Computer Lab',
+    'COMPUTER LAB 1': {
+      title: 'Computer Lab 1',
+      image: '/infrastructure/labs/computer-lab.jpg',
+      alt: 'Students working in computer lab with desktop computers'
+    },
+       'COMPUTER LAB 2': {
+      title: 'Computer Lab 2',
       image: '/infrastructure/labs/computer-lab.jpg',
       alt: 'Students working in computer lab with desktop computers'
     },

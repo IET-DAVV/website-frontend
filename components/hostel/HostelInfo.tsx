@@ -54,7 +54,7 @@ The following rules must be adhered to at all times:
     title: "FEE STRUCTURE",
     content: `The fee structure is transparent and reviewed annually as per institutional guidelines:
 
-• Undergraduate Programs (B.E. Full-Time): ₹80,000 – ₹1,20,000 per year (depending on branch).  
+• Undergraduate Programs (BE/BTECH. Full-Time): ₹80,000 – ₹1,20,000 per year (depending on branch).  
 • Hostel Charges: ₹25,000 – ₹35,000 per year (excluding mess charges).  
 • Mess Charges: ₹2,000 – ₹2,500 per month.  
 • Additional Fees: Examination fee, library fee, and refundable security deposit.

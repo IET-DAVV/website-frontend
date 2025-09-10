@@ -21,8 +21,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -88,8 +88,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -155,8 +155,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -222,8 +222,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -289,8 +289,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -356,8 +356,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -424,8 +424,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -491,8 +491,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -558,8 +558,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -625,8 +625,8 @@ export const facultyData = [
     "designation": "Assistant Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -692,8 +692,8 @@ export const facultyData = [
     "designation": "Assistant Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -759,8 +759,8 @@ export const facultyData = [
     "designation": "",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -827,8 +827,8 @@ export const facultyData = [
     "designation": "",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -894,8 +894,8 @@ export const facultyData = [
     "designation": "",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -961,8 +961,8 @@ export const facultyData = [
     "designation": "",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1028,8 +1028,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1095,8 +1095,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1162,8 +1162,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1230,8 +1230,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1297,8 +1297,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1364,8 +1364,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1431,8 +1431,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1498,8 +1498,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1565,8 +1565,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1633,8 +1633,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1700,8 +1700,8 @@ export const facultyData = [
     "designation": "",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1767,8 +1767,8 @@ export const facultyData = [
     "designation": "",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1834,8 +1834,8 @@ export const facultyData = [
     "designation": "",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1901,8 +1901,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -1968,8 +1968,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2036,8 +2036,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2103,8 +2103,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2170,8 +2170,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2237,8 +2237,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2304,8 +2304,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2371,8 +2371,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2439,8 +2439,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2506,8 +2506,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2573,8 +2573,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2640,8 +2640,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2707,8 +2707,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2774,8 +2774,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2842,8 +2842,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2909,8 +2909,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -2976,8 +2976,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -3043,8 +3043,8 @@ export const facultyData = [
     "designation": "Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -3110,8 +3110,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [
@@ -3177,8 +3177,8 @@ export const facultyData = [
     "designation": "Associate Professor",
     "dob": "",
     "qualifications": [
-      "B.E. (Computer Engineering): Shivaji University Kolhapur, 1992",
-      "M.Tech. (Computer Science): DAVV Indore, 2002",
+      "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
+      "MTECH. (Computer Science): DAVV Indore, 2002",
       "Ph.D. (Computer Engineering): IET DAVV Indore, 2012"
     ],
     "tabs": [

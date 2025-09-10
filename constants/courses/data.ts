@@ -1,12 +1,12 @@
 export const course = [
   {
-    name: "B.E. (FULL-TIME)",
+    name: "BE/BTECH. (FULL-TIME)",
     time: "FULL TIME",
     tenure: "4 year",
     capacity: "1000",
     description: "Bachelor of Engineering",
     content:
-      "A Bachelor of Engineering (B.E.) is an undergraduate academic degree in the field of engineering.",
+      "A Bachelor of Engineering (BE/BTECH.) is an undergraduate academic degree in the field of engineering.",
     coursesOffered: [
       "Computer Science",
       "Information Technology",
@@ -17,13 +17,13 @@ export const course = [
     ],
   },
   {
-    name: "B.E. (PART-TIME)",
+    name: "BE/BTECH. (PART-TIME)",
     time: "PART TIME",
     tenure: "4 year",
     capacity: "1000",
     description: "Bachelor of Engineering",
     content:
-      "A Bachelor of Engineering (B.E.) is an undergraduate academic degree in the field of engineering.",
+      "A Bachelor of Engineering (BE/BTECH.) is an undergraduate academic degree in the field of engineering.",
     coursesOffered: [
       "Computer Science",
       "Information Technology",
@@ -33,7 +33,7 @@ export const course = [
     ],
   },
   {
-    name: "M.E. (FULL-TIME)",
+    name: "MTECH. (FULL-TIME)",
     time: "FULL TIME",
     tenure: "2 year",
     capacity: "1000",
@@ -50,7 +50,7 @@ export const course = [
     ],
   },
   {
-    name: "M.E. (PART-TIME)",
+    name: "MTECH. (PART-TIME)",
     time: "PART TIME",
     tenure: "2 year",
     capacity: "1000",

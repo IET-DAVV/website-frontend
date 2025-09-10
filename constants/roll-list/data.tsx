@@ -1,19 +1,19 @@
 interface RollListData {
-  "B.E. I YEAR": {
+  "BE/BTECH. I YEAR": {
     [courseName: string]: {
       PdfLink: string;
     };
   };
-  "B.E. II YEAR": {
+  "BE/BTECH. II YEAR": {
     PdfLink: string;
   };
-  "B.E. III YEAR": {
+  "BE/BTECH. III YEAR": {
     PdfLink: string;
   };
-  "B.E. IV YEAR": {
+  "BE/BTECH. IV YEAR": {
     PdfLink: string;
   };
-  "M.E.": {
+  "MTECH.": {
     PdfLink: string;
   };
   "M.Sc.": {
@@ -22,7 +22,7 @@ interface RollListData {
 }
 
 export const rolllistData: RollListData = {
-  "B.E. I YEAR": {
+  "BE/BTECH. I YEAR": {
     "Computer Science": {
       PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
     },
@@ -42,16 +42,16 @@ export const rolllistData: RollListData = {
       PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
     },
   },
-  "B.E. II YEAR": {
+  "BE/BTECH. II YEAR": {
     PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
   },
-  "B.E. III YEAR": {
+  "BE/BTECH. III YEAR": {
     PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
   },
-  "B.E. IV YEAR": {
+  "BE/BTECH. IV YEAR": {
     PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
   },
-  "M.E.": {
+  "MTECH.": {
     PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
   },
   "M.Sc.": {

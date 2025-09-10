@@ -35,7 +35,7 @@ export interface SyllabusData {
 export const syllabusData: SyllabusData = {
   courses: {
     be_btech_full_time: {
-      courseName: "BE/B.Tech (Full Time)",
+      courseName: "BE/BTECH (Full Time)",
       branches: {
         "Computer Science and Engineering": {
           semesters: {
@@ -752,7 +752,7 @@ export const syllabusData: SyllabusData = {
       },
     },
     be_btech_part_time: {
-      courseName: "BE/B.Tech (Part Time)",
+      courseName: "BE/BTECH (Part Time)",
       branches: {
         "Computer Science and Engineering": {
           semesters: {
@@ -921,7 +921,7 @@ export const syllabusData: SyllabusData = {
       },
     },
     mtech_full_time: {
-      courseName: "M.Tech (Full Time)",
+      courseName: "MTECH (Full Time)",
       branches: {
         "Computer Engineering (Software Engg.)": {
           semesters: {
@@ -1201,7 +1201,7 @@ export const syllabusData: SyllabusData = {
       },
     },
     mtech_part_time: {
-      courseName: "M.Tech (Part Time)",
+      courseName: "MTECH (Part Time)",
       branches: {
         "Computer Engineering (Software Engg.)": {
           semesters: {

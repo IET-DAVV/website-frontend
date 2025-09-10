@@ -11,7 +11,7 @@ const playfair = Playfair_Display({
 });
 
 const IntakeCapacity: React.FC = () => {
-  const [selectedCourse, setSelectedCourse] = useState<string>("B.E. (FULL-TIME)");
+  const [selectedCourse, setSelectedCourse] = useState<string>("BE/BTECH. (FULL-TIME)");
 
   const handleSelectCourse = (courseName: string) => {
     setSelectedCourse(courseName);

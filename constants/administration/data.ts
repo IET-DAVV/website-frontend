@@ -29,8 +29,8 @@ export const directorData: DirectorProfile = {
     phone: "91-94253 17939",
   },
   qualifications: [
-    "B.E. (Hons.) in Electrical & Electronics Engineering from BITS Pilani – (1984)",
-    "B.E. (Hons.) in Electrical & Electronics Engineering from BITS Pilani – (1984)",
+    "BE/BTECH. (Hons.) in Electrical & Electronics Engineering from BITS Pilani – (1984)",
+    "BE/BTECH. (Hons.) in Electrical & Electronics Engineering from BITS Pilani – (1984)",
     "Ph.D. (Computer Engineering) from DAVV, Indore – (2007)",
   ],
   experience:
@@ -127,7 +127,7 @@ export const departments: Department[] = [
     phone: "+91 94253 22306",
     designation: "Professor and Head, Electronics and Telecommunication",
     background:
-      "B.E. (1982), M.E. (1985), Ph.D. (Electronics Engineering) (1996)",
+      "BE/BTECH. (1982), MTECH. (1985), Ph.D. (Electronics Engineering) (1996)",
     researchInterests:
       "Computer Networking, Computer Architecture, Performance evaluation of computer systems, Microcontrollers.",
   },
@@ -137,7 +137,7 @@ export const departments: Department[] = [
     email: "vtokekar@ietdavv.edu.in",
     phone: "+91 94253 17939",
     designation: "Professor and Head, Information Technology Department",
-    background: "B.E., M.E., Ph.D.",
+    background: "BE/BTECH., MTECH., Ph.D.",
     researchInterests:
       "Multimedia Communication, Performance Evaluation of Computer Communication Systems, Wireless Network Protocols.",
   },
@@ -147,7 +147,7 @@ export const departments: Department[] = [
     email: "atiwari@ietdavv.edu.in",
     phone: "+91 98269 41506",
     designation: "Professor and Head, Mechanical Engineering Department",
-    background: "B.E., M.Tech., Ph.D.",
+    background: "BE/BTECH., MTECH., Ph.D.",
     researchInterests:
       "Condition monitoring and diagnostic maintenance, Fault diagnosis of compressors & other rotodynamic machines, Tribology, Machine design, Material science, Vibration & noise control, Instrumentation & automatic control, Failure of Material.",
   },
@@ -158,7 +158,7 @@ export const departments: Department[] = [
     phone: "+91 96178 01687",
     designation:
       "Professor and Head, Electronics and Instrumentation Department",
-    background: "B.E., M.Tech., Ph.D.",
+    background: "BE/BTECH., MTECH., Ph.D.",
     researchInterests: "Image Processing, Thermodynamics of solid materials.",
   },
   {
@@ -167,7 +167,7 @@ export const departments: Department[] = [
     email: "glprajapati@ietdavv.edu.in",
     phone: "+91 98266 69205",
     designation: "Professor and Head, Computer Engineering Department",
-    background: "B.Tech., M.Tech., Ph.D.",
+    background: "BE/BTECH., MTECH., Ph.D.",
     researchInterests:
       "Data Structures and Algorithms, Machine Learning, Formal Language Theory, Automata Theory, Artificial Intelligence, Soft Computing, Bioinformatics.",
   },
@@ -177,7 +177,7 @@ export const departments: Department[] = [
     email: "sprakash@ietdavv.edu.in",
     phone: "+91 99771 86156",
     designation: "Professor and Head, Applied Science Department",
-    background: "M.Sc., M.Tech., Ph.D.",
+    background: "M.Sc., MTECH., Ph.D.",
     researchInterests:
       "Optical Metrology, Laser-based Instrumentation, Optical Networks.",
   },
@@ -187,7 +187,7 @@ export const departments: Department[] = [
     email: "pbansal@ietdavv.edu.in",
     phone: "+91 94250 45326",
     designation: "Professor and Head, Civil Engineering Department",
-    background: "B.E., M.Tech., Ph.D.",
+    background: "BE/BTECH., MTECH., Ph.D.",
     researchInterests:
       "Digital Forensics, Knowledge Management, Information Security, E-Commerce, Enterprise Resource Planning.",
   },

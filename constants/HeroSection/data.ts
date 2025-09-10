@@ -10,7 +10,7 @@ export const newsItems = [
     {
     label: "Counseling schedule session 2025-26 ",
     url: "https://ietdavv.edu.in/index.php/admission/admission-2025-26",
-    description: "(For B.Tech CSBS and BDesign program)",
+    description: "(For BE/BTECH CSBS and BDesign program)",
     isNew: false,
   },
   {
@@ -22,7 +22,7 @@ export const newsItems = [
   {
     label: "Academic Calendar 2025-26",
     url: "https://ietdavv.edu.in/index.php/academics/calender/i-yr-calender",
-    description: "(for B.Tech / M.Tech/ MSc/ PTDC)",
+    description: "(for BE/BTECH / MTECH/ MSc/ PTDC)",
     isNew: false,
   },
   {
@@ -48,12 +48,12 @@ export const announcementItems = [
   },{
     label: "Mandatory Registration for IKS on SWAYAM portal",
     url: "https://ietdavv.edu.in/index.php/academics/notices",
-    description: "(Notice for B.Tech. 2nd Year Students) ",
+    description: "(Notice for BE/BTECH. 2nd Year Students) ",
     isNew: false,
   },{
     label: "Admission Guidelines 2025-26",
     url: "https://ietdavv.edu.in/index.php/admission/admission-2025-26",
-    description: "(for candidates seeking admission in B.Tech) ",
+    description: "(for candidates seeking admission in BE/BTECH) ",
     isNew: true,
   },{
     label: "Centralized placement cell guidelines",
