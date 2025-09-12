@@ -43,7 +43,7 @@ const StackCards: React.FC = () => {
       backgroundImage: "/landing/Clubs/GDG_bg.png",
       exploreNow: "https://gdsc.ietdavv.edu.in/",
       socialLink: "https://www.instagram.com/gdgoc.ietdavv/",
-      rightRectangleName: "GDGOC",
+      rightRectangleName: "GDG",
     },
     {
       id: 2,
@@ -58,7 +58,7 @@ const StackCards: React.FC = () => {
       backgroundImage: "/landing/Clubs/ECell_bg.png",
       exploreNow: "https://www.ecellietdavv.in/",
       socialLink: "https://www.instagram.com/ecell_ietdavv/",
-      rightRectangleName: "Ecell",
+      rightRectangleName: "E CELL",
     },
     {
       id: 3,
@@ -88,7 +88,7 @@ const StackCards: React.FC = () => {
       backgroundImage: "/landing/Clubs/Robotronics_bg.png",
       exploreNow: "https://codingclub-ietdavv.com/",
       socialLink: "https://www.instagram.com/robotronics._iet/",
-      rightRectangleName: "Robotronics",
+      rightRectangleName: "ROBOTRONICS",
     },
     {
       id: 5,
@@ -118,7 +118,7 @@ const StackCards: React.FC = () => {
       backgroundImage: "/landing/Clubs/Visuals_bgn.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "IET\nVisuals",
+      rightRectangleName: "IET VISUALS",
     },
     {
       id: 7,
@@ -163,7 +163,7 @@ const StackCards: React.FC = () => {
       backgroundImage: "/landing/Clubs/cultural_bg.png",
       exploreNow: "https://designclub-ietdavv.com/",
       socialLink: "https://instagram.com/designclub_ietdavv",
-      rightRectangleName: "Cultural ",
+      rightRectangleName: "CULTURAL",
     },
   ];
 
@@ -171,6 +171,10 @@ const StackCards: React.FC = () => {
   const totalCards = showAllClubs ? cards.length + 1 : 1;
   const handleExploreClick = () => {
     setShowAllClubs(true);
+  };
+
+  const handleCollapseClick = () => {
+    setShowAllClubs(false);
   };
   return (
     <div className="min-h-screen bg-gray-100">
@@ -204,7 +208,8 @@ const StackCards: React.FC = () => {
                 }`}
                 style={{ zIndex: 1 }}
               >
-                <div className="w-full h-full bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div className="w-full h-[70vh] bg-white rounded-3xl shadow-2xl overflow-hidden">
+
                   <div className="flex flex-col lg:flex-row h-full">
                     {/* Content Section */}
                     <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
@@ -221,7 +226,7 @@ const StackCards: React.FC = () => {
                         className="rounded-md bg-blue-500 text-white p-2 w-32 transition-all duration-300 hover:transform hover:-translate-y-2 hover:scale-105"
                         disabled={showAllClubs}
                       >
-                        {showAllClubs ? "Exploring..." : "Explore Now"}
+                        {showAllClubs ? "Explore Clubs" : "Explore Now"}
                       </button>
                     </div>
 
@@ -288,14 +293,14 @@ const StackCards: React.FC = () => {
                     <div className="w-full h-full rounded-3xl shadow-2xl overflow-hidden border-2 border-gray-100 relative">
                       {/* Background Image */}
                       <div className="absolute inset-0">
-                        <Image
+                        {/* <Image
                           src={card.backgroundImage}
                           alt={card.title}
                           fill
                           className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-teal-600/20 to-blue-900/30 z-10" />
+                        /> */}
+                        <div className="absolute inset-0 bg-[#3B7A9E]  z-10" />
+                        {/* <div className="absolute inset-0 bg-gradient-to-br from-teal-600/20 to-blue-900/30 z-10" /> */}
                       </div>
 
                       {/* Content Container */}
@@ -389,18 +394,26 @@ const StackCards: React.FC = () => {
                         </div>
 
                         {/* Right Section - Name Rectangle */}
-                        <div className="flex items-center justify-center p-8">
-                          <div className="bg-gray-800 bg-opacity-70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-600">
+                        <div className="flex items-center justify-center p-4 md:p-8">
+                          <div className="bg-gray-800 bg-opacity-70 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-xl border border-gray-600 min-w-[120px] md:min-w-[140px]">
                             <div className="text-center">
-                              <div className="text-white text-4xl lg:text-5xl font-bold tracking-wider transform rotate-0">
+                              <div className={`text-white font-bold tracking-wider transform rotate-0 leading-tight ${
+                                card.rightRectangleName.length > 8 
+                                  ? 'text-2xl md:text-3xl' 
+                                  : 'text-3xl md:text-4xl lg:text-5xl'
+                              }`}>
                                 {card.rightRectangleName
-                                  .split("")
-                                  .map((letter, i) => (
-                                    <div
-                                      key={i}
-                                      className="block leading-tight"
-                                    >
-                                      {letter}
+                                  .split("\n")
+                                  .map((line, lineIndex) => (
+                                    <div key={lineIndex} className={lineIndex > 0 ? 'mt-1' : ''}>
+                                      {line.split("").map((letter, i) => (
+                                        <div
+                                          key={i}
+                                          className="block leading-tight"
+                                        >
+                                          {letter === " " ? "\u00A0" : letter}
+                                        </div>
+                                      ))}
                                     </div>
                                   ))}
                               </div>
@@ -415,6 +428,33 @@ const StackCards: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Collapse Button - appears when cards are expanded */}
+        {showAllClubs && (
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            onClick={handleCollapseClick}
+            className="fixed bottom-8 right-8 z-50 bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 15l7-7 7 7"
+              />
+            </svg>
+          </motion.button>
+        )}
       </div>
     </div>
   );

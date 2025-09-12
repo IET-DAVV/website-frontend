@@ -15,7 +15,7 @@ const Events: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-black px-4 py-10 md:py-20 md:px-16 flex flex-col lg:grid lg:grid-cols-3 lg:items-center gap-8">
+    <div className="bg-black px-4 py-10 md:py-20 md:px-16 flex flex-col lg:grid lg:grid-cols-3 lg:items-center gap-8 min-h-[70vh]">
       {/* Text Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

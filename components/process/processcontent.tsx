@@ -35,7 +35,7 @@ export default function ProcessContent() {
         className="space-y-4"
       >
         <h2 className="text-2xl text-black font-newyork font-bold mb-5">
-          Admission Process B.E. (FULL–TIME)
+          Admission Process BE/BTECH. (FULL–TIME)
         </h2>
 
         <div>
@@ -76,7 +76,7 @@ export default function ProcessContent() {
         className="space-y-4"
       >
         <h2 className="text-2xl font-bold font-newyork mb-5">
-          FOR POSTGRADUATE PROGRAM (M.E.)
+          FOR POSTGRADUATE PROGRAM (MTECH.)
         </h2>
 
         <p>

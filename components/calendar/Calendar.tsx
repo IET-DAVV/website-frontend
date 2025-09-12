@@ -130,11 +130,26 @@ const Calendar = () => {
                 <MdOutlineFileDownload className="text-white text-xl" />
               </a>
             </div>
-            <iframe
-              src={calenderData.years[selectedYear].PdfLink}
-              title={`PDF Viewer for ${selectedYear}`}
-              className="border-2 border-gray-300 h-[500px] w-full rounded-xl shadow-lg"
-            ></iframe>
+            {(() => {
+              const pdfLink = calenderData.years[selectedYear].PdfLink;
+              const isImage = /\.(jpeg|jpg|png|gif|bmp|webp)$/i.test(pdfLink);
+              
+              return isImage ? (
+                <div className="border-2 border-gray-300 h-[500px] w-full rounded-xl shadow-lg overflow-y-auto overflow-x-hidden">
+                  <img
+                    src={pdfLink}
+                    alt={`Calendar for ${selectedYear}`}
+                    className="w-full h-auto min-h-[500px] object-contain"
+                  />
+                </div>
+              ) : (
+                <iframe
+                  src={pdfLink}
+                  title={`PDF Viewer for ${selectedYear}`}
+                  className="border-2 border-gray-300 h-[500px] w-full rounded-xl shadow-lg"
+                ></iframe>
+              );
+            })()}
           </motion.div>
         )}
       </AnimatePresence>

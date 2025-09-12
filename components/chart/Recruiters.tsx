@@ -11,7 +11,7 @@ const Recruiters = () => {
     <div className="bg-white flex flex-col items-center justify-center space-y-6 sm:space-y-10 text-center py-12 sm:py-20 px-4">
       <div className="flex flex-col items-center justify-center space-y-1 sm:space-y-2">
         <h2
-          className={`text-3xl sm:text-5xl font-serif text-black font-newyork`}
+          className={`text-3xl sm:text-5xl text-black font-newyork`}
         >
           RECRUITERS
         </h2>

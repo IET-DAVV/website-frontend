@@ -32,8 +32,8 @@ interface Course {
 }
 
 const labelToKeyMap: Record<string, string> = {
-  "B.TECH (FULL-TIME)": "btech-full",
-  "B.TECH (PART-TIME)": "btech-part",
+  "BE/BTECH (FULL-TIME)": "btech-full",
+  "BE/BTECH (PART-TIME)": "btech-part",
   "M.TECH (FULL-TIME)": "me-full",
   "M.TECH (PART-TIME)": "me-part",
   "PHD":"phd",

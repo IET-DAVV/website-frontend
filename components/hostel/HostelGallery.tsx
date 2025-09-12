@@ -1,6 +1,8 @@
 'use client'
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Title from '../common/academics/Title';
 
 interface GalleryImage {
   id: number;
@@ -46,16 +48,14 @@ const GalleryCarousel = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="py-12 bg-white">
       {/* Header */}
-      <div className="text-center py-16">
-        <h1 className="text-6xl font-light text-light-blue font-newyork tracking-wider">
-          GALLERY
-        </h1>
+      <div className="text-center py-8">
+        <Title title="GALLERY" className="text-7xl leading-tight font-newyork" />
       </div>
 
       {/* Carousel Container */}
-      <div className="relative py-16">
+      <div className="relative py-4">
         <div className="max-w-7xl mx-auto px-8">
           {/* Navigation Buttons */}
           <button
@@ -88,39 +88,39 @@ const GalleryCarousel = () => {
             </svg>
           </button>
 
-          {/* Images Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 ease-in-out">
-            {getCurrentImages().map((image, index) => (
-              <div
-                key={image.id}
-                className="group cursor-pointer transform transition-all duration-300 hover:scale-105"
+          {/* Images Grid with Animation */}
+          <div className="overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 ease-in-out"
               >
-                <div className="relative aspect-[4/3] bg-gray-300 rounded-lg overflow-hidden shadow-lg">
-                  {/* Placeholder for actual images */}
-                  <div className="w-full h-full bg-gray-400 flex items-center justify-center">
-                    <div className="text-gray-600 text-sm font-medium">
-                      Image {image.id}
+                {getCurrentImages().map((image) => (
+                  <div
+                    key={image.id}
+                    className="group cursor-pointer transform transition-all duration-300 hover:scale-105"
+                  >
+                    <div className="relative aspect-[4/3] bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                      <div className="w-full h-full bg-gray-400 flex items-center justify-center">
+                        <div className="text-gray-600 text-sm font-medium">
+                          Image {image.id}
+                        </div>
+                      </div>
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <div className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {image.title}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Uncomment below when you have actual images */}
-                  {/* <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  /> */}
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                    <div className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {image.title}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Slide Indicators */}
@@ -132,7 +132,7 @@ const GalleryCarousel = () => {
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index
                     ? 'bg-teal-600 scale-125'
-                    : 'bg-white bg-opacity-60 hover:bg-opacity-80'
+                    : 'bg-black bg-opacity-60 hover:bg-opacity-45'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

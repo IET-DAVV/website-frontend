@@ -105,7 +105,7 @@ const Footer = () => {
         {/* Sitemap */}
         <div className="flex flex-col items-start space-y-5 p-5">
           <h1 className="font-bold text-white text-2xl">More Information</h1>
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-row flex-wrap gap-4">
             {moreInformation.map((link, index) => (
               <motion.div
                 key={link.name}
@@ -125,16 +125,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Miscellaneous */}
-        <div className="flex flex-col items-start justify-start space-y-5 p-5">
-          <h1 className="font-medium text-white text-lg">Miscellaneous</h1>
-          <Link
-            href="/footer/grievance"
-            className="font-light text-light-gray text-sm hover:text-light-blue"
-          >
-            Grievance
-          </Link>
-        </div>
       </div>
 
       {/* Bottom Strip */}

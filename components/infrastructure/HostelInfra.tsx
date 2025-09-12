@@ -1,92 +1,104 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const HostelsPage = () => {
   const hostelsData = [
     {
       id: 1,
-      name: 'Visvesvaraya (Boys)',
-      image: '/infrastructure/hostels/b1.jpg',
-      description: 'Hostel 1 is assigned to first year (freshman) students. It features double or triple occupancy rooms. Like the other hostels it has study furniture, Wi-Fi, and access to the common mess. It is part of'
+      name: "Visvesvaraya (Boys)",
+      image: "/infrastructure/hostels/b1.jpg",
+      description:
+        "First-year hostel with double/triple occupancy, study furniture, Wi-Fi, and access to the common mess.",
     },
     {
       id: 2,
-      name: 'Satvendra Nath Bose (Boys)',
-      image: '/infrastructure/hostels/b2.jpg',
-      description: 'Hostel 3 houses second year undergraduate students. Its nearly identical layout and facilities to Hostel 1 with two students per room and furnished'
+      name: "Satvendra Nath Bose (Boys)",
+      image: "/infrastructure/hostels/b2.jpg",
+      description:
+        "Second-year hostel with twin-sharing rooms, furnished interiors, and common amenities.",
     },
     {
       id: 3,
-      name: 'Ramanujan (Boys)',
-      image: '/infrastructure/hostels/b3.jpg',
-      description: 'Hostel 2 is reserved for third year students. Its rooms also accommodate two students each. In all other respects (furnishings, water supply, Wi-Fi, recreation and laundry facilities) it'
+      name: "Ramanujan (Boys)",
+      image: "/infrastructure/hostels/b3.jpg",
+      description:
+        "Third-year hostel with two-student rooms, Wi-Fi, laundry, and recreation facilities.",
     },
     {
       id: 4,
-      name: 'Vikram Sarabhai (Boys)',
-      image: '/infrastructure/hostels/b4.jpg',
-      description: 'Hostel 4 is set aside for fourth year students. Unlike the other hostels, Hostel 4 provides single occupancy rooms (one student per room). This offers seniors'
-    }
+      name: "Vikram Sarabhai (Boys)",
+      image: "/infrastructure/hostels/b4.jpg",
+      description:
+        "Final-year hostel offering single occupancy rooms for added privacy and comfort.",
+    },
   ];
 
   const girlsHostelData = [
     {
       id: 5,
-      name: 'A-BLOCK (Girls)',
-      image: '/infrastructure/hostels/b5.png',
-      description: 'Well-Maintained with Security & Warden Presence. Designed for comfort and safety, this hostel has clean washrooms, CCTV surveillance, and in-hostel laundry. Ideal'
+      name: "A-Block (Girls)",
+      image: "/infrastructure/hostels/b5.png",
+      description:
+        "Spacious rooms with security, warden presence, CCTV surveillance, and in-hostel laundry.",
     },
     {
       id: 6,
-      name: 'A-BLOCK (Girls)',
-      image: '/infrastructure/hostels/b5.png',
-      description: 'Well-Maintained with Security & Warden Presence. Designed for comfort and safety, this hostel has clean washrooms, CCTV surveillance, and in-hostel laundry. Ideal'
-    }
+      name: "B-Block (Girls)",
+  image: "/infrastructure/hostels/b5.png",
+      description:
+        "Comfortable rooms with modern amenities, dedicated study areas, and mess facilities.",
+    },
   ];
 
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-7xl font-newyork text-center text-gray-800 mb-12" >
+        <h1 className="text-7xl font-newyork text-center text-gray-800 mb-12">
           HOSTELS
         </h1>
         <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {/* Boys Hostels */}
           <div className="grid m-2 grid-cols-2">
             {hostelsData.map((hostel) => (
-              <div key={hostel.id} className="relative rounded-lg overflow-hidden group m-1">
+              <div
+                key={hostel.id}
+                className="relative rounded-lg overflow-hidden group m-1 shadow-lg hover:shadow-xl transition duration-300"
+              >
                 <Image
                   alt={`${hostel.name} Hostel`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
                   src={hostel.image}
                   width={400}
                   height={300}
-                  
                 />
-                <div className="absolute inset-0 bg-opacity-50 flex flex-col justify-end p-6 text-white transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 text-white transition-all duration-300">
                   <h2 className="text-2xl font-bold mb-2">{hostel.name}</h2>
-                  <p className="text-sm opacity-0 group-hover:opacity-100 group-hover:[animation:typing_2s_steps(40,_end)_forwards] overflow-hidden whitespace-nowrap border-r-2 border-white">
-  {hostel.description}
-</p>
-
+                  <p className="text-sm max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                    {hostel.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Girls Hostels */}
           <div className="grid grid-cols-2 m-2">
             {girlsHostelData.map((hostel) => (
-              <div key={hostel.id} className="relative rounded-lg overflow-hidden group m-1">
+              <div
+                key={hostel.id}
+                className="relative rounded-lg overflow-hidden group m-1 shadow-lg hover:shadow-xl transition duration-300"
+              >
                 <Image
                   alt={`${hostel.name} Hostel`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
                   src={hostel.image}
                   width={400}
                   height={300}
-                  
                 />
-                <div className="absolute inset-0 bg-opacity-50 flex flex-col justify-end p-6 text-white transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 text-white transition-all duration-300">
                   <h2 className="text-2xl font-bold mb-2">{hostel.name}</h2>
-                  <p className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-sm max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
                     {hostel.description}
                   </p>
                 </div>
@@ -95,13 +107,13 @@ const HostelsPage = () => {
           </div>
         </div>
 
+        {/* Button */}
         <div className="text-center mt-12">
           <Link href="/hostel">
-          <button className="bg-light-blue text-black font-semibold py-3 px-8 rounded-lg hover:bg-dark-blue transition-colors duration-300">
-            View More
-          </button>
+            <button className="bg-light-blue text-white font-semibold py-3 px-8 rounded-lg hover:bg-dark-blue transition-colors duration-300">
+              View More
+            </button>
           </Link>
-          
         </div>
       </div>
     </div>

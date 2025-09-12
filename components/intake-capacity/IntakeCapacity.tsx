@@ -11,7 +11,7 @@ const playfair = Playfair_Display({
 });
 
 const IntakeCapacity: React.FC = () => {
-  const [selectedCourse, setSelectedCourse] = useState<string>("B.E. (FULL-TIME)");
+  const [selectedCourse, setSelectedCourse] = useState<string>("BE/BTECH. (FULL-TIME)");
 
   const handleSelectCourse = (courseName: string) => {
     setSelectedCourse(courseName);
@@ -20,7 +20,7 @@ const IntakeCapacity: React.FC = () => {
   return (
     <div className="space-y-8 py-10">
       <motion.h1
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         className={`${playfair.className} flex justify-center text-4xl sm:text-6xl`}

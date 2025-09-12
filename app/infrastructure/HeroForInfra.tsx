@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import he from 'he';
+import he from "he";
 import React, { useState } from "react";
 
 const HeroInfra = () => {
@@ -10,7 +10,7 @@ const HeroInfra = () => {
     {
       id: 1,
       name: "M Block",
-      image: "/infrastructure/blocks/mblock aerial.jpg",
+      image: "/infrastructure/blocks/mblock_aerial.jpg",
       alt: "M Block aerial view",
       description: `Administrative &amp; Institutional Backbone
 M - Block is the central administrative and utility block of IET DAVV. It includes:
@@ -35,7 +35,7 @@ A-Block is one of the oldest academic blocks at IET DAVV, historically used for 
     {
       id: 3,
       name: "B Block",
-      image: "/infrastructure/blocks/bBlock aerial.jpg",
+      image: "/infrastructure/blocks/Bblock_aerial.jpg",
       alt: "B Block aerial view",
       description: `Computer Science + Cyber &amp; IT Infrastructure Hub
 B-Block is dedicated to the Computer Science and Information Technology departments. In addition to smart classrooms and coding labs, this block handles several technical backend responsibilities such as the institute&#8217;s website management, Wi-Fi ID generation, and cyber systems coordination. It plays a key role in digital administration and student tech access.`,
@@ -70,18 +70,18 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
     if (hoveredBlock !== null) {
       const block = campusBlocks.find((b) => b.id === hoveredBlock);
       return {
-        heading: block?.name || "Academic Blocks",
-        subheading: "",
+        heading: block?.name || "Academic",
+        subheading: "Blocks",
         description:
           block?.description ||
-          "IET's overall academics part takes place in these academic blocks. Have a glimpse to each one of them",
+          "IET's overall academics part takes place in these 6 blocks. Have a glimpse at each one of them",
       };
     }
     return {
-      heading: "Academic Blocks",
-      subheading: "Overview",
+      heading: "Academic",
+      subheading: "Blocks",
       description:
-        "IET's overall academics part takes place in these academic blocks. Have a glimpse to each one of them",
+        "IET's overall academics part takes place in these 6 blocks. Have a glimpse at each one of them",
     };
   };
 
@@ -94,7 +94,7 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-newyork sm:text-5xl lg:text-6xl font-light text-light-blue mb-4 tracking-wide">
-            INFRASTRUCTURE
+            FACILITIES
           </h1>
         </div>
 
@@ -158,3 +158,4 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
 };
 
 export default HeroInfra;
+

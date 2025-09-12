@@ -23,7 +23,7 @@ const RollList = () => {
   let pdfLink: string | null = null;
   if (yearData) {
     if ("PdfLink" in yearData) {
-      pdfLink = typeof yearData.PdfLink === "string" ? yearData.PdfLink : null; // Direct link for years like M.E., M.Sc.
+      pdfLink = typeof yearData.PdfLink === "string" ? yearData.PdfLink : null; // Direct link for years like MTECH., M.Sc.
     } else if (selectedBranch && yearData[selectedBranch as keyof typeof yearData]) {
       pdfLink = (yearData[selectedBranch as keyof typeof yearData] as any).PdfLink; // Link for a selected branch
     }

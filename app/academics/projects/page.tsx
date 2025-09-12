@@ -4,7 +4,7 @@ export default function ProjectsPage() {
   return (
     <main className="p-6 max-w-5xl mx-auto">
       <h1
-        className="text-center text-7xl font-extralight font-mono font-newyork"
+        className="text-center text-7xl font-extralight font-newyork"
         style={{ color: "#3B7A9E" }}
       >
         PROJECTS

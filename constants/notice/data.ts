@@ -12,7 +12,7 @@ export const admissionDownloads = [
         file: "https://www.ietdavv.edu.in/images/downloads/project_fellow/Project_Fellow_advertisement_Under_Dr_Rachana_Gupta_IET_DAVV.pdf",
       },
       {
-        label: "Notice regarding classes for B.Tech I Year CSBS students",
+        label: "Notice regarding classes for BE/BTECH I Year CSBS students",
         extralabel: "",
         file: "https://www.ietdavv.edu.in/images/Notices/Notice_2024/Btech_CSBCS_Classes_Sep2024.pdf",
       },

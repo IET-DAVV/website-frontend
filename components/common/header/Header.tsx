@@ -29,41 +29,41 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
     <header className={`${
       isHome ? 'absolute' : 'relative' 
-    } z-[999] w-full px-6 py-2 ${
+    } z-[30] w-full px-6 py-2 md:py-4 ${
       isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
     }`}>
       
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 md:space-x-3">
           <Image
-            src={"/logo.svg"}
-            className="w-12 h-12"
+            src="/logo.svg"
+            className="w-12 h-12 md:w-16 md:h-16"
             alt="logo"
-            width={1000}
-            height={1000}
+            width={64}
+            height={64}
           />
           <div className={`${manrope.className} leading-tight`}>
-            <p className="text-sm font-bold whitespace-nowrap">{LOGO}</p>
-            <p className="text-xs text-black/80">{LOGO_SUBTITLE}</p>
+            <p className="text-sm font-bold md:text-lg md:font-extrabold whitespace-nowrap">{LOGO}</p>
+            <p className="text-xs md:text-sm font-semibold text-black/80">{LOGO_SUBTITLE}</p>
           </div>
         </div>
 
         {/* Hamburger (Mobile Only) */}
-        <div
+        <button
           className="md:hidden text-3xl cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <IoClose /> : <IoMenu />}
-        </div>
+        </button>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex flex-row justify-center items-center space-x-4 relative">
+        <ul className="hidden md:flex flex-row justify-center items-center space-x-6">
           {links.map((link, idx) => (
             <li key={link.name} className="relative">
               {link.dropdown ? (
                 <button
-                  className={`text-sm bg-[#f8f8f8B3] hover:border-b-2 flex items-center gap-1 ${
+                  className={`text-sm md:text-base hover:border-b-2 flex items-center gap-1 ${
                     isHome ? "border-black" : "border-white/80"
                   }`}
                   onMouseEnter={() => {
@@ -71,9 +71,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                     setOpenDropdown(idx);
                   }}
                   onMouseLeave={() => {
-                    hoverTimeout = setTimeout(() => {
-                      setOpenDropdown(null);
-                    }, 200);
+                    hoverTimeout = setTimeout(() => setOpenDropdown(null), 200);
                   }}
                   onClick={(e) => e.preventDefault()}
                 >
@@ -84,38 +82,35 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                 </button>
               ) : (
                 <Link
-                  href={link.href} // Ensure href is correctly passed
-                  className={`block w-full text-left text-sm py-2 border-b border-gray-300 ${
-                    isHome ? "hover:text-black" : "hover:text-white"
-                  }`} // Added block and w-full for proper click area
-                  onClick={() => { // Added onClick to close menu on navigation
- setMenuOpen(false);
-                  }}
+                  href={link.href}
+                  className={`block text-sm md:text-base py-2 transition-colors duration-200 ${
+                    isHome ? "hover:text-black text-black" : "hover:text-white"
+                  }`}
+                  onClick={() => setMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
               )}
 
+              {/* Dropdown */}
               {link.dropdown && openDropdown === idx && (
                 <ul
                   className={`absolute left-0 mt-5 p-2 w-[200px] ${
-                    isHome ? " bg-[#f8f8f8ca]" : "text-black bg-white"
+                    isHome ? " bg-[#f8f8f8]" : "text-black bg-white"
                   } shadow-md border border-gray-200 rounded-b-md z-50`}
                   onMouseEnter={() => {
                     clearTimeout(hoverTimeout);
                     setOpenDropdown(idx);
                   }}
                   onMouseLeave={() => {
-                    hoverTimeout = setTimeout(() => {
-                      setOpenDropdown(null);
-                    }, 200);
+                    hoverTimeout = setTimeout(() => setOpenDropdown(null), 200);
                   }}
                 >
                   {link.dropdown.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className={`block px-2 py-2 text-black text-sm hover:bg-gray-100 rounded`}
+                        className="block px-3 py-2 text-sm md:text-base rounded hover:bg-gray-100 transition-colors duration-200"
                         onClick={() => setOpenDropdown(null)}
                       >
                         {item.name}
@@ -133,33 +128,26 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
       {menuOpen && (
         <ul
           className={`md:hidden mt-4 flex flex-col space-y-2 transition-all duration-300 ${
-            isHome ? "bg-[#f8f8f8B3] text-black" : "bg-[#3B7A9E] text-white"
+            isHome ? "bg-[#f8f8f8] text-black" : "bg-[#3B7A9E] text-white"
           } p-4 rounded shadow-md z-50`}
         >
           {links.map((link, idx) => (
             <li key={link.name} className="relative">
               {link.dropdown ? (
                 <button
-                  className={`w-full text-left text-sm py-2 border-b border-gray-300 flex justify-between items-center ${
-                    isHome ? "hover:text-black" : "hover:text-white"
-                  }`}
-                  onClick={() => {
-                    setOpenDropdown(openDropdown === idx ? null : idx);
-                  }}
+                  className="w-full flex justify-between items-center text-sm py-2 border-b border-gray-300"
+                  onClick={() =>
+                    setOpenDropdown(openDropdown === idx ? null : idx)
+                  }
                 >
                   {link.name}
-                  {link.dropdown && (
-                    <span className="text-sm">
-                      {openDropdown === idx ? "▲" : "▼"}
-                    </span>
-                  )}
+                  <span>{openDropdown === idx ? "▲" : "▼"}</span>
                 </button>
               ) : (
                 <Link
                   href={link.href}
-                  className={`text-sm bg-transparent hover:border-b-2 ${
-                    isHome ? "border-black" : "border-white/80"
-                  }`}
+                  className="block text-sm py-2 transition-colors duration-200"
+                  onClick={() => setMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
@@ -171,14 +159,13 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="block text-sm py-1 pl-4  hover:underline"
+                        className="block text-sm py-1 pl-4 hover:underline"
                         onClick={() => {
                           setOpenDropdown(null);
                           setMenuOpen(false);
                         }}
                       >
                         {item.name}
-                        <hr className="border-gray-300" />
                       </Link>
                     </li>
                   ))}

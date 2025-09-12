@@ -85,10 +85,10 @@ const GrievancePage = () => {
             className="w-full p-2 border border-gray-300 rounded-md text-sm"
           >
             <option value="">Select Course</option>
-            <option value="B.Tech CSE">B.Tech CSE</option>
-            <option value="B.Tech IT">B.Tech IT</option>
-            <option value="B.Tech ECE">B.Tech ECE</option>
-            <option value="M.Tech">M.Tech</option>
+            <option value="BE/BTECH CSE">BE/BTECH CSE</option>
+            <option value="BE/BTECH IT">BE/BTECH IT</option>
+            <option value="BE/BTECH ECE">BE/BTECH ECE</option>
+            <option value="MTECH">MTECH</option>
             <option value="MBA">MBA</option>
             <option value="PhD">PhD</option>
           </select>

@@ -117,7 +117,7 @@ const ProgramOutcomes: React.FC<ProgramOutcomesProps> = ({ selectedCourse, selec
     },
     "me-full": {
       "Computer Engineering with specialization in Software Engineering": [
-        "IET DAVV’s M.E. in Software Engineering begins with advanced architecture, UML, and design patterns, preparing students for enterprise-level system design and integration projects.",
+        "IET DAVV’s MTECH. in Software Engineering begins with advanced architecture, UML, and design patterns, preparing students for enterprise-level system design and integration projects.",
         "IET DAVV enhances proficiency in Java, concurrency, web frameworks, and API development through structured labs and practical software construction exercises.",
         "IET DAVV offers electives in cloud computing, machine learning, DevOps, and mobile computing, helping students specialize in high-demand areas of today's software and systems engineering domain.",
         "IET DAVV emphasizes teamwork, Agile project management, and documentation by embedding industry workflows such as Scrum and quality assurance within its course delivery model.",
@@ -171,7 +171,7 @@ const ProgramOutcomes: React.FC<ProgramOutcomesProps> = ({ selectedCourse, selec
     },
     "me-part": {
       "Computer Engineering with specialization in Software Engineering": [
-        "IET DAVV’s M.E. in Software Engineering begins with advanced architecture, UML, and design patterns, preparing students for enterprise-level system design and integration projects.",
+        "IET DAVV’s MTECH. in Software Engineering begins with advanced architecture, UML, and design patterns, preparing students for enterprise-level system design and integration projects.",
         "IET DAVV enhances proficiency in Java, concurrency, web frameworks, and API development through structured labs and practical software construction exercises.",
         "IET DAVV offers electives in cloud computing, machine learning, DevOps, and mobile computing, helping students specialize in high-demand areas of today's software and systems engineering domain.",
         "IET DAVV emphasizes teamwork, Agile project management, and documentation by embedding industry workflows such as Scrum and quality assurance within its course delivery model.",

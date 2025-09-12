@@ -1,11 +1,15 @@
-import React from 'react'
-import Page from "@/components/facultyPage/brachFaculty"
+'use client';
+import React, { Suspense } from 'react';
+import Page from "@/components/facultyPage/brachFaculty";
+
 const page = () => {
   return (
     <div>
-      <Page/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Page />
+      </Suspense>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
