@@ -177,7 +177,7 @@ const StackCards: React.FC = () => {
     setShowAllClubs(false);
   };
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-[80vh] bg-gray-100">
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
         <div className="text-center mb-9">
