@@ -1,9 +1,9 @@
-import Hostel from "@/components/infrastructure/hostel";
+import HostelInfra from "@/components/infrastructure/HostelInfra";
 
 const page = () => {
   return (
     <div className=" overflow-x-hidden bg-white">
-      <Hostel />
+      <HostelInfra />
     </div>
   );
 };

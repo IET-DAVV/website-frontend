@@ -22,7 +22,7 @@ interface TestTimetableData {
 export const testtimetableData: TestTimetableData = {
   courses: {
     BE_FULL_TIME: {
-      courseName: "B.E (FULL TIME)",
+      courseName: "BE/BTECH (FULL TIME)",
       branches: {
         "Computer Science": {
           years: {
@@ -247,7 +247,7 @@ export const testtimetableData: TestTimetableData = {
       },
     },
     BE_PART_TIME: {
-      courseName: "B.E (PART TIME)",
+      courseName: "BE/BTECH (PART TIME)",
       branches: {
         "Computer Science": {
           years: {
@@ -473,7 +473,7 @@ export const testtimetableData: TestTimetableData = {
     },
 
     ME: {
-      courseName: "M.E",
+      courseName: "MTECH",
       branches: {
         "Computer Engineering (Software Engineering)": {
           years: {

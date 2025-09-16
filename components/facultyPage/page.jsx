@@ -8,7 +8,7 @@ import Title from "../common/academics/Title"
 const page = () => {
   return (
     <>
-      <Title title="FACULTY" className="text-7xl leading-tight font-newyork" />
+      <Title title="DEPARTMENT" className="text-7xl leading-tight font-newyork" />
 
 <div className='ml-40 mr-40 p-4 text-lg font-medium text-[#434343]'>IET-DAVV has <span className=' text-black font-bold'>Eight major departments</span> with different engineering & Science streams. We have more than <span className='font-bold text-black '>85 faculty</span> members including (Regular,  Visiting & Adoc Faculty Members)</div>
 

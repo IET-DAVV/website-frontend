@@ -5,7 +5,7 @@ export const programsData = [
       title: "Bachelor’s of Technology",
       subtitle: "FULL TIME",
       description:
-        "A B.Tech full time program offering various specializations in engineering fields.",
+        "A BE/BTECH full time program offering various specializations in engineering fields.",
       duration: "4 years",
       students: "400",
       specializations: [
@@ -23,7 +23,7 @@ export const programsData = [
       name: "btech-part",
       title: "Bachelor’s of Technology",
       subtitle: "PART TIME",
-      description: "Part-time B.Tech for working professionals.",
+      description: "Part-time BE/BTECH for working professionals.",
       duration: "5 years",
       students: "150",
       specializations: [
@@ -38,7 +38,7 @@ export const programsData = [
       name: "me-full",
       title: "Master’s of Technology",
       subtitle: "FULL TIME",
-      description: "Full time M.E. program with advanced technical knowledge.",
+      description: "Full time MTECH. program with advanced technical knowledge.",
       duration: "2 years",
       students: "120",
       specializations: [
@@ -70,7 +70,7 @@ export const programsData = [
       title: "Master’s of Technology",
       subtitle: "PART TIME",
       description:
-        "Master of Technology (M.Tech) is a postgraduate degree in engineering and technology, focusing on advanced knowledge and practical skills in a specific technical field.",
+        "Master of Technology (MTECH) is a postgraduate degree in engineering and technology, focusing on advanced knowledge and practical skills in a specific technical field.",
       duration: "3 years",
       students: "100",
       specializations: [

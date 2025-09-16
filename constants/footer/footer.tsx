@@ -42,22 +42,22 @@ export const quickFindings = [
     name: "AICTE Feedback",
     value: "https://dauniv.ac.in/",
   },
-  {
-    name: "ICC",
-    value: "/footer/administration",
-  },
-  {
-    name: "Discipline Committee",
-    value: "/footer/administration",
-  },
-  {
-    name: "IPR Cell",
-    value: "/footer/administration",
-  },
-  {
-    name: "Anti Ragging",
-    value: "/footer/antiRagging",
-  },
+  // {
+  //   name: "ICC",
+  //   value: "/footer/administration",
+  // },
+  // {
+  //   name: "Discipline Committee",
+  //   value: "/footer/administration",
+  // },
+  // {
+  //   name: "IPR Cell",
+  //   value: "/footer/administration",
+  // },
+  // {
+  //   name: "Anti Ragging",
+  //   value: "/footer/antiRagging",
+  // },
 ];
 
 export const moreInformation = [

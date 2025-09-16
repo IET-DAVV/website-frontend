@@ -18,25 +18,32 @@ const Achievements = () => {
                           font-extrabold  bg-clip-text 
                           drop-shadow-sm"
               />
-              <h1 className="mt-3 sm:mt-4 text-sm text-left sm:text-base md:text-lg text-gray-600 
-                           max-w-2xl mx-auto lg:mx-0">
-                Celebrating excellence, innovation, and outstanding contributions 
-                that shape our community and drive progress forward.
+              <h1
+                className="mt-3 sm:mt-4 text-sm text-left sm:text-base md:text-lg text-gray-600 
+                           max-w-2xl mx-auto lg:mx-0"
+              >
+                Celebrating excellence, innovation, and outstanding
+                contributions that shape our community and drive progress
+                forward.
               </h1>
             </div>
-            
+
             {/* Optional decorative element */}
             <div className="hidden lg:flex justify-center items-center">
-              <div className="w-64 h-64 rounded-full bg-[#3B7A9E]
-                             opacity-10 blur-3xl"></div>
+              <div
+                className="w-64 h-6 rounded-full bg-[#3B7A9E]
+                             opacity-10 blur-3xl"
+              ></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Carousel Section */}
-      <div className="bg-[#3B7A9E]
-                     px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div
+        className="bg-[#3B7A9E]
+                     px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"
+      >
         <div className="max-w-7xl mx-auto">
           <Slides />
         </div>
@@ -44,6 +51,5 @@ const Achievements = () => {
     </div>
   );
 };
-
 
 export default Achievements;

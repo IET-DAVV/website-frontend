@@ -21,14 +21,14 @@ export const examtimetableData: ExamTimeTableData = {
     "Exam Timetable": {
       section: "Exam Timetable",
       branches: {
-        "BTECH I YEAR": {
+        "BE/BTECH I YEAR": {
           sections: {
             "1st Year": {
               PdfLink: "http://www.pdf995.com/samples/pdf.pdf",
             },
           },
         },
-        "BTECH II-IV YEAR": {
+        "BE/BTECH II-IV YEAR": {
           sections: {
             "2nd- 4th Year": {
               PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
@@ -41,14 +41,14 @@ export const examtimetableData: ExamTimeTableData = {
     "Practical Timetable": {
       section: "Practical Timetable",
       branches: {
-        "BTECH I YEAR": {
+        "BE/BTECH I YEAR": {
           sections: {
             "1st Year": {
               PdfLink: "https://example.com/practical/cse-1st.pdf",
             }
           },
         },
-        "BTECH II-IV YEAR": {
+        "BE/BTECH II-IV YEAR": {
           sections: {
             "2nd- 4th Year": {
               PdfLink: "http://www.pdf995.com/samples/pdfeditsample.pdf",
@@ -69,12 +69,12 @@ export const notice = [
     items: [
       {
         label: "Notice regarding schedule of viewing answer-books for review  ",
-        extralabel: "(for BE I Year-IVYear students)",
+        extralabel: "(for BE/BTECH I Year-IVYear students)",
         file: "https://www.ietdavv.edu.in/images/new_images/download.png",
       },
       {
         label: "Notice regarding observation of answer-books",
-        extralabel: " (for BE II Year / III Year / IVYear students) ",
+        extralabel: " (for BE/BTECH II Year / III Year / IVYear students) ",
         file: "https://www.ietdavv.edu.in/images/new_images/download.png",
       },
       {

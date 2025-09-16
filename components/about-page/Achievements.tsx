@@ -4,7 +4,7 @@ import AchievementsSlider from "./AchievementsSlider"; // ✅ correct import
 
 const Achievements = () => {
   return (
-    <div className="bg-white py-12 px-4 text-center">
+    <div className="bg-white py-12 px-4 text-center min-h-[70vh]">
       <h1 className="text-4xl font-bold mb-10">ACHIEVEMENTS</h1>
       <AchievementsSlider /> {/* ✅ Use only this */}
     </div>

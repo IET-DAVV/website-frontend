@@ -69,7 +69,7 @@ const UpperHeader = () => {
             {UPPER_HEADER_LINKS.map((link) => (
               <div key={link.name} className="relative group">
                 {link.dropdown ? (
-                  <div className="flex items-center space-x-1 cursor-pointer hover:border-b-2 hover:border-white text-xs">
+                  <div className="flex ab items-center space-x-1 cursor-pointer hover:border-b-2 hover:border-white text-xs">
                     <span>{link.name}</span>
                     <span className="transition-transform duration-200 group-hover:rotate-180">
                       ▼

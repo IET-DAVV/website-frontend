@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 
 const ProgramsOffered: React.FC = () => {
   const searchParams = useSearchParams();
-  const courseQuery = searchParams.get("course") || "B.TECH (FULL-TIME)";
+  const courseQuery = searchParams.get("course") || "BE/BTECH (FULL-TIME)";
 
   const [selectedCourse, setSelectedCourse] = useState<string>(courseQuery);
 

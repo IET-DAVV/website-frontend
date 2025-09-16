@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Title from "../common/academics/Title";
 
 interface HostelData {
   id: number;
@@ -147,7 +148,7 @@ const HostelComponent = () => {
           transition={{ duration: 0.8 }}
           className="text-6xl font-newyork font-light text-center mb-12 text-light-blue tracking-widest"
         >
-          HOSTEL
+          <Title title="HOSTEL" className="text-7xl leading-tight font-newyork" />
         </motion.h1>
 
         {/* Tab Navigation */}

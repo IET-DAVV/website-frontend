@@ -15,7 +15,7 @@ const Events: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-black px-4 py-10 md:py-20 md:px-16 flex flex-col lg:grid lg:grid-cols-3 lg:items-center gap-8">
+    <div className="bg-black px-4 py-0 md:py-2 md:px-16 flex flex-col lg:grid lg:grid-cols-3 lg:items-center gap-8">
       {/* Text Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -35,32 +35,19 @@ const Events: React.FC = () => {
 
       {/* Masonry Image Grid */}
       <div className="w-full lg:col-span-2">
-        {/* This check prevents the masonry from rendering on the server, fixing the error */}
         {isClient && (
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 1, 750: 2, 1024: 3 }}
           >
             <Masonry gutter="20px">
-              {[
-                null,
-                null,
-                null,
-                "image1",
-                "image2",
-                null,
-                null,
-                "image3",
-                null,
-              ].map((key, index) => (
+              {["image1", "image2", "image3"].map((key, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`rounded-lg w-full overflow-hidden ${
-                    index % 2 === 1 ? "h-[150px]" : "h-[250px] md:h-[300px]"
-                  }`}
+                  className="rounded-lg overflow-hidden w-full h-72"
                 >
                   {key ? (
                     <Image

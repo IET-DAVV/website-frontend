@@ -5,7 +5,8 @@ import "@/styles/fonts.css";
 import Footer from "@/components/common/footer/Footer";
 import HeaderContainer from "@/containers/header/Header";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
-import PageWrapper from "@/components/animations/PageWrapper"; // ✅ Add this
+import PageWrapper from "@/components/animations/PageWrapper";
+// import { PreloadResources } from "@/components/common/PreloadResources";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -18,6 +19,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  // Add performance hints
+  other: {
+    "dns-prefetch": "https://www.ietdavv.edu.in",
+    "preconnect": "https://fonts.googleapis.com",
+    "preload": "/landing/mblock.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,11 +34,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Preload critical resources */}
+        <link rel="preload" href="/landing/mblock.png" as="image" />
+        <link rel="dns-prefetch" href="//www.ietdavv.edu.in" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </head>
       <body className="bg-white" suppressHydrationWarning>
         <div className={manrope.className}>
           <AuthProvider>
             <HeaderContainer />
-            {/* ✅ Wrap main content with PageWrapper */}
+            {/* <PreloadResources /> */}
             <PageWrapper>
               <main>{children}</main>
             </PageWrapper>

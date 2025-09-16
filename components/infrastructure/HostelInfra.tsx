@@ -45,7 +45,7 @@ const HostelsPage = () => {
     {
       id: 6,
       name: "B-Block (Girls)",
-      image: "/infrastructure/hostels/b6.png",
+  image: "/infrastructure/hostels/b5.png",
       description:
         "Comfortable rooms with modern amenities, dedicated study areas, and mess facilities.",
     },
@@ -110,7 +110,7 @@ const HostelsPage = () => {
         {/* Button */}
         <div className="text-center mt-12">
           <Link href="/hostel">
-            <button className="bg-light-blue text-black font-semibold py-3 px-8 rounded-lg hover:bg-dark-blue transition-colors duration-300">
+            <button className="bg-light-blue text-white font-semibold py-3 px-8 rounded-lg hover:bg-dark-blue transition-colors duration-300">
               View More
             </button>
           </Link>

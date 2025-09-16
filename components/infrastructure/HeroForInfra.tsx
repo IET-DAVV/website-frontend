@@ -4,6 +4,7 @@ import he from "he";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Computer } from "lucide-react";
+import Title from "../common/academics/Title";
 
 const HeroInfra = () => {
   const [hoveredBlock, setHoveredBlock] = useState<number | null>(null);
@@ -37,7 +38,7 @@ A-Block is one of the oldest academic blocks at IET DAVV, historically used for 
   {
     id: 3,
     name: "B Block",
-    image: "/infrastructure/blocks/bBlock aerial.jpg",
+  image: "/infrastructure/blocks/Bblock_aerial.jpg",
     alt: "B Block aerial view",
     description: `Computer Science + Cyber &amp; IT Infrastructure Hub
 B-Block is dedicated to the Computer Science and Information Technology departments. In addition to smart classrooms and coding labs, this block handles several technical backend responsibilities such as the institute&#8217;s website management, Wi-Fi ID generation, and cyber systems coordination. It plays a key role in digital administration and student tech access.`,
@@ -101,9 +102,7 @@ F-Block is one of the newest and most technologically advanced blocks on campus.
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h1 className="text-3xl font-newyork sm:text-4xl md:text-5xl lg:text-6xl font-light text-light-blue mb-4 tracking-wide">
-            INFRASTRUCTURE
-          </h1>
+          <Title title="FACILITIES" className=" leading-tight font-newyork" />
         </motion.div>
 
         <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 items-start">
