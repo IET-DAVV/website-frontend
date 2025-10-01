@@ -10,47 +10,42 @@ interface HistoryEvent {
   title: string;
 }
 
-// 🧩 Component for a single timeline item
+// 🧩 Timeline Item Component
 const TimelineItem = ({ item, index }: { item: HistoryEvent; index: number }) => {
-  const isEven = index % 2 === 0; // check if the item is even/odd → controls left/right placement
+  const isEven = index % 2 === 0;
 
   return (
-    // 📌 Wrapper for the timeline card (left/right alignment + animation)
     <motion.div
-  className={`relative md:w-7/12 ${
-    isEven
-      ? "md:self-start pr-32 md:pr-36" // increased padding from center
-      : "md:self-end pl-32 md:pl-36"
-  }`}
-  initial={{ opacity: 0, x: isEven ? -60 : 60 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true, amount: 0.6 }}
-  transition={{ duration: 0.7, ease: "easeOut" }}
->
-  <motion.div
-    className={`bg-white/10 backdrop-blur-sm text-white rounded-2xl p-4 md:p-6 shadow-md border border-white/20 ${
-      isEven ? "origin-left" : "origin-right"
-    }`}
-    whileHover={{ scale: 1.03, borderColor: "rgba(255, 255, 255, 0.5)" }}
-    transition={{ type: "spring", stiffness: 300 }}
-  >
-    <h3 className="text-base md:text-lg font-light leading-snug">{item.title}</h3>
-  </motion.div>
-</motion.div>
-
+      id={`timeline-item-${index}`}
+      className={`relative md:w-9/12 ${
+        isEven ? "md:self-start pr-79 md:pr-80" : "md:self-end pl-79 md:pl-80"
+      }`}
+      initial={{ opacity: 0, x: isEven ? -60 : 60 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.6 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    >
+      <motion.div
+        className={`bg-white/10 backdrop-blur-sm text-white rounded-2xl p-4 md:p-6 shadow-md border border-white/20 ${
+          isEven ? "origin-left" : "origin-right"
+        }`}
+        whileHover={{ scale: 1.03, borderColor: "rgba(255, 255, 255, 0.5)" }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <h3 className="text-base md:text-lg font-light leading-snug">{item.title}</h3>
+      </motion.div>
+    </motion.div>
   );
 };
 
-// 🏛️ Main History component
+// 🏛️ Main History Component
 const History = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // 🎯 Scroll progress hook (for animated center line)
+  // 🎯 Scroll progress hook for animated center line
   const { scrollYProgress } = useScroll({
     container: scrollContainerRef,
   });
-
-  // 📈 Map scroll progress → line height animation
   const pathHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
@@ -66,19 +61,19 @@ const History = () => {
       {/* 📜 Scrollable Timeline Container */}
       <div
         ref={scrollContainerRef}
-        className="relative max-w-5xl mx-auto max-h-[70vh] overflow-y-auto overflow-x-visible pr-4 custom-scrollbar-hide"
+        className="relative max-w-5xl mx-auto max-h-[70vh] overflow-y-auto overflow-x-visible pr-4 custom-scrollbar-hide scroll-smooth"
       >
         <div className="relative py-8">
           {/* 🧵 Static center line */}
           <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-white/30 hidden md:block" />
 
-          {/* 🟢 Animated progress line (grows with scroll) */}
+          {/* 🟢 Animated progress line */}
           <motion.div
             className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] bg-white hidden md:block"
             style={{ height: pathHeight }}
           />
 
-          {/* 📌 Timeline items list */}
+          {/* 📌 Timeline items */}
           <div className="flex flex-col space-y-12 md:space-y-16">
             {history.map((item: HistoryEvent, index: number) => (
               <TimelineItem key={item.id} item={item} index={index} />
