@@ -1,46 +1,91 @@
 "use client";
-import React from "react";
-import { history, timeline } from "@/constants/about-page/about";
+import React, { useRef } from "react";
+import { history } from "@/constants/about-page/about";
 import "@/styles/fonts.css";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const History = () => {
+// ✨ Type definition for timeline events
+interface HistoryEvent {
+  id: number;
+  title: string;
+}
+
+// 🧩 Component for a single timeline item
+const TimelineItem = ({ item, index }: { item: HistoryEvent; index: number }) => {
+  const isEven = index % 2 === 0; // check if the item is even/odd → controls left/right placement
+
   return (
-    <div className="w-full bg-[#3B799E] px-6 py-16 md:p-20">
-      {/* Heading */}
-      <div className="text-center mb-12 md:mb-20">
-        <h1 className="font-newyork text-white text-3xl md:text-5xl font-extralight underline underline-offset-4 decoration-white decoration-[2.5px]">
+    // 📌 Wrapper for the timeline card (left/right alignment + animation)
+    <motion.div
+  className={`relative md:w-7/12 ${
+    isEven
+      ? "md:self-start pr-32 md:pr-36" // increased padding from center
+      : "md:self-end pl-32 md:pl-36"
+  }`}
+  initial={{ opacity: 0, x: isEven ? -60 : 60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true, amount: 0.6 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+>
+  <motion.div
+    className={`bg-white/10 backdrop-blur-sm text-white rounded-2xl p-4 md:p-6 shadow-md border border-white/20 ${
+      isEven ? "origin-left" : "origin-right"
+    }`}
+    whileHover={{ scale: 1.03, borderColor: "rgba(255, 255, 255, 0.5)" }}
+    transition={{ type: "spring", stiffness: 300 }}
+  >
+    <h3 className="text-base md:text-lg font-light leading-snug">{item.title}</h3>
+  </motion.div>
+</motion.div>
+
+  );
+};
+
+// 🏛️ Main History component
+const History = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // 🎯 Scroll progress hook (for animated center line)
+  const { scrollYProgress } = useScroll({
+    container: scrollContainerRef,
+  });
+
+  // 📈 Map scroll progress → line height animation
+  const pathHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  return (
+    <div className="w-full bg-[#3B799E] px-6 py-16 md:px-20 md:py-24">
+      {/* 🔠 Section Heading */}
+      <div className="text-center mb-12 md:mb-16">
+        <h1 className="font-newyork text-white text-3xl md:text-5xl font-extralight tracking-wide relative inline-block">
           IET HISTORY
+          <span className="absolute left-0 right-0 -bottom-1 h-[3px] bg-white/90 rounded" />
         </h1>
       </div>
 
-      {/* History Timeline Scroll Section */}
-      <div className="flex flex-col space-y-16 md:space-y-15 relative border-l-2 border-white pl-6 md:pl-10 max-h-[80vh] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-white/50 scrollbar-track-white/10">
-        {history.map((item: any, index: number) => (
+      {/* 📜 Scrollable Timeline Container */}
+      <div
+        ref={scrollContainerRef}
+        className="relative max-w-5xl mx-auto max-h-[70vh] overflow-y-auto overflow-x-visible pr-4 custom-scrollbar-hide"
+      >
+        <div className="relative py-8">
+          {/* 🧵 Static center line */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-white/30 hidden md:block" />
+
+          {/* 🟢 Animated progress line (grows with scroll) */}
           <motion.div
-            key={item.id}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="relative pl-6"
-          >
-            {/* Dot Marker */}
-            <span className="absolute -left-[1.05rem] top-1 w-4 h-4 bg-white rounded-full border-2 border-[#3B799E]" />
+            className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] bg-white hidden md:block"
+            style={{ height: pathHeight }}
+          />
 
-            {/* Content */}
-            <div
-              className="text-white text-sm md:text-base font-light"
-              style={{ lineHeight: "1.2", marginBottom: "0.35rem" }}
-            >
-              {item.title}
-            </div>
-          </motion.div>
-        ))}
+          {/* 📌 Timeline items list */}
+          <div className="flex flex-col space-y-12 md:space-y-16">
+            {history.map((item: HistoryEvent, index: number) => (
+              <TimelineItem key={item.id} item={item} index={index} />
+            ))}
+          </div>
+        </div>
       </div>
-
-      
     </div>
   );
 };
