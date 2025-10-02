@@ -177,10 +177,10 @@ const StackCards: React.FC = () => {
     setShowAllClubs(false);
   };
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-[80vh] bg-gray-100">
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-9">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             IET CLUBS
           </h1>
@@ -193,10 +193,10 @@ const StackCards: React.FC = () => {
         <div
           ref={containerRef}
           className="relative"
-          style={{ height: showAllClubs ? `${totalCards * 70}vh` : "100vh" }}
+          style={{ height: showAllClubs ? `${totalCards * 70}vh` : "20vh" }}
         >
           <div
-            className={`sticky top-0 h-screen flex items-center justify-center overflow-hidden ${
+            className={`sticky top-0 h-[80vh] flex items-center justify-center overflow-hidden ${
               !showAllClubs ? "relative" : ""
             }`}
           >
@@ -208,7 +208,7 @@ const StackCards: React.FC = () => {
                 }`}
                 style={{ zIndex: 1 }}
               >
-                <div className="w-full h-[70vh] bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div className="w-full h-[50vh] bg-white rounded-3xl shadow-2xl overflow-hidden">
 
                   <div className="flex flex-col lg:flex-row h-full">
                     {/* Content Section */}
