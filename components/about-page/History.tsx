@@ -17,18 +17,16 @@ const TimelineItem = ({ item, index }: { item: HistoryEvent; index: number }) =>
   return (
     <motion.div
       id={`timeline-item-${index}`}
-      className={`relative md:w-9/12 ${
-        isEven ? "md:self-start pr-79 md:pr-80" : "md:self-end pl-79 md:pl-80"
-      }`}
-      initial={{ opacity: 0, x: isEven ? -60 : 60 }}
+      className={`relative w-full md:w-9/12 
+        ${isEven ? "md:self-start pr-10 md:pr-80" : "md:self-end pl-10 md:pl-80"}`}
+      initial={{ opacity: 0, x: isEven ? -40 : 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.6 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <motion.div
-        className={`bg-white/10 backdrop-blur-sm text-white rounded-2xl p-4 md:p-6 shadow-md border border-white/20 ${
-          isEven ? "origin-left" : "origin-right"
-        }`}
+        className={`bg-white/10 backdrop-blur-sm text-white rounded-2xl p-4 md:p-6 shadow-md border border-white/20 
+          ${isEven ? "origin-left" : "origin-right"} w-full`}
         whileHover={{ scale: 1.03, borderColor: "rgba(255, 255, 255, 0.5)" }}
         transition={{ type: "spring", stiffness: 300 }}
       >
