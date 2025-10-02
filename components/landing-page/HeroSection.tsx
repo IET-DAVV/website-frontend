@@ -3,10 +3,27 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import NewsAnnouncement from "./NewsAnnouncement";
-import { newsItems, announcementItems, slides } from "@/constants/HeroSection/data";
+import {
+  slides,
+  fetchAnnouncements,
+  Item,
+  newsItems as defaultNews,
+  announcementItems as defaultAnnouncements,
+} from "@/constants/HeroSection/data";
 
 const HeroSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [newsItems, setNewsItems] = useState<Item[]>(defaultNews);
+  const [announcementItems, setAnnouncementItems] =
+    useState<Item[]>(defaultAnnouncements);
+
+  // Client-side fetch for news and announcements
+  useEffect(() => {
+    fetchAnnouncements().then(({ news, announcements }) => {
+      setNewsItems(news || []);
+      setAnnouncementItems(announcements || []);
+    });
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,7 +35,9 @@ const HeroSection: React.FC = () => {
   const handlePrevSlide = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
+    setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
+    );
   };
 
   const handleNextSlide = (e: React.MouseEvent) => {
@@ -32,24 +51,25 @@ const HeroSection: React.FC = () => {
       {/* Mobile Layout */}
       <div className="block lg:hidden space-y-4 sm:space-y-6">
         <div className="w-full">
-          <div className="carousel-container relative overflow-hidden rounded-lg w-full 
-                         h-[250px] sm:h-[350px] md:h-[400px] mx-auto bg-gray-200">
+          <div className="carousel-container relative overflow-hidden rounded-lg w-full h-[250px] sm:h-[350px] md:h-[400px] mx-auto bg-gray-200">
             {slides.map((src, index) => (
               <div
                 key={index}
-                className={`carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"}`}
+                className={`carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
               >
                 <Image
                   alt={`Slide ${index + 1}`}
                   src={src}
                   fill
                   className="object-cover object-center"
-                  priority={index === 0} // Only prioritize first image
+                  priority={index === 0}
                   loading={index === 0 ? "eager" : "lazy"}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   quality={85}
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
                 />
               </div>
             ))}
@@ -61,8 +81,18 @@ const HeroSection: React.FC = () => {
                 className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white p-2 sm:p-3 rounded-full pointer-events-auto"
                 aria-label="Previous slide"
               >
-                <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                <svg
+                  className="w-4 h-4 sm:w-6 sm:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
               </button>
               <button
@@ -71,8 +101,18 @@ const HeroSection: React.FC = () => {
                 className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white p-2 sm:p-3 rounded-full pointer-events-auto"
                 aria-label="Next slide"
               >
-                <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-4 h-4 sm:w-6 sm:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
@@ -100,7 +140,9 @@ const HeroSection: React.FC = () => {
             {slides.map((src, index) => (
               <div
                 key={index}
-                className={`carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"}`}
+                className={`carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
               >
                 <Image
                   alt={`Slide ${index + 1}`}
@@ -112,7 +154,7 @@ const HeroSection: React.FC = () => {
                   sizes="(max-width: 1200px) 60vw, 40vw"
                   quality={85}
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
                 />
               </div>
             ))}
@@ -124,8 +166,18 @@ const HeroSection: React.FC = () => {
                 className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white p-3 rounded-full pointer-events-auto"
                 aria-label="Previous slide"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
               </button>
               <button
@@ -134,8 +186,18 @@ const HeroSection: React.FC = () => {
                 className="bg-black bg-opacity-70 hover:bg-opacity-90 text-white p-3 rounded-full pointer-events-auto"
                 aria-label="Next slide"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
