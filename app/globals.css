@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Update this in your main stylesheet */
+.scroll-container-snap {
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-item-snap {
+  scroll-snap-align: start; /* ✨ CHANGED: from 'center' to 'start' */
+  scroll-snap-stop: always;
+}
+
+/* ✨ ADDED: This makes the last item snap to the end, fixing the progress bar */
+.scroll-item-snap:last-child {
+  scroll-snap-align: end;
+}
+
+.scroll-container-snap {
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-item-snap {
+  scroll-snap-align: center;
+  scroll-snap-stop: always; /* Ensures it stops on each item */
+}
+
 .custom-scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
