@@ -34,7 +34,7 @@
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.4.4",
+    "@next/bundle-analyzer": "^15.5.4",
     "@types/animejs": "^3.1.13",
     "@types/he": "^1.2.3",
     "@types/node": "^24.0.15",

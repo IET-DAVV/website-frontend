@@ -34,7 +34,15 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Facilities",
+    name: "Research & Innovation",
+    href: "/ResearchPage",
+  },
+  {
+    name: "Student Life & Activities",
+    href: "/StudentLife&Activities",
+  },
+  {
+    name: "Hostels",
     href: "/infrastructure",
   },
   {
@@ -54,12 +62,16 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Contact Us",
-    href: "/contact",
+    name: "Administration",
+    href: "/Administration",
   },
   {
-    name: "Fresher's Corner ",
-    href: "/freshers",
+    name: "Tenders & Procurement",
+    href: "/Tenders&Procurement",
+  },
+  {
+    name: "Contact Us",
+    href: "/contact",
   },
 ];
 
@@ -85,6 +97,10 @@ export const UPPER_HEADER_LINKS = [
   {
     name: "Notices",
     href: "/academics/notice",
+  },
+  {
+    name: "Fresher's Corner ",
+    href: "/freshers",
   },
   {
     name: "Alumni",

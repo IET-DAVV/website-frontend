@@ -11,70 +11,81 @@ const DownloadSection = () => {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease: "easeOut" }} // 👈 slower & smoother
-      className="space-y-8 px-4 sm:px-10"
+      transition={{ duration: 0.9, ease: "easeOut" }}
+      className="space-y-12 px-4 sm:px-10 py-10"
     >
       {/* Page Headings */}
-      <Title
-        title="PROCESS"
-        className="text-7xl leading-tight font-newyork mb-0"
-      />
-      <Title
-        title="(ADMISSION 2025-26)"
-        className="text-4xl font-newyork leading-tight mb-10"
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center space-y-3"
+      >
+        <Title
+          title="PROCESS"
+          className="text-6xl sm:text-7xl leading-tight font-newyork bg-gradient-to-r from-[#0077C2] to-[#00C6FF] bg-clip-text text-transparent"
+        />
+        <Title
+          title="(ADMISSION 2025-26)"
+          className="text-2xl sm:text-4xl font-newyork text-gray-800"
+        />
+      </motion.div>
 
       {/* Animated Sections */}
-      {admissionDownloads.map((section, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.7, // 👈 slower section entrance
-            delay: index * 0.25, // 👈 staggered even more
-            ease: "easeOut",
-          }}
-          viewport={{ once: true }}
-          className="space-y-4 mb-16"
-        >
-          {/* Section Title */}
-          <h2
-            className="text-xl font-bold text-center text-[#2F2F2F] mb-0"
-            dangerouslySetInnerHTML={{ __html: section.title }}
-          />
+      <div className="space-y-16">
+        {admissionDownloads.map((section, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: index * 0.25,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            {/* Section Title */}
+            <h2
+              className="text-2xl font-semibold text-center text-[#2F2F2F] tracking-wide"
+              dangerouslySetInnerHTML={{ __html: section.title }}
+            />
 
-          {/* Downloads Box */}
-          <div className="border rounded-md divide-y divide-gray-800 max-w-2xl w-full mx-auto shadow-sm border-gray-800">
-            {section.items.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.55, // 👈 slower item animation
-                  delay: idx * 0.05, // 👈 slower stagger per item
-                  ease: "easeOut",
-                }}
-                viewport={{ once: true }}
-                className="flex justify-between items-center px-4 py-3"
-              >
-                <span className="text-sm font-medium">{item.label}</span>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={item.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#0077C2] hover:bg-[#005fa3] transition text-white px-4 py-1.5 rounded inline-flex items-center gap-1 text-sm"
+            {/* Downloads Box */}
+            <div className="bg-white/60 backdrop-blur-sm border rounded-xl shadow-lg max-w-2xl w-full mx-auto overflow-hidden">
+              {section.items.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: idx * 0.08,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: true }}
+                  className="flex justify-between items-center px-5 py-4 hover:bg-gray-50 transition"
                 >
-                  Click Here <Download size={15} />
-                </motion.a>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      ))}
+                  <span className="text-sm sm:text-base font-medium text-gray-800">
+                    {item.label}
+                  </span>
+                  <motion.a
+                    whileHover={{ scale: 1.08 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={item.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-[#0077C2] to-[#00AEEF] hover:from-[#005fa3] hover:to-[#008ecc] transition text-white px-5 py-2 rounded-full inline-flex items-center gap-2 text-sm font-semibold shadow-md"
+                  >
+                    <Download size={16} /> Download
+                  </motion.a>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </motion.div>
   );
 };

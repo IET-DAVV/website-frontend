@@ -1,53 +1,92 @@
-import React from 'react'
+"use client";
+import React from "react";
 import { antiRaggingCurbing } from "@/constants/antiragging/data";
+import { motion } from "framer-motion";
 
 const Curbing = () => {
   return (
-    <div className='px-36 pb-32'>
-      <h2 className='w-[50%] mx-auto my-20 text-2xl font-bold text-center text-[#06779B]'>{antiRaggingCurbing.title}</h2>
+    <div className="px-6 sm:px-12 lg:px-36 pb-32">
+      {/* Title 1 */}
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="max-w-2xl mx-auto my-16 text-2xl sm:text-3xl font-bold text-center text-[#06779B]"
+      >
+        {antiRaggingCurbing.title}
+      </motion.h2>
 
-      <div className='border divide-y divide-[#959595] max-w-5xl w-full mx-auto border-[#959595]'>
-        <div className="flex justify-between px-10 py-5 relative after:absolute after:w-[1px] after:bg-[#959595] after:top-0 after:right-[23%] after:h-full"
-        >
+      {/* Section 1 */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="bg-white/70 backdrop-blur-sm border rounded-xl shadow-lg max-w-5xl w-full mx-auto overflow-hidden"
+      >
+        <div className="flex justify-between items-center px-6 py-5">
           <span className="text-lg font-medium">
-            {antiRaggingCurbing.sectino1.label}
-            <span className="text-[#06779B] text-lg font-medium">
+            {antiRaggingCurbing.sectino1.label}{" "}
+            <span className="text-[#06779B] font-semibold">
               {antiRaggingCurbing.sectino1.extralabel}
             </span>
           </span>
-          <a
+          <motion.a
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
             href={antiRaggingCurbing.sectino1.file}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#06779B] text-white px-10 py-2 rounded-[6px] inline-flex items-center gap-1 text-sm"
+            className="bg-gradient-to-r from-[#0077C2] to-[#00AEEF] hover:from-[#005fa3] hover:to-[#008ecc] transition text-white px-8 py-2 rounded-full inline-flex items-center gap-2 text-sm font-semibold shadow-md"
           >
             Download
-          </a>
+          </motion.a>
         </div>
-      </div>
+      </motion.div>
 
-      <h2 className='w-[50%] mx-auto my-20 text-2xl font-bold text-center text-[#06779B]'>{antiRaggingCurbing.title2}</h2>
-      <div className="border divide-y divide-[#959595] max-w-5xl w-full mx-auto border-[#959595] ">
+      {/* Title 2 */}
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="max-w-xl mx-auto my-16 text-xl sm:text-2xl font-semibold text-center text-[#06779B]"
+      >
+        {antiRaggingCurbing.title2}
+      </motion.h2>
+
+      {/* Section 2 */}
+      <div className="bg-white/70 backdrop-blur-sm border rounded-xl shadow-lg max-w-5xl w-full mx-auto overflow-hidden divide-y">
         {antiRaggingCurbing.section2.map((item, idx) => (
-          <div
+          <motion.div
             key={idx}
-            className=""
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: idx * 0.05,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            className="px-6 py-5 flex flex-col sm:flex-row justify-between gap-4"
           >
-            <span className='flex justify-between px-10 py-5 relative after:absolute after:w-[1px] after:bg-[#959595] after:top-0 after:right-[50%] after:h-full'>
-              <div className='w-full flex justify-between'>
-                <div className="text-lg w-[45%] font-medium text-[#06779B]">
-                  {item.label}
-                </div>
-                <div className="text-lg w-[45%] font-medium">
-                  {item.subLabel}<span className='text-[#F51C1C]'>{item.Highlight}</span>
-                </div>
-              </div>
-            </span>
-          </div>
+            <div className="text-lg font-semibold text-[#06779B] w-full sm:w-1/2">
+              {item.label}
+            </div>
+            <div className="text-lg font-medium w-full sm:w-1/2">
+              {item.subLabel}{" "}
+              {item.Highlight && (
+                <span className="text-[#F51C1C] font-semibold">
+                  {item.Highlight}
+                </span>
+              )}
+            </div>
+          </motion.div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Curbing
+export default Curbing;
