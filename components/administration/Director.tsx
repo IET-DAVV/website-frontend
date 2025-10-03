@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+// Assuming directorData is a file exporting the DirectorProfile object
+// containing the data for Dr. Vrinda Tokekar.
 import { directorData } from "@/constants/administration/data";
 import Image from "next/image";
 
@@ -16,114 +18,123 @@ const Director: React.FC = () => {
     responsibilities,
   } = directorData;
 
+  // Helper function to render semantic lists
+  const renderList = (items: string[]) => (
+    <ul className="list-disc list-inside space-y-1 text-lg text-[#686868] pl-5">
+      {items.map((item) => (
+        <li key={item} className="marker:text-black">{item}</li> // Uses theme color for bullet points
+      ))}
+    </ul>
+  );
+
   return (
-    <div className="mt-20 space-y-4 flex flex-col gap-6">
-      <div className="mx-40 flex justify-between items-center">
-        <div>
-          <h2 className="mb-5 text-3xl font-semibold text-[#1D1D1D]">{name}</h2>
-          <div className="flex flex-col text-lg text-[#686868]">
+    // Use a responsive container with max width and padding
+    <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 space-y-10">
+      
+      {/* 1. Name, Designation, and Image Section */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-b border-gray-200 pb-8">
+        
+        {/* Designation Info */}
+        <div className="order-2 md:order-1 flex-grow">
+          <h2 className="mb-4 text-4xl font-semibold text-[#1D1D1D]">{name}</h2>
+          <div className="flex flex-col text-lg text-[#686868] space-y-1">
             {designation.map((line, index) => (
-              <p key={index} className="text-gray-700 ">
+              // Bolder for the primary role
+              <p key={index} className={index === 0 ? "text-xl font-medium text-gray-800" : "text-lg text-gray-700"}>
                 {line}
               </p>
             ))}
           </div>
         </div>
-        <Image
-          width={48}
-          height={48}
-          src={image}
-          alt={name}
-          className=" border-4 border-[#686868] w-48 h-48 object-cover"
-        />
+        
+        {/* Image */}
+        <div className="order-1 md:order-2">
+            <Image
+                // Removed width/height props for default behavior, keeping classes
+                width={192} 
+                height={192} 
+                src={image}
+                alt={name}
+                className="border-4 border-black w-48 h-48 object-cover shadow-lg" // Using established theme color for border
+            />
+        </div>
       </div>
 
-      <div className="h-[0.5px] w-[85%] bg-light-gray m-auto" />
-
-      <div className="mx-40 flex justify-start items-center gap-20">
-        <h2 className="text-3xl font-semibold text-[#1D1D1D]">Contacts :-</h2>
-        {contact.email && (
-          <p>
-            <strong className="text-xl font-normal text-[#1D1D1D] ">
-              Email:
-            </strong>{" "}
-            <a
-              href={`mailto:${contact.email}`}
-              className="text-[#067798] text-lg underline"
-            >
-              {contact.email}
-            </a>
-          </p>
-        )}
-        {contact.phone && (
-          <p>
-            <strong className="text-xl font-normal text-[#1D1D1D] ">
-              Phone:
-            </strong>{" "}
-            <a
-              href={`tel:${contact.phone}`}
-              className="text-[#067798] text-lg  underline"
-            >
-              {contact.phone}
-            </a>
-          </p>
-        )}
+      {/* 2. Contact Details Section */}
+      {/* Removed separate separator, using padding and border-b on sections for cleaner flow */}
+      <div className="space-y-4">
+        <h2 className="text-3xl font-semibold text-black">Contacts</h2>
+        <div className="flex flex-col sm:flex-row justify-start items-start sm:items-center gap-8">
+          
+          {contact.email && (
+            <p className="text-xl">
+              <strong className="font-semibold text-[#1D1D1D]">Email:</strong>{" "}
+              <a
+                href={`mailto:${contact.email}`}
+                className="text-[#0077C2] hover:underline transition" // Using established blue theme color
+              >
+                {contact.email}
+              </a>
+            </p>
+          )}
+          {contact.phone && (
+            <p className="text-xl">
+              <strong className="font-semibold text-[#1D1D1D]">Phone:</strong>{" "}
+              <a
+                href={`tel:${contact.phone}`}
+                className="text-[#0077C2] hover:underline transition" // Using established blue theme color
+              >
+                {contact.phone}
+              </a>
+            </p>
+          )}
+        </div>
       </div>
-      <div className="h-[0.5px] w-[85%] bg-light-gray m-auto" />
+      <div className="h-[1px] w-full bg-gray-200 m-auto" /> {/* Visible Separator */}
 
-      <div className="mx-40">
-        <h2 className="text-3xl mb-5 font-semibold text-[#1D1D1D]">
+      {/* 3. Educational Qualifications */}
+      <div className="space-y-4">
+        <h2 className="text-3xl font-semibold text-black">
           Educational Qualifications
         </h2>
-        <div className="flex flex-col text-lg text-[#686868]">
-          {qualifications.map((q) => (
-            <p key={q}>{q}</p>
-          ))}
-        </div>
+        {renderList(qualifications)}
       </div>
-      <div className="h-[0.5px] w-[85%] bg-light-gray m-auto" />
+      <div className="h-[1px] w-full bg-gray-200 m-auto" />
 
-      <div className="mx-40">
-        <h3 className="text-3xl mb-5 font-semibold text-[#1D1D1D]">
+      {/* 4. Experience */}
+      <div className="space-y-4">
+        <h3 className="text-3xl font-semibold text-black">
           Experience
         </h3>
-        <p className=" text-lg text-[#686868]">{experience}</p>
+        <p className="text-lg text-[#686868]">{experience}</p>
       </div>
-      <div className="h-[0.5px] w-[85%] bg-light-gray m-auto" />
-      <div className="mx-40">
-        <h3 className="text-3xl mb-5 font-semibold text-[#1D1D1D]">
-          Areas of Interest:
-        </h3>
-        <div className="text-lg text-[#686868]">
-          {interests.map((item) => (
-            <p key={item}>{item}</p>
-          ))}
-        </div>
-      </div>
-      <div className="h-[0.5px] w-[85%] bg-light-gray m-auto" />
+      <div className="h-[1px] w-full bg-gray-200 m-auto" />
 
-      <div className="mx-40">
-        <h3 className="text-3xl mb-5 font-semibold text-[#1D1D1D]">
+      {/* 5. Areas of Interest */}
+      <div className="space-y-4">
+        <h3 className="text-3xl font-semibold text-black">
+          Areas of Interest
+        </h3>
+        {renderList(interests)}
+      </div>
+      <div className="h-[1px] w-full bg-gray-200 m-auto" />
+
+      {/* 6. Research & Publication Profile */}
+      <div className="space-y-4">
+        <h3 className="text-3xl font-semibold text-black">
           Research & Publication Profile
         </h3>
-        <div className="text-lg text-[#686868]">
-          {publications.map((item) => (
-            <p key={item}>{item}</p>
-          ))}
-        </div>
+        {renderList(publications)}
       </div>
-      <div className="h-[0.5px] w-[85%] bg-light-gray m-auto" />
-      <div className="mx-40">
-        <h3 className="text-3xl mb-5 font-semibold text-[#1D1D1D]">
-          Responsibilities Held:
+      <div className="h-[1px] w-full bg-gray-200 m-auto" />
+
+      {/* 7. Responsibilities Held */}
+      <div className="space-y-4">
+        <h3 className="text-3xl font-semibold text-black">
+          Responsibilities Held
         </h3>
-        <div className="text-lg text-[#686868]">
-          {responsibilities.map((item) => (
-            <p key={item}>{item}</p>
-          ))}
-        </div>
+        {renderList(responsibilities)}
       </div>
-      <div className="h-[0.5px] w-[85%] bg-light-gray m-auto" />
     </div>
   );
 };

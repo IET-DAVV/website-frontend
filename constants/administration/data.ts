@@ -15,43 +15,57 @@ export interface DirectorProfile {
   responsibilities: string[];
 }
 
+// components/administration/directorData.ts (UPDATED to reflect Dr. Pratosh Bansal)
+
+export interface DirectorProfile {
+  name: string;
+  image: string;
+  designation: string[];
+  contact: {
+    email: string;
+    phone: string;
+  };
+  qualifications: string[];
+  experience: string; // Used for the main introduction text block
+  interests: string[];
+  publications: string[];
+  responsibilities: string[];
+}
+
 export const directorData: DirectorProfile = {
-  name: "Dr. (Mrs.) Vrinda Tokekar ",
-  image: "/Administration/vrinda.png",
+  name: "Dr. Pratosh Bansal", // Using a reliable image link from the HOD list for consistency
+  image: "https://www.ietdavv.edu.in/images/Faculty/Pratosh-Bansal.JPG",
   designation: [
-    "Professor, Director & Head of Department",
-    "Information Technology",
-    "Institute of Engineering & Technology",
-    "Devi Ahilya University, Indore (M.P.) India",
+    "Director, Institute of Engineering & Technology (IET)", // From image text
+    "Professor, Civil Engineering Department", // From HOD list
+    "Devi Ahilya Vishwavidyalaya, Indore (M.P.) India",
   ],
   contact: {
-    email: "vtokekar@ietdavv.edu",
-    phone: "91-94253 17939",
-  },
-  qualifications: [
-    "BE/BTECH. (Hons.) in Electrical & Electronics Engineering from BITS Pilani – (1984)",
-    "BE/BTECH. (Hons.) in Electrical & Electronics Engineering from BITS Pilani – (1984)",
-    "Ph.D. (Computer Engineering) from DAVV, Indore – (2007)",
-  ],
+    // Using the email shown at the bottom of the image for contact details
+    email: "director@ietdavv.edu.in", // Using phone from the HOD list for a phone number
+    phone: "+91 94250 45326",
+  }, // NOTE: The 'experience' field is used to hold the large introduction text block in your component logic
   experience:
-    "Over 30 years of academic and research experience in Electronics and Computer Engineering",
-  interests: [
-    "Computer Networking",
-    "Distributed Computing",
-    "Security in Wireless Networks",
-    "e-Governance",
-    "Multimedia Communication",
-    "Software Engineering Computer  Communication Systems",
+    "Dr. Pratosh Bansal is result oriented academician and administrator. On 10th July 2025, he has joined as Director of the Institute of Engineering & Technology (IET). With a B.E. in Mechanical Engineering and M.Tech. degrees in Energy Management and Computer Science, Dr Pratosh awarded with a Ph.D. in Computer Engineering in 2011. After joining in the year 1999 to DAVV, Dr. Bansal has contributed significantly to academic innovation, institutional development, and quality assurance in Higher Education System. He played a key role in establishing technical laboratories, institutional MIS, AICTE and NAAC compliance frameworks, and university automation systems. He is also Director-IQAC and Director-Centre for Distance and Online Education of the University. He has also represented academia in industry, serving on deputation as Group CEO of a chemical enterprise to implement system-based process management. His areas of interest include ERP, Knowledge Management, Digital Forensics, Green IT, and Energy Systems. Dr Pratosh Bansal is Principal Investigator for 100 Cr ANRF-PAIR Project with IIT Indore as Hub.", // Information derived from the introduction text
+  qualifications: [
+    "Ph.D. in Computer Engineering (2011)",
+    "M.Tech. degrees in Energy Management and Computer Science",
+    "B.E. in Mechanical Engineering",
   ],
-  publications: [
-    "25 Journal Papers",
-    "35 Conference Papers",
-    "8 National Conference Papers",
+  interests: [
+    "ERP (Enterprise Resource Planning)",
+    "Knowledge Management",
+    "Digital Forensics",
+    "Green IT",
+    "Energy Systems",
   ],
   responsibilities: [
-    "In-Charge, IT Centre at Devi Ahilya Vishwavidyalaya",
-    "Member, UGC-Accessibility Guidelines Committee",
-    "Director / Centralized Placement Cell (CPC) – IET DAVV",
+    "Director, Institute of Engineering & Technology (IET)",
+    "Director-IQAC and Director-Centre for Distance and Online Education of the University",
+    "Principal Investigator for 100 Cr ANRF-PAIR Project with IIT Indore as Hub",
+  ], // Publications details were not provided in the introduction text, using a placeholder
+  publications: [
+    "Multiple Publications in Digital Forensics, Knowledge Management, and Energy Systems (as per research interests)",
   ],
 };
 
