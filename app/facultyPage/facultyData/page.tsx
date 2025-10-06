@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
-import Page from "@/components/facultyPage/facultyData/branchFaculty";
+import React, { Suspense } from "react";
+import Page from "@/components/facultyPage/branchFaculty";
 
 const page = () => {
   return (
@@ -9,6 +9,6 @@ const page = () => {
       </Suspense>
     </div>
   );
-}
+};
 
 export default page;

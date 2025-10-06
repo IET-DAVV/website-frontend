@@ -1,6 +1,6 @@
-'use client';
-import React, { Suspense } from 'react';
-import Page from "@/components/facultyData/branchFaculty";
+"use client";
+import React, { Suspense } from "react";
+import Page from "@/components/facultyPage/branchFaculty";
 
 const page = () => {
   return (
