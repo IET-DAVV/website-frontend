@@ -86,7 +86,7 @@ export const UPPER_HEADER_LINKS = [
     href: "https://www.dauniv.ac.in/placement",
   },
   {
-    name: "Courses",
+    name: "Programs",
     href: "/academics/programsoffered",
     dropdown: [
       { name: "BE/BTECH (FULL-TIME)", value: "BE/BTECH (FULL-TIME)" },
