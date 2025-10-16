@@ -2,9 +2,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-// import Title from "../common/academics/Title"; // Use this import for titel component
+ import title from "../common/academics/Title";
 
-{/* <Title title="Titel that you wanna use" className="text-7xl leading-tight font-newyork" /> */}// uncomment this to use the titel component
+{ <title title="Research@IET" className="text-7xl leading-tight font-newyork" />}
 
 // This component creates the main title, styled similarly to your example.
 const Title: React.FC<{ title: string }> = ({ title }) => (
