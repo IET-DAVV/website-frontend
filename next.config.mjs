@@ -43,8 +43,7 @@ const nextConfig = {
     contentSecurityPolicy:
       "default-src 'self'; script-src 'none'; sandbox;",
     // 🧠 Added for Next.js 16
-    qualities: [75, 85], // include any quality values you use
-    quality: 85,         // optional global default
+    qualities: [75, 85], 
   },
   compress: true,
   experimental: {
