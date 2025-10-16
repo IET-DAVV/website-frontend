@@ -16,10 +16,12 @@ export const headerLinks: HeaderLinksType = [
     name: "Academics",
     href: "",
     dropdown: [
+      { name: "Academic Calendar", href: "/academics/calendar" },
+      {name: "Syllabus", href: "/academics/syllabus"},
       { name: "Class Timetable", href: "/academics/class" },
-      { name: "Test Timetable", href: "/academics/test" },
-      { name: "Syllabus", href: "/academics/syllabus" },
-      { name: "Calendar", href: "/academics/calendar" },
+      
+      
+    
 
     ],
   },
@@ -42,13 +44,14 @@ export const headerLinks: HeaderLinksType = [
     href: "/StudentLife&Activities",
   },
   {
-    name: "Hostels",
+    name: "Facilities",
     href: "/infrastructure",
   },
   {
     name: "Examination",
     href: "",
     dropdown: [
+      { name: "Test Timetable", href: "/academics/test" },
       { name: "Exam Time Table", href: "/examination" },
       {
         name: "Examination Form",
