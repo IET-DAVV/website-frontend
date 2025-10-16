@@ -5,11 +5,11 @@ export const headerLinks: HeaderLinksType = [
     href: "/",
   },
   {
-    name: "About Us",
+    name: "About IET",
     href: "",
     dropdown: [
       { name: "About Us", href: "/about" },
-      { name: "Department", href: "/facultyPage" },
+      { name: "Departments", href: "/facultyPage" },
     ],
   },
   {
@@ -34,7 +34,7 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Research & Innovation",
+    name: "Research @ IET",
     href: "/ResearchPage",
   },
   {
