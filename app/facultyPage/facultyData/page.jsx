@@ -1,5 +1,4 @@
-import React, { Suspense } from 'react';
-import Page from "@/components/facultyPage/facultyData";
+import Page from "@/components/facultyPage/branchFaculty";
 
 const page = () => {
   return (
