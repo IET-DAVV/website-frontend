@@ -10,6 +10,7 @@ export const headerLinks: HeaderLinksType = [
     dropdown: [
       { name: "About Us", href: "/about" },
       { name: "Departments", href: "/facultyPage" },
+       {name: "Administration",href: "/Administration",},
     ],
   },
   {
@@ -64,10 +65,7 @@ export const headerLinks: HeaderLinksType = [
       },
     ],
   },
-  {
-    name: "Administration",
-    href: "/Administration",
-  },
+ 
   {
     name: "Tenders & Procurement",
     href: "/Tenders&Procurement",
