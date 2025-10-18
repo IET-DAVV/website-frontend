@@ -28,7 +28,7 @@ export const quickLinks = [
 export const information = [
   {
     name: "University Website",
-    value: "https://dauniv.ac.in/",
+    value: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
   },
   {
     name: "Contact Directory",
