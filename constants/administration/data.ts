@@ -1,28 +1,11 @@
 // components/administration/directorData.ts
-
-export interface DirectorProfile {
-  name: string;
-  image: string;
-  designation: string[];
-  contact: {
-    email: string;
-    phone: string;
-  };
-  qualifications: string[];
-  experience: string;
-  interests: string[];
-  publications: string[];
-  responsibilities: string[];
-}
-
 // components/administration/directorData.ts (UPDATED to reflect Dr. Pratosh Bansal)
-
 export interface DirectorProfile {
   name: string;
   image: string;
   designation: string[];
   contact: {
-    email: string;
+    email: string[];
     phone: string;
   };
   qualifications: string[];
@@ -33,24 +16,26 @@ export interface DirectorProfile {
 }
 
 export const directorData: DirectorProfile = {
-  name: "Dr. Pratosh Bansal", // Using a reliable image link from the HOD list for consistency
+  name: "Dr. (Mr.) Pratosh Bansal", // Using a reliable image link from the HOD list for consistency
   image: "https://www.ietdavv.edu.in/images/Faculty/Pratosh-Bansal.JPG",
   designation: [
-    "Director, Institute of Engineering & Technology (IET)", // From image text
-    "Professor, Civil Engineering Department", // From HOD list
+    "Proffessor and Director",
+    "Information Technology",
+    "Institute of Engineering & Technology (IET)",
     "Devi Ahilya Vishwavidyalaya, Indore (M.P.) India",
   ],
   contact: {
     // Using the email shown at the bottom of the image for contact details
-    email: "director@ietdavv.edu.in", // Using phone from the HOD list for a phone number
+    email: ["director@ietdavv.edu.in","pbansal@ietdavv.edu.in"],
+    // Using phone from the HOD list for a phone number
     phone: "+91 94250 45326",
   }, // NOTE: The 'experience' field is used to hold the large introduction text block in your component logic
   experience:
     "Dr. Pratosh Bansal is result oriented academician and administrator. On 10th July 2025, he has joined as Director of the Institute of Engineering & Technology (IET). With a B.E. in Mechanical Engineering and M.Tech. degrees in Energy Management and Computer Science, Dr Pratosh awarded with a Ph.D. in Computer Engineering in 2011. After joining in the year 1999 to DAVV, Dr. Bansal has contributed significantly to academic innovation, institutional development, and quality assurance in Higher Education System. He played a key role in establishing technical laboratories, institutional MIS, AICTE and NAAC compliance frameworks, and university automation systems. He is also Director-IQAC and Director-Centre for Distance and Online Education of the University. He has also represented academia in industry, serving on deputation as Group CEO of a chemical enterprise to implement system-based process management. His areas of interest include ERP, Knowledge Management, Digital Forensics, Green IT, and Energy Systems. Dr Pratosh Bansal is Principal Investigator for 100 Cr ANRF-PAIR Project with IIT Indore as Hub.", // Information derived from the introduction text
   qualifications: [
-    "Ph.D. in Computer Engineering (2011)",
-    "M.Tech. degrees in Energy Management and Computer Science",
-    "B.E. in Mechanical Engineering",
+    "B.E.(Mechanical Engineering)",
+    "M.Tech.(Energy Management and Computer Science)",
+    "Ph.D. (Computer Engineering) (2011)",
   ],
   interests: [
     "ERP (Enterprise Resource Planning)",
@@ -196,7 +181,7 @@ export const departments: Department[] = [
       "Optical Metrology, Laser-based Instrumentation, Optical Networks.",
   },
   {
-    name: "Dr. Pratosh Bansal",
+    name: "Dr. (Mr.)  Pratosh Bansal",
     image: "https://www.ietdavv.edu.in/images/Faculty/Pratosh-Bansal.JPG",
     email: "pbansal@ietdavv.edu.in",
     phone: "+91 94250 45326",

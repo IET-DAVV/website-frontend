@@ -1154,7 +1154,7 @@ export const facultyData = [
   {
     "branch": "INFORMATION TECHNOLOGY",
     "image": "https://ietdavv.edu.in/images/Faculty/Pratosh-Bansal.JPG",
-    "name": "Dr. Pratosh Bansal",
+    "name": "Dr. (Mr.)  Pratosh Bansal",
     "position": "Professor",
     "description": " Digital Forensics, Knowledge Management, Information Security, Cloud Computing, E-Commerce & Enterprise Resource Planning",
     "email": "pbansal@ietdavv.edu.in",

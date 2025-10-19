@@ -28,7 +28,7 @@ const Director = () => {
       <div className="w-full md:w-2/3 px-6 py-6 md:p-8 flex flex-col justify-center">
         <hr className="border-t border-gray-400 mb-6 md:mb-11 mt-2" />
         <h2 className="font-newyork text-xl md:text-5xl font-light mb-1">
-          Dr. Pratosh Bansal
+          Dr. (Mr.)  Pratosh Bansal
         </h2>
 
         {/* UNDERLINED TITLE */}
