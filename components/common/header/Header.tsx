@@ -27,45 +27,44 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const isHome = pathname === "/";
 
   return (
-    <header
-      className={`${
-        isHome ? "absolute bg-[#f8f8f8B3]" : "relative bg-[#3B7A9E] text-white"
-      } z-[999] w-full px-6 py-2 transition-colors duration-300`}
-    >
-      <div className="flex justify-between items-center gap-4">
+    <header className={`${
+      isHome ? 'absolute' : 'relative' 
+    } z-[30] w-full px-6 py-2 md:py-4 ${
+      isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
+    }`}>
+      
+      <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center space-x-2 flex-shrink-0">
+        <div className="flex items-center space-x-2 md:space-x-3">
           <Image
             src="/logo.svg"
-            className="w-12 h-12"
+            className="w-12 h-12 md:w-16 md:h-16"
             alt="logo"
-            width={48}
-            height={48}
+            width={64}
+            height={64}
           />
           <div className={`${manrope.className} leading-tight`}>
-            <p className="text-sm font-bold whitespace-nowrap">{LOGO}</p>
-            <p className="text-xs text-black/80">{LOGO_SUBTITLE}</p>
+            <p className="text-sm font-bold md:text-lg md:font-extrabold whitespace-nowrap">{LOGO}</p>
+            <p className="text-xs md:text-sm font-semibold text-black/80">{LOGO_SUBTITLE}</p>
           </div>
         </div>
 
-        {/* Hamburger (Mobile Only) - Centered Icon */}
+        {/* Hamburger (Mobile Only) */}
         <button
-          className="md:hidden text-3xl cursor-pointer flex items-center justify-center"
+          className="md:hidden text-3xl cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <IoClose /> : <IoMenu />}
         </button>
 
-        {/* Desktop Nav - Updated to a responsive grid layout */}
-        <ul className="hidden md:grid flex-grow grid-flow-col auto-cols-fr gap-2 items-stretch text-center">
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex flex-row justify-center items-center space-x-6">
           {links.map((link, idx) => (
-            <li key={link.name} className="relative flex">
+            <li key={link.name} className="relative">
               {link.dropdown ? (
                 <button
-                  className={`text-sm w-full flex-grow flex items-center justify-center gap-1 transition-colors duration-200 whitespace-normal break-words p-1 ${
-                    isHome
-                      ? "hover:text-black text-black"
-                      : "hover:text-white text-white"
+                  className={`text-sm md:text-base hover:border-b-2 flex items-center gap-1 ${
+                    isHome ? "border-black" : "border-white/80"
                   }`}
                   onMouseEnter={() => {
                     clearTimeout(hoverTimeout);
@@ -76,15 +75,15 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                   }}
                   onClick={(e) => e.preventDefault()}
                 >
-                  <span>{link.name}</span>
-                  <span className="text-xs self-center">
+                  {link.name}
+                  <span className="text-xs">
                     {openDropdown === idx ? "▲" : "▼"}
                   </span>
                 </button>
               ) : (
                 <Link
                   href={link.href}
-                  className={`text-sm w-full flex-grow flex items-center justify-center py-2 transition-colors duration-200 whitespace-normal break-words p-1 ${
+                  className={`block text-sm md:text-base py-2 transition-colors duration-200 ${
                     isHome ? "hover:text-black text-black" : "hover:text-white"
                   }`}
                   onClick={() => setMenuOpen(false)}
@@ -96,11 +95,9 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               {/* Dropdown */}
               {link.dropdown && openDropdown === idx && (
                 <ul
-                  className={`absolute left-0 top-full mt-2 w-[200px] rounded-md border shadow-md transition-all duration-200 text-left ${
-                    isHome
-                      ? "bg-[#f8f8f8ca] border-gray-200"
-                      : "bg-white text-black border-gray-200"
-                  }`}
+                  className={`absolute left-0 mt-5 p-2 w-[200px] ${
+                    isHome ? " bg-[#f8f8f8]" : "text-black bg-white"
+                  } shadow-md border border-gray-200 rounded-b-md z-50`}
                   onMouseEnter={() => {
                     clearTimeout(hoverTimeout);
                     setOpenDropdown(idx);
@@ -113,7 +110,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="block px-3 py-2 text-sm rounded hover:bg-gray-100 transition-colors duration-200"
+                        className="block px-3 py-2 text-sm md:text-base rounded hover:bg-gray-100 transition-colors duration-200"
                         onClick={() => setOpenDropdown(null)}
                       >
                         {item.name}
@@ -130,9 +127,9 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
       {/* Mobile Nav */}
       {menuOpen && (
         <ul
-          className={`md:hidden mt-4 flex flex-col space-y-2 p-4 rounded shadow-md transition-all duration-300 ${
-            isHome ? "bg-[#f8f8f8B3] text-black" : "bg-[#3B7A9E] text-white"
-          }`}
+          className={`md:hidden mt-4 flex flex-col space-y-2 transition-all duration-300 ${
+            isHome ? "bg-[#f8f8f8] text-black" : "bg-[#3B7A9E] text-white"
+          } p-4 rounded shadow-md z-50`}
         >
           {links.map((link, idx) => (
             <li key={link.name} className="relative">
@@ -183,4 +180,3 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
 };
 
 export default Header;
-
