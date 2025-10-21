@@ -34,7 +34,7 @@ const Footer = () => {
           <div className="flex items-center space-x-3">
             <CiPhone className="text-white" size={20} />
             <p className="font-medium text-[#F1F1F1] font-xl text-[15px] hover:text-light-blue">
-              +91 0731-2322678
+              
             </p>
           </div>
           <div className="flex items-center space-x-3">

@@ -130,7 +130,7 @@ const ContactUs = () => {
 </div>
 
             </div>
-            <p className={`${manrope.className}`}>0731-2352678</p>
+            <p className={`${manrope.className}`}></p>
           </motion.div>
 
           {/* Map */}

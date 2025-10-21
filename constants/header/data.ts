@@ -5,21 +5,24 @@ export const headerLinks: HeaderLinksType = [
     href: "/",
   },
   {
-    name: "About Us",
+    name: "About IET",
     href: "",
     dropdown: [
       { name: "About Us", href: "/about" },
-      { name: "Department", href: "/facultyPage" },
+      { name: "Departments", href: "/facultyPage" },
+       {name: "Administration",href: "/Administration",},
     ],
   },
   {
     name: "Academics",
     href: "",
     dropdown: [
+      { name: "Academic Calendar", href: "/academics/calendar" },
+      {name: "Syllabus", href: "/academics/syllabus"},
       { name: "Class Timetable", href: "/academics/class" },
-      { name: "Test Timetable", href: "/academics/test" },
-      { name: "Syllabus", href: "/academics/syllabus" },
-      { name: "Calendar", href: "/academics/calendar" },
+      
+      
+    
 
     ],
   },
@@ -34,7 +37,7 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Research & Innovation",
+    name: "Research @ IET",
     href: "/ResearchPage",
   },
   {
@@ -42,13 +45,14 @@ export const headerLinks: HeaderLinksType = [
     href: "/StudentLife&Activities",
   },
   {
-    name: "Hostels",
+    name: "Facilities",
     href: "/infrastructure",
   },
   {
     name: "Examination",
     href: "",
     dropdown: [
+      { name: "Test Timetable", href: "/academics/test" },
       { name: "Exam Time Table", href: "/examination" },
       {
         name: "Examination Form",
@@ -61,10 +65,7 @@ export const headerLinks: HeaderLinksType = [
       },
     ],
   },
-  {
-    name: "Administration",
-    href: "/Administration",
-  },
+ 
   {
     name: "Tenders & Procurement",
     href: "/Tenders&Procurement",
@@ -76,14 +77,14 @@ export const headerLinks: HeaderLinksType = [
 ];
 
 export const LOGO = "Institute of Engineering & Technology";
-export const LOGO_SUBTITLE = "देवी अहिल्या विश्वविद्यालय";
+export const LOGO_SUBTITLE = "DEVI AHILYA VISHWAVIDYALAYA ";
 export const UPPER_HEADER_LINKS = [
   {
     name: "Placement",
     href: "https://www.dauniv.ac.in/placement",
   },
   {
-    name: "Courses",
+    name: "Programs",
     href: "/academics/programsoffered",
     dropdown: [
       { name: "BE/BTECH (FULL-TIME)", value: "BE/BTECH (FULL-TIME)" },

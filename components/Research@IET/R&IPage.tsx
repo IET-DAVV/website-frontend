@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
- import title from "../common/academics/Title";
+ //import title from "../common/academics/Title";
 
 { <title title="Research@IET" className="text-7xl leading-tight font-newyork" />}
 
