@@ -1,80 +1,104 @@
-export const quickLinks = [
+export const importantLinks = [
   {
-    name: "Home",
+    name: "Digital Initiative by MHRD",
     url: "/",
   },
   {
-    name: "About",
-    url: "/about",
+    name: "Devi Ahilya Vishwavidyalaya",
+    url: "https://www.dauniv.ac.in/",
   },
   {
-    name: "Clubs",
-    url: "/clubs",
+    name: "Directorate of Technical Education",
+    url: "http://www.mptechedu.org/",
   },
   {
-    name: "Academic Programs",
-    url: "/academic-programs",
+    name: "AICTE",
+    url: "http://www.mptechedu.org/",
   },
   {
-    name: "Contact Us",
-    url: "/contact-us",
+    name: "University Grants Commission",
+    url: "https://www.ugc.gov.in/",
   },
   {
-    name: "Student Corner",
-    url: "/student-corner",
+    name: "MPOnline",
+    url: "https://www.mponline.gov.in/portal/",
   },
 ];
 
-export const information = [
+export const quickFindings = [
   {
-    name: "University Website",
-    value: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
+    name: "Anti Ragging Committee & Squad",
+    value: "/footer/antiRagging",
   },
   {
-    name: "Contact Directory",
+    name: "TEQIP",
     value: "0731-2471200",
   },
   {
-    name: "Forms",
-    value: "info@ietdavv.ac.in",
+    name: "Grievance",
+    value: "/footer/grievance",
   },
   {
-    name: "Mandatory Disclosure",
+    name: "AICTE Feedback",
     value: "https://dauniv.ac.in/",
   },
-  {
-    name: "Administration",
-    value: "/footer/administration",
-  },
-  {
-    name: "Anti Ragging",
-    value: "/footer/antiRagging",
-  },
+  // {
+  //   name: "ICC",
+  //   value: "/footer/administration",
+  // },
+  // {
+  //   name: "Discipline Committee",
+  //   value: "/footer/administration",
+  // },
+  // {
+  //   name: "IPR Cell",
+  //   value: "/footer/administration",
+  // },
+  // {
+  //   name: "Anti Ragging",
+  //   value: "/footer/antiRagging",
+  // },
 ];
 
-export const sitemap = [
+export const moreInformation = [
   {
-    name: "Home",
-    url: "/",
+    name: "Copyright Policy",
+    url: "/footer/copyright",
   },
   {
-    name: "About",
-    url: "/about",
+    name: "Hyper Linking Policy",
+    url: "/footer/hyperlink",
   },
   {
-    name: "Clubs",
-    url: "/clubs",
+    name: "Terms & Conditions",
+    url: "/footer/termsCondition",
   },
   {
-    name: "Academic Programs",
-    url: "/academic-programs",
+    name: "Privacy Policy",
+    url: "/footer/privacyPolicy",
   },
   {
-    name: "Contact Us",
-    url: "/contact-us",
+    name: "Security Policy",
+    url: "/footer/security",
   },
   {
-    name: "Student Corner",
-    url: "/student-corner",
+    name: "Archival Policy",
+    url: "/footer/archivalPolicy",
+  },
+  {
+    name: "Accessibility Statement",
+    url: "/footer/accessibility",
+  },
+  {
+    name: "COMA Policy",
+    url: "/footer/comaPolicy",
+  },
+  {
+    name: "Content Review Policy",
+    url: "/footer/contentReview",
+  },
+  {
+    name: "Scholar Page",
+    url: "/footer/scholarPage",
   },
 ];

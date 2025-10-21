@@ -71,23 +71,27 @@ const ContactUs = () => {
             <div className="flex items-center text-light-blue">
               <FaMapMarkerAlt className="mr-2" size={20} />
               <div className="flex flex-col">
-  <h3 className={`${manrope.className} font-medium`}>Address </h3>
-  <motion.div
-  className="h-[2px] bg-light-blue w-full"
-  style={{ transformOrigin: "left" }}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={underlineVariants}
-/>
+                <h3 className={`${manrope.className} font-medium`}>Address </h3>
+                <motion.div
+                  className="h-[2px] bg-light-blue w-full"
+                  style={{ transformOrigin: "left" }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={underlineVariants}
+                />
 
-</div>
+              </div>
 
             </div>
             <p className={`${manrope.className}`}>
-              Institute of Engineering and Technology, Devi Ahilya Vishwavidyalaya,
+              Institute of Engineering & Technology,
+              <br /> 
+              Vikramshila Parisar,
               <br />
-              Khandwa Road Indore-452017 (M.P)
+              Devi Ahilya Vishwavidyalaya,
+              <br />
+              Khandwa Road Indore-452017 (M.P.)
             </p>
           </motion.div>
 
@@ -96,42 +100,47 @@ const ContactUs = () => {
             <div className="flex items-center text-light-blue">
               <FaEnvelope className="mr-2" size={20} />
               <div className="flex flex-col">
-  <h3 className={`${manrope.className} font-medium`}>Email </h3>
-  <motion.div
-  className="h-[3px] bg-light-blue w-full"
-  style={{ transformOrigin: "left" }}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={underlineVariants}
-/>
+                <h3 className={`${manrope.className} font-medium`}>Email </h3>
+                <motion.div
+                  className="h-[3px] bg-light-blue w-full"
+                  style={{ transformOrigin: "left" }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={underlineVariants}
+                />
 
-</div>
+              </div>
 
             </div>
-            <p className={`${manrope.className}`}>contactiet@ietdavv.edu.in</p>
+            <a href="mailto:ao@ietdavv.edu.in"
+              className={`${manrope.className} transition-colors duration-200 hover:text-light-blue hover:underline`}
+            >
+              ao@ietdavv.edu.in
+            </a>
           </motion.div>
 
           {/* Phone */}
-          <motion.div className="text-black flex flex-col space-y-2" variants={fadeUp}>
+          {/* <motion.div className="text-black flex flex-col space-y-2" variants={fadeUp}>
             <div className="flex items-center text-light-blue">
               <FaPhoneAlt className="mr-2" size={20} />
               <div className="flex flex-col">
-  <h3 className={`${manrope.className} font-medium`}>Call Us </h3>
-  <motion.div
-  className="h-[2px] bg-light-blue w-full"
-  style={{ transformOrigin: "left" }}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={underlineVariants}
-/>
+                <h3 className={`${manrope.className} font-medium`}>Call Us </h3>
+                <motion.div
+                  className="h-[2px] bg-light-blue w-full"
+                  style={{ transformOrigin: "left" }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={underlineVariants}
+                />
 
-</div>
+              </div>
 
             </div>
-            <p className={`${manrope.className}`}>0731-2352678</p>
-          </motion.div>
+            <p className={`${manrope.className}`}></p>
+          </motion.div> */}
+          {/* un comment only when we get the number  */}
 
           {/* Map */}
           <motion.div variants={fadeUp}>
@@ -157,9 +166,20 @@ const ContactUs = () => {
             />
             <input
               type="email"
-              placeholder="Email"
+              placeholder="Email (e.g., name@example.com)"
               className="w-full border text-black text-sans border-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              title="Please enter a valid email address"
+              required
             />
+            <input
+            type="tel"
+            placeholder="Contact Number (e.g., 9876543210)"
+            className="w-full border text-black text-sans border-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600"
+            pattern="[0-9]{10}"
+            title="Please enter a 10-digit contact number"
+            required
+          />
             <textarea
               placeholder="Type your message here"
               rows={13}

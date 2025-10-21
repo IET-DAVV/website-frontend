@@ -33,6 +33,7 @@ const CourseSelector: React.FC<CourseSelectorProps> = ({
     if (setSelectedBranch) setSelectedBranch("");
     if (setSelectedYear) setSelectedYear("");
   }
+  
 
   return (
     <motion.div
