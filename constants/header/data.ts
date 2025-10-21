@@ -5,7 +5,7 @@ export const headerLinks: HeaderLinksType = [
     href: "/",
   },
   {
-    name: "About Us",
+    name: "About IET",
     href: "",
     dropdown: [
       { name: "About Us", href: "/about" },
@@ -34,7 +34,7 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Research & Innovation",
+    name: "Research @ IET",
     href: "/ResearchPage",
   },
   {
@@ -42,11 +42,11 @@ export const headerLinks: HeaderLinksType = [
     href: "/StudentLife&Activities",
   },
   {
-    name: "Hostels",
+    name: "Facilities",
     href: "/infrastructure",
   },
   {
-    name: "Examination",
+    name: "Examinations",
     href: "",
     dropdown: [
       { name: "Exam Time Table", href: "/examination" },
@@ -62,10 +62,6 @@ export const headerLinks: HeaderLinksType = [
     ],
   },
   {
-    name: "Administration",
-    href: "/Administration",
-  },
-  {
     name: "Tenders & Procurement",
     href: "/Tenders&Procurement",
   },
@@ -76,7 +72,7 @@ export const headerLinks: HeaderLinksType = [
 ];
 
 export const LOGO = "Institute of Engineering & Technology";
-export const LOGO_SUBTITLE = "देवी अहिल्या विश्वविद्यालय";
+export const LOGO_SUBTITLE = "Devi Ahilya Vishwavidyalaya";
 export const UPPER_HEADER_LINKS = [
   {
     name: "Placement",
@@ -103,7 +99,7 @@ export const UPPER_HEADER_LINKS = [
     href: "/freshers",
   },
   {
-    name: "Alumni",
+    name: "Alumni & Outreach",
     href: "https://ietdavvalumni.almaconnect.com/",
   },
 ];

@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
     <header className={`${
       isHome ? 'absolute' : 'relative' 
-    } z-[30] w-full px-6 py-2 md:py-4 ${
+    } z-[30] w-full px-6 py-2 md:py-2 ${
       isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
     }`}>
       
@@ -58,12 +58,22 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
         </button>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex flex-row justify-center items-center space-x-6">
+        <ul className="hidden md:flex flex-row justify-center items-center ">
           {links.map((link, idx) => (
-            <li key={link.name} className="relative">
+            <li
+              key={link.name}
+              className={`relative flex items-center ${
+                idx > 0 ? "before:content-['|'] before:mx-1" : ""
+              } ${
+                isHome
+                  ? "before:text-black/50"
+                  : "before:text-white/50"
+              }`}
+            >
+              <div className="relative">
               {link.dropdown ? (
                 <button
-                  className={`text-sm md:text-base hover:border-b-2 flex items-center gap-1 ${
+                  className={`text-xs md:text-sm hover:border-b-2 flex items-center  ${
                     isHome ? "border-black" : "border-white/80"
                   }`}
                   onMouseEnter={() => {
@@ -83,7 +93,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               ) : (
                 <Link
                   href={link.href}
-                  className={`block text-sm md:text-base py-2 transition-colors duration-200 ${
+                  className={`block max-w-36 truncate text-xs md:text-sm py-2 transition-colors duration-200 ${
                     isHome ? "hover:text-black text-black" : "hover:text-white"
                   }`}
                   onClick={() => setMenuOpen(false)}
@@ -95,7 +105,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               {/* Dropdown */}
               {link.dropdown && openDropdown === idx && (
                 <ul
-                  className={`absolute left-0 mt-5 p-2 w-[200px] ${
+                  className={`absolute left-0 mt-7 p-2 w-[150px] ${
                     isHome ? " bg-[#f8f8f8]" : "text-black bg-white"
                   } shadow-md border border-gray-200 rounded-b-md z-50`}
                   onMouseEnter={() => {
@@ -110,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="block px-3 py-2 text-sm md:text-base rounded hover:bg-gray-100 transition-colors duration-200"
+                        className="block px-3 py-2 text-xs md:text-sm rounded hover:bg-gray-100 transition-colors duration-200"
                         onClick={() => setOpenDropdown(null)}
                       >
                         {item.name}
@@ -119,6 +129,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                   ))}
                 </ul>
               )}
+              </div>
             </li>
           ))}
         </ul>
