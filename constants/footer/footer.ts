@@ -1,0 +1,80 @@
+export const quickLinks = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "About",
+    url: "/about",
+  },
+  {
+    name: "Clubs",
+    url: "/clubs",
+  },
+  {
+    name: "Academic Programs",
+    url: "/academic-programs",
+  },
+  {
+    name: "Contact Us",
+    url: "/contact-us",
+  },
+  {
+    name: "Student Corner",
+    url: "/student-corner",
+  },
+];
+
+export const information = [
+  {
+    name: "University Website",
+    value: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
+  },
+  {
+    name: "Contact Directory",
+    value: "0731-2471200",
+  },
+  {
+    name: "Forms",
+    value: "info@ietdavv.ac.in",
+  },
+  {
+    name: "Mandatory Disclosure",
+    value: "https://dauniv.ac.in/",
+  },
+  {
+    name: "Administration",
+    value: "/footer/administration",
+  },
+  {
+    name: "Anti Ragging",
+    value: "/footer/antiRagging",
+  },
+];
+
+export const sitemap = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "About",
+    url: "/about",
+  },
+  {
+    name: "Clubs",
+    url: "/clubs",
+  },
+  {
+    name: "Academic Programs",
+    url: "/academic-programs",
+  },
+  {
+    name: "Contact Us",
+    url: "/contact-us",
+  },
+  {
+    name: "Student Corner",
+    url: "/student-corner",
+  },
+];

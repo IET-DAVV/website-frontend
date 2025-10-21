@@ -54,7 +54,6 @@ const LibraryPage = () => {
   const handleCloseModal = (): void => {
     setIsModalOpen(false);
   };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}
