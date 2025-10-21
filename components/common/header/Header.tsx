@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
     <header className={`${
       isHome ? 'absolute' : 'relative' 
-    } z-[30] w-full px-6 py-2 md:py-2 ${
+    } z-[30] w-full px-6 py-2 md:py-1 ${
       isHome ? "bg-[#f8f8f8B3]" : "bg-[#3B7A9E] text-white"
     }`}>
       
@@ -38,10 +38,10 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
         <div className="flex items-center space-x-2 md:space-x-3">
           <Image
             src="/logo.svg"
-            className="w-12 h-12 md:w-16 md:h-16"
+            className="w-16 h-16 md:w-20 md:h-20"
             alt="logo"
-            width={64}
-            height={64}
+            width={80}
+            height={80}
           />
           <div className={`${manrope.className} leading-tight`}>
             <p className="text-sm font-bold md:text-lg md:font-extrabold whitespace-nowrap">{LOGO}</p>
@@ -105,7 +105,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               {/* Dropdown */}
               {link.dropdown && openDropdown === idx && (
                 <ul
-                  className={`absolute left-0 mt-7 p-2 w-[150px] ${
+                  className={`absolute left-0 mt-7 p-2 w-[200px] ${
                     isHome ? " bg-[#f8f8f8]" : "text-black bg-white"
                   } shadow-md border border-gray-200 rounded-b-md z-50`}
                   onMouseEnter={() => {

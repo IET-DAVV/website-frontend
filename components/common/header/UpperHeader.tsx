@@ -54,12 +54,13 @@ const UpperHeader = () => {
             className="flex items-center space-x-2 cursor-pointer text-white"
           >
             <IoMail />
-            <p className="hover:border-b-2 hover:border-white">contactiet@ietdavv.edu.in</p>
+            <p className="hover:border-b-2 hover:border-white">ao@ietdavv.edu.in</p>
           </a>
-          <a href="tel:+919826000000" className="flex items-center space-x-2 border-b-2 border-transparent hover:border-white cursor-pointer transition-all duration-200 pb-1">
+          {/* <a href="tel:+919826000000" className="flex items-center space-x-2 border-b-2 border-transparent hover:border-white cursor-pointer transition-all duration-200 pb-1">
             <IoCall />
-            <p>+91 98260 00000</p>
-          </a>
+            <p> </p>
+          </a> */}
+          {/* uncomment when we get the number */}
         </div>
 
         {/* Right: Links + Search */}

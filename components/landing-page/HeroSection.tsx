@@ -124,15 +124,15 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <NewsAnnouncement title="News" items={newsItems} />
-          <NewsAnnouncement title="Announcement" items={announcementItems} />
+          <NewsAnnouncement title="Notices" items={newsItems} />
+          <NewsAnnouncement title="Announcements" items={announcementItems} />
         </div>
       </div>
 
       {/* Desktop Layout */}
       <div className="hidden lg:grid lg:grid-cols-5 gap-6 xl:gap-8 items-start min-h-[600px]">
         <div className="lg:col-span-1">
-          <NewsAnnouncement title="News" items={newsItems} />
+          <NewsAnnouncement title="Notices" items={newsItems} />
         </div>
 
         <div className="lg:col-span-3">
@@ -209,7 +209,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="lg:col-span-1">
-          <NewsAnnouncement title="Announcement" items={announcementItems} />
+          <NewsAnnouncement title="Announcements" items={announcementItems} />
         </div>
       </div>
     </div>

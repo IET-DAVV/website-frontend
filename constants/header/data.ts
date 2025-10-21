@@ -9,17 +9,17 @@ export const headerLinks: HeaderLinksType = [
     href: "",
     dropdown: [
       { name: "About Us", href: "/about" },
-      { name: "Department", href: "/facultyPage" },
+      { name: "Director", href: "/facultyPage" },
+      { name: "Departments", href: "/facultyPage" },
     ],
   },
   {
     name: "Academics",
     href: "",
     dropdown: [
-      { name: "Class Timetable", href: "/academics/class" },
-      { name: "Test Timetable", href: "/academics/test" },
-      { name: "Syllabus", href: "/academics/syllabus" },
       { name: "Calendar", href: "/academics/calendar" },
+      { name: "Syllabus", href: "/academics/syllabus" },
+      { name: "Class Timetable", href: "/academics/class" },
 
     ],
   },
@@ -36,6 +36,12 @@ export const headerLinks: HeaderLinksType = [
   {
     name: "Research @ IET",
     href: "/ResearchPage",
+     dropdown: [
+      { name: "High-End Equipment", href: "/" },
+      { name: "Ongoing Research Projects", href: "/" },
+      { name: "Achievements", href: "/" },
+
+     ],
   },
   {
     name: "Student Life & Activities",
@@ -59,6 +65,7 @@ export const headerLinks: HeaderLinksType = [
         name: "Admit Card",
         href: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
       },
+      { name: "Test Timetable", href: "/academics/test" },
     ],
   },
   {
@@ -79,7 +86,7 @@ export const UPPER_HEADER_LINKS = [
     href: "https://www.dauniv.ac.in/placement",
   },
   {
-    name: "Courses",
+    name: "Programs",
     href: "/academics/programsoffered",
     dropdown: [
       { name: "BE/BTECH (FULL-TIME)", value: "BE/BTECH (FULL-TIME)" },
