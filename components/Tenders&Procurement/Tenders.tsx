@@ -3,6 +3,7 @@
 import React from "react";
 import Title from "../common/academics/Title"; // Use this import for titel component
 // import {} from "../constants/Tender/data.ts"
+import CourseSelector from "../common/academics/CourseSelector"
 
 // This component creates the main title, styled similarly to your example.
 
