@@ -1,211 +1,152 @@
-// dont change the export variable and read all the comments
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-// import Title from "../common/academics/Title"; // Use this import for titel component
+//import React from 'react';
+import React, { useState, useEffect } from "react";
+// Define the structure for sidebar navigation items
+interface NavItem {
+  name: string;
+  isRecent?: boolean;
+}
 
-{/* <Title title="Titel that you wanna use" className="text-7xl leading-tight font-newyork" /> */}// uncomment this to use the titel component
+interface LabData {
+  id: string; // Unique ID for state tracking
+  name: string; // Used for sidebar link text
+  imageTitle: string; // Title displayed on the image (e.g., General Computing Lab II)
+  mainHeading: string; // Title above the paragraph (e.g., GENERAL COMPUTING LAB II)
+  imageUrl: string; // Unique image path
+  isRecent?: boolean;
+}
 
-// This component creates the main title, styled similarly to your example.
-const Title: React.FC<{ title: string }> = ({ title }) => (
-  <div className="text-center my-8 md:my-12">
-    <motion.h1
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-4xl md:text-5xl font-serif font-bold"
-      style={{ color: 'rgb(59, 122, 158)' }} // Applied the requested text color
-    >
-      {title}
-    </motion.h1>
-    {/* This is the underline element from your design */}
-    <motion.div
-      initial={{ opacity: 0, width: 0 }}
-      animate={{ opacity: 1, width: "6rem" }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-      className="w-24 h-1 mx-auto mt-4 rounded"
-      style={{ backgroundColor: 'rgb(59, 122, 158)' }} // Matching color
-    />
-  </div>
-);
+const ResearchLabPage: React.FC = () => {
+  // --- Data Definitions ---
 
-// This component contains the CSS for the Pac-Man animation.
-// Placing it here keeps everything self-contained within this one file.
-const PacmanAnimationStyles: React.FC = () => {
-  const styles = `
-    /* New wrapper to create a self-contained animation stage */
-    .animation-wrapper {
-        position: relative;
-        width: 350px; /* Width to contain pacman and all dots */
-        height: 100px; /* Pacman's height */
-        transform: scale(0.8); /* Scale down for smaller screens */
-    }
-    @media (min-width: 768px) {
-        .animation-wrapper {
-            transform: scale(1); /* Full size on medium screens and up */
-        }
-    }
+  const mainNavItems: string[] = [
+    'Research Labs & Centers',
+    'Funded Projects',
+    'Publications & Patents',
+    'Consultancy & MoUs',
+    'Innovation Cell / IIC',
+  ];
+const sidebarItems: LabData[] = [
+    { id: 'vlsi', name: 'VLSI LAB', imageTitle: 'VLSI Lab', mainHeading: 'VLSI LAB', imageUrl: '/images/vlsi-lab.jpg' },
+    { id: 'computing', name: 'COMPUTER LAB', imageTitle: 'General Computing Lab II', mainHeading: 'GENERAL COMPUTING LAB II', imageUrl: 'https://thvnext.bing.com/th/id/OIP.vHFXtTZKazdxMLZbXLsCdgHaEv?w=245&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3' }, // Existing content
+    { id: 'auditorium', name: 'AUDITORIUM', imageTitle: 'Institute Auditorium', mainHeading: 'INSTITUTE AUDITORIUM', imageUrl: '/images/institute-auditorium.jpg' },
+    { id: 'electronics', name: 'ELECTRONICS LAB', imageTitle: 'Electronics Lab', mainHeading: 'ELECTRONICS LAB', imageUrl: '/images/electronics-lab.jpg' },
+    { id: 'workshop', name: 'WORKSHOP', imageTitle: 'Mechanical Workshop', mainHeading: 'MECHANICAL WORKSHOP', imageUrl: '/images/mechanical-workshop.jpg' },
+    { id: 'aiml', name: 'AIML LAB', imageTitle: 'AI-ML Research Center', mainHeading: 'AI-ML RESEARCH CENTER', imageUrl: '/images/aiml-lab.jpg' },
+    { id: 'civil', name: 'Civil (recent)', imageTitle: 'Civil Engineering Lab', mainHeading: 'CIVIL ENGINEERING LAB', imageUrl: '/images/civil-lab.jpg', isRecent: true },
+  ];
+  
 
-    /* Pacman container now only handles movement across the screen */
-    .pacman {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        /* Updated animation with a smoother loop */
-        animation: movePacman 2.5s linear infinite;
-    }
-    
-    /* New inner element to handle the mouth chomping animation */
-    .pacman-shape {
-        width: 0px;
-        height: 0px;
-        border-right: 50px solid transparent;
-        border-top: 50px solid rgb(59, 122, 158);
-        border-left: 50px solid rgb(59, 122, 158);
-        border-bottom: 50px solid rgb(59, 122, 158);
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        animation: chomp 0.5s ease-in-out infinite;
-        position: relative;
-    }
+  const loremIpsumText: string = `Lorem ipsum ultricies risus interdum aliquet quam lobortis ex etiam mattis enim non neque dictumst turpis viverra laoreet sit amet duik ipsum egestas et nunc sed aliquet suspendisse nunc amet pellentesque non at lacinia umum consectetur elementum pharetra enim consequat si ided elementum mot pharetra ultricies faucibus ac vitae dictumstturpis viverra laoreet sit amet duik ipsum egestas et nunc sed aliquet suspendisse nunc amet pellentesque non at lacinia umum consectetur elementum pharetra enim consequat si ided elementum mot pharetra ultricies faucibus ac vitae vulputate posuere turpis feugiat tellus id iud viverras ets grign laoreet. instique tortor risus id aliqui ornare volutpat mattis sagittis et nisi quis suspendisse maecenas vot vulputate posuere turpis feugiat tellus id iud viverras ets grign laoreet. instique tortor risus id aliqui ornare volutpat mattis sagittis et nisi quis suspendisse maecenas vot volutpat porttitor amet velit elit puiuis imperdiet sed velit turpis fea latpa consequat. nunc sed ipsum viverra vulputate enim elementum pharetra tortor leo eget viverra euismod vestibulum pellentesque elit id lacus mattis nunc tincidunt elit. metus vel turpis tincidunt at mattis nunc consectetur elit. metus vel turpis tincidunt at mattis nunc consectetur elit. metus vel turpis tincidunt at metus vel turpis tincidunt at viverra euismod vestibulum pellentesque elit id lacus mattis nunc tincidunt elit. metus vel turpis tincidunt at mattis nunc consectetur elit. metus vel turpis tincidunt at mattis nunc consectetur elit. metus vel turpis tincidunt at metus vel turpis tincidunt at.`;
 
-    .pacman-eye {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: white; /* Changed eye to white for better contrast */
-        border: 1px solid #333;
-        border-radius: 50%;
-        top: -30px;
-        right: 20px;
-    }
+  // --- Helper Components (for structure and readability) ---
 
-    /* Dots are now positioned absolutely within the wrapper and stay fixed */
-    .dots {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: 42.5px; /* Vertically center dots relative to pacman's 100px height */
-        left: 100px; /* Start dots just after pacman's initial space */
-    }
+ const [activeLabId, setActiveLabId] = React.useState<string>('computing');
+const activeLab = sidebarItems.find(item => item.id === activeLabId) || sidebarItems[1]; // Default to the second item (Computing Lab)
+ const handleSidebarClick = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    setActiveLabId(id);
+  };
 
-    .dot {
-        width: 15px;
-        height: 15px;
-        background-color: rgb(59, 122, 158); /* Updated dot color */
-        border-radius: 50%;
-        margin: 0 12px;
-        /* Updated animation with a smoother loop */
-        animation: eat 2.5s linear infinite;
-    }
-
-    /* Staggered delays for each dot to disappear as Pac-Man passes */
-    .dot:nth-child(1) { animation-delay: 0s; }
-    .dot:nth-child(2) { animation-delay: 0.4s; }
-    .dot:nth-child(3) { animation-delay: 0.8s; }
-    .dot:nth-child(4) { animation-delay: 1.2s; }
-    .dot:nth-child(5) { animation-delay: 1.6s; }
-
-    /* Chomp animation correctly rotates to open and close the mouth */
-    @keyframes chomp {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(-45deg); }
-      100% { transform: rotate(0deg); }
-    }
-
-    /* CORRECTED: Dots are now visible until eaten, and reappear correctly for the next loop. */
-    @keyframes eat {
-        0% {
-            /* Dot is visible at the start of its animation cycle */
-            transform: scale(1);
-            opacity: 1;
-        }
-        0.01% {
-            /* Instantly "eaten" and becomes invisible */
-            transform: scale(0);
-            opacity: 0;
-        }
-        79.99% {
-            /* Stays invisible until the global reset period */
-            transform: scale(0);
-            opacity: 0;
-        }
-        80% {
-            /* Reappears for the reset and is ready for the next loop */
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    /* Pac-Man moves for 2s (80% of 2.5s), then is hidden for 0.5s to create a clean loop */
-    @keyframes movePacman {
-        0% {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        80% {
-            transform: translateX(250px);
-            opacity: 1;
-        }
-        80.01% { /* Disappear instantly at the end of the path */
-            opacity: 0;
-        }
-        100% { /* Stay hidden and reset position for the next loop */
-            transform: translateX(0);
-            opacity: 0;
-        }
-    }
-  `;
-  return <style>{styles}</style>;
-};
-
-// The main component for the page, now named RIPage
-const ResearchPage: React.FC = () => {
   return (
-    <>
-      <PacmanAnimationStyles />
-      <div className="bg-white min-h-screen flex flex-col items-center justify-center text-gray-800 font-sans p-4 text-center overflow-hidden">
-        <Title title="PAGE UNDER CONSTRUCTION" />
+    <div className="min-h-screen bg-gray-50">
+      
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-lg md:text-xl text-gray-500 mb-16 max-w-md"
-        >
-          Our team is working hard to bring this page to life. Please check back soon for updates!
-        </motion.p>
-        
-        {/* This div now acts as the stage for the animation */}
-        <div className="h-28 flex items-center justify-center">
-            <motion.div
-                key={Math.random()} // Re-trigger animation on re-render if needed
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="animation-wrapper"
-            >
-              <div className="pacman">
-                <div className="pacman-shape">
-                    <div className="pacman-eye"></div>
-                </div>
-              </div>
-              <div className="dots">
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-              </div>
-            </motion.div>
-        </div>
+      {/* RESEARCH AND INNOVATION Heading (with user-specified class styling) */}
+      <div className="text-center py-8 px-4">
+        <h1 className={`
+          mt-2 font-newyork font-normal text-[#3B7A9E] text-center mb-4
+        text-4xl leading-[44px]
+        sm:text-5xl sm:leading-[60px]
+        md:text-6xl md:leading-[80px]
+        lg:text-[80px] lg:leading-[120px]`
+        }>
+          RESEARCH AND INNOVATION
+        </h1>
       </div>
-    </>
+
+      {/* Sub-Navigation */}
+      <nav className="border-b border-gray-300">
+        <ul className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-8 text-gray-600">
+          {mainNavItems.map((item) => (
+            <li key={item}>
+              <a 
+                href="#"
+                className={`
+                  block py-3 transition hover:text-custom-blue
+                  ${item === 'Research Labs & Centers' 
+                      ? 'text-[#3B7A9E] font-semibold border-b-4 border-[#3B7A9E]' 
+                      : ''}
+                `}
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        {/* Hero Section: Image and Lab Title with Sidebar */}
+        <section className="relative mb-12">
+          <div 
+            className="h-[450px] bg-cover bg-center shadow-lg relative"
+            style={{ backgroundImage: "url({activeLab.imageUrl})" }} // Placeholder image path
+          >
+            {/* Dark Gradient Overlay for Title Visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            
+            {/* Lab Title */}
+            <h2 className="absolute top-0 left-0 p-8 bg-gray-200 text-black text-4xl font-light tracking-wide">
+              {activeLab.imageTitle}
+            </h2>
+          </div>
+          
+          {/* Sidebar Navigation */}
+          <aside className="absolute top-5 right-0 w-56 bg-gray-100 shadow-xl border border-gray-300 z-10">
+            <ul className="divide-y divide-gray-300">
+              {sidebarItems.map((item) => (
+                <li key={item.name} className="group">
+                  <a 
+                    href="#" 
+                    onClick={(e) => handleSidebarClick(e, item.id)}
+                    className={`
+                      block p-4 text-sm uppercase text-gray-700 bg-gray-200 transition duration-150
+                      hover:bg-gray-200 hover:text-[#3B7A9E]
+                      ${item.isRecent ? 'text-gray-500 lowercase' : ''}
+                    `}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </section>
+
+        {/* General Lab Heading (Below the image) */}
+        <div className="text-center py-6 mb-8 border-y border-gray-300">
+          <h2 className="text-5xl font-newyork text-gray-800 uppercase front-bold tracking-wider">
+            {activeLab.mainHeading}
+          </h2>
+        </div>
+
+        {/* Descriptive Content */}
+        <section className="text-gray-700 text-base leading-relaxed">
+          <p className="mb-6 text-justify">
+            {loremIpsumText.split('. ').slice(0, 2).join('. ') + '.'}
+          </p>
+          <p className="mb-6 text-justify">
+            {loremIpsumText.split('. ').slice(2).join('. ') + '.'}
+          </p>
+          {/* Add more paragraphs as needed */}
+        </section>
+      </main>
+
+      
+    </div>
   );
 };
 
-export default ResearchPage;
+export default ResearchLabPage;
