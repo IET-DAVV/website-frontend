@@ -2,209 +2,155 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-// import Title from "../common/academics/Title"; // Use this import for titel component
 
-{/* <Title title="Titel that you wanna use" className="text-7xl leading-tight font-newyork" /> */}// uncomment this to use the titel component
+// import Title from "../common/academics/Title"; // use if global Title component exists
 
-// This component creates the main title, styled similarly to your example.
 const Title: React.FC<{ title: string }> = ({ title }) => (
-  <div className="text-center my-8 md:my-12">
+  <div className="text-center my-10 md:my-16">
     <motion.h1
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-4xl md:text-5xl font-serif font-bold"
-      style={{ color: 'rgb(59, 122, 158)' }} // Applied the requested text color
+      className="text-4xl md:text-5xl font-serif font-bold text-sky-800"
     >
       {title}
     </motion.h1>
-    {/* This is the underline element from your design */}
     <motion.div
       initial={{ opacity: 0, width: 0 }}
       animate={{ opacity: 1, width: "6rem" }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="w-24 h-1 mx-auto mt-4 rounded"
-      style={{ backgroundColor: 'rgb(59, 122, 158)' }} // Matching color
+      className="w-24 h-1 mx-auto mt-4 rounded bg-sky-800"
     />
   </div>
 );
 
-// This component contains the CSS for the Pac-Man animation.
-// Placing it here keeps everything self-contained within this one file.
-const PacmanAnimationStyles: React.FC = () => {
-  const styles = `
-    /* New wrapper to create a self-contained animation stage */
-    .animation-wrapper {
-        position: relative;
-        width: 350px; /* Width to contain pacman and all dots */
-        height: 100px; /* Pacman's height */
-        transform: scale(0.8); /* Scale down for smaller screens */
-    }
-    @media (min-width: 768px) {
-        .animation-wrapper {
-            transform: scale(1); /* Full size on medium screens and up */
-        }
-    }
+const SectionTitle: React.FC<{ subtitle: string }> = ({ subtitle }) => (
+  <motion.h2
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4 }}
+    className="text-2xl md:text-3xl font-semibold text-sky-700 mt-10 mb-4 text-center"
+  >
+    {subtitle}
+  </motion.h2>
+);
 
-    /* Pacman container now only handles movement across the screen */
-    .pacman {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        /* Updated animation with a smoother loop */
-        animation: movePacman 2.5s linear infinite;
-    }
-    
-    /* New inner element to handle the mouth chomping animation */
-    .pacman-shape {
-        width: 0px;
-        height: 0px;
-        border-right: 50px solid transparent;
-        border-top: 50px solid rgb(59, 122, 158);
-        border-left: 50px solid rgb(59, 122, 158);
-        border-bottom: 50px solid rgb(59, 122, 158);
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        animation: chomp 0.5s ease-in-out infinite;
-        position: relative;
-    }
-
-    .pacman-eye {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: white; /* Changed eye to white for better contrast */
-        border: 1px solid #333;
-        border-radius: 50%;
-        top: -30px;
-        right: 20px;
-    }
-
-    /* Dots are now positioned absolutely within the wrapper and stay fixed */
-    .dots {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: 42.5px; /* Vertically center dots relative to pacman's 100px height */
-        left: 100px; /* Start dots just after pacman's initial space */
-    }
-
-    .dot {
-        width: 15px;
-        height: 15px;
-        background-color: rgb(59, 122, 158); /* Updated dot color */
-        border-radius: 50%;
-        margin: 0 12px;
-        /* Updated animation with a smoother loop */
-        animation: eat 2.5s linear infinite;
-    }
-
-    /* Staggered delays for each dot to disappear as Pac-Man passes */
-    .dot:nth-child(1) { animation-delay: 0s; }
-    .dot:nth-child(2) { animation-delay: 0.4s; }
-    .dot:nth-child(3) { animation-delay: 0.8s; }
-    .dot:nth-child(4) { animation-delay: 1.2s; }
-    .dot:nth-child(5) { animation-delay: 1.6s; }
-
-    /* Chomp animation correctly rotates to open and close the mouth */
-    @keyframes chomp {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(-45deg); }
-      100% { transform: rotate(0deg); }
-    }
-
-    /* CORRECTED: Dots are now visible until eaten, and reappear correctly for the next loop. */
-    @keyframes eat {
-        0% {
-            /* Dot is visible at the start of its animation cycle */
-            transform: scale(1);
-            opacity: 1;
-        }
-        0.01% {
-            /* Instantly "eaten" and becomes invisible */
-            transform: scale(0);
-            opacity: 0;
-        }
-        79.99% {
-            /* Stays invisible until the global reset period */
-            transform: scale(0);
-            opacity: 0;
-        }
-        80% {
-            /* Reappears for the reset and is ready for the next loop */
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    /* Pac-Man moves for 2s (80% of 2.5s), then is hidden for 0.5s to create a clean loop */
-    @keyframes movePacman {
-        0% {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        80% {
-            transform: translateX(250px);
-            opacity: 1;
-        }
-        80.01% { /* Disappear instantly at the end of the path */
-            opacity: 0;
-        }
-        100% { /* Stay hidden and reset position for the next loop */
-            transform: translateX(0);
-            opacity: 0;
-        }
-    }
-  `;
-  return <style>{styles}</style>;
-};
-
-// The main component for the page, now named RIPage
 const RIPage: React.FC = () => {
   return (
-    <>
-      <PacmanAnimationStyles />
-      <div className="bg-white min-h-screen flex flex-col items-center justify-center text-gray-800 font-sans p-4 text-center overflow-hidden">
-        <Title title="PAGE UNDER CONSTRUCTION" />
+    <div className="bg-white min-h-screen text-gray-800 font-sans px-4 md:px-12 py-10 leading-relaxed">
+      {/* Main Page Title */}
+      <Title title="Research and Innovation" />
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-lg md:text-xl text-gray-500 mb-16 max-w-md"
-        >
-          Our team is working hard to bring this page to life. Please check back soon for updates!
-        </motion.p>
-        
-        {/* This div now acts as the stage for the animation */}
-        <div className="h-28 flex items-center justify-center">
-            <motion.div
-                key={Math.random()} // Re-trigger animation on re-render if needed
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="animation-wrapper"
-            >
-              <div className="pacman">
-                <div className="pacman-shape">
-                    <div className="pacman-eye"></div>
-                </div>
-              </div>
-              <div className="dots">
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-              </div>
-            </motion.div>
+      {/* Consultancy & MoU Section */}
+      <SectionTitle subtitle="Consultancy & MoU’s" />
+
+      <div className="max-w-5xl mx-auto text-justify space-y-6">
+        <h3 className="text-xl font-semibold text-sky-800">a) Technical</h3>
+        <ol className="list-decimal list-inside space-y-2">
+          <li>
+            The MOU has been signed with NICT Pvt. Ltd Indore to develop the
+            Product “Non-invasive blood glucometer”.
+          </li>
+          <li>
+            The MOU has been signed with Olee Space Pvt. Ltd. Pune to develop
+            the Product in Optical Wireless Communication.
+          </li>
+          <li>
+            Department has signed a Memorandum of Understanding (MOU) with
+            “Shree Pacetronix Ltd, Pithampur” on 14th March 2022 to design and
+            develop an ASIC Chip “PACE-CHIP” for Pacemaker under the
+            Chip-to-Startup (C2S) initiative of the Ministry of Electronics and
+            Information Technology (MeitY) Govt. of India.
+          </li>
+          <li>
+            The Institute has signed MOU with IIT Indore for 2022–23 session. As
+            per MOU, students of the department visited IIT Indore to see the
+            latest research work, interacted with faculty & research scholars of
+            IIT Indore.
+          </li>
+          <li>
+            Department has signed MOU with VLSI Society of India (VSI) on 18th
+            March 2024. VSI provides technical training regarding EDA tools,
+            organizing conferences, short-term courses, and facilitating
+            semiconductor know-how within the Institute.
+          </li>
+        </ol>
+
+        <h3 className="text-xl font-semibold text-sky-800">b) Society/Ethical</h3>
+        <ol className="list-decimal list-inside space-y-2">
+          <li>
+            Department has signed a Memorandum of Understanding (MOU) for the
+            project “Satark” — an initiative of Bridgestone Tyres India Pvt.
+            Ltd, implemented by TRAXS Society with Indore Traffic Police to
+            raise Road Safety Awareness (26/10/2021).
+          </li>
+          <li>
+            Department has collaboration with IIT Indore during 2022–2023
+            session. Under this collaboration, Mr. Shrey Pathak completed a
+            4-week internship at IIT Indore under Prof. Shubhail Mukherjee.
+          </li>
+          <li>
+            Department has collaboration with IIT Indore, IIT Jammu, IET-DAVV
+            Indore, and ABV-IIITM Gwalior to design and develop ASIC blocks of
+            Pacemaker Chip “Shree Pacetronix Ltd, Pithampur”. Research scholars
+            and faculty members interact and share research facilities across
+            these institutes.
+          </li>
+        </ol>
+
+        <h3 className="text-xl font-semibold text-sky-800">
+          Non-Disclosure Agreements (NDA)
+        </h3>
+        <ol className="list-decimal list-inside space-y-2">
+          <li>
+            The department has signed a Non-Disclosure Agreement (NDA) with
+            Europractice IC Service, Belgium to provide the UMC Process Design
+            Kit (PDK) for research and education purposes, including access to
+            180nm, 90nm, 65nm, and 45nm CMOS technologies.
+          </li>
+          <li>
+            The department has also signed NDA with Semi-Conductor Laboratory
+            (SCL), Mohali, Govt. of India, for using SCL PDK of 180nm for
+            research and education.
+          </li>
+        </ol>
+      </div>
+
+      {/* Innovation Cell / Incubation Centre Section */}
+      <SectionTitle subtitle="Innovation Cell / Incubation Centre" />
+
+      <div className="max-w-5xl mx-auto text-justify space-y-6">
+        <p>
+          Devi Ahilya Vishwavidyalaya, Incubation Centre (DAVV-IC) is a Section
+          8 company designed to foster a vibrant ecosystem of technology
+          incubation and entrepreneurship. By aligning with national priorities,
+          DAVV-IC aims to generate employment, create wealth, and build
+          successful businesses.
+        </p>
+        <p>
+          The center provides a nurturing environment for emerging startups,
+          particularly those originating from academia, to help them transition
+          from innovative ideas to scalable, sustainable businesses. DAVV-IC is
+          registered under CIN No. <b>U80901MP2022NPL063927</b> and has obtained{" "}
+          <b>12A</b> & <b>80G</b> certificates for tax exemptions and CSR
+          registration.
+        </p>
+        <p>
+          The DAVV Incubation Forum aims to connect budding entrepreneurs,
+          startups, and mentors by providing resources, networking
+          opportunities, and a platform to showcase innovative ideas.
+        </p>
+
+        <div className="flex justify-center mt-8">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="px-6 py-3 bg-sky-700 text-white rounded-lg shadow-md hover:bg-sky-800 transition"
+          >
+            Explore More
+          </motion.button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
