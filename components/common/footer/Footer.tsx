@@ -23,25 +23,34 @@ const Footer = () => {
         {/* Reach Us */}
         <div className="col-span-1 lg:col-span-2 flex flex-col items-start p-5 border-b lg:border-b-0 lg:border-r border-[#D9D9D9] space-y-5">
           <h1 className="font-bold text-white text-2xl">Reach Us</h1>
-          <div className="flex items-start space-x-3">
+          <a
+            href="https://www.google.com/maps/search/Institute+of+Engineering+%26+Technology%2C+DAVV+MVJH%2BFW7%2C+Takshashila+Campus%2CKhandwa+road%2C+Indore%2C+Madhya+Pradesh+452001"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start space-x-3 transition-opacity duration-200 hover:opacity-80"
+          >
             <CiLocationOn className="text-white" size={30} />
-            <p className="font-medium text-[#F1F1F1] font-xl text-[15px] max-w-sm">
-              Institute of Engineering and Technology
+            <p className="font-medium text-[#F1F1F1] font-xl text-[15px] max-w-sm hover:text-light-blue">
+              Institute of Engineering & Technology,
+              <br />
+              Vikramshila Parisar,
+              <br />
               Devi Ahilya Vishwavidyalaya
+              <br />
               Khandwa Road Indore-452017 (M.P.)
             </p>
-          </div>
-          <div className="flex items-center space-x-3">
+          </a>
+          {/* <div className="flex items-center space-x-3">
             <CiPhone className="text-white" size={20} />
             <p className="font-medium text-[#F1F1F1] font-xl text-[15px] hover:text-light-blue">
               +91 0731-2322678
             </p>
-          </div>
+          </div> */}{/*Un comment only when we have number*/}
           <div className="flex items-center space-x-3">
             <CiMail className="text-white" size={20} />
-            <p className="font-medium text-[#F1F1F1] font-xl text-[15px] hover:text-light-blue">
-              contactiet@ietdavv.edu.in
-            </p>
+            <a href="mailto:ao@ietdavv.edu.in" className="font-medium text-[#F1F1F1] font-xl text-[15px] hover:text-light-blue">             
+              ao@ietdavv.edu.in
+            </a>
           </div>
           <div className="flex items-center space-x-3">
             <CiMap className="text-white" size={20} />

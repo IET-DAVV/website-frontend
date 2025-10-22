@@ -164,7 +164,7 @@ const PacmanAnimationStyles: React.FC = () => {
 };
 
 // The main component for the page, now named RIPage
-const RIPage: React.FC = () => {
+const ResearchPage: React.FC = () => {
   return (
     <>
       <PacmanAnimationStyles />
@@ -208,4 +208,4 @@ const RIPage: React.FC = () => {
   );
 };
 
-export default RIPage;
+export default ResearchPage;

@@ -37,8 +37,8 @@ export const headerLinks: HeaderLinksType = [
     name: "Research @ IET",
     href: "/ResearchPage",
      dropdown: [
-      { name: "High-End Equipment", href: "/" },
-      { name: "Ongoing Research Projects", href: "/" },
+      { name: "High-End Equipment", href: "/ResearchPage/High-End-Equipment" },
+      { name: "Ongoing Research Projects", href: "/ResearchPage/OngoingResearch" },
       { name: "Achievements", href: "/" },
 
      ],
