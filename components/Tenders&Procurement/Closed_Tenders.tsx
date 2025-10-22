@@ -164,7 +164,7 @@ const PacmanAnimationStyles: React.FC = () => {
 };
 
 // The main component for the page, now named RIPage
-const TPPage: React.FC = () => {
+const Closed_TendersPage: React.FC = () => {
   return (
     <>
       <PacmanAnimationStyles />
@@ -208,4 +208,4 @@ const TPPage: React.FC = () => {
   );
 };
 
-export default TPPage;
+export default Closed_TendersPage;

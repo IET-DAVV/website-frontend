@@ -71,6 +71,11 @@ export const headerLinks: HeaderLinksType = [
   {
     name: "Tenders & Procurement",
     href: "/Tenders&Procurement",
+    dropdown: [
+      {name: "Open Tenders", href: "/Tenders&Procurement",},
+      { name: "Procurement Policies", href: "/Tenders&Procurement" },
+      { name: "Closed Tenders", href: "/Tenders&Procurement" },
+    ],
   },
   {
     name: "Contact Us",
