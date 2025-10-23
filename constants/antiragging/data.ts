@@ -29,7 +29,7 @@ export const antiRagging: AntiRagging = {
 
             }
         },
-        Consultancy_MoUs : {
+        Consultancy: {
             SectionsName: "Consultancy & MoUs",
             sections: {
 

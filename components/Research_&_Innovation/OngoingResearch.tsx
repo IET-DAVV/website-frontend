@@ -6,8 +6,8 @@ import CourseSelector from "../common/academics/CourseSelector";
 import ResearchLabPage from "./Research Labs";
 import FundedProjectsPage from "./Funded Projects";
 import Committee from "./Publications Patents";
-import Squad from "./Consultancy";
-import Discipline from "./Innovation Cell";
+import ConsultancyPage from "./Consultancy";
+import InnovationPage from "./Innovation Cell";
 import Title from "../common/academics/Title";
 
 function RI() {
@@ -33,8 +33,8 @@ function RI() {
         {selectedCourse === "Research_Labs_Centers" && <ResearchLabPage/>}
         {selectedCourse === "Funded_Projects" && <FundedProjectsPage/>}
         {selectedCourse === "Publications_Patents" && <FundedProjectsPage/>}
-        {selectedCourse === "Consultancy_MoUs " && <FundedProjectsPage/>}
-        {selectedCourse === "Innovation_Cell" && <Discipline/>}
+        {selectedCourse === "Consultancy" && <ConsultancyPage/>}
+        {selectedCourse === "Innovation_Cell" && <InnovationPage/>}
       </div>
     </div>
   );

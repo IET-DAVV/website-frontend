@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { motion } from "framer-motion";
 
 const FundedProjectsPage: React.FC = () => {
   return (
@@ -8,15 +9,22 @@ const FundedProjectsPage: React.FC = () => {
         
         {/* Main Heading: 1. SEMICON INDIA 2025 */}
         <div className="text-center py-6 mb-8 relative">
-          <h2 className={`
+          <motion.h2
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className={`
             font-newyork font-normal text-gray-800
             text-4xl leading-[44px]
             sm:text-5xl sm:leading-[60px]
             md:text-6xl md:leading-[80px]
             lg:text-[60px] lg:leading-[80px]`
-          }>
-            1. SEMICON INDIA 2025
-          </h2>
+      }
+    >
+    1. SEMICON INDIA 2025
+    </motion.h2>
+            
+          
           {/* Close button icon placeholder */}
           <div className="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-900 cursor-pointer">
             

@@ -1,108 +1,167 @@
 "use client";
-import React from "react";
-import { antiRaggingGuidelines } from "@/constants/antiragging/data";
-import { Download } from "lucide-react";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import anime from "animejs";
 
-const Guidelines = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease: "easeOut" }}
-      className="space-y-12 px-4 sm:px-10 py-12"
-    >
-      {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="w-full max-w-2xl mx-auto text-3xl sm:text-4xl font-bold text-center text-[#06779B]"
-      >
-        {antiRaggingGuidelines.title}
-      </motion.h2>
+export default function IncubationCentre() {
+  // Sabhi refs ko unke correct element type ke saath declare kiya hai
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const topLineRef = useRef<HTMLDivElement>(null);
+  const bottomLineRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const p1Ref = useRef<HTMLParagraphElement>(null);
+  const p2Ref = useRef<HTMLParagraphElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
 
-      {/* Guidelines Content */}
-      <div className="max-w-4xl mx-auto space-y-4 text-justify leading-relaxed text-gray-800">
-        {antiRaggingGuidelines.content.map((para, index) => (
-          <motion.p
-            key={index}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="text-sm sm:text-base"
-          >
-            {para}
-          </motion.p>
-        ))}
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const tl = anime.timeline({
+            easing: "easeOutExpo",
+            duration: 1000,
+          });
 
-        {/* SubContent */}
-        <div className="mt-4">
-          <span className="text-[#1D1D1D] font-semibold">
-            {antiRaggingGuidelines.subContent1.heading}{" "}
-          </span>
-          <span>{antiRaggingGuidelines.subContent1.content}</span>
-        </div>
+          tl.add({
+            targets: topLineRef.current,
+            scaleX: [0, 1],
+            duration: 800,
+          })
+            .add(
+              {
+                targets: titleRef.current,
+                translateY: [40, 0],
+                opacity: [0, 1],
+                duration: 800,
+              },
+              "-=600"
+            )
+            .add(
+              {
+                targets: [p1Ref.current, p2Ref.current],
+                translateY: [20, 0],
+                opacity: [0, 1],
+                duration: 800,
+                delay: anime.stagger(150),
+              },
+              "-=600"
+            )
+            .add(
+              {
+                targets: imageRef.current,
+                scale: [0.8, 1],
+                opacity: [0, 1],
+                duration: 1000,
+              },
+              "-=1000"
+            )
+            .add(
+              {
+                targets: buttonRef.current,
+                translateY: [20, 0],
+                opacity: [0, 1],
+                duration: 800,
+              },
+              "-=800"
+            )
+            .add(
+              {
+                targets: bottomLineRef.current,
+                scaleX: [0, 1],
+                duration: 800,
+              },
+              "-=1000"
+            );
 
-        {/* Punishments */}
-        <h3 className="text-lg font-semibold mt-8 text-[#2F2F2F]">
-          Punishment in the event of ragging:
-        </h3>
-        <p>{antiRaggingGuidelines.punishments.content}</p>
-        <ul className="list-disc pl-6 space-y-2">
-          {antiRaggingGuidelines.punishments.subContent.map((item, i) => (
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              viewport={{ once: true }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
-        <p className="mt-2">{antiRaggingGuidelines.punishments.ending}</p>
-      </div>
-
-      {/* Downloads Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-        className="mb-16 mt-12"
-      >
-        <div className="bg-white/70 backdrop-blur-sm border rounded-xl shadow-lg max-w-2xl mx-auto overflow-hidden divide-y divide-gray-300">
-          {antiRaggingGuidelines.links.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="flex justify-between items-center px-6 py-5 hover:bg-gray-50 transition"
-            >
-              <span className="text-base font-medium text-[#06779B]">
-                {item.label}
-              </span>
-              <motion.a
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-                href={item.file}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#0077C2] to-[#00AEEF] hover:from-[#005fa3] hover:to-[#008ecc] transition text-white px-6 py-2 rounded-full inline-flex items-center gap-2 text-sm font-semibold shadow-md"
-              >
-                <Download size={16} /> Download
-              </motion.a>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </motion.div>
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    }
   );
-};
 
-export default Guidelines;
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current);
+  }
+
+  return () => {
+    if (sectionRef.current) {
+      observer.unobserve(sectionRef.current);
+    }
+  };
+}, []);
+
+
+  return (
+    <div ref={sectionRef} className="bg-[#CCCCCC80] backdrop-blur-md py-16 px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div ref={topLineRef} className="border-t border-black mb-12"></div>
+        
+        <h1
+          ref={titleRef}
+          className="text-center text-[60px] font-newyork leading-[120px] font-manrope text-black mb-12"
+          style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
+        >
+          INCUBATION CENTER
+        </h1>
+        
+        <div className="flex flex-col lg:flex-row items-start gap-12">
+          <div className="flex-1 text-black text-base leading-relaxed space-y-6 max-w-2xl">
+            {/* YAHAN TEXT ADD KAR DIYA GAYA HAI */}
+            <p ref={p1Ref}>
+              Devi Ahilya Vishwavidyalaya, Incubation Centre (DAVV-IC) is a
+              Section 8 company designed to foster a vibrant ecosystem of
+              technology incubation and entrepreneurship. By aligning with
+              national priorities, DAVV-IC aims to generate employment, create
+              wealth, and build successful businesses. The center provides a
+              nurturing environment for emerging startups, particularly those
+              originating from academia, to help them transition from innovative
+              ideas to scalable, sustainable businesses. DAVV-IC is registered
+              under CIN No. U80901MP2022NPL063927 and has obtained 12A & 80G
+              certificates for tax exemptions and CSR registration.
+            </p>
+            <p ref={p2Ref}>
+              The DAVV Incubation Forum aims to connect budding entrepreneurs,
+              startups, and mentors by providing resources, networking
+              opportunities, and a platform to showcase innovative ideas.
+            </p>
+          </div>
+          
+          <div className="flex flex-col items-center">
+            <div ref={imageRef}>
+              <Image
+                src="/infrastructure/incubation/incubation aerial.jpg"
+                alt="DAVV Incubation Centre Building"
+                width={745}
+                height={371}
+                className="rounded-lg shadow-md"
+                priority
+              />
+            </div>
+            <div ref={buttonRef}>
+              <Link href="https://davvincubationcentre.com/" target="_blank" rel="noopener noreferrer">
+                <button className="mt-6 bg-[#008ECC] text-white text-lg font-medium px-8 py-3 rounded-md hover:bg-[#007bb3] transition">
+                  Explore More
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        <div ref={bottomLineRef} className="border-t border-black mt-12"></div>
+      </div>
+      
+      <style jsx global>{`
+        .letter {
+          display: inline-block;
+          line-height: 1em;
+        }
+      `}</style>
+    </div>
+  );
+}
