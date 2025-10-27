@@ -17,8 +17,6 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
   const listRef = useRef<HTMLUListElement>(null);
   const animationFrameId = useRef<number | null>(null);
   const scrollPosition = useRef(0);
-  const [isUserScrolling, setIsUserScrolling] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
   const scrollStep = 0.15; // Even slower scrolling for better readability
   const [isPaused, setIsPaused] = useState(false);
 
@@ -30,7 +28,7 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
   };
 
   const scrollStepFunction = () => {
-    if (isUserScrolling || isPaused) {
+    if (isPaused) {
       animationFrameId.current = requestAnimationFrame(scrollStepFunction);
       return;
     }
@@ -58,34 +56,14 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
     return () => {
       clearAnimationFrame();
     };
-  }, [isUserScrolling, isPaused]);
-
-  const startResumeTimeout = () => {
-    setTimeout(() => {
-      if (isHovering) {
-        setIsUserScrolling(false);
-      }
-    }, 2000);
-  };
-
-  const handleUserInteraction = () => {
-    setIsUserScrolling(true);
-    startResumeTimeout();
-  };
+  }, [isPaused]);
 
   const handleMouseEnter = () => {
-    setIsHovering(true);
-    setIsUserScrolling(true);
+    setIsPaused(true);
   };
 
   const handleMouseLeave = () => {
-    setIsHovering(false);
-    startResumeTimeout();
-  };
-
-  const handleClick = () => {
-    setIsUserScrolling(true);
-    startResumeTimeout();
+    setIsPaused(false);
   };
 
   return (
@@ -108,9 +86,6 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
                    overflow-y-auto ${
                      isPaused ? "overflow-y-scroll" : "overflow-hidden"
                    }`}
-        onWheel={handleUserInteraction}
-        onTouchStart={handleUserInteraction}
-        onClick={handleClick}
       >
         <div>
           <ul ref={listRef} className="space-y-2 sm:space-y-3 md:space-y-4">

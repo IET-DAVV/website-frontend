@@ -54,7 +54,7 @@ const ContactUs = () => {
       >
         <Title title="CONTACT US" />
         <p className="text-center text-light-blue">
-          Do you have any questions? Don&apos;t hesitate to contact us
+          If you have any questions, please don’t hesitate to contact us.
         </p>
       </motion.div>
 
