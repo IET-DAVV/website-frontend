@@ -1,20 +1,17 @@
 export const importantLinks = [
-  {
-    name: "Digital Initiative by MHRD",
-    url: "/",
-  },
-  {
+{
     name: "Devi Ahilya Vishwavidyalaya",
     url: "https://www.dauniv.ac.in/",
-  },
-  {
-    name: "Directorate of Technical Education",
-    url: "http://www.mptechedu.org/",
   },
   {
     name: "AICTE",
     url: "http://www.mptechedu.org/",
   },
+  {
+    name: "Directorate of Technical Education",
+    url: "http://www.mptechedu.org/",
+  },
+  
   {
     name: "University Grants Commission",
     url: "https://www.ugc.gov.in/",
@@ -27,6 +24,19 @@ export const importantLinks = [
     name: "DAVV MPOnline",
     url: "https://davv.mponline.gov.in/Portal/services/DAVVDASHBOARD/DAVVHOME.aspx",
   },
+  {
+    name: "Digital Initiative by MHRD",
+    url: "/",
+  },
+  {
+    name: "Samarth",
+    url: "https://samarth.edu.in/about/#:~:text=%22Samarth%22%20is%20an%20initiative%20by%20the%20Ministry%20of,of%20services%20for%20students%2C%20staff%2C%20and%20other%20stakeholders",
+  },
+  {
+    name: "Mandatory Disclosure ",
+    url: "/",
+  },
+
 
 ];
 
@@ -34,6 +44,10 @@ export const quickFindings = [
   {
     name: "Anti Ragging Committee & Squad",
     value: "/footer/antiRagging",
+  },
+  {
+    name: "Anti Ragging Cell",
+    value: "/",
   },
   {
     name: "TEQIP",
@@ -63,6 +77,15 @@ export const quickFindings = [
     name: "Administration",
     value: "/footer/administration",
   },
+  {
+    name: "Student Feedback",
+    value: "/",
+  },
+  {
+    name: "Digital Resources (E-books, Tutorials, MOOCs)",
+    value: "/",
+  },
+
 ];
 
 export const moreInformation = [
