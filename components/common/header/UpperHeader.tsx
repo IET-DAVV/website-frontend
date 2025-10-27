@@ -97,6 +97,8 @@ const UpperHeader = () => {
                 ) : (
                   <Link
                     href={link.href}
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="hover:border-b-2 hover:border-white text-xs"
                   >
                     {link.name}

@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
           />
           <div className={`${manrope.className} leading-tight`}>
             <p className="text-sm font-bold md:text-lg md:font-extrabold whitespace-nowrap">{LOGO}</p>
-            <p className="text-xs md:text-sm font-semibold text-black/80">{LOGO_SUBTITLE}</p>
+            <p className="text-xs md:text-sm font-semibold ">{LOGO_SUBTITLE}</p>
           </div>
         </div>
 
@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
         </button>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex flex-row justify-center items-center ">
+        <ul className="hidden md:flex md:font-extrabold flex-row justify-center items-center ">
           {links.map((link, idx) => (
             <li
               key={link.name}
@@ -105,7 +105,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               {/* Dropdown */}
               {link.dropdown && openDropdown === idx && (
                 <ul
-                  className={`absolute left-0 mt-7 p-2 w-[200px] ${
+                  className={`absolute left-0 mt-7 p-2 w-[200px] max-h-64 overflow-y-auto ${
                     isHome ? " bg-[#f8f8f8]" : "text-black bg-white"
                   } shadow-md border border-gray-200 rounded-b-md z-50`}
                   onMouseEnter={() => {
@@ -120,6 +120,8 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                     <li key={item.name}>
                       <Link
                         href={item.href}
+                        target={item.href.startsWith('http') ? '_blank' : undefined}
+                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                         className="block px-3 py-2 text-xs md:text-sm rounded hover:bg-gray-100 transition-colors duration-200"
                         onClick={() => setOpenDropdown(null)}
                       >
@@ -170,6 +172,8 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                     <li key={item.name}>
                       <Link
                         href={item.href}
+                        target={item.href.startsWith('http') ? '_blank' : undefined}
+                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                         className="block text-sm py-1 pl-4 hover:underline"
                         onClick={() => {
                           setOpenDropdown(null);

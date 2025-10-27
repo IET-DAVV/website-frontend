@@ -38,6 +38,10 @@ const fadeUp = {
 
 
 const ContactUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col space-y-10 mx-auto p-16">
       {/* Title Section */}

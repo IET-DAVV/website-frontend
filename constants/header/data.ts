@@ -44,7 +44,7 @@ export const headerLinks: HeaderLinksType = [
      ],
   },
   {
-    name: "Student Life & Activities",
+    name: "Student Life",
     href: "/StudentLife&Activities",
   },
   {
