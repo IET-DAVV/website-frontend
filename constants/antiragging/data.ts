@@ -11,32 +11,32 @@ export interface AntiRagging {
 
 export const antiRagging: AntiRagging = {
     sections: {
-        Guidelines: {
-            SectionsName: "Guidelines",
+        Research_Labs_Centers: {
+            SectionsName: "Research Labs & Centers",
             sections: {
 
             }
         },
-        CURBING_THE_MENANCE_OF_RAGGING: {
-            SectionsName: "Curbing the Menance of Ragging ",
+        Funded_Projects: {
+            SectionsName: "Funded Projects",
             sections: {
 
             }
         },
-        Anti_Ragging_committee: {
-            SectionsName: "Anti-Ragging committee",
+        Publications_Patents: {
+            SectionsName: "Publications & Patents",
             sections: {
 
             }
         },
-        Anti_Ragging_squad: {
-            SectionsName: "Anti-Ragging squad",
+        Consultancy: {
+            SectionsName: "Consultancy & MoUs",
             sections: {
 
             }
         },
-        Dicipline_Committee: {
-            SectionsName: "Dicipline Committee",
+        Innovation_Cell: {
+            SectionsName: "Innovation Cell/ IIC",
             sections: {
 
             }
