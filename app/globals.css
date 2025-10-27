@@ -6,7 +6,16 @@
 .scroll-container-snap {
   scroll-snap-type: x mandatory;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scroll if elements unintentionally overflow */
+}
 
+/* You might also want to add this if you use it globally, though Tailwind's preflight handles much of it */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 .scroll-item-snap {
   scroll-snap-align: start; /* ✨ CHANGED: from 'center' to 'start' */
   scroll-snap-stop: always;
