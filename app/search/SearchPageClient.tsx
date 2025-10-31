@@ -44,7 +44,7 @@ const SearchPageClient = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Search Results for "{query}"</h1>
+      <h1 className="text-3xl font-bold mb-6">Search Results for &quot;{query}&quot;</h1>
       {filteredResults.length > 0 ? (
         <ul className="space-y-4">
           {filteredResults.map((item) => (

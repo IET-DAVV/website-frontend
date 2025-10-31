@@ -43,14 +43,14 @@ const [selectedCourse, setSelectedCourse] = useState(defaultCourse);
     const firstBranch = branches[0] || "";
     setSelectedBranch(firstBranch);
     // The next effect will handle the semester update
-  }, [selectedCourse]);
+  }, [selectedCourse, branches]);
 
   // On Branch Change -> Update Semester
   useEffect(() => {
     const firstSemester = semesters[0] || "";
     setSelectedSemester(firstSemester);
     setOpenSubjectCode(null); // Close any open accordion
-  }, [selectedBranch]);
+  }, [selectedBranch, semesters]);
 
   // On Semester Change -> Close any open accordion
   useEffect(() => {

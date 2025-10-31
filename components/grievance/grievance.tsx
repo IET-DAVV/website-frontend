@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const GrievancePage = () => {
   const [formData, setFormData] = useState({
@@ -104,9 +105,11 @@ const GrievancePage = () => {
               required
               className="w-full p-2 pr-10 border border-gray-300 rounded-md text-sm"
             />
-            <img
+            <Image
               src="https://cdn-icons-png.flaticon.com/512/542/542689.png"
               alt="email icon"
+              width={16}
+              height={16}
               className="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 opacity-70"
             />
           </div>
@@ -122,9 +125,11 @@ const GrievancePage = () => {
               required
               className="w-full p-2 pr-10 border border-gray-300 rounded-md text-sm"
             />
-            <img
+            <Image
               src="https://cdn-icons-png.flaticon.com/512/1551/1551230.png"
               alt="phone icon"
+              width={16}
+              height={16}
               className="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 opacity-70"
             />
           </div>

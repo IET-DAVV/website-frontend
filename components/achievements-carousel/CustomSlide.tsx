@@ -2,6 +2,7 @@
 
 "use client";
 import React from "react";
+import Image from "next/image";
 
 type CustomSlideProps = {
   title: string;
@@ -16,12 +17,14 @@ const CustomSlide = ({ title, year, imgAddress, description }: CustomSlideProps)
                    max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 
                    mx-auto text-center text-black h-full">
       <div className="flex flex-col h-full">
-        <img
-          src={imgAddress}
-          alt={title}
-          className="w-full h-32 sm:h-40 md:h-48 lg:h-56 object-cover rounded-md mb-3 sm:mb-4 
-                     transition-transform duration-300 hover:scale-105"
-        />
+        <div className="relative w-full h-32 sm:h-40 md:h-48 lg:h-56 mb-3 sm:mb-4">
+          <Image
+            src={imgAddress}
+            alt={title}
+            fill
+            className="object-cover rounded-md transition-transform duration-300 hover:scale-105"
+          />
+        </div>
         <div className="flex-grow flex flex-col justify-between">
           <div>
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-1 sm:mb-2 

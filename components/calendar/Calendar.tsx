@@ -6,6 +6,7 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { FiAlertCircle } from "react-icons/fi"; // A nice icon for alerts
 import Title from "../common/academics/Title";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Image from "next/image";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ const Calendar = () => {
       const defaultYear = years.find(year => calenderData.years[year]?.PdfLink) || years[0];
       setSelectedYear(defaultYear);
     }
-  }, []);
+  }, [years]);
 
   const handleYearChange = (year: string) => {
     const hasLink = calenderData.years[year]?.PdfLink;
@@ -135,11 +136,12 @@ const Calendar = () => {
               const isImage = /\.(jpeg|jpg|png|gif|bmp|webp)$/i.test(pdfLink);
               
               return isImage ? (
-                <div className="border-2 border-gray-300 h-[500px] w-full rounded-xl shadow-lg overflow-y-auto overflow-x-hidden">
-                  <img
+                <div className="border-2 border-gray-300 h-[500px] w-full rounded-xl shadow-lg overflow-y-auto overflow-x-hidden relative">
+                  <Image
                     src={pdfLink}
                     alt={`Calendar for ${selectedYear}`}
-                    className="w-full h-auto min-h-[500px] object-contain"
+                    fill
+                    className="object-contain"
                   />
                 </div>
               ) : (

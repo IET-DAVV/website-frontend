@@ -92,7 +92,7 @@ const LibraryPage = () => {
                   {/* Text content */}
                   <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed font-light max-w-4xl">
                     The IET DAVV Central Library is a newly renovated, state-of-the-art
-                    facility designed to support students' academic and research endeavors.
+                    facility designed to support students&apos; academic and research endeavors.
                     Relocated from its original 1997 space in A-Block, it now features modern
                     interiors, comfortable reading areas, and individual study desks backed by
                     high-speed Wi-Fi and digital access.

@@ -12,6 +12,7 @@ import { examtimetableData } from "@/constants/exam-timetable/data";
 import { MdOutlineFileDownload } from "react-icons/md";
 import SyllabusAccordion from "../common/academics/SyllabusAccordion";
 import { Manrope } from "next/font/google";
+import Image from "next/image";
 import "@/app/globals.css";
 
 const manrope = Manrope({
@@ -263,13 +264,12 @@ const FreshersCorner = () => {
         </div>
 
         {isImage ? (
-          <div className="border-2 border-blue-500 h-[500px] w-full overflow-y-auto overflow-x-hidden">
-            <img
+          <div className="border-2 border-blue-500 h-[500px] w-full overflow-y-auto overflow-x-hidden relative">
+            <Image
               src={pdfLink}
               alt={`Calendar - ${type}`}
-              className="w-full h-auto min-h-[500px] object-contain"
-              loading="lazy"
-              decoding="async"
+              fill
+              className="object-contain"
             />
           </div>
         ) : (

@@ -3,6 +3,9 @@ import Image from 'next/image'
 import { facultyData } from '@/constants/facultyData/data'
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { User } from 'lucide-react';
+import { generateFacultyPDF, getCachedPDF, setCachedPDF } from '@/utils/pdfGenerator';
+import { useState, useEffect } from 'react';
 
 interface FacultyMember {
         branch: string;
@@ -20,8 +23,46 @@ interface FacultyMember {
 
 const FacultyData = (): JSX.Element => {
         const searchParams = useSearchParams();
-        const branchParam = searchParams.get("branch");
-        const nameParam = searchParams.get("name");
+        const branch = searchParams.get("branch");
+        const [pdfLoading, setPdfLoading] = useState<{[key: string]: boolean}>({});
+
+        // Enable smooth scrolling for navigation
+        useEffect(() => {
+                document.documentElement.style.scrollBehavior = 'smooth';
+                return () => {
+                        document.documentElement.style.scrollBehavior = 'auto';
+                };
+        }, []);
+
+  const handleProfileClick = async (faculty: any, facultyIdentifier: number | string) => {
+    const cacheKey = `${branch}-${facultyIdentifier}`;
+    setPdfLoading(prev => ({ ...prev, [cacheKey]: true }));
+
+    try {
+      // Check if PDF is cached
+      let pdfBlob = getCachedPDF(cacheKey);
+
+      if (!pdfBlob) {
+        // Generate new PDF
+        pdfBlob = await generateFacultyPDF(faculty);
+        setCachedPDF(cacheKey, pdfBlob);
+      }
+
+      // Create blob URL and open in new tab
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+      window.open(pdfUrl, '_blank');
+
+      // Clean up the URL after a short delay to allow the tab to open
+      setTimeout(() => {
+        URL.revokeObjectURL(pdfUrl);
+      }, 1000);
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    } finally {
+      setPdfLoading(prev => ({ ...prev, [cacheKey]: false }));
+    }
+  };        const nameParam = searchParams.get("name");
 
         if (nameParam) {
                 // Show individual faculty details
@@ -37,7 +78,97 @@ const FacultyData = (): JSX.Element => {
                 }
 
                 return (
-                        <div className="max-w-6xl mx-auto bg-white p-6 mt-20 mb-20">
+                        <div className="max-w-7xl mx-auto bg-white p-6 mt-20 mb-20 relative flex gap-6">
+                                {/* Navigation Menu */}
+                                <div className="sticky top-24 w-64 bg-gradient-to-b from-white to-gray-50 shadow-xl rounded-lg p-4 border border-gray-200 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto flex-shrink-0">
+                                        <h3 className="text-lg font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2 flex items-center gap-2">
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd" />
+                                                </svg>
+                                                Quick Navigation
+                                        </h3>
+                                        <nav className="space-y-1">
+                                                {faculty.description && (
+                                                        <a
+                                                                href="#about-faculty"
+                                                                className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                        >
+                                                                 About Faculty
+                                                        </a>
+                                                )}
+                                                <a
+                                                        href="#education-qualification"
+                                                        className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                >
+                                                         Education & Qualification
+                                                </a>
+                                                {faculty.tabs?.find(tab => tab.key === 'work') && (
+                                                        <a
+                                                                href="#work-experience"
+                                                                className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                        >
+                                                                 Work Experience
+                                                        </a>
+                                                )}
+                                                {faculty.tabs?.find(tab => tab.key === 'research') && (
+                                                        <a
+                                                                href="#research-details"
+                                                                className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                        >
+                                                                 Research Details
+                                                        </a>
+                                                )}
+                                                {faculty.tabs?.find(tab => tab.key === 'phd') && (
+                                                        <a
+                                                                href="#phd-supervision"
+                                                                className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                        >
+                                                                 PhD Supervision
+                                                        </a>
+                                                )}
+                                                {faculty.tabs?.find(tab => tab.label.toLowerCase().includes('publication')) && (
+                                                        <a
+                                                                href="#publications"
+                                                                className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                        >
+                                                                 Publications
+                                                        </a>
+                                                )}
+                                                {faculty.tabs?.find(tab => tab.label.toLowerCase().includes('project')) && (
+                                                        <a
+                                                                href="#projects"
+                                                                className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                        >
+                                                                 Projects
+                                                        </a>
+                                                )}
+                                                {faculty.tabs?.find(tab => tab.label.toLowerCase().includes('testing') || tab.label.toLowerCase().includes('consultancy')) && (
+                                                        <a
+                                                                href="#testing-consultancy"
+                                                                className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                        >
+                                                                 Testing & Consultancy
+                                                        </a>
+                                                )}
+                                                {faculty.tabs?.filter(tab =>
+                                                        !['work', 'research', 'phd'].includes(tab.key) &&
+                                                        !tab.label.toLowerCase().includes('publication') &&
+                                                        !tab.label.toLowerCase().includes('project') &&
+                                                        !tab.label.toLowerCase().includes('testing') &&
+                                                        !tab.label.toLowerCase().includes('consultancy')
+                                                ).length > 0 && (
+                                                        <a
+                                                                href="#other-details"
+                                                                className="block text-sm text-gray-700 hover:text-[#06779B] hover:bg-[#06779B]/10 px-3 py-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-[#06779B]"
+                                                        >
+                                                                 Other Details
+                                                        </a>
+                                                )}
+                                        </nav>
+                                </div>
+
+                                {/* Main Content */}
+                                <div className="flex-1 min-w-0">
                                 {/* Header */}
                                 <div className="text-[#686868] flex flex-col lg:flex-row items-center gap-6 font-medium mb-8">
                                         <div className="flex-1">
@@ -45,9 +176,9 @@ const FacultyData = (): JSX.Element => {
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                                                         <p><span className="font-bold text-black">Designation:</span> {faculty.designation}</p>
                                                         <p><span className="text-black font-bold">Employee ID:</span> {faculty.EmployeeID || "N/A"}</p>
-                                                        <p><span className="text-black font-bold">Phone:</span> 
+                                                        <p><span className="text-black font-bold">Phone:</span>
                                                                 {faculty.phone ? (
-                                                                        <a 
+                                                                        <a
                                                                                 href={`tel:+91${faculty.phone.replace(/\s+/g, '')}`}
                                                                                 className="text-[#06779B] hover:underline"
                                                                         >
@@ -56,7 +187,18 @@ const FacultyData = (): JSX.Element => {
                                                                 ) : "N/A"}
                                                         </p>
                                                         <p><span className="text-black font-bold">Email:</span> {faculty.email || "N/A"}</p>
-                                                        <p><span className="text-black font-bold">Icon:</span> {(faculty as any).icon || "Detailed Profile"}</p>
+                                                        <p><span className="text-black font-bold">Profile:</span>
+                                                                <button
+                                                                        onClick={() => handleProfileClick(faculty, faculty.name)}
+                                                                        disabled={pdfLoading[`${branch}-${faculty.name}`]}
+                                                                        className="inline-flex items-center gap-2 text-[#06779B] hover:text-[#056a8a] hover:underline ml-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                                >
+                                                                        <User size={16} />
+                                                                        <span>
+                                                                                {pdfLoading[`${branch}-${faculty.name}`] ? 'Generating PDF...' : 'Detailed Profile'}
+                                                                        </span>
+                                                                </button>
+                                                        </p>
                                                         <p><span className="text-black font-bold">Qualification:</span> {(faculty as any).qualification || null}</p>
                                                 </div>
                                         </div>
@@ -74,14 +216,14 @@ const FacultyData = (): JSX.Element => {
 
                                 {/* About Faculty */}
                                 {faculty.description && (
-                                        <div className="mb-8">
+                                        <div id="about-faculty" className="mb-8">
                                                 <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">About Faculty</h2>
                                                 <p className="text-gray-700 leading-relaxed">{faculty.description}</p>
                                         </div>
                                 )}
 
                                 {/* Education and Qualification */}
-                                <div className="mb-8">
+                                <div id="education-qualification" className="mb-8">
                                         <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">Education and Qualification</h2>
                                         <div className="overflow-x-auto">
                                                 <table className="w-full border-collapse border border-gray-300">
@@ -100,17 +242,17 @@ const FacultyData = (): JSX.Element => {
                                                                         const parts = qual.split(':');
                                                                         const degreePart = parts[0]?.trim() || '';
                                                                         const universityYearPart = parts[1]?.trim() || '';
-                                                                        
+
                                                                         // Extract degree and specialization
                                                                         const degreeMatch = degreePart.match(/^(.+?)\s*\((.+)\)$/);
                                                                         const degree = degreeMatch ? degreeMatch[1] : degreePart;
                                                                         const specialization = degreeMatch ? degreeMatch[2] : '';
-                                                                        
+
                                                                         // Extract university and year
                                                                         const universityYearMatch = universityYearPart.match(/^(.+?),\s*(\d{4})$/);
                                                                         const university = universityYearMatch ? universityYearMatch[1] : universityYearPart;
                                                                         const year = universityYearMatch ? universityYearMatch[2] : '';
-                                                                        
+
                                                                         return (
                                                                                 <tr key={index} className="hover:bg-gray-50">
                                                                                         <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
@@ -128,7 +270,7 @@ const FacultyData = (): JSX.Element => {
 
                                 {/* Work Experience */}
                                 {faculty.tabs?.find(tab => tab.key === 'work') && (
-                                        <div className="mb-8">
+                                        <div id="work-experience" className="mb-8">
                                                 <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">Work Experience</h2>
                                                 <div className="overflow-x-auto">
                                                         <table className="w-full border-collapse border border-gray-300">
@@ -163,7 +305,7 @@ const FacultyData = (): JSX.Element => {
 
                                 {/* Research Details */}
                                 {faculty.tabs?.find(tab => tab.key === 'research') && (
-                                        <div className="mb-8">
+                                        <div id="research-details" className="mb-8">
                                                 <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">Research Details</h2>
                                                 <div className="overflow-x-auto">
                                                         <table className="w-full border-collapse border border-gray-300">
@@ -196,7 +338,7 @@ const FacultyData = (): JSX.Element => {
 
                                 {/* PhD Supervision */}
                                 {faculty.tabs?.find(tab => tab.key === 'phd') && (
-                                        <div className="mb-8">
+                                        <div id="phd-supervision" className="mb-8">
                                                 <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">PhD Supervision</h2>
                                                 <div className="overflow-x-auto">
                                                         <table className="w-full border-collapse border border-gray-300">
@@ -231,7 +373,7 @@ const FacultyData = (): JSX.Element => {
 
                                 {/* Publications */}
                                 {faculty.tabs?.find(tab => tab.label.toLowerCase().includes('publication')) && (
-                                        <div className="mb-8">
+                                        <div id="publications" className="mb-8">
                                                 <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">Publications</h2>
                                                 <div className="overflow-x-auto">
                                                         <table className="w-full border-collapse border border-gray-300">
@@ -264,7 +406,7 @@ const FacultyData = (): JSX.Element => {
 
                                 {/* Projects */}
                                 {faculty.tabs?.find(tab => tab.label.toLowerCase().includes('project')) && (
-                                        <div className="mb-8">
+                                        <div id="projects" className="mb-8">
                                                 <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">Projects</h2>
                                                 <ul className="list-disc pl-6 space-y-2">
                                                         {faculty.tabs.find(tab => tab.label.toLowerCase().includes('project'))?.content.map((item: any, index: number) => (
@@ -276,7 +418,7 @@ const FacultyData = (): JSX.Element => {
 
                                 {/* Testing & Consultancy */}
                                 {faculty.tabs?.find(tab => tab.label.toLowerCase().includes('testing') || tab.label.toLowerCase().includes('consultancy')) && (
-                                        <div className="mb-8">
+                                        <div id="testing-consultancy" className="mb-8">
                                                 <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">Testing & Consultancy</h2>
                                                 <ul className="list-disc pl-6 space-y-2">
                                                         {faculty.tabs.find(tab => tab.label.toLowerCase().includes('testing') || tab.label.toLowerCase().includes('consultancy'))?.content.map((item: any, index: number) => (
@@ -287,14 +429,14 @@ const FacultyData = (): JSX.Element => {
                                 )}
 
                                 {/* Other Details */}
-                                {faculty.tabs?.filter(tab => 
-                                        !['work', 'research', 'phd'].includes(tab.key) && 
+                                {faculty.tabs?.filter(tab =>
+                                        !['work', 'research', 'phd'].includes(tab.key) &&
                                         !tab.label.toLowerCase().includes('publication') &&
                                         !tab.label.toLowerCase().includes('project') &&
                                         !tab.label.toLowerCase().includes('testing') &&
                                         !tab.label.toLowerCase().includes('consultancy')
                                 ).map((tab, index) => (
-                                        <div key={index} className="mb-8">
+                                        <div key={index} id={index === 0 ? "other-details" : undefined} className="mb-8">
                                                 <h2 className="text-2xl font-bold text-[#06779B] mb-4 border-b-2 border-[#06779B] pb-2">{tab.label}</h2>
                                                 <ul className="list-disc pl-6 space-y-2">
                                                         {tab.content.map((item: any, itemIndex: number) => (
@@ -304,31 +446,33 @@ const FacultyData = (): JSX.Element => {
                                         </div>
                                 ))}
                         </div>
+                        </div>
                 );
         }
 
         // Show faculty list for branch
-        const branch = branchParam ? decodeURIComponent(branchParam) : null;
+        const branchParam = searchParams.get("branch");
+        const branchName = branchParam ? decodeURIComponent(branchParam) : null;
 
         // Filter faculty by branch
-        const filteredFaculty = branch 
-                ? facultyData.filter((data: FacultyMember) => data.branch === branch)
+        const filteredFaculty = branchName
+                ? facultyData.filter((data: FacultyMember) => data.branch === branchName)
                 : [];
 
         return (
                 <>
                         <div className="w-full">
-                                <h1 className="text-4xl font-bold text-center text-[#06779B] mt-10 mb-10">{branch || 'Faculty'}</h1>
+                                <h1 className="text-4xl font-bold text-center text-[#06779B] mt-10 mb-10">{branchName || 'Faculty'}</h1>
 
                                 {filteredFaculty.length === 0 ? (
                                         <div className="text-center py-16 text-gray-500">
-                                                <p className="text-lg">No faculty members found for {branch || 'this department'}</p>
+                                                <p className="text-lg">No faculty members found for {branchName || 'this department'}</p>
                                         </div>
                                 ) : (
                                         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 m-20 mt-10 mb-10 p-4'>
                                                 {filteredFaculty.map((data: FacultyMember, index: number) => (
-                                                        <div 
-                                                                key={index} 
+                                                        <div
+                                                                key={index}
                                                                 className="max-w-[350px] bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300"
                                                         >
                                                                 {/* Image Container */}
@@ -351,7 +495,7 @@ const FacultyData = (): JSX.Element => {
                                                                 <div className="p-4 pl-6 pr-6">
                                                                         <h2 className="text-xl font-bold text-gray-800 mb-1">{data.name}</h2>
                                                                         <p className="font-semibold text-sm text-gray-600 mb-2">{data.designation}</p>
-                                                                        
+
                                                                         {data.email && (
                                                                                 <p className="text-xs text-[#06779B] font-semibold mb-3 truncate">
                                                                                         {data.email}
