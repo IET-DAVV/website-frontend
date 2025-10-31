@@ -31,23 +31,24 @@ const page: React.FC = () => {
         {subject.map((data: SubjectItem, index: number) => (
           <Link
             key={index}
-            href={`/facultyPage/branchFaculty?branch=${encodeURIComponent(
+            href={`/facultyPage/facultyData?branch=${encodeURIComponent(
               data.subject
             )}`}
-            className="relative h-[200px] w-[370px] overflow-hidden group shadow-lg"
           >
-            {/* Background Image */}
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-105 duration-300"
-              style={{ backgroundImage: `url(${data.image})` }}
-            />
+            <div className="relative h-[200px] w-[370px] overflow-hidden group shadow-lg cursor-pointer">
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-105 duration-300"
+                style={{ backgroundImage: `url(${data.image})` }}
+              />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-[#00000092] transition duration-300" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-[#00000092] transition duration-300" />
 
-            {/* Subject Text */}
-            <div className="relative z-10 flex items-center justify-center h-full text-white text-xl font-semibold text-center px-2">
-              {data.subject}
+              {/* Subject Text */}
+              <div className="relative z-10 flex items-center justify-center h-full text-white text-xl font-semibold text-center px-2">
+                {data.subject}
+              </div>
             </div>
           </Link>
         ))}

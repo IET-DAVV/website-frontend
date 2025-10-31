@@ -1,8 +1,18 @@
 "use client";
 import { useState } from "react";
 
-export default function FacultyTabs({ tabs }) {
-    const [activeTab, setActiveTab] = useState("work");
+interface TabItem {
+    key: string;
+    label: string;
+    content: string[];
+}
+
+interface FacultyTabsProps {
+    tabs: TabItem[];
+}
+
+export default function FacultyTabs({ tabs }: FacultyTabsProps): JSX.Element {
+    const [activeTab, setActiveTab] = useState<string>("work");
     const activeContent = tabs.find((tab) => tab.key === activeTab);
 
     return (
@@ -13,8 +23,9 @@ export default function FacultyTabs({ tabs }) {
                     <button
                         key={tab.key}
                         onClick={() => setActiveTab(tab.key)}
-                        className={`p-2 border-r border-gray-200 font-semibold hover:bg-gray-100 ${activeTab === tab.key ? "text-[#06779B] font-extrabold" : "text-black"
-                            }`}
+                        className={`p-2 border-r border-gray-200 font-semibold hover:bg-gray-100 ${
+                            activeTab === tab.key ? "text-[#06779B] font-extrabold" : "text-black"
+                        }`}
                     >
                         {tab.label}
                     </button>
