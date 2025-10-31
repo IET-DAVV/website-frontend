@@ -26,10 +26,10 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'ietdavv.edu.in',
+                hostname: 'www.ietdavv.edu.in',
             }
         ],
     },
 };
 
-export default nextConfig;
+export default bundleAnalyzer(nextConfig);
