@@ -4,4 +4,5 @@ const ResearchPage = () => {
   return <EquipmentPage />;
 };
 
+
 export default ResearchPage;

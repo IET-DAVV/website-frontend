@@ -2,10 +2,7 @@
 //import React from 'react';
 import React, { useState, useEffect } from "react";
 // Define the structure for sidebar navigation items
-interface NavItem {
-  name: string;
-  isRecent?: boolean;
-}
+
 
 interface LabData {
   id: string; // Unique ID for state tracking
