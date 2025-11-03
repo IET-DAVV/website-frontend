@@ -161,6 +161,37 @@ export const facultyData = [
             "year": "2021"
           }
         ]
+      },{
+        "key": "others",
+        "label": "others",
+        "content": [
+          {
+            "type": "Responsibilities Held",
+            "title": "Machine Learning Approaches for Data Structure Optimization",
+            "year": "2023"
+          },
+          {
+            "type": "Expert Talk",
+            "title": "Formal Language Theory in Modern Computing",
+            "year": "2022"
+          }
+        ]
+      },
+      {
+        "key": "workshop",
+        "label": "workshop",
+        "content": [
+          {
+            "type": "Online",
+            "title": "Machine Learning Approaches for Data Structure Optimization",
+            "year": "2023"
+          },
+          {
+            "type": "Offline",
+            "title": "Formal Language Theory in Modern Computing",
+            "year": "2022"
+          }
+        ]
       },
       {
         "key": "projects",
