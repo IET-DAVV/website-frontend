@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.2",
+    "bundle-analyzer": "^0.0.6",
     "fuse.js": "^7.1.0",
     "grommet-icons": "^4.12.1",
     "jspdf": "^3.0.3",
