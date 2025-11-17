@@ -106,7 +106,7 @@ const FacultyData = (): JSX.Element => {
         const response = await fetch('http://117.239.195.147:1337/api/faculty-datas?populate=*');
         
         if (!response.ok) {
-          throw new Error('Failed to fetch faculty data');
+          throw new Error('Failed to fetch faculty data from bhhhackend API');
         }
         
         const result = await response.json();
