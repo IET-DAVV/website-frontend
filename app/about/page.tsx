@@ -13,6 +13,7 @@ const Page = () => {
       <About />
       <History />
       <AchievementsSlider />
+      <About />
       <Vision />
       <Mission />
       <div className="p-5 flex flex-col space-y-5">
