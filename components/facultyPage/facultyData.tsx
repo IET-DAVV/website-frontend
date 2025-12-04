@@ -1,6 +1,5 @@
-
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -89,7 +88,7 @@ const FacultyData = (): JSX.Element => {
   const searchParams = useSearchParams();
   const branch = searchParams.get("branch");
   const nameParam = searchParams.get("name");
-  
+
   const [facultyData, setFacultyData] = useState<FacultyMember[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -101,19 +100,21 @@ const FacultyData = (): JSX.Element => {
       try {
         setLoading(true);
         setError(null);
-        
+
         // Replace with your actual API endpoint
-        const response = await fetch('http://117.239.195.147:1337/api/faculty-datas?populate=*');
-        
+        const response = await fetch(
+          "http://117.239.195.147:1337/api/faculty-datas?populate=*"
+        );
+
         if (!response.ok) {
-          throw new Error('Failed to fetch faculty data from bhhhackend API');
+          throw new Error("Failed to fetch faculty data from bhhhackend API");
         }
-        
+
         const result = await response.json();
         setFacultyData(result.data || []);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
-        console.error('Error fetching faculty data:', err);
+        setError(err instanceof Error ? err.message : "An error occurred");
+        console.error("Error fetching faculty data:", err);
       } finally {
         setLoading(false);
       }
@@ -159,7 +160,7 @@ const FacultyData = (): JSX.Element => {
           phdSupervision: attrs.phd_supervision || [],
           testingAndConsultancy: attrs.testing_and_consultancy || [],
           imageUrl: attrs.Formal_Image?.data?.attributes?.url
-            ? `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${attrs.Formal_Image.data.attributes.url}`
+            ? `http://117.239.195.147:1337${attrs.Formal_Image.data.attributes.url}`
             : null,
         };
 
@@ -199,8 +200,8 @@ const FacultyData = (): JSX.Element => {
     return (
       <div className="text-center py-16 text-red-500">
         <p className="text-lg">Error: {error}</p>
-        <button 
-          onClick={() => window.location.reload()} 
+        <button
+          onClick={() => window.location.reload()}
           className="mt-4 px-4 py-2 bg-[#06779B] text-white rounded-md hover:bg-[#056a8a]"
         >
           Retry
@@ -213,8 +214,7 @@ const FacultyData = (): JSX.Element => {
     // Show individual faculty details
     const facultyName = decodeURIComponent(nameParam);
     const facultyMember = facultyData.find(
-      (data) =>
-        data.attributes.Name.toLowerCase() === facultyName.toLowerCase()
+      (data) => data.attributes.Name.toLowerCase() === facultyName.toLowerCase()
     );
 
     if (!facultyMember) {
@@ -226,9 +226,11 @@ const FacultyData = (): JSX.Element => {
     }
 
     const faculty = facultyMember.attributes;
-    const imageUrl = faculty.Formal_Image?.data?.attributes?.url 
-      ? `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${faculty.Formal_Image.data.attributes.url}`
-      : '/placeholder-faculty.jpg';
+    const imageUrl = faculty.Formal_Image?.data?.attributes?.url
+      ? `${process.env.NEXT_PUBLIC_API_URL || "http://117.239.195.147:1337"}${
+          faculty.Formal_Image.data.attributes.url
+        }`
+      : "/placeholder-faculty.jpg";
 
     return (
       <div className="max-w-7xl mx-auto bg-white p-6 mt-20 mb-20 relative flex gap-6">
@@ -334,14 +336,19 @@ const FacultyData = (): JSX.Element => {
                 </p>
                 <p>
                   <span className="text-black font-bold">Email:</span>{" "}
-                  <a href={`mailto:${faculty.email}`} className="text-[#06779B] hover:underline">
+                  <a
+                    href={`mailto:${faculty.email}`}
+                    className="text-[#06779B] hover:underline"
+                  >
                     {faculty.email || "N/A"}
                   </a>
                 </p>
                 <p>
                   <span className="text-black font-bold">Profile:</span>
                   <button
-                    onClick={() => handleProfileClick(facultyMember, faculty.Name)}
+                    onClick={() =>
+                      handleProfileClick(facultyMember, faculty.Name)
+                    }
                     disabled={pdfLoading[`${branch}-${faculty.Name}`]}
                     className="inline-flex items-center gap-2 text-[#06779B] hover:text-[#056a8a] hover:underline ml-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
@@ -355,7 +362,9 @@ const FacultyData = (): JSX.Element => {
                 </p>
                 <p>
                   <span className="text-black font-bold">Qualification:</span>{" "}
-                  {faculty.qualification !== "N/A\t" ? faculty.qualification : "N/A"}
+                  {faculty.qualification !== "N/A\t"
+                    ? faculty.qualification
+                    : "N/A"}
                 </p>
               </div>
             </div>
@@ -393,21 +402,41 @@ const FacultyData = (): JSX.Element => {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-[#06779B] text-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">S. No.</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Degree</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Specialization</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Year</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">University/Board</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        S. No.
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Degree
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Specialization
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Year
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        University/Board
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {faculty.education_qualifcation.map((qual, index) => (
                       <tr key={qual.id} className="hover:bg-gray-50">
-                        <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
-                        <td className="border border-gray-300 px-4 py-2">{qual.degree}</td>
-                        <td className="border border-gray-300 px-4 py-2">{qual.specialization}</td>
-                        <td className="border border-gray-300 px-4 py-2">{qual.year}</td>
-                        <td className="border border-gray-300 px-4 py-2">{qual.institute}</td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {index + 1}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {qual.degree}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {qual.specialization}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {qual.year}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {qual.institute}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -426,23 +455,47 @@ const FacultyData = (): JSX.Element => {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-[#06779B] text-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">S. No.</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Designation</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Department</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Employer Name</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Duration</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Mode of Employment</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        S. No.
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Designation
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Department
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Employer Name
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Duration
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Mode of Employment
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {faculty.work_experience.map((exp, index) => (
                       <tr key={exp.id} className="hover:bg-gray-50">
-                        <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
-                        <td className="border border-gray-300 px-4 py-2">{exp.designation}</td>
-                        <td className="border border-gray-300 px-4 py-2">{exp.department}</td>
-                        <td className="border border-gray-300 px-4 py-2">{exp.employer}</td>
-                        <td className="border border-gray-300 px-4 py-2">{exp.duration_of_employment_in_months}</td>
-                        <td className="border border-gray-300 px-4 py-2">{exp.mode_of_employment}</td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {index + 1}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {exp.designation}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {exp.department}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {exp.employer}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {exp.duration_of_employment_in_months}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {exp.mode_of_employment}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -461,33 +514,64 @@ const FacultyData = (): JSX.Element => {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-[#06779B] text-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">S.No.</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Type</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Title</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Year</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Paper Link</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Authors</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Publishers</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        S.No.
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Type
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Title
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Year
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Paper Link
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Authors
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Publishers
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {faculty.research_details.map((pub, index) => (
                       <tr key={pub.id} className="hover:bg-gray-50">
-                        <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
-                        <td className="border border-gray-300 px-4 py-2">{pub.type}</td>
-                        <td className="border border-gray-300 px-4 py-2">{pub.title}</td>
-                        <td className="border border-gray-300 px-4 py-2">{pub.publication_year}</td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {index + 1}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {pub.type}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {pub.title}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {pub.publication_year}
+                        </td>
                         <td className="border border-gray-300 px-4 py-2">
                           {pub.paper_link && pub.paper_link !== "N/A\t" ? (
-                            <a href={pub.paper_link} target="_blank" rel="noopener noreferrer" className="text-[#06779B] hover:underline">
+                            <a
+                              href={pub.paper_link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#06779B] hover:underline"
+                            >
                               Link
                             </a>
                           ) : (
                             "N/A"
                           )}
                         </td>
-                        <td className="border border-gray-300 px-4 py-2">{pub.author}</td>
-                        <td className="border border-gray-300 px-4 py-2">{pub.publishers}</td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {pub.author}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {pub.publishers}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -506,21 +590,41 @@ const FacultyData = (): JSX.Element => {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-[#06779B] text-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">S. No.</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Student Name</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">University/Institute</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Thesis Title</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Year</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        S. No.
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Student Name
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        University/Institute
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Thesis Title
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Year
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {faculty.phd_supervision.map((phd, index) => (
                       <tr key={phd.id} className="hover:bg-gray-50">
-                        <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
-                        <td className="border border-gray-300 px-4 py-2">{phd.student}</td>
-                        <td className="border border-gray-300 px-4 py-2">{phd.university}</td>
-                        <td className="border border-gray-300 px-4 py-2">{phd.thesis_title}</td>
-                        <td className="border border-gray-300 px-4 py-2">{phd.year}</td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {index + 1}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {phd.student}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {phd.university}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {phd.thesis_title}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {phd.year}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -539,23 +643,47 @@ const FacultyData = (): JSX.Element => {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-[#06779B] text-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">S. No.</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Type</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Title</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Duration</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Amount</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Year</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        S. No.
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Type
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Title
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Duration
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Amount
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">
+                        Year
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {faculty.project_detials.map((proj, index) => (
                       <tr key={proj.id} className="hover:bg-gray-50">
-                        <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
-                        <td className="border border-gray-300 px-4 py-2">{proj.type}</td>
-                        <td className="border border-gray-300 px-4 py-2">{proj.title}</td>
-                        <td className="border border-gray-300 px-4 py-2">{proj.duration}</td>
-                        <td className="border border-gray-300 px-4 py-2">{proj.amount}</td>
-                        <td className="border border-gray-300 px-4 py-2">{proj.year}</td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {index + 1}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {proj.type}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {proj.title}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {proj.duration}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {proj.amount}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {proj.year}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -610,9 +738,12 @@ const FacultyData = (): JSX.Element => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 m-20 mt-10 mb-10 p-4">
             {filteredFaculty.map((data) => {
               const faculty = data.attributes;
-              const imageUrl = faculty.Formal_Image?.data?.attributes?.url 
-                ? `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${faculty.Formal_Image.data.attributes.url}`
-                : '/placeholder-faculty.jpg';
+              const imageUrl = faculty.Formal_Image?.data?.attributes?.url
+                ? `${
+                    process.env.NEXT_PUBLIC_API_URL ||
+                    "http://117.239.195.147:1337"
+                  }${faculty.Formal_Image.data.attributes.url}`
+                : "/placeholder-faculty.jpg";
 
               return (
                 <div
@@ -630,7 +761,6 @@ const FacultyData = (): JSX.Element => {
                       className="object-cover w-full h-full"
                       onError={(e) => {
                         const img = e.target as HTMLImageElement;
-                        img.src = "/placeholder-faculty.jpg";
                       }}
                     />
                   </div>
