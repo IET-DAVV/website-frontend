@@ -31,7 +31,7 @@ const Content: React.FC<ContentProps> = ({ selectedCourse }) => {
 
       return controls.stop;
     }
-  }, [filteredCourse?.total]);
+  }, [filteredCourse?.total, count]);
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },

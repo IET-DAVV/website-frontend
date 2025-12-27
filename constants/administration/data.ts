@@ -16,42 +16,39 @@ export interface DirectorProfile {
 }
 
 export const directorData: DirectorProfile = {
-  name: "Dr. (Mrs.) Vrinda Tokekar ",
-  image: "/Administration/vrinda.png",
+  name: "Dr. Pratosh Bansal",
+  image: "https://www.ietdavv.edu.in/images/Faculty/Pratosh-Bansal.JPG",
   designation: [
-    "Professor, Director & Head of Department",
-    "Information Technology",
+    "Director",
     "Institute of Engineering & Technology",
-    "Devi Ahilya University, Indore (M.P.) India",
+    "Devi Ahilya Vishwavidyalaya",
+    "Khandwa Road, Indore. MP. India.",
   ],
   contact: {
-    email: "vtokekar@ietdavv.edu",
-    phone: "91-94253 17939",
+    email: "director@ietdavv.edu.in",
+    phone: "+91 94250 45326",
   },
   qualifications: [
-    "BE/BTECH. (Hons.) in Electrical & Electronics Engineering from BITS Pilani – (1984)",
-    "BE/BTECH. (Hons.) in Electrical & Electronics Engineering from BITS Pilani – (1984)",
-    "Ph.D. (Computer Engineering) from DAVV, Indore – (2007)",
+    "B.E. in Mechanical Engineering",
+    "M.Tech. in Energy Management",
+    "M.Tech. in Computer Science",
+    "Ph.D. in Computer Engineering (2011)",
   ],
   experience:
-    "Over 30 years of academic and research experience in Electronics and Computer Engineering",
+    "Dr. Pratosh Bansal is result oriented academician and administrator. On 10th July 2025, he has joined as Director of the Institute of Engineering & Technology (IET). With a B.E. in Mechanical Engineering and M.Tech. degrees in Energy Management and Computer Science, Dr Pratosh awarded with a Ph.D. in Computer Engineering in 2011. After joining in the year 1999 to DAVV, Dr. Bansal has contributed significantly to academic innovation, institutional development, and quality assurance in Higher Education System. He played a key role in establishing technical laboratories, institutional MIS, AICTE and NAAC compliance frameworks, and university automation systems. He has also represented academia in industry, serving on deputation as Group CEO of a chemical enterprise to implement system-based process management.",
   interests: [
-    "Computer Networking",
-    "Distributed Computing",
-    "Security in Wireless Networks",
-    "e-Governance",
-    "Multimedia Communication",
-    "Software Engineering Computer  Communication Systems",
+    "ERP",
+    "Knowledge Management",
+    "Digital Forensics",
+    "Green IT",
+    "Energy Systems",
   ],
   publications: [
-    "25 Journal Papers",
-    "35 Conference Papers",
-    "8 National Conference Papers",
+    "Principal Investigator for 100 Cr ANRF-PAIR Project with IIT Indore as Hub",
   ],
   responsibilities: [
-    "In-Charge, IT Centre at Devi Ahilya Vishwavidyalaya",
-    "Member, UGC-Accessibility Guidelines Committee",
-    "Director / Centralized Placement Cell (CPC) – IET DAVV",
+    "Director-IQAC",
+    "Director-Centre for Distance and Online Education of the University",
   ],
 };
 

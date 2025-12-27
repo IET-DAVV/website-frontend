@@ -8,55 +8,28 @@ const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 31536000,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "http",
-        hostname: "googleusercontent.com",
-        port: "",
-        pathname: "/profile/picture/**",
-      },
-      {
-        protocol: "http",
-        hostname: "lh3.googleusercontent.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "www.ietdavv.edu.in",
-        port: "",
-        pathname: "/**",
-      },
-    ],
-    // Optimize image loading
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-  compress: true,
-  experimental: {
-    optimizeCss: true,
-  },
-  // Performance optimizations - swcMinify is now default in Next.js 15
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-  // Enable modern features
-  poweredByHeader: false,
-  outputFileTracingRoot: __dirname,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+            },
+            {
+                protocol: 'http',
+                hostname: '117.239.195.147',
+            },
+            {
+                protocol: 'https',
+                hostname: 'ietdavv.edu.in',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.ietdavv.edu.in',
+            }
+        ],
+    },
 };
 
 export default bundleAnalyzer(nextConfig);

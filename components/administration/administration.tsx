@@ -12,7 +12,7 @@ const Administration = () => {
   const renderContent = () => {
     switch (selectedPage) {
       case "Director":
-        return <Director />;
+        return <Director />; 
       case "Head of Departments":
         return <Departments />;
       case "Administrative Office":

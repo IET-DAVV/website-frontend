@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, FC, useState } from "react";
+import React, { useEffect, useRef, FC, useState, useCallback } from "react";
 
 interface NewsAnnouncementItem {
   label: string;
@@ -27,7 +27,7 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
     }
   };
 
-  const scrollStepFunction = () => {
+  const scrollStepFunction = useCallback(() => {
     if (isPaused) {
       animationFrameId.current = requestAnimationFrame(scrollStepFunction);
       return;
@@ -49,14 +49,14 @@ const NewsAnnouncement: FC<NewsAnnouncementProps> = ({ title, items }) => {
     scrollContainer.scrollTop = scrollPosition.current;
 
     animationFrameId.current = requestAnimationFrame(scrollStepFunction);
-  };
+  }, [isPaused]);
 
   useEffect(() => {
     animationFrameId.current = requestAnimationFrame(scrollStepFunction);
     return () => {
       clearAnimationFrame();
     };
-  }, [isPaused]);
+  }, [isPaused, scrollStepFunction]);
 
   const handleMouseEnter = () => {
     setIsPaused(true);

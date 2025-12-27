@@ -76,7 +76,7 @@ const FundedProjectsPage: React.FC = () => {
           <ul className="list-disc list-inside text-base text-gray-700 leading-relaxed space-y-2 pl-4">
             <li>The chip design has been documented as a patentable innovation due to its novel architecture and optimized implementation.</li>
             <li>A technical paper detailing the methodology, design process, and simulation outcomes has been prepared for submission in reputed IEEE conferences/ journals.</li>
-            <li>This achievement will also be included in the institute's Publication & Patent record, highlighting IET-DAVV's contribution to India's self-reliance in semiconductor technology.</li>
+            <li>This achievement will also be included in the institute&apos;s Publication & Patent record, highlighting IET-DAVV&apos;s contribution to India&apos;s self-reliance in semiconductor technology.</li>
           </ul>
         </section>
 
@@ -84,7 +84,7 @@ const FundedProjectsPage: React.FC = () => {
         <section className="mb-10">
           <h3 className="text-xl font-semibold text-gray-800 mb-3">Impact & Recognition</h3>
           <ul className="list-disc list-inside text-base text-gray-700 leading-relaxed space-y-2 pl-4">
-            <li>Being recognized at Semicon India 2025, alongside designs from national R&D organizations, highlights the institute's leadership in VLSI research and semiconductor innovation.</li>
+            <li>Being recognized at Semicon India 2025, alongside designs from national R&D organizations, highlights the institute&apos;s leadership in VLSI research and semiconductor innovation.</li>
             <li>It fosters further collaboration and advancements within the Indian semiconductor ecosystem.</li>
             <li>This accomplishment sets a benchmark for academic-industry collaboration, proving that academic institutions can directly contribute to chip-level innovation at a national level.</li>
           </ul>

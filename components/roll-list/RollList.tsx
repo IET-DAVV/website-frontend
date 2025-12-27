@@ -34,7 +34,7 @@ const RollList = () => {
     if (years.length > 0) {
       setSelectedYear(years[0]);
     }
-  }, []);
+  }, [years]);
 
   // When year changes, reset the selected branch
   useEffect(() => {

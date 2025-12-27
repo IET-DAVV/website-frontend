@@ -64,11 +64,11 @@ export const ConsultancyPage: React.FC = () => {
           <div>
             <h3 className="text-2xl font-semibold mb-4" >Technical</h3>
             <ol className="list-decimal pl-6 space-y-3">
-              <li>The MOU has been signed with NICT Pvt. Ltd Indore to develop the product "Non-invasive Blood Glucometer." <span className="underline text-base text-gray-700 leading-relaxed text-justify mb-4" 
+              <li>The MOU has been signed with NICT Pvt. Ltd Indore to develop the product &quot;Non-invasive Blood Glucometer.&quot; <span className="underline text-base text-gray-700 leading-relaxed text-justify mb-4" 
               ><a href="https://www.example.com/project-details">(Click Here)
           </a></span></li>
               <li>The MOU has been signed with Olee Space Pvt. Ltd. Pune to develop a product in Optical Wireless Communication. <span className="underline text-base text-gray-700 leading-relaxed text-justify mb-4"><a href="https://www.example.com/project-details">(Click Here)</a></span></li>
-              <li>MOU with Shree Pacetronix Ltd., Pithampur (14 March 2022) to design and develop an ASIC chip "iPACE-CHIP" under the C2S initiative by MeitY, Govt. of India. <span className="underline text-base text-gray-700 leading-relaxed text-justify mb-4"><a href="https://www.example.com/project-details">(Click Here)</a></span></li>
+              <li>MOU with Shree Pacetronix Ltd., Pithampur (14 March 2022) to design and develop an ASIC chip &quot;iPACE-CHIP&quot; under the C2S initiative by MeitY, Govt. of India. <span className="underline text-base text-gray-700 leading-relaxed text-justify mb-4"><a href="https://www.example.com/project-details">(Click Here)</a></span></li>
               <li>The Institute signed an MOU with IIT Indore for 2022-23; students explored research labs and interacted with faculty. <span className="underline text-base text-gray-700 leading-relaxed text-justify mb-4"><a href="https://www.example.com/project-details">(Click Here)</a></span></li>
               <li>MOU with VLSI Society of India (VSI) on 18 March 2024 to support chip design, EDA tools, and semiconductor education. <span className="underline text-base text-gray-700 leading-relaxed text-justify mb-4"><a href="https://www.example.com/project-details">(Click Here)</a></span></li>
             </ol>

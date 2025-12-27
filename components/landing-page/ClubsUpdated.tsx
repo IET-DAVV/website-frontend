@@ -176,6 +176,66 @@ const StackCards: React.FC = () => {
   const handleCollapseClick = () => {
     setShowAllClubs(false);
   };
+
+  // Create individual transform values for each card (since cards.length is fixed)
+  const card1Progress = useTransform(scrollYProgress, [0.09, 0.18], [0, 1]);
+  const card1Y = useTransform(card1Progress, [0, 1], [700, Math.max(8, 20 - 0 * 3)]);
+  const card1Scale = useTransform(card1Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card1RotateX = useTransform(card1Progress, [0, 0.5], [5, 0]);
+
+  const card2Progress = useTransform(scrollYProgress, [0.18, 0.27], [0, 1]);
+  const card2Y = useTransform(card2Progress, [0, 1], [700, Math.max(8, 20 - 1 * 3)]);
+  const card2Scale = useTransform(card2Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card2RotateX = useTransform(card2Progress, [0, 0.5], [5, 0]);
+
+  const card3Progress = useTransform(scrollYProgress, [0.27, 0.36], [0, 1]);
+  const card3Y = useTransform(card3Progress, [0, 1], [700, Math.max(8, 20 - 2 * 3)]);
+  const card3Scale = useTransform(card3Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card3RotateX = useTransform(card3Progress, [0, 0.5], [5, 0]);
+
+  const card4Progress = useTransform(scrollYProgress, [0.36, 0.45], [0, 1]);
+  const card4Y = useTransform(card4Progress, [0, 1], [700, Math.max(8, 20 - 3 * 3)]);
+  const card4Scale = useTransform(card4Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card4RotateX = useTransform(card4Progress, [0, 0.5], [5, 0]);
+
+  const card5Progress = useTransform(scrollYProgress, [0.45, 0.54], [0, 1]);
+  const card5Y = useTransform(card5Progress, [0, 1], [700, Math.max(8, 20 - 4 * 3)]);
+  const card5Scale = useTransform(card5Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card5RotateX = useTransform(card5Progress, [0, 0.5], [5, 0]);
+
+  const card6Progress = useTransform(scrollYProgress, [0.54, 0.63], [0, 1]);
+  const card6Y = useTransform(card6Progress, [0, 1], [700, Math.max(8, 20 - 5 * 3)]);
+  const card6Scale = useTransform(card6Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card6RotateX = useTransform(card6Progress, [0, 0.5], [5, 0]);
+
+  const card7Progress = useTransform(scrollYProgress, [0.63, 0.72], [0, 1]);
+  const card7Y = useTransform(card7Progress, [0, 1], [700, Math.max(8, 20 - 6 * 3)]);
+  const card7Scale = useTransform(card7Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card7RotateX = useTransform(card7Progress, [0, 0.5], [5, 0]);
+
+  const card8Progress = useTransform(scrollYProgress, [0.72, 0.81], [0, 1]);
+  const card8Y = useTransform(card8Progress, [0, 1], [700, Math.max(8, 20 - 7 * 3)]);
+  const card8Scale = useTransform(card8Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card8RotateX = useTransform(card8Progress, [0, 0.5], [5, 0]);
+
+  const card9Progress = useTransform(scrollYProgress, [0.81, 0.9], [0, 1]);
+  const card9Y = useTransform(card9Progress, [0, 1], [700, Math.max(8, 20 - 8 * 3)]);
+  const card9Scale = useTransform(card9Progress, [0, 0.5, 1], [0.9, 1, 1.01]);
+  const card9RotateX = useTransform(card9Progress, [0, 0.5], [5, 0]);
+
+  // Array of card transforms
+  const cardTransforms = [
+    { y: card1Y, scale: card1Scale, rotateX: card1RotateX },
+    { y: card2Y, scale: card2Scale, rotateX: card2RotateX },
+    { y: card3Y, scale: card3Scale, rotateX: card3RotateX },
+    { y: card4Y, scale: card4Scale, rotateX: card4RotateX },
+    { y: card5Y, scale: card5Scale, rotateX: card5RotateX },
+    { y: card6Y, scale: card6Scale, rotateX: card6RotateX },
+    { y: card7Y, scale: card7Scale, rotateX: card7RotateX },
+    { y: card8Y, scale: card8Scale, rotateX: card8RotateX },
+    { y: card9Y, scale: card9Scale, rotateX: card9RotateX },
+  ];
+
   return (
     <div className="min-h-[80vh] bg-gray-100">
       <div className="container mx-auto px-4 py-8">
@@ -247,44 +307,17 @@ const StackCards: React.FC = () => {
               </div>
 
               {/* Dynamic Stack Cards */}
-              {cards.map((card, index) => {
-                const cardStart = (index + 1) * 0.09;
-                const cardEnd = cardStart + 0.09;
-
-                const cardProgress = useTransform(
-                  scrollYProgress,
-                  [cardStart, cardEnd],
-                  [0, 1]
-                );
-
-                const stackOffset = Math.max(8, 20 - index * 3);
-                const y = useTransform(
-                  cardProgress,
-                  [0, 1],
-                  [700, stackOffset]
-                );
-
-                const scale = useTransform(
-                  cardProgress,
-                  [0, 0.5, 1],
-                  [0.9, 1, 1.01]
-                );
-
-                const rotateX = useTransform(cardProgress, [0, 0.5], [5, 0]);
-
-                // Only conditionally render the JSX, not the hooks
-                if (!showAllClubs) {
-                  return null;
-                }
+              {showAllClubs && cards.map((card, index) => {
+                const transforms = cardTransforms[index];
 
                 return (
                   <motion.div
                     key={card.id}
                     className="absolute inset-0 w-full h-full"
                     style={{
-                      y,
-                      scale,
-                      rotateX,
+                      y: transforms.y,
+                      scale: transforms.scale,
+                      rotateX: transforms.rotateX,
                       zIndex: 10 + index,
                       transformStyle: "preserve-3d",
                       transformOrigin: "center bottom",

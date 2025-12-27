@@ -1,6 +1,6 @@
 export const subject = [
     { subject: "COMPUTER SCIENCE", link: "/faculty/computerScience" ,image:"/faculty/computerScience.png",},
-    { subject: "INFORMATION TECHNOLOY", link: "/faculty/informationTechnology" ,image:"/faculty/informationTechnology.png",},
+    { subject: "INFORMATION TECHNOLOGY", link: "/faculty/informationTechnology" ,image:"/faculty/informationTechnology.png",},
     { subject: "ELECTRONICS & TELECOMUNICATION", link: "/faculty/electronicsTelecommunication" ,image:"/faculty/electronicTelecomunication.png",},
     { subject: "ELCTRONIC & INSTRUMENTAION", link: "/faculty/electronicsInstrumentation" ,image:"/faculty/electronicEnstruments.png",},
     { subject: "CIVIL ENGINEERING", link: "/faculty/civilEngineering" ,image:"/faculty/civilEngineer.png",},
@@ -14,12 +14,11 @@ export const facultyData = [
     "image": "https://www.ietdavv.edu.in/images/Faculty/G.L.-Prajapati.jpg",
     "branch": "COMPUTER SCIENCE",
     "name": "Dr. G.L. Prajapati",
-    "position": "Professor",
     "description": "Data Structures and Algorithms, Machine Learning, Formal Language Theory, Automata Theory, Artificial Intelligence, Soft Computing, and Bioinformatics",
     "email": "glprajapati@ietdavv.edu.in",
-    "phone": "91 98266 69205",
+    "phone": "98266 69205",
     "designation": "Professor",
-    "dob": "",
+    "EmployeeID": "",
     "qualifications": [
       "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
       "MTECH. (Computer Science): DAVV Indore, 2002",
@@ -30,33 +29,168 @@ export const facultyData = [
         "key": "work",
         "label": "Work Experience",
         "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
+          {
+            "designation": "Professor",
+            "department": "Computer Engineering",
+            "employerName": "IET DAVV",
+            "duration": "2014 – Present"
+          },
+          {
+            "designation": "Software Engineer",
+            "department": "IT Department",
+            "employerName": "Pertech Computers LTD",
+            "duration": "2005 – 2014"
+          },
+          {
+            "designation": "Trainee Engineer",
+            "department": "Engineering",
+            "employerName": "Carbon Corporation LTD",
+            "duration": "2002 – 2005"
+          }
         ]
       },
       {
         "key": "research",
         "label": "Research Details",
         "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
+          {
+            "researchType": "Wireless Networks",
+            "researchTitle": "Research on Wireless Networks and Sensor Systems",
+            "publicationYear": "2020"
+          },
+          {
+            "researchType": "Machine Learning",
+            "researchTitle": "Applications of Machine Learning in Data Structures",
+            "publicationYear": "2022"
+          },
+          {
+            "researchType": "Formal Languages",
+            "researchTitle": "Advances in Formal Language Theory and Automata",
+            "publicationYear": "2021"
+          }
         ]
       },
       {
         "key": "phd",
         "label": "PhD Supervision",
         "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
+          {
+            "studentName": "Rahul Sharma",
+            "thesisTitle": "Machine Learning Applications in Software Engineering",
+            "status": "Completed",
+            "year": "2022"
+          },
+          {
+            "studentName": "Priya Patel",
+            "thesisTitle": "Wireless Sensor Networks for IoT Applications",
+            "status": "Completed",
+            "year": "2021"
+          },
+          {
+            "studentName": "Amit Kumar",
+            "thesisTitle": "Bioinformatics and Computational Biology",
+            "status": "Ongoing",
+            "year": "2024"
+          },
+          {
+            "studentName": "Sneha Gupta",
+            "thesisTitle": "Artificial Intelligence in Healthcare",
+            "status": "Ongoing",
+            "year": "2024"
+          },
+          {
+            "studentName": "Vikram Singh",
+            "thesisTitle": "Network Security Protocols",
+            "status": "Ongoing",
+            "year": "2024"
+          }
         ]
       },
       {
         "key": "publications",
         "label": "Publications",
         "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
+          {
+            "type": "Journal",
+            "title": "Machine Learning Approaches for Data Structure Optimization",
+            "year": "2023"
+          },
+          {
+            "type": "Journal",
+            "title": "Formal Language Theory in Modern Computing",
+            "year": "2022"
+          },
+          {
+            "type": "Journal",
+            "title": "Wireless Sensor Networks: A Comprehensive Review",
+            "year": "2021"
+          },
+          {
+            "type": "Conference",
+            "title": "AI Applications in Bioinformatics",
+            "year": "2023"
+          },
+          {
+            "type": "Conference",
+            "title": "Soft Computing Techniques for Network Security",
+            "year": "2022"
+          },
+          {
+            "type": "Journal",
+            "title": "Algorithm Analysis and Optimization",
+            "year": "2021"
+          },
+          {
+            "type": "Journal",
+            "title": "Neural Networks in Pattern Recognition",
+            "year": "2020"
+          },
+          {
+            "type": "Conference",
+            "title": "Big Data Analytics for Healthcare",
+            "year": "2023"
+          },
+          {
+            "type": "Journal",
+            "title": "Computational Intelligence Methods",
+            "year": "2022"
+          },
+          {
+            "type": "Conference",
+            "title": "IoT Security Frameworks",
+            "year": "2021"
+          }
+        ]
+      },{
+        "key": "others",
+        "label": "others",
+        "content": [
+          {
+            "type": "Responsibilities Held",
+            "title": "Machine Learning Approaches for Data Structure Optimization",
+            "year": "2023"
+          },
+          {
+            "type": "Expert Talk",
+            "title": "Formal Language Theory in Modern Computing",
+            "year": "2022"
+          }
+        ]
+      },
+      {
+        "key": "workshop",
+        "label": "workshop",
+        "content": [
+          {
+            "type": "Online",
+            "title": "Machine Learning Approaches for Data Structure Optimization",
+            "year": "2023"
+          },
+          {
+            "type": "Offline",
+            "title": "Formal Language Theory in Modern Computing",
+            "year": "2022"
+          }
         ]
       },
       {
@@ -81,12 +215,11 @@ export const facultyData = [
     "branch": "COMPUTER SCIENCE",
     "image": "https://www.ietdavv.edu.in/images/Faculty/meina.jpg",
     "name": "Dr. (Mrs) Meena Sharma",
-    "position": "Professor",
     "description": "Software Engineering, Software Quality",
     "email": "msharma@ietdavv.edu.in",
-    "phone": "91 98269 27378",
+    "phone": "98269 27378",
     "designation": "Professor",
-    "dob": "",
+    "EmployeeID": "",
     "qualifications": [
       "BE/BTECH. (Computer Engineering): Shivaji University Kolhapur, 1992",
       "MTECH. (Computer Science): DAVV Indore, 2002",
@@ -97,33 +230,132 @@ export const facultyData = [
         "key": "work",
         "label": "Work Experience",
         "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
+          {
+            "designation": "Trainee Engineer",
+            "department": "Engineering",
+            "employerName": "Carbon Corporation LTD",
+            "duration": "2002 – 2005"
+          },
+          {
+            "designation": "Software Engineer",
+            "department": "IT Department",
+            "employerName": "Pertech Computers LTD",
+            "duration": "2005 – 2014"
+          },
+          {
+            "designation": "Professor",
+            "department": "Computer Engineering",
+            "employerName": "IET DAVV",
+            "duration": "2014 – Present"
+          }
         ]
       },
       {
         "key": "research",
         "label": "Research Details",
         "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
+          {
+            "researchType": "Wireless Networks",
+            "researchTitle": "Research on Wireless Networks and Sensor Systems",
+            "publicationYear": "2020"
+          },
+          {
+            "researchType": "Software Engineering",
+            "researchTitle": "Software Quality and Testing Methodologies",
+            "publicationYear": "2022"
+          }
         ]
       },
       {
         "key": "phd",
         "label": "PhD Supervision",
         "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
+          {
+            "studentName": "Research Scholar 1",
+            "thesisTitle": "Software Engineering Methodologies",
+            "status": "Completed",
+            "year": "2021"
+          },
+          {
+            "studentName": "Research Scholar 2",
+            "thesisTitle": "Quality Assurance in Software Development",
+            "status": "Completed",
+            "year": "2022"
+          },
+          {
+            "studentName": "Research Scholar 3",
+            "thesisTitle": "Advanced Software Testing Techniques",
+            "status": "Ongoing",
+            "year": "2024"
+          },
+          {
+            "studentName": "Research Scholar 4",
+            "thesisTitle": "Software Metrics and Measurement",
+            "status": "Ongoing",
+            "year": "2024"
+          },
+          {
+            "studentName": "Research Scholar 5",
+            "thesisTitle": "Agile Software Development",
+            "status": "Ongoing",
+            "year": "2024"
+          }
         ]
       },
       {
         "key": "publications",
         "label": "Publications",
         "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
+          {
+            "type": "Journal",
+            "title": "Software Quality Assurance Frameworks",
+            "year": "2023"
+          },
+          {
+            "type": "Journal",
+            "title": "Testing Methodologies in Modern Software Development",
+            "year": "2022"
+          },
+          {
+            "type": "Journal",
+            "title": "Wireless Sensor Networks in IoT",
+            "year": "2021"
+          },
+          {
+            "type": "Conference",
+            "title": "Advances in Software Engineering",
+            "year": "2023"
+          },
+          {
+            "type": "Conference",
+            "title": "Quality Metrics in Software Projects",
+            "year": "2022"
+          },
+          {
+            "type": "Journal",
+            "title": "Software Testing Automation",
+            "year": "2021"
+          },
+          {
+            "type": "Journal",
+            "title": "Requirements Engineering",
+            "year": "2020"
+          },
+          {
+            "type": "Conference",
+            "title": "Software Process Improvement",
+            "year": "2023"
+          },
+          {
+            "type": "Journal",
+            "title": "Agile Development Practices",
+            "year": "2022"
+          },
+          {
+            "type": "Conference",
+            "title": "Software Quality Standards",
+            "year": "2021"
+          }
         ]
       },
       {
@@ -164,33 +396,137 @@ export const facultyData = [
         "key": "work",
         "label": "Work Experience",
         "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
+          {
+            "designation": "Trainee Engineer",
+            "department": "Engineering",
+            "employerName": "Carbon Corporation LTD",
+            "duration": "2002 – 2005"
+          },
+          {
+            "designation": "Software Engineer",
+            "department": "IT Department",
+            "employerName": "Pertech Computers LTD",
+            "duration": "2005 – 2014"
+          },
+          {
+            "designation": "Professor",
+            "department": "Computer Engineering",
+            "employerName": "IET DAVV",
+            "duration": "2014 – Present"
+          }
         ]
       },
       {
         "key": "research",
         "label": "Research Details",
         "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
+          {
+            "researchType": "Artificial Intelligence",
+            "researchTitle": "AI Algorithms and Optimization Techniques",
+            "publicationYear": "2020"
+          },
+          {
+            "researchType": "Algorithm Analysis",
+            "researchTitle": "Complexity Analysis of Modern Algorithms",
+            "publicationYear": "2022"
+          },
+          {
+            "researchType": "Machine Learning",
+            "researchTitle": "Machine Learning Applications in Algorithm Design",
+            "publicationYear": "2021"
+          }
         ]
       },
       {
         "key": "phd",
         "label": "PhD Supervision",
         "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
+          {
+            "studentName": "Anita Sharma",
+            "thesisTitle": "Advanced AI Algorithms for Optimization",
+            "status": "Completed",
+            "year": "2022"
+          },
+          {
+            "studentName": "Rajesh Kumar",
+            "thesisTitle": "Algorithm Analysis and Complexity Theory",
+            "status": "Completed",
+            "year": "2021"
+          },
+          {
+            "studentName": "Priya Singh",
+            "thesisTitle": "Machine Learning in Algorithm Design",
+            "status": "Ongoing",
+            "year": "2024"
+          },
+          {
+            "studentName": "Vivek Patel",
+            "thesisTitle": "Computational Complexity of AI Systems",
+            "status": "Ongoing",
+            "year": "2024"
+          },
+          {
+            "studentName": "Neha Gupta",
+            "thesisTitle": "Parallel and Distributed Algorithms",
+            "status": "Ongoing",
+            "year": "2024"
+          }
         ]
       },
       {
         "key": "publications",
         "label": "Publications",
         "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
+          {
+            "type": "Journal",
+            "title": "Advances in Artificial Intelligence Algorithms",
+            "year": "2023"
+          },
+          {
+            "type": "Journal",
+            "title": "Algorithm Analysis and Optimization",
+            "year": "2022"
+          },
+          {
+            "type": "Journal",
+            "title": "Machine Learning for Algorithm Design",
+            "year": "2021"
+          },
+          {
+            "type": "Conference",
+            "title": "AI in Computational Complexity",
+            "year": "2023"
+          },
+          {
+            "type": "Conference",
+            "title": "Modern Algorithm Techniques",
+            "year": "2022"
+          },
+          {
+            "type": "Journal",
+            "title": "Complexity Theory Applications",
+            "year": "2021"
+          },
+          {
+            "type": "Journal",
+            "title": "Parallel Computing Algorithms",
+            "year": "2020"
+          },
+          {
+            "type": "Conference",
+            "title": "Optimization in AI Systems",
+            "year": "2023"
+          },
+          {
+            "type": "Journal",
+            "title": "Algorithmic Problem Solving",
+            "year": "2022"
+          },
+          {
+            "type": "Conference",
+            "title": "Computational Intelligence Methods",
+            "year": "2021"
+          }
         ]
       },
       {
@@ -231,33 +567,137 @@ export const facultyData = [
         "key": "work",
         "label": "Work Experience",
         "content": [
-          "Trainee Engineer (Carbon Corporation LTD, Nashik)",
-          "Software Engineer (Pertech Computers LTD, New Delhi)",
-          "Professor, Computer Engg., IET DAVV (2014 – onwards)"
+          {
+            "designation": "Trainee Engineer",
+            "department": "Engineering",
+            "employerName": "Carbon Corporation LTD",
+            "duration": "2002 – 2005"
+          },
+          {
+            "designation": "Software Engineer",
+            "department": "IT Department",
+            "employerName": "Pertech Computers LTD",
+            "duration": "2005 – 2014"
+          },
+          {
+            "designation": "Professor",
+            "department": "Computer Engineering",
+            "employerName": "IET DAVV",
+            "duration": "2014 – Present"
+          }
         ]
       },
       {
         "key": "research",
         "label": "Research Details",
         "content": [
-          "Research on Wireless Networks and Sensor Systems.",
-          "Published papers in IEEE & ACM journals."
+          {
+            "researchType": "Mobile Ad Hoc Networks",
+            "researchTitle": "Routing Protocols in Mobile Ad Hoc Networks",
+            "publicationYear": "2020"
+          },
+          {
+            "researchType": "Network Security",
+            "researchTitle": "Cryptographic Techniques for Network Security",
+            "publicationYear": "2022"
+          },
+          {
+            "researchType": "Wireless Networks",
+            "researchTitle": "Security in Wireless Sensor Networks",
+            "publicationYear": "2021"
+          }
         ]
       },
       {
         "key": "phd",
         "label": "PhD Supervision",
         "content": [
-          "Supervised 5 PhD students in Software Engineering.",
-          "Currently guiding 2 research scholars."
+          {
+            "studentName": "Ravi Kumar",
+            "thesisTitle": "Security Protocols in Mobile Ad Hoc Networks",
+            "status": "Completed",
+            "year": "2022"
+          },
+          {
+            "studentName": "Sunita Patel",
+            "thesisTitle": "Cryptography and Network Security",
+            "status": "Completed",
+            "year": "2021"
+          },
+          {
+            "studentName": "Amit Singh",
+            "thesisTitle": "Routing Algorithms in MANETs",
+            "status": "Ongoing",
+            "year": "2024"
+          },
+          {
+            "studentName": "Priya Sharma",
+            "thesisTitle": "Wireless Network Security",
+            "status": "Ongoing",
+            "year": "2024"
+          },
+          {
+            "studentName": "Vikram Gupta",
+            "thesisTitle": "IoT Security Frameworks",
+            "status": "Ongoing",
+            "year": "2024"
+          }
         ]
       },
       {
         "key": "publications",
         "label": "Publications",
         "content": [
-          "20+ International Journal Publications",
-          "10+ Conference Papers"
+          {
+            "type": "Journal",
+            "title": "Routing Protocols in Mobile Ad Hoc Networks",
+            "year": "2023"
+          },
+          {
+            "type": "Journal",
+            "title": "Network Security and Cryptography",
+            "year": "2022"
+          },
+          {
+            "type": "Journal",
+            "title": "Wireless Sensor Network Security",
+            "year": "2021"
+          },
+          {
+            "type": "Conference",
+            "title": "Advances in MANET Routing",
+            "year": "2023"
+          },
+          {
+            "type": "Conference",
+            "title": "Cryptographic Security Measures",
+            "year": "2022"
+          },
+          {
+            "type": "Journal",
+            "title": "IoT Network Security",
+            "year": "2021"
+          },
+          {
+            "type": "Journal",
+            "title": "Mobile Computing Security",
+            "year": "2020"
+          },
+          {
+            "type": "Conference",
+            "title": "Network Protocol Analysis",
+            "year": "2023"
+          },
+          {
+            "type": "Journal",
+            "title": "Cybersecurity in Wireless Networks",
+            "year": "2022"
+          },
+          {
+            "type": "Conference",
+            "title": "Distributed Network Security",
+            "year": "2021"
+          }
         ]
       },
       {
