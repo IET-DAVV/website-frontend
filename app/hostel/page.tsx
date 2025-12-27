@@ -208,11 +208,7 @@ export default function HostelPage() {
                     <p className="text-gray-700"><span className="font-bold">Support Staff:</span> {admin.staff}</p>
                     <p className="text-gray-700"><span className="font-bold">Contact:</span> {admin.contact}</p>
                   </div>
-                  {admin.image && (
-                    <div className="sm:w-1/3 h-48 sm:h-auto relative">
 
-                    </div>
-                  )}
                 </motion.div>
               ))}
             </div>
