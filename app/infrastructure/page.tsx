@@ -1,19 +1,24 @@
 import FacilityShowcase from "@/components/infrastructure/FacilityShowcase";
 import HeroInfra from "@/components/infrastructure/HeroForInfra";
 import HostelsPage from "@/components/infrastructure/HostelInfra";
-import IncubationCentre from "@/components/infrastructure/IncubationCenter";
+
 import LibraryPage from "@/components/infrastructure/library";
 
-const page = () => {
+const InfrastructurePage = () => {
   return (
-    <div className="flex flex-col gap-8 px-4 md:px-8 lg:px-16">
+    <main className="min-h-screen bg-white">
+      {/* Full-width sections manage their own internal constraints */}
       <HeroInfra />
-      <HostelsPage />
-      <LibraryPage />
-      <IncubationCentre />
-      <FacilityShowcase />
-    </div>
+      
+      {/* Grouped content sections */}
+      <div className="flex flex-col">
+        <HostelsPage />
+        <LibraryPage />
+
+        <FacilityShowcase />
+      </div>
+    </main>
   );
 };
 
-export default page;
+export default InfrastructurePage;
