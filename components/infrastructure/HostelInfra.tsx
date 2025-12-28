@@ -64,7 +64,7 @@ const HostelsPage = () => {
           {/* Left Column: Boys Hostels (2x2 Grid) */}
           <div className="grid grid-cols-2 gap-2 m-2">
             {hostelsData.map((hostel) => (
-              <Link href="/hostel" key={hostel.id} className="block group">
+              <Link href="/boyshostel" key={hostel.id} className="block group">
                 <motion.div
                   whileHover={{ y: -5 }}
                   className="relative h-64 rounded-lg overflow-hidden shadow-lg cursor-pointer"
