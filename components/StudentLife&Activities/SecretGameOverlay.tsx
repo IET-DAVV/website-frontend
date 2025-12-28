@@ -29,7 +29,7 @@ const Particle = ({ x, y }: { x: number; y: number }) => {
 // --- Main Game Component ---
 export const SecretGameOverlay = ({ onClose }: { onClose: () => void }) => {
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(15); // Increased initial time slightly
+  const [timeLeft, setTimeLeft] = useState(25); // Increased initial time slightly
   const [gameState, setGameState] = useState<"playing" | "won" | "lost">("playing");
   const [bugPosition, setBugPosition] = useState({ top: "50%", left: "50%" });
   const [bugSize, setBugSize] = useState(1); // Scale factor for difficulty
@@ -113,7 +113,7 @@ export const SecretGameOverlay = ({ onClose }: { onClose: () => void }) => {
 
   const restartGame = () => {
       setScore(0);
-      setTimeLeft(15);
+      setTimeLeft(25);
       setBugSize(1);
       setGameState("playing");
       moveBug();
