@@ -1,211 +1,303 @@
-// dont change the export variable and read all the comments
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-// import Title from "../common/academics/Title"; // Use this import for titel component
+import React, { useState, useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence, Variants } from "framer-motion";
+// Ensure this path matches where you saved the game file
+import { SecretGameOverlay } from "./SecretGameOverlay"; 
 
-{/* <Title title="Titel that you wanna use" className="text-7xl leading-tight font-newyork" /> */}// uncomment this to use the titel component
+// --- 1. Type Definitions ---
+interface ClubData {
+  id: number;
+  name: string;
+  description: string;
+  logoPath?: string;
+  logoColor?: string;
+  images: string[];
+  linkedinUrl?: string;
+  buttonLink?: string;
+}
 
-// This component creates the main title, styled similarly to your example.
-const Title: React.FC<{ title: string }> = ({ title }) => (
-  <div className="text-center my-8 md:my-12">
-    <motion.h1
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-4xl md:text-5xl font-serif font-bold"
-      style={{ color: 'rgb(59, 122, 158)' }} // Applied the requested text color
-    >
-      {title}
-    </motion.h1>
-    {/* This is the underline element from your design */}
-    <motion.div
-      initial={{ opacity: 0, width: 0 }}
-      animate={{ opacity: 1, width: "6rem" }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-      className="w-24 h-1 mx-auto mt-4 rounded"
-      style={{ backgroundColor: 'rgb(59, 122, 158)' }} // Matching color
-    />
-  </div>
-);
+// --- 2. Data Configuration ---
+const clubs: ClubData[] = [
+  {
+    id: 1,
+    name: "Google Developer Groups on Campus IET DAVV",
+    // UPDATED CONTENT BELOW
+    description: "As the official Google Developer Groups on Campus chapter at IET DAVV, Indore, we exist to help students learn, build, and grow together. Our ecosystem is built on four non-negotiable pillars: Innovation First, where we bypass theory to apply cutting-edge technologies to real-world problems; Skill Development, prioritizing tangible growth through hands-on workshops; a Community Driven network that architects support among developers; and Excellence, striving for perfection from event logistics to project code.",
+    logoPath: "/SL/gdglog.png", 
+    linkedinUrl: "https://www.linkedin.com/company/gdgoc-iet-davv/posts/",
+    buttonLink: "https://gdgoc-ietdavv.netlify.app/",
+    logoColor: "#4285F4",
+    images: ["/club-gdg-1.jpg", "/club-gdg-2.jpg"],
+  }
+];
 
-// This component contains the CSS for the Pac-Man animation.
-// Placing it here keeps everything self-contained within this one file.
-const PacmanAnimationStyles: React.FC = () => {
-  const styles = `
-    /* New wrapper to create a self-contained animation stage */
-    .animation-wrapper {
-        position: relative;
-        width: 350px; /* Width to contain pacman and all dots */
-        height: 100px; /* Pacman's height */
-        transform: scale(0.8); /* Scale down for smaller screens */
-    }
-    @media (min-width: 768px) {
-        .animation-wrapper {
-            transform: scale(1); /* Full size on medium screens and up */
-        }
-    }
-
-    /* Pacman container now only handles movement across the screen */
-    .pacman {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        /* Updated animation with a smoother loop */
-        animation: movePacman 2.5s linear infinite;
-    }
-    
-    /* New inner element to handle the mouth chomping animation */
-    .pacman-shape {
-        width: 0px;
-        height: 0px;
-        border-right: 50px solid transparent;
-        border-top: 50px solid rgb(59, 122, 158);
-        border-left: 50px solid rgb(59, 122, 158);
-        border-bottom: 50px solid rgb(59, 122, 158);
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        animation: chomp 0.5s ease-in-out infinite;
-        position: relative;
-    }
-
-    .pacman-eye {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: white; /* Changed eye to white for better contrast */
-        border: 1px solid #333;
-        border-radius: 50%;
-        top: -30px;
-        right: 20px;
-    }
-
-    /* Dots are now positioned absolutely within the wrapper and stay fixed */
-    .dots {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: 42.5px; /* Vertically center dots relative to pacman's 100px height */
-        left: 100px; /* Start dots just after pacman's initial space */
-    }
-
-    .dot {
-        width: 15px;
-        height: 15px;
-        background-color: rgb(59, 122, 158); /* Updated dot color */
-        border-radius: 50%;
-        margin: 0 12px;
-        /* Updated animation with a smoother loop */
-        animation: eat 2.5s linear infinite;
-    }
-
-    /* Staggered delays for each dot to disappear as Pac-Man passes */
-    .dot:nth-child(1) { animation-delay: 0s; }
-    .dot:nth-child(2) { animation-delay: 0.4s; }
-    .dot:nth-child(3) { animation-delay: 0.8s; }
-    .dot:nth-child(4) { animation-delay: 1.2s; }
-    .dot:nth-child(5) { animation-delay: 1.6s; }
-
-    /* Chomp animation correctly rotates to open and close the mouth */
-    @keyframes chomp {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(-45deg); }
-      100% { transform: rotate(0deg); }
-    }
-
-    /* CORRECTED: Dots are now visible until eaten, and reappear correctly for the next loop. */
-    @keyframes eat {
-        0% {
-            /* Dot is visible at the start of its animation cycle */
-            transform: scale(1);
-            opacity: 1;
-        }
-        0.01% {
-            /* Instantly "eaten" and becomes invisible */
-            transform: scale(0);
-            opacity: 0;
-        }
-        79.99% {
-            /* Stays invisible until the global reset period */
-            transform: scale(0);
-            opacity: 0;
-        }
-        80% {
-            /* Reappears for the reset and is ready for the next loop */
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    /* Pac-Man moves for 2s (80% of 2.5s), then is hidden for 0.5s to create a clean loop */
-    @keyframes movePacman {
-        0% {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        80% {
-            transform: translateX(250px);
-            opacity: 1;
-        }
-        80.01% { /* Disappear instantly at the end of the path */
-            opacity: 0;
-        }
-        100% { /* Stay hidden and reset position for the next loop */
-            transform: translateX(0);
-            opacity: 0;
-        }
-    }
-  `;
-  return <style>{styles}</style>;
+// --- 3. Animation Variants ---
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
 };
 
-// The main component for the page, now named RIPage
-const SLA: React.FC = () => {
-  return (
-    <>
-      <PacmanAnimationStyles />
-      <div className="bg-white min-h-screen flex flex-col items-center justify-center text-gray-800 font-sans p-4 text-center overflow-hidden">
-        <Title title="PAGE UNDER CONSTRUCTION" />
+const itemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 60, damping: 20 },
+  },
+};
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-lg md:text-xl text-gray-500 mb-16 max-w-md"
+// --- 4. SVG Icons ---
+const InstagramIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const LinkedInIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+  </svg>
+);
+
+// --- 5. Header Component ---
+const HeaderSection = () => {
+  const [activeTab, setActiveTab] = useState("Clubs");
+  const tabs = ["Clubs", "Cultural & Technical Fests", "Live@IET", "Newsletter & Media"];
+
+  return (
+    <motion.div 
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="w-full flex flex-col items-center pt-28 pb-16 px-6 md:px-12 font-sans relative z-10"
+    >
+      {/* Title */}
+      <div className="overflow-hidden mb-12 text-center">
+        <motion.h1
+          variants={itemVariants}
+          className="text-5xl md:text-7xl font-serif text-[#1F6E8C] uppercase tracking-wide"
         >
-          Our team is working hard to bring this page to life. Please check back soon for updates!
-        </motion.p>
-        
-        {/* This div now acts as the stage for the animation */}
-        <div className="h-28 flex items-center justify-center">
-            <motion.div
-                key={Math.random()} // Re-trigger animation on re-render if needed
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="animation-wrapper"
-            >
-              <div className="pacman">
-                <div className="pacman-shape">
-                    <div className="pacman-eye"></div>
-                </div>
-              </div>
-              <div className="dots">
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-              </div>
-            </motion.div>
-        </div>
+          Student Life <span className="italic font-light text-[#0e7490]">&</span> Activities
+        </motion.h1>
       </div>
-    </>
+
+      {/* Tabs */}
+      <motion.div variants={itemVariants} className="w-full max-w-6xl mb-12">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-10 border-b border-gray-200 pb-4">
+          {tabs.map((tab) => (
+            <div
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className="relative cursor-pointer group pb-2"
+            >
+              <span className={`text-base md:text-lg font-bold tracking-wide transition-colors duration-300 ${
+                  activeTab === tab ? "text-[#1F6E8C]" : "text-gray-400 group-hover:text-gray-600"
+                }`}
+              >
+                {tab}
+              </span>
+              {activeTab === tab && (
+                <motion.div
+                  layoutId="underline"
+                  className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1F6E8C]"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Description Text */}
+      <motion.p
+        variants={itemVariants}
+        className="max-w-4xl w-full text-gray-600 text-lg md:text-xl leading-8 text-center font-medium"
+      >
+        At IET DAVV, we believe holistic development is key. Our campus is a hub
+        of student led activities driven by various Communities and Clubs,
+        covering both academics and extracurricular activities.
+      </motion.p>
+    </motion.div>
   );
 };
 
-export default SLA;
+// --- 6. Club Card Component (FIXED) ---
+const ClubCard: React.FC<{ data: ClubData; index: number; onTriggerGame: () => void }> = ({ data, index, onTriggerGame }) => {
+  const ref = useRef(null);
+  const [clickCount, setClickCount] = useState(0);
+  
+  // Ref to store the timer ID so we can clear it
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
+  // --- FIXED LOGIC ---
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // 1. Clear the previous timer immediately so it doesn't reset the count
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+
+    // 2. Check for Win
+    if (newCount >= 15) {
+        onTriggerGame();
+        setClickCount(0); // Reset count
+        if (timerRef.current) clearTimeout(timerRef.current); // Clear timer
+    } else {
+        // 3. Set a NEW timer. If user stops clicking for 2s, THEN reset.
+        timerRef.current = setTimeout(() => {
+            setClickCount(0);
+        }, 2000);
+    }
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10% 0px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="max-w-[85rem] mx-auto mb-32 px-6 md:px-12"
+    >
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+        
+        {/* Left Column: Image Stack */}
+        <div className="w-full lg:w-9/19 flex flex-col gap-6 relative">
+          {[0, 1].map((imgIdx) => (
+            <motion.div 
+              key={imgIdx}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="w-full h-64 md:h-80 bg-gray-100 rounded-xl overflow-hidden shadow-md relative group"
+            >
+               <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400 text-lg font-semibold group-hover:bg-gray-300 transition-colors duration-500">
+                  <span className="z-10 relative">Club Image {imgIdx + 1}</span>
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
+               </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Right Column: Content */}
+        <div className="w-full lg:w-7/12 flex flex-col pt-2">
+          {/* Header Row */}
+          <div className="flex flex-col-reverse md:flex-row justify-between items-start mb-6 gap-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
+              {data.name}
+            </h2>
+            
+            {/* --- LOGO TRIGGER --- */}
+            <motion.div 
+              onClick={handleLogoClick}
+              whileHover={{ rotate: 10, scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              // Visual Feedback: Shake when getting close (count > 5)
+              animate={clickCount > 5 ? { x: [-2, 2, -2, 2, 0] } : {}} 
+              className="shrink-0 p-1 bg-white rounded-full shadow-sm border border-gray-100 cursor-pointer select-none"
+            >
+               {data.logoPath ? (
+                 <img
+                   src={data.logoPath}
+                   alt={`${data.name} logo`}
+                   className="w-16 md:w-20 h-auto object-contain"
+                 />
+               ) : (
+                 <div className="text-4xl font-bold px-3" style={{ color: data.logoColor }}>&lt;/&gt;</div>
+               )}
+            </motion.div>
+          </div>
+
+          <p className="text-gray-600 text-base md:text-lg leading-8 mb-8 text-justify font-normal">
+            {data.description}
+          </p>
+          
+          <div className="flex items-center gap-3 mb-8">
+            <div className="h-px w-8 bg-[#0e7490]"></div>
+            <p className="text-gray-500 text-base italic">
+              No prior experience needed.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center w-full gap-6 mt-auto">
+            <motion.a 
+              href={data.buttonLink || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="bg-[#0e7490] text-white text-base md:text-lg font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg hover:bg-[#155e75] transition-all w-full sm:w-auto text-center cursor-pointer"
+            >
+              Explore More
+            </motion.a>
+            
+            <div className="flex gap-6 items-center">
+               <motion.a 
+                 whileHover={{ y: -3, color: "#E1306C" }} 
+                 href="#" 
+                 className="text-[#0e7490] transition-colors"
+               >
+                 <InstagramIcon />
+               </motion.a>
+               <motion.a 
+                 whileHover={{ y: -3, color: "#0077b5" }} 
+                 href={data.linkedinUrl || "#"} 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="text-[#0e7490] transition-colors"
+               >
+                 <LinkedInIcon />
+               </motion.a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+// --- 7. Main Page Export ---
+export default function StudentLifeActivities() {
+  const [gameActive, setGameActive] = useState(false);
+
+  return (
+    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen font-sans pb-32 overflow-hidden">
+      {/* Game Overlay */}
+      <AnimatePresence>
+         {gameActive && <SecretGameOverlay onClose={() => setGameActive(false)} />}
+      </AnimatePresence>
+
+      <HeaderSection />
+      
+      <div className="mt-12 flex flex-col gap-16">
+        {clubs.map((club, index) => (
+          <ClubCard 
+             key={club.id} 
+             data={club} 
+             index={index} 
+             onTriggerGame={() => setGameActive(true)} 
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
