@@ -5,11 +5,12 @@ WORKDIR /app
 # Copy only dependency files first
 COPY package-lock.json package-lock.json ./
 COPY package.json package.json ./
-# Copy full source
+
 COPY . .
 
-
 RUN npm install
+
+# Copy full source
 
 
 RUN npm run build
